@@ -4,9 +4,20 @@
 format: jb-book
 root: intro
 chapters:
-- file: selection_criteria
-- file: ai_playground_access
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: protein_book
+- file: content/selection_criteria
+- file: content/ai_playground_access
+- file: content/protein_book/protein_book
+  sections:
+  - file: content/protein_book/chapter1_chemical_properties
+  - file: content/protein_book/chapter2_biosynthesis
+  - file: content/protein_book/chapter3_evolutionary_origins
+  - file: content/protein_book/chapter4_physical_interactions
+  - file: content/protein_book/chapter5_conformational_properties
+  - file: content/protein_book/chapter6_folded_conformations
+  - file: content/protein_book/chapter7_proteins_in_solution
+  - file: content/protein_book/chapter8_interactions_with_molecules
+  - file: content/protein_book/chapter9_enzyme_catalysis
+  - file: content/protein_book/chapter10_degradation
+- file: content/markdown
+- file: content/notebooks
+- file: content/markdown-notebooks
