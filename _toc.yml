@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 chapters:
 - file: selection_criteria
+- file: ai_playground_access
 - file: markdown
 - file: notebooks
 - file: markdown-notebooks
