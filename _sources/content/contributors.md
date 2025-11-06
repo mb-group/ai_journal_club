@@ -15,8 +15,6 @@ This collaborative effort represents the collective knowledge, insights, and ded
 </div>
 <div>
 <strong>Role:</strong> Senior Computational Research Scientist<br>
-<strong>Contributions:</strong> Model curation, chapter organization, AI analysis<br>
-<strong>Expertise:</strong> AI applications in biology, protein modeling, computational biology<br>
 <strong>Affiliation:</strong> Babu Group Research Team
 </div>
 </div>
@@ -27,10 +25,8 @@ This collaborative effort represents the collective knowledge, insights, and ded
 <img src="../people/walid.png" alt="Walid Abu Al-Afia" style="width: 100%; height: 100%; object-fit: cover;">
 </div>
 <div>
-<strong>Role:</strong> Computational Engineer II & Co-Contributor<br>
-<strong>Contributions:</strong> Literature review, model evaluation, content development<br>
-<strong>Expertise:</strong> Computational engineering, AI model assessment, research methodology<br>
-<strong>Affiliation:</strong> Babu Group Research Team
+<strong>Role:</strong> Computational Engineer II<br>
+<strong>Affiliation:</strong> Information Service
 </div>
 </div>
 
