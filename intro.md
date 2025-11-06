@@ -20,7 +20,27 @@ Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in
 
 **Accelerate Translation**: Shorten the cycle from fundamental discovery to clinical impact.
 
-## Model catalog rationale
+## Running Statistics
+
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+
+📊 **Current Collection Overview**
+
+- **Total Models/Papers**: 69 papers and models
+- **Source Focus**: Primarily Nature Portfolio journals (2024)
+- **Coverage Areas**: 65 topical chapters across three core areas
+
+📚 **Distribution by Field**
+- **Proteins**: 10 chapters (Chemical properties, folding, catalysis, etc.)
+- **Genes**: 30 chapters (DNA, transcription, regulation, etc.)  
+- **Cells**: 25 chapters (Membrane structure, organelles, division, etc.)
+
+📈 **Growth Tracking**
+- **Last Updated**: November 2024
+- **Status**: Actively expanding with new publications
+- **Completion**: Model descriptions added progressively through journal club discussions
+
+</div>
 
 Models are organized according to classic textbooks (Proteins, Genes, The Cell) chapters and topics to reflect how much AI has been contributing to fundamental science. See [selection criteria](content/selection_criteria.md) for details of what publications are included.
 
