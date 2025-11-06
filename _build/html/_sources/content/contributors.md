@@ -14,22 +14,61 @@ This collaborative effort represents the collective knowledge, insights, and ded
 <img src="../people/cai-tian-458904-025.webp" alt="Tian Cai" style="width: 100%; height: 100%; object-fit: cover;">
 </div>
 <div>
-<strong>Role:</strong> Lead Contributor & Content Architect<br>
+<strong>Role:</strong> Senior Computational Research Scientist<br>
 <strong>Contributions:</strong> Model curation, chapter organization, AI analysis<br>
 <strong>Expertise:</strong> AI applications in biology, protein modeling, computational biology<br>
 <strong>Affiliation:</strong> Babu Group Research Team
 </div>
 </div>
 
-### Walid
+### Walid Abu Al-Afia
 <div style="display: flex; align-items: center; margin: 20px 0;">
-<div style="width: 120px; height: 120px; border-radius: 50%; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; margin-right: 20px; border: 2px solid #ddd;">
-<em>Photo</em>
+<div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
+<img src="../people/walid.png" alt="Walid Abu Al-Afia" style="width: 100%; height: 100%; object-fit: cover;">
 </div>
 <div>
-<strong>Role:</strong> Co-Contributor & Research Analyst<br>
+<strong>Role:</strong> Computational Engineer II & Co-Contributor<br>
 <strong>Contributions:</strong> Literature review, model evaluation, content development<br>
-<strong>Expertise:</strong> Biological systems, AI model assessment, research methodology<br>
+<strong>Expertise:</strong> Computational engineering, AI model assessment, research methodology<br>
+<strong>Affiliation:</strong> Babu Group Research Team
+</div>
+</div>
+
+### Ben Leslie, PhD
+<div style="display: flex; align-items: center; margin: 20px 0;">
+<div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
+<img src="../people/leslie-ben-00214123-032.webp" alt="Ben Leslie" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+<div>
+<strong>Role:</strong> Director of Lab Operations<br>
+<strong>Contributions:</strong> Laboratory coordination, research infrastructure, operational excellence<br>
+<strong>Expertise:</strong> Laboratory management, research operations, scientific workflow optimization<br>
+<strong>Affiliation:</strong> Babu Group Research Team
+</div>
+</div>
+
+### Balint Meszaros, PhD
+<div style="display: flex; align-items: center; margin: 20px 0;">
+<div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
+<img src="../people/meszaros-balint-142203-021.webp" alt="Balint Meszaros" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+<div>
+<strong>Role:</strong> Principal Computational Research Scientist<br>
+<strong>Contributions:</strong> Advanced computational analysis, AI model development, research leadership<br>
+<strong>Expertise:</strong> Computational biology, machine learning, protein structure analysis<br>
+<strong>Affiliation:</strong> Babu Group Research Team
+</div>
+</div>
+
+### Jaimin Patel
+<div style="display: flex; align-items: center; margin: 20px 0;">
+<div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
+<img src="../people/patel-jaimin-142203-017.webp" alt="Jaimin Patel" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+<div>
+<strong>Role:</strong> Principal Software Engineer<br>
+<strong>Contributions:</strong> Software architecture, platform development, technical infrastructure<br>
+<strong>Expertise:</strong> Software engineering, system architecture, AI platform development<br>
 <strong>Affiliation:</strong> Babu Group Research Team
 </div>
 </div>
