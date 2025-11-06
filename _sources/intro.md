@@ -6,7 +6,7 @@
 
 With the excitement surrounding the integration of AI into every aspect of life, it's crucial to have a comprehensive understanding of the areas where AI has significantly contributed to fundamental scientific research, as well as identifying gaps that remain unexplored. To address this, we've created an AI playground, a zoo of models—an accessible and interactive resource. With just a few clicks, you can gain a holistic view of AI's impact across various topics and experiment with each model to discover how truly beneficial they are.
 
-Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in 2024 according to a selection criteria.
+Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in 2025 according to a selection criteria.
 
 <div style="background-color: #e8f4f8; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #007acc;">
 
@@ -37,13 +37,14 @@ Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in
 📊 **Current Collection Overview**
 
 - **Total Models/Papers**: 69 papers and models
-- **Source Focus**: Primarily Nature Portfolio journals (2024)
+- **Source Focus**: Primarily Nature Portfolio journals (2025)
 - **Coverage Areas**: 65 topical chapters across three core areas
 
 📚 **Distribution by Field**
 - **Proteins**: 10 chapters (Chemical properties, folding, catalysis, etc.)
 - **Genes**: 30 chapters (DNA, transcription, regulation, etc.)  
 - **Cells**: 25 chapters (Membrane structure, organelles, division, etc.)
+- **Journal Club Discussion Take-Away**: 4 sections (Fundamental concepts, milestones, trends, clarifications)
 
 📈 **Growth Tracking**
 - **Last Updated**: November 2024
