@@ -1,0 +1,940 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fundamental AI Concepts &#8212; Babu group AI journal club</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/journal_club_book/fundamental_concepts';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Important Trend Shifts" href="trend_shifts.html" />
+    <link rel="prev" title="Most Important Milestone Works" href="milestone_works.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/jc_logo.png" class="logo__image only-light" alt="Babu group AI journal club - Home"/>
+    <script>document.write(`<img src="../../_static/jc_logo.png" class="logo__image only-dark" alt="Babu group AI journal club - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Babu Group AI Journal Club
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../state_of_ai_for_biology.html">State of AI for Biology: A Comprehensive Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protein_book/protein_book.html">Protein Book</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter1_chemical_properties.html">Chapter 1: Chemical Properties of Polypeptides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter2_biosynthesis.html">Chapter 2: Biosynthesis of Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter3_evolutionary_origins.html">Chapter 3: Evolutionary and Genetic Origins of Protein Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter4_physical_interactions.html">Chapter 4: Physical Interactions That Determine the Properties of Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter5_conformational_properties.html">Chapter 5: Conformational Properties of Polypeptide Chains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter6_folded_conformations.html">Chapter 6: The Folded Conformations of Globular Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter7_proteins_in_solution.html">Chapter 7: Proteins in Solution and in Membranes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter8_interactions_with_molecules.html">Chapter 8: Interactions with Other Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter9_enzyme_catalysis.html">Chapter 9: Enzyme Catalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter10_degradation.html">Chapter 10: Degradation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../gene_book/gene_book.html">Gene Book</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter1_genes_are_dna.html">Chapter 1: Genes are DNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter2_interrupted_gene.html">Chapter 2: The Interrupted Gene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter3_genome_content.html">Chapter 3: The Content of the Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter4_clusters_repeats.html">Chapter 4: Clusters and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter5_messenger_rna.html">Chapter 5: Messenger RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter6_protein_synthesis.html">Chapter 6: Protein Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter7_genetic_code.html">Chapter 7: Using the Genetic Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter8_protein_localization.html">Chapter 8: Protein Localization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter9_transcription.html">Chapter 9: Transcription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter10_operon.html">Chapter 10: The Operon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter11_regulatory_circuits.html">Chapter 11: Regulatory Circuits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter12_phage_strategies.html">Chapter 12: Phage Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter13_the_replicon.html">Chapter 13: The Replicon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter14_dna_replication.html">Chapter 14: DNA Replication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter15_recombination_and_repair.html">Chapter 15: Recombination and Repair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter16_transposons.html">Chapter 16: Transposons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter17_retroviruses_and_retroposons.html">Chapter 17: Retroviruses and Retroposons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter18_dna_rearrangement.html">Chapter 18: Rearrangement of DNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter19_chromosomes.html">Chapter 19: Chromosomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter20_nucleosomes.html">Chapter 20: Nucleosomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter21_promoters_and_enhancers.html">Chapter 21: Promoters and Enhancers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter22_activating_transcription.html">Chapter 22: Activating Transcription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter23_controlling_chromatin_structure.html">Chapter 23: Controlling Chromatin Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter24_rna_splicing.html">Chapter 24: RNA Splicing and Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter25_catalytic_rna.html">Chapter 25: Catalytic RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter26_immune_diversity.html">Chapter 26: Immune Diversity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter27_protein_trafficking.html">Chapter 27: Protein Trafficking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter28_signal_transduction.html">Chapter 28: Signal Transduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter29_cell_cycle_growth_regulation.html">Chapter 29: Cell Cycle Growth Regulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter30_oncogenes_and_cancer.html">Chapter 30: Oncogenes and Cancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_book/chapter31_gradients__cascades__and_signaling_pathways.html">Chapter 31: Gradients, Cascades, and Signaling Pathways</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cell_book/cell_book.html">Cell Book</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter1_cells_genomes.html">Chapter 1: Cells and Genomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter2_cell_chemistry_and_biosynthesis.html">Chapter 2: Cell Chemistry and Biosynthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter3_proteins.html">Chapter 3: Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter4_dna_and_chromosomes.html">Chapter 4: DNA and Chromosomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter5_dna_replication__repair__recombination.html">Chapter 5: DNA Replication, Repair, Recombination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter6_genome_to_protein.html">Chapter 6: How Cells Read the Genome: From DNA to Protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter7_gene_expression_control.html">Chapter 7: Control of Gene Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter8_manipulation_methods.html">Chapter 8: Manipulating Proteins, DNA, and RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter9_visualizing_cells.html">Chapter 9: Visualizing Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter10_membrane_structure.html">Chapter 10: Membrane Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter11_membrane_transport_and_electrical_properties.html">Chapter 11: Membrane Transport and Electrical Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter12_intracellular_compartments_and_protein_sorting.html">Chapter 12: Intracellular Compartments and Protein Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter13_intracellular_vesicular_traffic.html">Chapter 13: Intracellular Vesicular Traffic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter14_energy_conversion__mitochondria_and_chloroplasts.html">Chapter 14: Energy Conversion: Mitochondria and Chloroplasts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter15_cell_communication.html">Chapter 15: Cell Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter16_the_cytoskeleton.html">Chapter 16: The Cytoskeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter17_the_cell_cycle_and_programmed_cell_death.html">Chapter 17: The Cell Cycle and Programmed Cell Death</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter18_the_mechanics_of_cell_division.html">Chapter 18: The Mechanics of Cell Division</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter19_cell_junctions.html">Chapter 19: Cell Junctions, Cell Adhesion, and the Extracellular Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter20_germ_cells_and_fertilization.html">Chapter 20: Germ Cells and Fertilization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter21_development.html">Chapter 21: Development of Multicellular Organisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter22_histology__lives_and_deaths_of_cells_in_tissues.html">Chapter 22: Histology: Lives and Deaths of Cells in Tissues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter23_cancer.html">Chapter 23: Cancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter24_immune_system.html">Chapter 24: The Adaptive Immune System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter25_pathogens.html">Chapter 25: Pathogens</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="journal_club_book.html">Journal Club Discussion Take-Away</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="confusing_concepts.html">Frequently Confusing AI Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="milestone_works.html">Most Important Milestone Works</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fundamental AI Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trend_shifts.html">Important Trend Shifts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../selection_criteria.html">Selection Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai_playground_access.html">Access to AI Playground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/journal_club_book/fundamental_concepts.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/journal_club_book/fundamental_concepts.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fundamental AI Concepts</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-machine-learning-concepts">Core Machine Learning Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-paradigms">Learning Paradigms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-types-and-architectures">Model Types and Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-evaluation">Training and Evaluation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-fundamentals">Deep Learning Fundamentals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-mechanisms">Attention Mechanisms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-considerations">Practical Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-and-preprocessing">Data Quality and Preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection-and-validation">Model Selection and Validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-and-explainability">Interpretation and Explainability</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emerging-concepts">Emerging Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-learning">Multi-Modal Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-and-zero-shot-learning">Few-Shot and Zero-Shot Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-ai-for-biology">Generative AI for Biology</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways-for-biologists">Key Takeaways for Biologists</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fundamental-ai-concepts">
+<h1>Fundamental AI Concepts<a class="headerlink" href="#fundamental-ai-concepts" title="Link to this heading">#</a></h1>
+<p><em>Essential AI knowledge every biologist should understand</em></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This section distills the core AI concepts that are most relevant for biological research. Rather than providing an exhaustive computer science treatment, we focus on the intuitions, applications, and implications that matter most for biologists working with or evaluating AI tools.</p>
+</section>
+<section id="core-machine-learning-concepts">
+<h2>Core Machine Learning Concepts<a class="headerlink" href="#core-machine-learning-concepts" title="Link to this heading">#</a></h2>
+<section id="learning-paradigms">
+<h3>Learning Paradigms<a class="headerlink" href="#learning-paradigms" title="Link to this heading">#</a></h3>
+<p><strong>Supervised Learning</strong></p>
+<ul class="simple">
+<li><p><strong>What it is</strong>: Learning from labeled examples to make predictions on new data</p></li>
+<li><p><strong>When to use</strong>: When you have clear input-output relationships and labeled training data</p></li>
+<li><p><strong>Biology examples</strong>:</p>
+<ul>
+<li><p>Predicting protein function from sequence</p></li>
+<li><p>Classifying cell types from gene expression</p></li>
+<li><p>Identifying disease-associated variants</p></li>
+</ul>
+</li>
+<li><p><strong>Key insight</strong>: Quality and quantity of labels determines success</p></li>
+</ul>
+<p><strong>Unsupervised Learning</strong></p>
+<ul class="simple">
+<li><p><strong>What it is</strong>: Finding hidden patterns in data without labels</p></li>
+<li><p><strong>When to use</strong>: For exploratory analysis, dimensionality reduction, or clustering</p></li>
+<li><p><strong>Biology examples</strong>:</p>
+<ul>
+<li><p>Discovering cell populations in single-cell data</p></li>
+<li><p>Finding co-expressed gene modules</p></li>
+<li><p>Identifying protein structural motifs</p></li>
+</ul>
+</li>
+<li><p><strong>Key insight</strong>: Patterns found may not align with biological categories</p></li>
+</ul>
+<p><strong>Reinforcement Learning</strong></p>
+<ul class="simple">
+<li><p><strong>What it is</strong>: Learning through trial and error with rewards and penalties</p></li>
+<li><p><strong>When to use</strong>: For optimization problems or sequential decision making</p></li>
+<li><p><strong>Biology examples</strong>:</p>
+<ul>
+<li><p>Optimizing experimental protocols</p></li>
+<li><p>Drug discovery pipeline optimization</p></li>
+<li><p>Molecular design for specific properties</p></li>
+</ul>
+</li>
+<li><p><strong>Key insight</strong>: Requires careful reward function design</p></li>
+</ul>
+<p><strong>Self-Supervised Learning</strong></p>
+<ul class="simple">
+<li><p><strong>What it is</strong>: Creating supervision signals from the data itself</p></li>
+<li><p><strong>When to use</strong>: When labeled data is scarce but unlabeled data is abundant</p></li>
+<li><p><strong>Biology examples</strong>:</p>
+<ul>
+<li><p>Protein language models (predict masked amino acids)</p></li>
+<li><p>DNA foundation models (predict next nucleotide)</p></li>
+<li><p>Image analysis (predict rotations, crops)</p></li>
+</ul>
+</li>
+<li><p><strong>Key insight</strong>: Nature provides many self-supervisory signals</p></li>
+</ul>
+</section>
+<section id="model-types-and-architectures">
+<h3>Model Types and Architectures<a class="headerlink" href="#model-types-and-architectures" title="Link to this heading">#</a></h3>
+<p><strong>Linear Models</strong></p>
+<ul class="simple">
+<li><p><strong>Strengths</strong>: Interpretable, fast, well-understood</p></li>
+<li><p><strong>Limitations</strong>: Assumes linear relationships</p></li>
+<li><p><strong>Biology applications</strong>: GWAS, differential expression analysis</p></li>
+<li><p><strong>When to use</strong>: When interpretability is crucial and relationships are approximately linear</p></li>
+</ul>
+<p><strong>Tree-Based Methods (Random Forest, Gradient Boosting)</strong></p>
+<ul class="simple">
+<li><p><strong>Strengths</strong>: Handle non-linear relationships, feature interactions, mixed data types</p></li>
+<li><p><strong>Limitations</strong>: Can overfit, less interpretable than linear models</p></li>
+<li><p><strong>Biology applications</strong>: Variant effect prediction, multi-omics integration</p></li>
+<li><p><strong>When to use</strong>: Tabular biological data with complex relationships</p></li>
+</ul>
+<p><strong>Neural Networks</strong></p>
+<ul class="simple">
+<li><p><strong>Strengths</strong>: Universal function approximators, can learn complex patterns</p></li>
+<li><p><strong>Limitations</strong>: Require large datasets, computationally intensive, less interpretable</p></li>
+<li><p><strong>Biology applications</strong>: Image analysis, sequence analysis, molecular property prediction</p></li>
+<li><p><strong>When to use</strong>: Large datasets with complex, non-linear relationships</p></li>
+</ul>
+<p><strong>Convolutional Neural Networks (CNNs)</strong></p>
+<ul class="simple">
+<li><p><strong>Strengths</strong>: Excellent for spatial patterns, translation invariant</p></li>
+<li><p><strong>Biology applications</strong>: Microscopy analysis, genomic sequence analysis, protein structure</p></li>
+<li><p><strong>Key insight</strong>: Local patterns and hierarchical features matter</p></li>
+</ul>
+<p><strong>Recurrent Neural Networks (RNNs/LSTMs)</strong></p>
+<ul class="simple">
+<li><p><strong>Strengths</strong>: Handle sequential data, memory of past inputs</p></li>
+<li><p><strong>Limitations</strong>: Difficulty with long sequences, training challenges</p></li>
+<li><p><strong>Biology applications</strong>: Time-series biological data, sequence analysis</p></li>
+<li><p><strong>Key insight</strong>: Order and context matter in biological sequences</p></li>
+</ul>
+<p><strong>Transformers and Attention</strong></p>
+<ul class="simple">
+<li><p><strong>Strengths</strong>: Parallel processing, long-range dependencies, flexible attention</p></li>
+<li><p><strong>Biology applications</strong>: Protein language models, multi-modal biological data</p></li>
+<li><p><strong>Key insight</strong>: Different parts of biological sequences interact in complex ways</p></li>
+</ul>
+</section>
+<section id="training-and-evaluation">
+<h3>Training and Evaluation<a class="headerlink" href="#training-and-evaluation" title="Link to this heading">#</a></h3>
+<p><strong>Overfitting and Regularization</strong></p>
+<ul class="simple">
+<li><p><strong>The problem</strong>: Models that memorize training data but fail on new data</p></li>
+<li><p><strong>Solutions</strong>: Cross-validation, regularization techniques, more data</p></li>
+<li><p><strong>Biology relevance</strong>: Particularly important due to limited biological datasets</p></li>
+<li><p><strong>Warning signs</strong>: Perfect training accuracy, poor validation performance</p></li>
+</ul>
+<p><strong>Bias-Variance Tradeoff</strong></p>
+<ul class="simple">
+<li><p><strong>Bias</strong>: Systematic errors due to oversimplified assumptions</p></li>
+<li><p><strong>Variance</strong>: Sensitivity to small changes in training data</p></li>
+<li><p><strong>Biology implications</strong>: Simple models may miss biological complexity; complex models may not generalize</p></li>
+<li><p><strong>Balance</strong>: Choose model complexity appropriate for data size and noise</p></li>
+</ul>
+<p><strong>Cross-Validation</strong></p>
+<ul class="simple">
+<li><p><strong>Purpose</strong>: Estimate how well a model will perform on unseen data</p></li>
+<li><p><strong>Biology considerations</strong>:</p>
+<ul>
+<li><p>Account for data structure (related sequences, batch effects)</p></li>
+<li><p>Time-based splits for temporal data</p></li>
+<li><p>Species-based splits for evolutionary relationships</p></li>
+</ul>
+</li>
+<li><p><strong>Common mistakes</strong>: Data leakage, inappropriate splitting strategies</p></li>
+</ul>
+<p><strong>Performance Metrics</strong></p>
+<ul class="simple">
+<li><p><strong>Classification</strong>: Accuracy, precision, recall, F1-score, ROC-AUC</p></li>
+<li><p><strong>Regression</strong>: MSE, MAE, R²</p></li>
+<li><p><strong>Biology-specific</strong>:</p>
+<ul>
+<li><p>Functional enrichment analysis</p></li>
+<li><p>Structural similarity measures (RMSD, GDT-TS)</p></li>
+<li><p>Evolutionary conservation metrics</p></li>
+</ul>
+</li>
+<li><p><strong>Key insight</strong>: Choose metrics that align with biological relevance</p></li>
+</ul>
+</section>
+</section>
+<section id="deep-learning-fundamentals">
+<h2>Deep Learning Fundamentals<a class="headerlink" href="#deep-learning-fundamentals" title="Link to this heading">#</a></h2>
+<section id="key-concepts">
+<h3>Key Concepts<a class="headerlink" href="#key-concepts" title="Link to this heading">#</a></h3>
+<p><strong>Representation Learning</strong></p>
+<ul class="simple">
+<li><p><strong>What it means</strong>: Learning useful intermediate representations of data</p></li>
+<li><p><strong>Why it matters</strong>: Good representations make downstream tasks easier</p></li>
+<li><p><strong>Biology example</strong>: Protein embeddings that capture functional relationships</p></li>
+<li><p><strong>Implication</strong>: Pre-trained models can be powerful starting points</p></li>
+</ul>
+<p><strong>Transfer Learning</strong></p>
+<ul class="simple">
+<li><p><strong>Concept</strong>: Leveraging knowledge from one task to improve performance on another</p></li>
+<li><p><strong>Types</strong>: Feature extraction, fine-tuning, domain adaptation</p></li>
+<li><p><strong>Biology applications</strong>: Using models trained on large datasets for specific biological problems</p></li>
+<li><p><strong>Key insight</strong>: Related biological problems often share underlying patterns</p></li>
+</ul>
+<p><strong>Foundation Models</strong></p>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Large models trained on diverse data that can be adapted to many tasks</p></li>
+<li><p><strong>Examples</strong>: ESM for proteins, Nucleotide Transformer for DNA, scGPT for single cells</p></li>
+<li><p><strong>Advantages</strong>: Leverage large-scale data, transfer to data-poor domains</p></li>
+<li><p><strong>Considerations</strong>: Computational requirements, potential biases, black-box nature</p></li>
+</ul>
+</section>
+<section id="attention-mechanisms">
+<h3>Attention Mechanisms<a class="headerlink" href="#attention-mechanisms" title="Link to this heading">#</a></h3>
+<p><strong>What Attention Does</strong></p>
+<ul class="simple">
+<li><p><strong>Purpose</strong>: Allow models to focus on relevant parts of the input</p></li>
+<li><p><strong>Mechanism</strong>: Learn weighted combinations of input elements</p></li>
+<li><p><strong>Biology relevance</strong>: Capture long-range interactions in sequences and structures</p></li>
+</ul>
+<p><strong>Multi-Head Attention</strong></p>
+<ul class="simple">
+<li><p><strong>Concept</strong>: Multiple attention mechanisms operating in parallel</p></li>
+<li><p><strong>Advantage</strong>: Can capture different types of relationships simultaneously</p></li>
+<li><p><strong>Biology example</strong>: Different attention heads might focus on different protein motifs</p></li>
+</ul>
+<p><strong>Self-Attention</strong></p>
+<ul class="simple">
+<li><p><strong>Mechanism</strong>: Elements of a sequence attend to other elements in the same sequence</p></li>
+<li><p><strong>Biology applications</strong>: Modeling amino acid interactions, genomic regulatory elements</p></li>
+<li><p><strong>Key insight</strong>: Biological sequences have rich internal structure</p></li>
+</ul>
+</section>
+</section>
+<section id="practical-considerations">
+<h2>Practical Considerations<a class="headerlink" href="#practical-considerations" title="Link to this heading">#</a></h2>
+<section id="data-quality-and-preprocessing">
+<h3>Data Quality and Preprocessing<a class="headerlink" href="#data-quality-and-preprocessing" title="Link to this heading">#</a></h3>
+<p><strong>Data Quality Principles</strong></p>
+<ul class="simple">
+<li><p><strong>Garbage in, garbage out</strong>: AI amplifies data quality issues</p></li>
+<li><p><strong>Biology-specific</strong>: Batch effects, experimental artifacts, annotation quality</p></li>
+<li><p><strong>Solutions</strong>: Careful quality control, domain expertise, robust preprocessing</p></li>
+</ul>
+<p><strong>Feature Engineering vs. Representation Learning</strong></p>
+<ul class="simple">
+<li><p><strong>Traditional approach</strong>: Manually design features based on domain knowledge</p></li>
+<li><p><strong>Deep learning approach</strong>: Let models learn features automatically</p></li>
+<li><p><strong>Hybrid approach</strong>: Combine domain knowledge with learned representations</p></li>
+<li><p><strong>Biology insight</strong>: Domain knowledge remains valuable even with deep learning</p></li>
+</ul>
+</section>
+<section id="model-selection-and-validation">
+<h3>Model Selection and Validation<a class="headerlink" href="#model-selection-and-validation" title="Link to this heading">#</a></h3>
+<p><strong>Choosing the Right Model</strong></p>
+<ul class="simple">
+<li><p><strong>Data size</strong>: Simple models for small datasets, complex models for large datasets</p></li>
+<li><p><strong>Interpretability needs</strong>: Linear models vs. black boxes</p></li>
+<li><p><strong>Computational constraints</strong>: Training time, inference speed, memory requirements</p></li>
+<li><p><strong>Biology domain</strong>: Sequence analysis, imaging, omics integration</p></li>
+</ul>
+<p><strong>Validation Strategies</strong></p>
+<ul class="simple">
+<li><p><strong>Hold-out validation</strong>: Simple but may not be representative</p></li>
+<li><p><strong>Cross-validation</strong>: Better estimates but computationally expensive</p></li>
+<li><p><strong>Temporal validation</strong>: For time-series biological data</p></li>
+<li><p><strong>Phylogenetic validation</strong>: Account for evolutionary relationships</p></li>
+</ul>
+</section>
+<section id="interpretation-and-explainability">
+<h3>Interpretation and Explainability<a class="headerlink" href="#interpretation-and-explainability" title="Link to this heading">#</a></h3>
+<p><strong>Why Interpretability Matters in Biology</strong></p>
+<ul class="simple">
+<li><p><strong>Scientific understanding</strong>: AI should enhance, not replace, biological insight</p></li>
+<li><p><strong>Trust and adoption</strong>: Biologists need to understand model decisions</p></li>
+<li><p><strong>Regulatory requirements</strong>: Medical applications require explainable decisions</p></li>
+<li><p><strong>Hypothesis generation</strong>: Interpretable models can suggest new biological mechanisms</p></li>
+</ul>
+<p><strong>Interpretation Techniques</strong></p>
+<ul class="simple">
+<li><p><strong>Feature importance</strong>: Which inputs matter most for predictions</p></li>
+<li><p><strong>Attention visualization</strong>: What parts of sequences/structures models focus on</p></li>
+<li><p><strong>Gradient-based methods</strong>: How sensitive is the output to input changes</p></li>
+<li><p><strong>Perturbation analysis</strong>: How do changes in input affect output</p></li>
+</ul>
+<p><strong>Limitations of Interpretation</strong></p>
+<ul class="simple">
+<li><p><strong>Post-hoc explanations</strong>: May not reflect actual model reasoning</p></li>
+<li><p><strong>Cherry-picking</strong>: Easy to find explanations that confirm biases</p></li>
+<li><p><strong>Complexity</strong>: Biological systems are inherently complex and multi-factorial</p></li>
+</ul>
+</section>
+</section>
+<section id="emerging-concepts">
+<h2>Emerging Concepts<a class="headerlink" href="#emerging-concepts" title="Link to this heading">#</a></h2>
+<section id="multi-modal-learning">
+<h3>Multi-Modal Learning<a class="headerlink" href="#multi-modal-learning" title="Link to this heading">#</a></h3>
+<p><strong>Definition</strong>: Integrating different types of biological data (sequence, structure, function, expression)
+<strong>Advantages</strong>: More complete biological picture, better performance
+<strong>Challenges</strong>: Different data types, scales, and noise characteristics
+<strong>Examples</strong>: Combining protein sequence and structure, multi-omics integration</p>
+</section>
+<section id="few-shot-and-zero-shot-learning">
+<h3>Few-Shot and Zero-Shot Learning<a class="headerlink" href="#few-shot-and-zero-shot-learning" title="Link to this heading">#</a></h3>
+<p><strong>Few-shot</strong>: Learning new tasks with very few examples
+<strong>Zero-shot</strong>: Performing tasks without specific training examples
+<strong>Biology relevance</strong>: Many biological problems have limited labeled data
+<strong>Approaches</strong>: Meta-learning, transfer learning, foundation models</p>
+</section>
+<section id="generative-ai-for-biology">
+<h3>Generative AI for Biology<a class="headerlink" href="#generative-ai-for-biology" title="Link to this heading">#</a></h3>
+<p><strong>Concept</strong>: Models that can create new biological entities (sequences, structures, molecules)
+<strong>Applications</strong>: Protein design, drug discovery, synthetic biology
+<strong>Considerations</strong>: Biological constraints, safety, validation requirements
+<strong>Examples</strong>: ProtGPT for proteins, molecular GANs for drugs</p>
+</section>
+</section>
+<section id="key-takeaways-for-biologists">
+<h2>Key Takeaways for Biologists<a class="headerlink" href="#key-takeaways-for-biologists" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Start Simple</strong>: Begin with interpretable models before moving to complex ones</p></li>
+<li><p><strong>Domain Knowledge Matters</strong>: AI works best when combined with biological expertise</p></li>
+<li><p><strong>Data Quality is Paramount</strong>: Invest time in understanding and cleaning your data</p></li>
+<li><p><strong>Validation is Critical</strong>: Use appropriate validation strategies for biological data</p></li>
+<li><p><strong>Interpretability vs. Performance</strong>: Consider the tradeoff for your specific application</p></li>
+<li><p><strong>Stay Updated</strong>: AI for biology is rapidly evolving; keep learning</p></li>
+<li><p><strong>Collaborate</strong>: Work with AI experts while maintaining biological perspective</p></li>
+</ol>
+<hr class="docutils" />
+<p><em>This section provides the essential AI foundation for biologists, focusing on practical understanding rather than mathematical details.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/journal_club_book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="milestone_works.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Most Important Milestone Works</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="trend_shifts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Important Trend Shifts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-machine-learning-concepts">Core Machine Learning Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-paradigms">Learning Paradigms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-types-and-architectures">Model Types and Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-evaluation">Training and Evaluation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-fundamentals">Deep Learning Fundamentals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-mechanisms">Attention Mechanisms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-considerations">Practical Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-and-preprocessing">Data Quality and Preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection-and-validation">Model Selection and Validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-and-explainability">Interpretation and Explainability</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emerging-concepts">Emerging Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-learning">Multi-Modal Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-and-zero-shot-learning">Few-Shot and Zero-Shot Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-ai-for-biology">Generative AI for Biology</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways-for-biologists">Key Takeaways for Biologists</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Babu group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

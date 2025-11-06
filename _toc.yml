@@ -77,6 +77,12 @@ chapters:
   - file: content/cell_book/chapter23_cancer
   - file: content/cell_book/chapter24_immune_system
   - file: content/cell_book/chapter25_pathogens
+- file: content/journal_club_book/journal_club_book
+  sections:
+  - file: content/journal_club_book/confusing_concepts
+  - file: content/journal_club_book/milestone_works
+  - file: content/journal_club_book/fundamental_concepts
+  - file: content/journal_club_book/trend_shifts
 - file: content/selection_criteria
 - file: content/ai_playground_access
 - file: content/contributors
