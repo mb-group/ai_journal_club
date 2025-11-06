@@ -4,8 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: content/selection_criteria
-- file: content/ai_playground_access
+- file: content/state_of_ai_for_biology
 - file: content/protein_book/protein_book
   sections:
   - file: content/protein_book/chapter1_chemical_properties
@@ -78,3 +77,6 @@ chapters:
   - file: content/cell_book/chapter23_cancer
   - file: content/cell_book/chapter24_immune_system
   - file: content/cell_book/chapter25_pathogens
+- file: content/selection_criteria
+- file: content/ai_playground_access
+- file: content/contributors
