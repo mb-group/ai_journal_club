@@ -41,8 +41,6 @@ This collaborative effort represents the collective knowledge, insights, and ded
 </div>
 <div>
 <strong>Role:</strong> Director of Lab Operations<br>
-<strong>Contributions:</strong> Laboratory coordination, research infrastructure, operational excellence<br>
-<strong>Expertise:</strong> Laboratory management, research operations, scientific workflow optimization<br>
 <strong>Affiliation:</strong> Babu Group Research Team
 </div>
 </div>
@@ -54,8 +52,6 @@ This collaborative effort represents the collective knowledge, insights, and ded
 </div>
 <div>
 <strong>Role:</strong> Principal Computational Research Scientist<br>
-<strong>Contributions:</strong> Advanced computational analysis, AI model development, research leadership<br>
-<strong>Expertise:</strong> Computational biology, machine learning, protein structure analysis<br>
 <strong>Affiliation:</strong> Babu Group Research Team
 </div>
 </div>
@@ -67,8 +63,6 @@ This collaborative effort represents the collective knowledge, insights, and ded
 </div>
 <div>
 <strong>Role:</strong> Principal Software Engineer<br>
-<strong>Contributions:</strong> Software architecture, platform development, technical infrastructure<br>
-<strong>Expertise:</strong> Software engineering, system architecture, AI platform development<br>
 <strong>Affiliation:</strong> Babu Group Research Team
 </div>
 </div>
