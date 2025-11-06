@@ -8,6 +8,16 @@ With the excitement surrounding the integration of AI into every aspect of life,
 
 Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in 2024 according to a selection criteria.
 
+<div style="background-color: #e8f4f8; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #007acc;">
+
+🔬 **Latest Journal Club Discussion Take Away**
+
+📊 [**State of AI for Biology: A Comprehensive Overview**](content/state_of_ai_for_biology.md)
+
+*Our most current synthesis mapping AI's revolutionary impact across all fundamental biological sciences. Get the complete picture of where AI stands today in proteins, genes, and cells—from breakthrough achievements to emerging frontiers.*
+
+</div>
+
 ## Highlights
 
 **Rapid**: Frequent, up-to-date discussions that keep pace with AI and biology's fast evolution.
