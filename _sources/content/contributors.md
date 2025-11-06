@@ -6,6 +6,24 @@ This collaborative effort represents the collective knowledge, insights, and ded
 
 ---
 
+## Principal Investigator
+
+### M. Madan Babu, PhD, FRSC, FMedSci, FRS
+<div style="display: flex; align-items: center; margin: 20px 0;">
+<div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
+<img src="../people/babu-madan-00209692-002.webp" alt="M. Madan Babu" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+<div>
+<strong>Role:</strong> Principal Investigator<br>
+<strong>Title:</strong> Chief Data Scientist and Senior Vice President for Data Science<br>
+<strong>Position:</strong> Member, St. Jude Faculty<br>
+<strong>Director:</strong> Center of Excellence for Data-Driven Discovery<br>
+<strong>Chair:</strong> George J. Pedersen Endowed Chair in Biological Data Sciences
+</div>
+</div>
+
+---
+
 ## Core Contributors
 
 ### Tian Cai
