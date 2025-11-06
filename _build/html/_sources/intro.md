@@ -1,10 +1,24 @@
 # Babu Group AI Journal Club
 
+*What's the current state of AI in fundamental biology? — A live, growing book of insight*
+
 ## Overview
 
 With the excitement surrounding the integration of AI into every aspect of life, it's crucial to have a comprehensive understanding of the areas where AI has significantly contributed to fundamental scientific research, as well as identifying gaps that remain unexplored. To address this, we've created an AI playground, a zoo of models—an accessible and interactive resource. With just a few clicks, you can gain a holistic view of AI's impact across various topics and experiment with each model to discover how truly beneficial they are.
 
 Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in 2024 according to a selection criteria.
+
+## Highlights
+
+**Rapid**: Frequent, up-to-date discussions that keep pace with AI and biology's fast evolution.
+
+**Hands-on & Interactive**: Learn by doing — live demos, code walkthroughs, and collaborative exploration.
+
+**Break & Play**: Deconstruct cutting-edge models, experiment beyond the manuscript, and re-create results together.
+
+**Cross-field Overview**: Integrate perspectives across data modalities and disciplines to spark new insights.
+
+**Accelerate Translation**: Shorten the cycle from fundamental discovery to clinical impact.
 
 ## Model catalog rationale
 
