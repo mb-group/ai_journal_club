@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 11: Regulatory Circuits &#8212; Babu group AI journal club</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/gene_book/chapter11_regulatory_circuits';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 12: Phage Strategies" href="chapter12_phage_strategies.html" />
+    <link rel="prev" title="Chapter 10: The Operon" href="chapter10_operon.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/jc_logo.png" class="logo__image only-light" alt="Babu group AI journal club - Home"/>
+    <script>document.write(`<img src="../../_static/jc_logo.png" class="logo__image only-dark" alt="Babu group AI journal club - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Babu Group AI Journal Club
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../selection_criteria.html">Selection Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai_playground_access.html">Access to AI Playground</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protein_book/protein_book.html">Protein Book</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter1_chemical_properties.html">Chapter 1: Chemical Properties of Polypeptides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter2_biosynthesis.html">Chapter 2: Biosynthesis of Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter3_evolutionary_origins.html">Chapter 3: Evolutionary and Genetic Origins of Protein Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter4_physical_interactions.html">Chapter 4: Physical Interactions That Determine the Properties of Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter5_conformational_properties.html">Chapter 5: Conformational Properties of Polypeptide Chains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter6_folded_conformations.html">Chapter 6: The Folded Conformations of Globular Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter7_proteins_in_solution.html">Chapter 7: Proteins in Solution and in Membranes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter8_interactions_with_molecules.html">Chapter 8: Interactions with Other Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter9_enzyme_catalysis.html">Chapter 9: Enzyme Catalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protein_book/chapter10_degradation.html">Chapter 10: Degradation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="gene_book.html">Gene Book</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter1_genes_are_dna.html">Chapter 1: Genes are DNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter2_interrupted_gene.html">Chapter 2: The Interrupted Gene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter3_genome_content.html">Chapter 3: The Content of the Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4_clusters_repeats.html">Chapter 4: Clusters and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter5_messenger_rna.html">Chapter 5: Messenger RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter6_protein_synthesis.html">Chapter 6: Protein Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter7_genetic_code.html">Chapter 7: Using the Genetic Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter8_protein_localization.html">Chapter 8: Protein Localization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter9_transcription.html">Chapter 9: Transcription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter10_operon.html">Chapter 10: The Operon</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Chapter 11: Regulatory Circuits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_phage_strategies.html">Chapter 12: Phage Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_the_replicon.html">Chapter 13: The Replicon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter14_dna_replication.html">Chapter 14: DNA Replication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter15_recombination_and_repair.html">Chapter 15: Recombination and Repair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter16_transposons.html">Chapter 16: Transposons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter17_retroviruses_and_retroposons.html">Chapter 17: Retroviruses and Retroposons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter18_dna_rearrangement.html">Chapter 18: Rearrangement of DNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter19_chromosomes.html">Chapter 19: Chromosomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter20_nucleosomes.html">Chapter 20: Nucleosomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter21_promoters_and_enhancers.html">Chapter 21: Promoters and Enhancers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter22_activating_transcription.html">Chapter 22: Activating Transcription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter23_controlling_chromatin_structure.html">Chapter 23: Controlling Chromatin Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter24_rna_splicing.html">Chapter 24: RNA Splicing and Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter25_catalytic_rna.html">Chapter 25: Catalytic RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter26_immune_diversity.html">Chapter 26: Immune Diversity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter27_protein_trafficking.html">Chapter 27: Protein Trafficking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter28_signal_transduction.html">Chapter 28: Signal Transduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter29_cell_cycle_growth_regulation.html">Chapter 29: Cell Cycle Growth Regulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter30_oncogenes_and_cancer.html">Chapter 30: Oncogenes and Cancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter31_gradients__cascades__and_signaling_pathways.html">Chapter 31: Gradients, Cascades, and Signaling Pathways</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cell_book/cell_book.html">Cell Book</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter1_cells_genomes.html">Chapter 1: Cells and Genomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter2_cell_chemistry_and_biosynthesis.html">Chapter 2: Cell Chemistry and Biosynthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter3_proteins.html">Chapter 3: Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter4_dna_and_chromosomes.html">Chapter 4: DNA and Chromosomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter5_dna_replication__repair__recombination.html">Chapter 5: DNA Replication, Repair, Recombination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter6_genome_to_protein.html">Chapter 6: How Cells Read the Genome: From DNA to Protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter7_gene_expression_control.html">Chapter 7: Control of Gene Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter8_manipulation_methods.html">Chapter 8: Manipulating Proteins, DNA, and RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter9_visualizing_cells.html">Chapter 9: Visualizing Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter10_membrane_structure.html">Chapter 10: Membrane Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter11_membrane_transport_and_electrical_properties.html">Chapter 11: Membrane Transport and Electrical Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter12_intracellular_compartments_and_protein_sorting.html">Chapter 12: Intracellular Compartments and Protein Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter13_intracellular_vesicular_traffic.html">Chapter 13: Intracellular Vesicular Traffic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter14_energy_conversion__mitochondria_and_chloroplasts.html">Chapter 14: Energy Conversion: Mitochondria and Chloroplasts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter15_cell_communication.html">Chapter 15: Cell Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter16_the_cytoskeleton.html">Chapter 16: The Cytoskeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter17_the_cell_cycle_and_programmed_cell_death.html">Chapter 17: The Cell Cycle and Programmed Cell Death</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter18_the_mechanics_of_cell_division.html">Chapter 18: The Mechanics of Cell Division</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter19_cell_junctions.html">Chapter 19: Cell Junctions, Cell Adhesion, and the Extracellular Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter20_germ_cells_and_fertilization.html">Chapter 20: Germ Cells and Fertilization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter21_development.html">Chapter 21: Development of Multicellular Organisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter22_histology__lives_and_deaths_of_cells_in_tissues.html">Chapter 22: Histology: Lives and Deaths of Cells in Tissues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter23_cancer.html">Chapter 23: Cancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter24_immune_system.html">Chapter 24: The Adaptive Immune System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cell_book/chapter25_pathogens.html">Chapter 25: Pathogens</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/gene_book/chapter11_regulatory_circuits.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/gene_book/chapter11_regulatory_circuits.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 11: Regulatory Circuits</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-regulatory-network-prediction">Gene Regulatory Network Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models">Foundation Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#genecompass-cross-species-gene-regulatory-mechanisms">GeneCompass: Cross-Species Gene Regulatory Mechanisms</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grn-guided-simulation">GRN-Guided Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groundgan-grn-guided-single-cell-rna-seq-simulation">GRouNdGAN: GRN-Guided Single Cell RNA-seq Simulation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linger-gene-regulatory-network-inference-from-single-cell-multiome">LINGER: Gene Regulatory Network Inference from Single-Cell Multiome</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-and-developmental-grns">Dynamic and Developmental GRNs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dictys-dynamic-gene-regulatory-networks">Dictys: Dynamic Gene Regulatory Networks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenic-enhanced-single-cell-regulatory-network-analysis">SCENIC+: Enhanced Single-Cell Regulatory Network Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-grn-methods">Additional GRN Methods</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specialized-grn-applications">Specialized GRN Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#discogen-discriminative-gene-network-analysis">Discogen: Discriminative Gene Network Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-prediction">Perturbation Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcriptional-response-prediction">Transcriptional Response Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prediction-of-perturbed-transcriptional-response">Prediction of Perturbed Transcriptional Response</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-perturbation-methods">Alternative Perturbation Methods</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-platforms">Benchmark Platforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perteval-scfm-perturbation-evaluation-for-single-cell-foundation-models">PertEval-scFM: Perturbation Evaluation for Single-Cell Foundation Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbbench-perturbation-benchmarking-platform">PerturbBench: Perturbation Benchmarking Platform</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-perturbation-models">Advanced Perturbation Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prnet-perturbation-response-network">PRnet: Perturbation Response Network</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdgrapher-combinatorial-perturbation-prediction">PDGrapher: Combinatorial Perturbation Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sams-vae-structured-perturbation-model">SAMS-VAE: Structured Perturbation Model</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cellular-response-models">Cellular Response Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cellular-response-modeling">Cellular Response Modeling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cpa-compositional-perturbation-autoencoder">CPA: Compositional Perturbation Autoencoder</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recover-drug-combination-prediction">RECOVER: Drug Combination Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-modeling-approaches">Advanced Modeling Approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-transport-methods">Optimal Transport Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gears-gene-expression-analysis-of-response">GEARs: Gene Expression Analysis of Response</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lineage-and-developmental-responses">Lineage and Developmental Responses</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#porcelain-lineage-related-gene-expression-analysis">PORCELAIN: Lineage-Related Gene Expression Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#salt-paper-causal-simulation-framework">Salt&amp;Paper: Causal Simulation Framework</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-causal-models">Advanced Causal Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-simulation-models">Causal Simulation Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-intervention-model-for-causal-perturbation">Generative Intervention Model for Causal Perturbation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sccausalvi-single-cell-causal-variational-inference">scCausalVI: Single-Cell Causal Variational Inference</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gpo-vae-gene-perturbation-outcome-vae">GPO-VAE: Gene Perturbation Outcome VAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-resources-and-benchmarks">Data Resources and Benchmarks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scperturb-single-cell-perturbation-database">scPerturb: Single-Cell Perturbation Database</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-perturbation-analysis">Interpretable Perturbation Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-11-regulatory-circuits">
+<h1>Chapter 11: Regulatory Circuits<a class="headerlink" href="#chapter-11-regulatory-circuits" title="Link to this heading">#</a></h1>
+<section id="gene-regulatory-network-prediction">
+<h2>Gene Regulatory Network Prediction<a class="headerlink" href="#gene-regulatory-network-prediction" title="Link to this heading">#</a></h2>
+<section id="foundation-models">
+<h3>Foundation Models<a class="headerlink" href="#foundation-models" title="Link to this heading">#</a></h3>
+<section id="genecompass-cross-species-gene-regulatory-mechanisms">
+<h4>GeneCompass: Cross-Species Gene Regulatory Mechanisms<a class="headerlink" href="#genecompass-cross-species-gene-regulatory-mechanisms" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Knowledge-informed cross-species foundation model for gene regulation</p></li>
+<li><p><strong>Input</strong>: Single-cell transcriptional profile, species information</p></li>
+<li><p><strong>Output</strong>: Universal embedding vector for gene regulatory mechanisms</p></li>
+<li><p><strong>Publication</strong>: Cell Research 2024</p></li>
+<li><p><strong>DOI</strong>: <a class="reference external" href="https://doi.org/10.1038/s41422-024-01034-y">https://doi.org/10.1038/s41422-024-01034-y</a></p></li>
+<li><p><strong>Technical Highlights</strong>:</p>
+<ul>
+<li><p>Universal embeddings applicable to downstream tasks</p></li>
+<li><p>Integrates GRN context, species information, cell types, promoter sequences, co-expression</p></li>
+</ul>
+</li>
+<li><p><strong>Application Notes</strong>:</p>
+<ul>
+<li><p>Generalization to bulk-seq is a concern</p></li>
+<li><p>Downstream task performance not fully evaluated in paper</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="grn-guided-simulation">
+<h3>GRN-Guided Simulation<a class="headerlink" href="#grn-guided-simulation" title="Link to this heading">#</a></h3>
+<section id="groundgan-grn-guided-single-cell-rna-seq-simulation">
+<h4>GRouNdGAN: GRN-Guided Single Cell RNA-seq Simulation<a class="headerlink" href="#groundgan-grn-guided-single-cell-rna-seq-simulation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: GRN-guided simulation for in silico perturbation experiments</p></li>
+<li><p><strong>Input</strong>: Gene regulatory network structure, baseline expression</p></li>
+<li><p><strong>Output</strong>: Simulated single-cell expression under perturbations</p></li>
+<li><p><strong>GitHub</strong>: Available</p></li>
+<li><p><strong>Paper</strong>: Nature Communication 2024</p></li>
+<li><p><strong>Core Technology</strong>: Generative Adversarial Networks (GANs)</p></li>
+<li><p><strong>Model Usage</strong>: Synthesize cells under new conditions for in silico TF knockout experiments</p></li>
+</ul>
+</section>
+<section id="linger-gene-regulatory-network-inference-from-single-cell-multiome">
+<h4>LINGER: Gene Regulatory Network Inference from Single-Cell Multiome<a class="headerlink" href="#linger-gene-regulatory-network-inference-from-single-cell-multiome" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Infer gene regulatory networks from single-cell multi-omics data</p></li>
+<li><p><strong>Input</strong>: Single-cell RNA-seq and ATAC-seq data</p></li>
+<li><p><strong>Output</strong>: Gene regulatory network predictions</p></li>
+<li><p><strong>GitHub</strong>: Available</p></li>
+<li><p><strong>Paper</strong>: Nature Biotechnology 2024</p></li>
+<li><p><strong>Application</strong>: Multi-omics GRN reconstruction</p></li>
+</ul>
+</section>
+</section>
+<section id="dynamic-and-developmental-grns">
+<h3>Dynamic and Developmental GRNs<a class="headerlink" href="#dynamic-and-developmental-grns" title="Link to this heading">#</a></h3>
+<section id="dictys-dynamic-gene-regulatory-networks">
+<h4>Dictys: Dynamic Gene Regulatory Networks<a class="headerlink" href="#dictys-dynamic-gene-regulatory-networks" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Dynamic GRN inference across developmental continuum</p></li>
+<li><p><strong>Input</strong>: Time-course single-cell data</p></li>
+<li><p><strong>Output</strong>: Dynamic gene regulatory networks</p></li>
+<li><p><strong>Paper</strong>: Nature Methods 2023</p></li>
+<li><p><strong>Application</strong>: Developmental biology, cell differentiation</p></li>
+</ul>
+</section>
+<section id="scenic-enhanced-single-cell-regulatory-network-analysis">
+<h4>SCENIC+: Enhanced Single-Cell Regulatory Network Analysis<a class="headerlink" href="#scenic-enhanced-single-cell-regulatory-network-analysis" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Enhanced version of SCENIC for regulatory network inference</p></li>
+<li><p><strong>Input</strong>: Single-cell RNA-seq data</p></li>
+<li><p><strong>Output</strong>: Cell-type-specific regulatory networks</p></li>
+<li><p><strong>Paper</strong>: Nature Methods 2023</p></li>
+<li><p><strong>Application</strong>: Cell-type-specific regulation analysis</p></li>
+</ul>
+</section>
+<section id="additional-grn-methods">
+<h4>Additional GRN Methods<a class="headerlink" href="#additional-grn-methods" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Comprehensive review of GRN inference methods</p></li>
+<li><p><strong>Paper</strong>: Briefings in Bioinformatics 2025</p></li>
+<li><p><strong>URL</strong>: <a class="reference external" href="https://academic.oup.com/bib/article/26/2/bbaf089/8068119">https://academic.oup.com/bib/article/26/2/bbaf089/8068119</a></p></li>
+<li><p><strong>Application</strong>: Method comparison and selection</p></li>
+</ul>
+</section>
+</section>
+<section id="specialized-grn-applications">
+<h3>Specialized GRN Applications<a class="headerlink" href="#specialized-grn-applications" title="Link to this heading">#</a></h3>
+<section id="discogen-discriminative-gene-network-analysis">
+<h4>Discogen: Discriminative Gene Network Analysis<a class="headerlink" href="#discogen-discriminative-gene-network-analysis" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Discriminative approach to gene network inference</p></li>
+<li><p><strong>Paper</strong>: Available</p></li>
+<li><p><strong>Application</strong>: Disease-specific network analysis</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="perturbation-prediction">
+<h2>Perturbation Prediction<a class="headerlink" href="#perturbation-prediction" title="Link to this heading">#</a></h2>
+<section id="transcriptional-response-prediction">
+<h3>Transcriptional Response Prediction<a class="headerlink" href="#transcriptional-response-prediction" title="Link to this heading">#</a></h3>
+<section id="prediction-of-perturbed-transcriptional-response">
+<h4>Prediction of Perturbed Transcriptional Response<a class="headerlink" href="#prediction-of-perturbed-transcriptional-response" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Predicting transcriptional changes from perturbations</p></li>
+<li><p><strong>Input</strong>: Baseline expression, perturbation information</p></li>
+<li><p><strong>Output</strong>: Predicted transcriptional response</p></li>
+<li><p><strong>Paper</strong>: Available</p></li>
+<li><p><strong>Note</strong>: Some studies suggest it’s not significantly better than linear models</p></li>
+<li><p><strong>Application</strong>: Drug discovery, systems biology</p></li>
+</ul>
+</section>
+<section id="alternative-perturbation-methods">
+<h4>Alternative Perturbation Methods<a class="headerlink" href="#alternative-perturbation-methods" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Alternative approaches to perturbation prediction</p></li>
+<li><p><strong>Papers</strong>: Multiple available</p></li>
+<li><p><strong>Application</strong>: Comparative analysis of perturbation methods</p></li>
+</ul>
+</section>
+</section>
+<section id="benchmark-platforms">
+<h3>Benchmark Platforms<a class="headerlink" href="#benchmark-platforms" title="Link to this heading">#</a></h3>
+<section id="perteval-scfm-perturbation-evaluation-for-single-cell-foundation-models">
+<h4>PertEval-scFM: Perturbation Evaluation for Single-Cell Foundation Models<a class="headerlink" href="#perteval-scfm-perturbation-evaluation-for-single-cell-foundation-models" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Benchmark platform for evaluating perturbation prediction models</p></li>
+<li><p><strong>Paper</strong>: NIPS 2024</p></li>
+<li><p><strong>Application</strong>: Model evaluation and comparison</p></li>
+</ul>
+</section>
+<section id="perturbbench-perturbation-benchmarking-platform">
+<h4>PerturbBench: Perturbation Benchmarking Platform<a class="headerlink" href="#perturbbench-perturbation-benchmarking-platform" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Comprehensive benchmark for perturbation prediction methods</p></li>
+<li><p><strong>GitHub</strong>: Available</p></li>
+<li><p><strong>Application</strong>: Standardized evaluation of perturbation models</p></li>
+</ul>
+</section>
+</section>
+<section id="advanced-perturbation-models">
+<h3>Advanced Perturbation Models<a class="headerlink" href="#advanced-perturbation-models" title="Link to this heading">#</a></h3>
+<section id="prnet-perturbation-response-network">
+<h4>PRnet: Perturbation Response Network<a class="headerlink" href="#prnet-perturbation-response-network" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Network-based perturbation response prediction</p></li>
+<li><p><strong>Publication</strong>: Predicting transcriptional responses to novel chemical perturbations using deep generative model for drug discovery</p></li>
+<li><p><strong>Journal</strong>: Nature Communications 15, 9256 (2024)</p></li>
+<li><p><strong>DOI</strong>: <a class="reference external" href="https://doi.org/10.1038/s41467-024-53457-1">https://doi.org/10.1038/s41467-024-53457-1</a></p></li>
+<li><p><strong>Input</strong>: SMILES strings, unperturbed transcriptional profile (single cell or bulk)</p></li>
+<li><p><strong>Output</strong>: Perturbed transcriptional profile, up/down-regulated gene sets, drug ranking</p></li>
+<li><p><strong>Technical Highlights</strong>:</p>
+<ul>
+<li><p>Handles both single-cell and bulk data</p></li>
+<li><p>Considers drug dosage effects</p></li>
+</ul>
+</li>
+<li><p><strong>Application Notes</strong>: Generalization across cell types is a concern</p></li>
+</ul>
+</section>
+<section id="pdgrapher-combinatorial-perturbation-prediction">
+<h4>PDGrapher: Combinatorial Perturbation Prediction<a class="headerlink" href="#pdgrapher-combinatorial-perturbation-prediction" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Causally-inspired neural networks for therapeutic perturbation prediction</p></li>
+<li><p><strong>GitHub</strong>: Available</p></li>
+<li><p><strong>Application</strong>: Combinatorial drug prediction</p></li>
+</ul>
+</section>
+<section id="sams-vae-structured-perturbation-model">
+<h4>SAMS-VAE: Structured Perturbation Model<a class="headerlink" href="#sams-vae-structured-perturbation-model" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Structured approach to perturbation modeling using VAE</p></li>
+<li><p><strong>Paper</strong>: NIPS 2023</p></li>
+<li><p><strong>Application</strong>: Structured perturbation analysis</p></li>
+</ul>
+</section>
+</section>
+<section id="cellular-response-models">
+<h3>Cellular Response Models<a class="headerlink" href="#cellular-response-models" title="Link to this heading">#</a></h3>
+<section id="cellular-response-modeling">
+<h4>Cellular Response Modeling<a class="headerlink" href="#cellular-response-modeling" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Models for predicting cellular responses to perturbations</p></li>
+<li><p><strong>Paper</strong>: ICLR 2023</p></li>
+<li><p><strong>Application</strong>: Cell biology, drug screening</p></li>
+</ul>
+</section>
+<section id="cpa-compositional-perturbation-autoencoder">
+<h4>CPA: Compositional Perturbation Autoencoder<a class="headerlink" href="#cpa-compositional-perturbation-autoencoder" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Autoencoder for compositional perturbation analysis</p></li>
+<li><p><strong>Paper</strong>: Molecular Systems Biology 2023</p></li>
+<li><p><strong>Application</strong>: Multi-factor perturbation analysis</p></li>
+</ul>
+</section>
+<section id="recover-drug-combination-prediction">
+<h4>RECOVER: Drug Combination Prediction<a class="headerlink" href="#recover-drug-combination-prediction" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Model for predicting drug combination effects</p></li>
+<li><p><strong>Paper</strong>: Cell Reports 2023</p></li>
+<li><p><strong>Application</strong>: Combination therapy design</p></li>
+</ul>
+</section>
+</section>
+<section id="advanced-modeling-approaches">
+<h3>Advanced Modeling Approaches<a class="headerlink" href="#advanced-modeling-approaches" title="Link to this heading">#</a></h3>
+<section id="optimal-transport-methods">
+<h4>Optimal Transport Methods<a class="headerlink" href="#optimal-transport-methods" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Optimal transport for perturbation analysis</p></li>
+<li><p><strong>Paper</strong>: Nature Methods 2023</p></li>
+<li><p><strong>Application</strong>: Single-cell perturbation analysis</p></li>
+</ul>
+</section>
+<section id="gears-gene-expression-analysis-of-response">
+<h4>GEARs: Gene Expression Analysis of Response<a class="headerlink" href="#gears-gene-expression-analysis-of-response" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Analysis of gene expression responses to perturbations</p></li>
+<li><p><strong>Paper</strong>: Nature Biotechnology 2023</p></li>
+<li><p><strong>Application</strong>: Response mechanism analysis</p></li>
+</ul>
+</section>
+</section>
+<section id="lineage-and-developmental-responses">
+<h3>Lineage and Developmental Responses<a class="headerlink" href="#lineage-and-developmental-responses" title="Link to this heading">#</a></h3>
+<section id="porcelain-lineage-related-gene-expression-analysis">
+<h4>PORCELAIN: Lineage-Related Gene Expression Analysis<a class="headerlink" href="#porcelain-lineage-related-gene-expression-analysis" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Analysis of lineage-related gene expression changes</p></li>
+<li><p><strong>Paper</strong>: Nature Communication 2025</p></li>
+<li><p><strong>Application</strong>: Developmental biology, cell fate analysis</p></li>
+</ul>
+</section>
+<section id="salt-paper-causal-simulation-framework">
+<h4>Salt&amp;Paper: Causal Simulation Framework<a class="headerlink" href="#salt-paper-causal-simulation-framework" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Framework for causal simulation in biology</p></li>
+<li><p><strong>Paper</strong>: Available</p></li>
+<li><p><strong>Application</strong>: Causal inference in biological systems</p></li>
+</ul>
+</section>
+</section>
+<section id="advanced-causal-models">
+<h3>Advanced Causal Models<a class="headerlink" href="#advanced-causal-models" title="Link to this heading">#</a></h3>
+<section id="causal-simulation-models">
+<h4>Causal Simulation Models<a class="headerlink" href="#causal-simulation-models" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Advanced causal simulation approaches</p></li>
+<li><p><strong>Papers</strong>: Multiple available including Nature MI 2023</p></li>
+<li><p><strong>Application</strong>: Mechanistic understanding of biological processes</p></li>
+</ul>
+</section>
+<section id="generative-intervention-model-for-causal-perturbation">
+<h4>Generative Intervention Model for Causal Perturbation<a class="headerlink" href="#generative-intervention-model-for-causal-perturbation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Generative approach to causal perturbation modeling</p></li>
+<li><p><strong>Paper</strong>: Available</p></li>
+<li><p><strong>Application</strong>: Causal intervention analysis</p></li>
+</ul>
+</section>
+<section id="sccausalvi-single-cell-causal-variational-inference">
+<h4>scCausalVI: Single-Cell Causal Variational Inference<a class="headerlink" href="#sccausalvi-single-cell-causal-variational-inference" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Causal variational inference for single-cell data</p></li>
+<li><p><strong>Paper</strong>: Available</p></li>
+<li><p><strong>Application</strong>: Causal analysis in single-cell studies</p></li>
+</ul>
+</section>
+<section id="gpo-vae-gene-perturbation-outcome-vae">
+<h4>GPO-VAE: Gene Perturbation Outcome VAE<a class="headerlink" href="#gpo-vae-gene-perturbation-outcome-vae" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: VAE for predicting gene perturbation outcomes</p></li>
+<li><p><strong>Paper</strong>: Available</p></li>
+<li><p><strong>Application</strong>: Perturbation outcome prediction</p></li>
+</ul>
+</section>
+</section>
+<section id="data-resources-and-benchmarks">
+<h3>Data Resources and Benchmarks<a class="headerlink" href="#data-resources-and-benchmarks" title="Link to this heading">#</a></h3>
+<section id="scperturb-single-cell-perturbation-database">
+<h4>scPerturb: Single-Cell Perturbation Database<a class="headerlink" href="#scperturb-single-cell-perturbation-database" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Comprehensive database of single-cell perturbation studies</p></li>
+<li><p><strong>URL</strong>: <a class="reference external" href="https://www.nature.com/articles/s41592-023-02144-y">https://www.nature.com/articles/s41592-023-02144-y</a></p></li>
+<li><p><strong>Application</strong>: Data resource for perturbation studies</p></li>
+</ul>
+</section>
+<section id="interpretable-perturbation-analysis">
+<h4>Interpretable Perturbation Analysis<a class="headerlink" href="#interpretable-perturbation-analysis" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Description</strong>: Methods for interpretable analysis of perturbation effects</p></li>
+<li><p><strong>URL</strong>: <a class="reference external" href="https://www.cell.com/cell-systems/abstract/S2405-4712(25)00078-X">https://www.cell.com/cell-systems/abstract/S2405-4712(25)00078-X</a></p></li>
+<li><p><strong>Application</strong>: Mechanistic interpretation of perturbation effects</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/gene_book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter10_operon.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 10: The Operon</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter12_phage_strategies.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 12: Phage Strategies</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-regulatory-network-prediction">Gene Regulatory Network Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models">Foundation Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#genecompass-cross-species-gene-regulatory-mechanisms">GeneCompass: Cross-Species Gene Regulatory Mechanisms</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grn-guided-simulation">GRN-Guided Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groundgan-grn-guided-single-cell-rna-seq-simulation">GRouNdGAN: GRN-Guided Single Cell RNA-seq Simulation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linger-gene-regulatory-network-inference-from-single-cell-multiome">LINGER: Gene Regulatory Network Inference from Single-Cell Multiome</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-and-developmental-grns">Dynamic and Developmental GRNs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dictys-dynamic-gene-regulatory-networks">Dictys: Dynamic Gene Regulatory Networks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenic-enhanced-single-cell-regulatory-network-analysis">SCENIC+: Enhanced Single-Cell Regulatory Network Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-grn-methods">Additional GRN Methods</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specialized-grn-applications">Specialized GRN Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#discogen-discriminative-gene-network-analysis">Discogen: Discriminative Gene Network Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-prediction">Perturbation Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcriptional-response-prediction">Transcriptional Response Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prediction-of-perturbed-transcriptional-response">Prediction of Perturbed Transcriptional Response</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-perturbation-methods">Alternative Perturbation Methods</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-platforms">Benchmark Platforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perteval-scfm-perturbation-evaluation-for-single-cell-foundation-models">PertEval-scFM: Perturbation Evaluation for Single-Cell Foundation Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbbench-perturbation-benchmarking-platform">PerturbBench: Perturbation Benchmarking Platform</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-perturbation-models">Advanced Perturbation Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prnet-perturbation-response-network">PRnet: Perturbation Response Network</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdgrapher-combinatorial-perturbation-prediction">PDGrapher: Combinatorial Perturbation Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sams-vae-structured-perturbation-model">SAMS-VAE: Structured Perturbation Model</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cellular-response-models">Cellular Response Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cellular-response-modeling">Cellular Response Modeling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cpa-compositional-perturbation-autoencoder">CPA: Compositional Perturbation Autoencoder</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recover-drug-combination-prediction">RECOVER: Drug Combination Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-modeling-approaches">Advanced Modeling Approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-transport-methods">Optimal Transport Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gears-gene-expression-analysis-of-response">GEARs: Gene Expression Analysis of Response</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lineage-and-developmental-responses">Lineage and Developmental Responses</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#porcelain-lineage-related-gene-expression-analysis">PORCELAIN: Lineage-Related Gene Expression Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#salt-paper-causal-simulation-framework">Salt&amp;Paper: Causal Simulation Framework</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-causal-models">Advanced Causal Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-simulation-models">Causal Simulation Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-intervention-model-for-causal-perturbation">Generative Intervention Model for Causal Perturbation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sccausalvi-single-cell-causal-variational-inference">scCausalVI: Single-Cell Causal Variational Inference</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gpo-vae-gene-perturbation-outcome-vae">GPO-VAE: Gene Perturbation Outcome VAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-resources-and-benchmarks">Data Resources and Benchmarks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scperturb-single-cell-perturbation-database">scPerturb: Single-Cell Perturbation Database</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-perturbation-analysis">Interpretable Perturbation Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Babu group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
