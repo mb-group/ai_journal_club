@@ -76,7 +76,7 @@ This collaborative effort represents the collective knowledge, insights, and ded
 <img src="../people/nemec-katarina-142203-031.webp" alt="Katarina Nemec" style="width: 100%; height: 100%; object-fit: cover;">
 </div>
 <div>
-<strong>Role:</strong> Lead Researcher<br>
+<strong>Role:</strong> Scientist<br>
 <strong>Affiliation:</strong> Babu Group Research Team
 </div>
 </div>
