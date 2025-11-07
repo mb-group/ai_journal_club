@@ -70,6 +70,17 @@ This collaborative effort represents the collective knowledge, insights, and ded
 </div>
 </div>
 
+### Katarina Nemec, PhD
+<div style="display: flex; align-items: center; margin: 20px 0;">
+<div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
+<img src="../people/nemec-katarina-142203-031.webp" alt="Katarina Nemec" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+<div>
+<strong>Role:</strong> Lead Researcher<br>
+<strong>Affiliation:</strong> Babu Group Research Team
+</div>
+</div>
+
 ### Jaimin Patel
 <div style="display: flex; align-items: center; margin: 20px 0;">
 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
