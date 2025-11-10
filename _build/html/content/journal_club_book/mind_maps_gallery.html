@@ -465,9 +465,24 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-conceptual-frameworks">Visual Conceptual Frameworks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gallery">Gallery</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-frameworks-and-methodologies">AI Frameworks and Methodologies</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-focused-ai-applications">Protein-Focused AI Applications</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-development-and-research-strategy">Field Development and Research Strategy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-frameworks-and-methodologies">AI Frameworks and Methodologies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-view-by-data-type"><strong>AI View by Data Type</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#framework-to-scrutinize-foundation-models"><strong>Framework to Scrutinize Foundation Models</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#language-models"><strong>Language Models</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-ai"><strong>Interpretable AI</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-focused-ai-applications">Protein-Focused AI Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-for-protein-dedicated"><strong>AI for Protein (Dedicated)</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-design-engineering"><strong>Protein Design &amp; Engineering</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-development-and-research-strategy">Field Development and Research Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#building-block-field-evolution-trajectory"><strong>Building Block Field Evolution Trajectory</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dry-lab-wet-lab-synergy"><strong>Dry Lab - Wet Lab Synergy</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-ecosystem-for-a-project"><strong>Using the Ecosystem for a Project</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-notes">Usage Notes</a></li>
@@ -485,45 +500,141 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="mind-maps-gallery">
 <h1>Mind Maps Gallery<a class="headerlink" href="#mind-maps-gallery" title="Link to this heading">#</a></h1>
+<style>
+.mind-map-preview img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #e1e4e8;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.mind-map-preview img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.mind-map-section {
+    margin-bottom: 3em;
+}
+</style>
 <section id="visual-conceptual-frameworks">
 <h2>Visual Conceptual Frameworks<a class="headerlink" href="#visual-conceptual-frameworks" title="Link to this heading">#</a></h2>
 <p>These mind maps represent visual summaries and conceptual frameworks that emerged from our journal club discussions. Each mind map captures key relationships, hierarchies, and connections between important AI concepts in biology, providing intuitive visual guides for understanding complex topics.</p>
 </section>
 <section id="gallery">
 <h2>Gallery<a class="headerlink" href="#gallery" title="Link to this heading">#</a></h2>
-<p>The following mind maps are organized by theme and represent collective insights from multiple discussion sessions:</p>
+<p>The following mind maps are organized by theme and represent collective insights from multiple discussion sessions. Click on any preview image or title to view the full-resolution PDF version.</p>
 <section id="ai-frameworks-and-methodologies">
 <h3>AI Frameworks and Methodologies<a class="headerlink" href="#ai-frameworks-and-methodologies" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong><a class="reference download internal" download="" href="../../_downloads/86ae8f409cffcc9fbca44861fff0d789/AI-view-by-data-type.pdf"><span class="xref download myst">AI View by Data Type</span></a></strong>: Comprehensive framework organizing AI approaches by the types of biological data they process.</p></li>
-<li><p><strong><a class="reference download internal" download="" href="../../_downloads/131a43dd6b6357f29b3ebed189188fe9/framework%20to%20scrutinize%20a%20foundation%20model.pdf"><span class="xref download myst">Framework to Scrutinize Foundation Models</span></a></strong>: Systematic approach for evaluating and analyzing foundation models in biological contexts.</p></li>
-<li><p><strong><a class="reference download internal" download="" href="../../_downloads/355494c0cf65a4aab3d70a0f80c15645/language-model.pdf"><span class="xref download myst">Language Models</span></a></strong>: Conceptual overview of language models and their applications in biological sequence analysis.</p></li>
-<li><p><strong><a class="reference download internal" download="" href="../../_downloads/04cef2a2b6924444ea3e371ccdd9297b/interpretable-AI.pdf"><span class="xref download myst">Interpretable AI</span></a></strong>: Framework for understanding and implementing interpretable AI methods in biological research.</p></li>
-</ul>
+<div class="mind-map-section">
+<section id="ai-view-by-data-type">
+<h4><strong>AI View by Data Type</strong><a class="headerlink" href="#ai-view-by-data-type" title="Link to this heading">#</a></h4>
+<div class="mind-map-preview">
+<p><a class="reference download internal" download="" href="../../_downloads/86ae8f409cffcc9fbca44861fff0d789/AI-view-by-data-type.pdf"><span class="xref download myst"><img alt="AI View by Data Type" src="../../_images/AI-view-by-data-type-1.png" /></span></a></p>
+</div>
+<p><strong><a class="reference download internal" download="" href="../../_downloads/86ae8f409cffcc9fbca44861fff0d789/AI-view-by-data-type.pdf"><span class="xref download myst">📄 View Full PDF</span></a></strong></p>
+<p>Comprehensive framework organizing AI approaches by the types of biological data they process.</p>
+</div>
+<div class="mind-map-section">
+</section>
+<section id="framework-to-scrutinize-foundation-models">
+<h4><strong>Framework to Scrutinize Foundation Models</strong><a class="headerlink" href="#framework-to-scrutinize-foundation-models" title="Link to this heading">#</a></h4>
+<div class="mind-map-preview">
+<p><a class="reference download internal" download="" href="../../_downloads/131a43dd6b6357f29b3ebed189188fe9/framework%20to%20scrutinize%20a%20foundation%20model.pdf"><span class="xref download myst"><img alt="Framework to Scrutinize Foundation Models" src="content/journal_club_book/mind-maps/previews/framework%20to%20scrutinize%20a%20foundation%20model-1.png" /></span></a></p>
+</div>
+<p><strong><a class="reference download internal" download="" href="../../_downloads/131a43dd6b6357f29b3ebed189188fe9/framework%20to%20scrutinize%20a%20foundation%20model.pdf"><span class="xref download myst">📄 View Full PDF</span></a></strong></p>
+<p>Systematic approach for evaluating and analyzing foundation models in biological contexts.</p>
+</div>
+<div class="mind-map-section">
+</section>
+<section id="language-models">
+<h4><strong>Language Models</strong><a class="headerlink" href="#language-models" title="Link to this heading">#</a></h4>
+<div class="mind-map-preview">
+<p><a class="reference download internal" download="" href="../../_downloads/355494c0cf65a4aab3d70a0f80c15645/language-model.pdf"><span class="xref download myst"><img alt="Language Models" src="../../_images/language-model-1.png" /></span></a></p>
+</div>
+<p><strong><a class="reference download internal" download="" href="../../_downloads/355494c0cf65a4aab3d70a0f80c15645/language-model.pdf"><span class="xref download myst">📄 View Full PDF</span></a></strong></p>
+<p>Conceptual overview of language models and their applications in biological sequence analysis.</p>
+</div>
+<div class="mind-map-section">
+</section>
+<section id="interpretable-ai">
+<h4><strong>Interpretable AI</strong><a class="headerlink" href="#interpretable-ai" title="Link to this heading">#</a></h4>
+<div class="mind-map-preview">
+<p><a class="reference download internal" download="" href="../../_downloads/04cef2a2b6924444ea3e371ccdd9297b/interpretable-AI.pdf"><span class="xref download myst"><img alt="Interpretable AI" src="../../_images/interpretable-AI-1.png" /></span></a></p>
+</div>
+<p><strong><a class="reference download internal" download="" href="../../_downloads/04cef2a2b6924444ea3e371ccdd9297b/interpretable-AI.pdf"><span class="xref download myst">📄 View Full PDF</span></a></strong></p>
+<p>Framework for understanding and implementing interpretable AI methods in biological research.</p>
+</div>
+</section>
 </section>
 <section id="protein-focused-ai-applications">
 <h3>Protein-Focused AI Applications<a class="headerlink" href="#protein-focused-ai-applications" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong><a class="reference download internal" download="" href="../../_downloads/889a25364f6fde2c354fe91c1ec06c8a/AI-for-protein_dedicated.pdf"><span class="xref download myst">AI for Protein (Dedicated)</span></a></strong>: Specialized AI approaches and tools designed specifically for protein analysis and prediction.</p></li>
-<li><p><strong><a class="reference download internal" download="" href="../../_downloads/c30cca1f6508432d44365b225da7aea0/protein%20design_engineering.pdf"><span class="xref download myst">Protein Design &amp; Engineering</span></a></strong>: Comprehensive framework for AI-driven protein design and engineering methodologies.</p></li>
-</ul>
+<div class="mind-map-section">
+<section id="ai-for-protein-dedicated">
+<h4><strong>AI for Protein (Dedicated)</strong><a class="headerlink" href="#ai-for-protein-dedicated" title="Link to this heading">#</a></h4>
+<div class="mind-map-preview">
+<p><a class="reference download internal" download="" href="../../_downloads/889a25364f6fde2c354fe91c1ec06c8a/AI-for-protein_dedicated.pdf"><span class="xref download myst"><img alt="AI for Protein (Dedicated)" src="../../_images/AI-for-protein_dedicated-1.png" /></span></a></p>
+</div>
+<p><strong><a class="reference download internal" download="" href="../../_downloads/889a25364f6fde2c354fe91c1ec06c8a/AI-for-protein_dedicated.pdf"><span class="xref download myst">📄 View Full PDF</span></a></strong></p>
+<p>Specialized AI approaches and tools designed specifically for protein analysis and prediction.</p>
+</div>
+<div class="mind-map-section">
+</section>
+<section id="protein-design-engineering">
+<h4><strong>Protein Design &amp; Engineering</strong><a class="headerlink" href="#protein-design-engineering" title="Link to this heading">#</a></h4>
+<div class="mind-map-preview">
+<p><a class="reference download internal" download="" href="../../_downloads/c30cca1f6508432d44365b225da7aea0/protein%20design_engineering.pdf"><span class="xref download myst"><img alt="Protein Design &amp; Engineering" src="content/journal_club_book/mind-maps/previews/protein%20design_engineering-1.png" /></span></a></p>
+</div>
+<p><strong><a class="reference download internal" download="" href="../../_downloads/c30cca1f6508432d44365b225da7aea0/protein%20design_engineering.pdf"><span class="xref download myst">📄 View Full PDF</span></a></strong></p>
+<p>Comprehensive framework for AI-driven protein design and engineering methodologies.</p>
+</div>
+</section>
 </section>
 <section id="field-development-and-research-strategy">
 <h3>Field Development and Research Strategy<a class="headerlink" href="#field-development-and-research-strategy" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong><a class="reference download internal" download="" href="../../_downloads/a4c2abd6fcd49b25f0b3678e335a8c00/building-block-field-evolution-trajectory.pdf"><span class="xref download myst">Building Block Field Evolution Trajectory</span></a></strong>: Mapping the evolutionary trajectory of key building blocks in AI for biology.</p></li>
-<li><p><strong><a class="reference download internal" download="" href="../../_downloads/d8b597edccc8e65ab1b1611ffd342a15/dry-lab-wet-lab-synergy.pdf"><span class="xref download myst">Dry Lab - Wet Lab Synergy</span></a></strong>: Framework for optimizing collaboration between computational and experimental approaches.</p></li>
-<li><p><strong><a class="reference download internal" download="" href="../../_downloads/5ee2abe6719046b4d364f1133eb11c09/to-use-the-ecosystem-for-a-project.pdf"><span class="xref download myst">Using the Ecosystem for a Project</span></a></strong>: Strategic guide for leveraging the broader AI/biology ecosystem in research projects.</p></li>
-</ul>
+<div class="mind-map-section">
+<section id="building-block-field-evolution-trajectory">
+<h4><strong>Building Block Field Evolution Trajectory</strong><a class="headerlink" href="#building-block-field-evolution-trajectory" title="Link to this heading">#</a></h4>
+<div class="mind-map-preview">
+<p><a class="reference download internal" download="" href="../../_downloads/a4c2abd6fcd49b25f0b3678e335a8c00/building-block-field-evolution-trajectory.pdf"><span class="xref download myst"><img alt="Building Block Field Evolution Trajectory" src="../../_images/building-block-field-evolution-trajectory-1.png" /></span></a></p>
+</div>
+<p><strong><a class="reference download internal" download="" href="../../_downloads/a4c2abd6fcd49b25f0b3678e335a8c00/building-block-field-evolution-trajectory.pdf"><span class="xref download myst">📄 View Full PDF</span></a></strong></p>
+<p>Mapping the evolutionary trajectory of key building blocks in AI for biology.</p>
+</div>
+<div class="mind-map-section">
+</section>
+<section id="dry-lab-wet-lab-synergy">
+<h4><strong>Dry Lab - Wet Lab Synergy</strong><a class="headerlink" href="#dry-lab-wet-lab-synergy" title="Link to this heading">#</a></h4>
+<div class="mind-map-preview">
+<p><a class="reference download internal" download="" href="../../_downloads/d8b597edccc8e65ab1b1611ffd342a15/dry-lab-wet-lab-synergy.pdf"><span class="xref download myst"><img alt="Dry Lab - Wet Lab Synergy" src="../../_images/dry-lab-wet-lab-synergy-1.png" /></span></a></p>
+</div>
+<p><strong><a class="reference download internal" download="" href="../../_downloads/d8b597edccc8e65ab1b1611ffd342a15/dry-lab-wet-lab-synergy.pdf"><span class="xref download myst">📄 View Full PDF</span></a></strong></p>
+<p>Framework for optimizing collaboration between computational and experimental approaches.</p>
+</div>
+<div class="mind-map-section">
+</section>
+<section id="using-the-ecosystem-for-a-project">
+<h4><strong>Using the Ecosystem for a Project</strong><a class="headerlink" href="#using-the-ecosystem-for-a-project" title="Link to this heading">#</a></h4>
+<div class="mind-map-preview">
+<p><a class="reference download internal" download="" href="../../_downloads/5ee2abe6719046b4d364f1133eb11c09/to-use-the-ecosystem-for-a-project.pdf"><span class="xref download myst"><img alt="Using the Ecosystem for a Project" src="../../_images/to-use-the-ecosystem-for-a-project-1.png" /></span></a></p>
+</div>
+<p><strong><a class="reference download internal" download="" href="../../_downloads/5ee2abe6719046b4d364f1133eb11c09/to-use-the-ecosystem-for-a-project.pdf"><span class="xref download myst">📄 View Full PDF</span></a></strong></p>
+<p>Strategic guide for leveraging the broader AI/biology ecosystem in research projects.</p>
+</div>
+</section>
 </section>
 </section>
 <section id="usage-notes">
 <h2>Usage Notes<a class="headerlink" href="#usage-notes" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Interactive PDFs</strong>: Click on any mind map to view the full-resolution version</p></li>
+<li><p><strong>Preview Images</strong>: Each mind map includes a preview image for quick visualization</p></li>
+<li><p><strong>Interactive PDFs</strong>: Click on any preview image or PDF link to view the full-resolution version</p></li>
 <li><p><strong>Context</strong>: Each mind map represents synthesized insights from multiple journal club discussions</p></li>
 <li><p><strong>Updates</strong>: These mind maps are living documents that evolve as our understanding deepens</p></li>
 <li><p><strong>Themes</strong>: Mind maps are organized by conceptual themes rather than chronological order</p></li>
+<li><p><strong>Accessibility</strong>: Preview images provide immediate visual context while maintaining access to detailed PDFs</p></li>
 </ul>
 </section>
 <section id="contributing">
@@ -598,9 +709,24 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-conceptual-frameworks">Visual Conceptual Frameworks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gallery">Gallery</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-frameworks-and-methodologies">AI Frameworks and Methodologies</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-focused-ai-applications">Protein-Focused AI Applications</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-development-and-research-strategy">Field Development and Research Strategy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-frameworks-and-methodologies">AI Frameworks and Methodologies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-view-by-data-type"><strong>AI View by Data Type</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#framework-to-scrutinize-foundation-models"><strong>Framework to Scrutinize Foundation Models</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#language-models"><strong>Language Models</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-ai"><strong>Interpretable AI</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-focused-ai-applications">Protein-Focused AI Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-for-protein-dedicated"><strong>AI for Protein (Dedicated)</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-design-engineering"><strong>Protein Design &amp; Engineering</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field-development-and-research-strategy">Field Development and Research Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#building-block-field-evolution-trajectory"><strong>Building Block Field Evolution Trajectory</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dry-lab-wet-lab-synergy"><strong>Dry Lab - Wet Lab Synergy</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-ecosystem-for-a-project"><strong>Using the Ecosystem for a Project</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-notes">Usage Notes</a></li>
