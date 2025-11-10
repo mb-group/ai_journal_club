@@ -8,22 +8,15 @@ With the excitement surrounding the integration of AI into every aspect of life,
 
 Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in 2025 according to a selection criteria.
 
-Models are organized according to classic textbooks (Proteins, Genes, The Cell) chapters and topics to reflect how much AI has been contributing to fundamental science. See [selection criteria](content/selection_criteria.md) for details of what publications are included.
+<div style="background-color: #e8f4f8; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #007acc;">
 
-![Proteins Book Cover](assets/proteins-creighton-book-cover.jpeg)
-![Genes Book Cover](assets/Genes-lewin-bookcover.jpg)
-![The Cell Book Cover](assets/cell-bookcover.jpg)
+🔬 **Latest Journal Club Discussion Take Away**
 
-**P.S.** Model descriptions are being completed gradually according to the pace of the journal club. If any paper particularly interests you, please feel free to tell us to prioritize them.
-
-```{tableofcontents}
-```
-
-## Latest Journal Club Discussion Take Away
-
-� [**State of AI for Biology: A Comprehensive Overview**](content/state_of_ai_for_biology.md)
+📊 [**State of AI for Biology: A Comprehensive Overview**](content/state_of_ai_for_biology.md)
 
 *Our most current synthesis mapping AI's revolutionary impact across all fundamental biological sciences. Get the complete picture of where AI stands today in proteins, genes, and cells—from breakthrough achievements to emerging frontiers.*
+
+</div>
 
 ## Highlights
 
@@ -55,6 +48,8 @@ Our discussions generate comprehensive mind maps that capture key relationships 
 
 ## Running Statistics
 
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+
 📊 **Current Collection Overview**
 
 - **Total Models/Papers**: 69 papers and models
@@ -72,3 +67,17 @@ Our discussions generate comprehensive mind maps that capture key relationships 
 - **Status**: Actively expanding with new publications
 - **Completion**: Model descriptions added progressively through journal club discussions
 
+</div>
+
+Models are organized according to classic textbooks (Proteins, Genes, The Cell) chapters and topics to reflect how much AI has been contributing to fundamental science. See [selection criteria](content/selection_criteria.md) for details of what publications are included.
+
+<div align="center">
+<img src="assets/proteins-creighton-book-cover.jpeg" alt="Proteins Book Cover" width="200" style="margin: 10px;">
+<img src="assets/Genes-lewin-bookcover.jpg" alt="Genes Book Cover" width="200" style="margin: 10px;">
+<img src="assets/cell-bookcover.jpg" alt="The Cell Book Cover" width="200" style="margin: 10px;">
+</div>
+
+**P.S.** Model descriptions are being completed gradually according to the pace of the journal club. If any paper particularly interests you, please feel free to tell us to prioritize them.
+
+```{tableofcontents}
+```
