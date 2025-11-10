@@ -30,6 +30,22 @@ Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in
 
 **Accelerate Translation**: Shorten the cycle from fundamental discovery to clinical impact.
 
+## Visual Conceptual Frameworks
+
+Our discussions generate comprehensive mind maps that capture key relationships and conceptual frameworks. Here are two examples:
+
+### AI for Protein Analysis
+[![AI for Protein (Dedicated)](content/journal_club_book/mind-maps/previews/AI-for-protein_dedicated-1.png)](content/journal_club_book/mind-maps/AI-for-protein_dedicated.pdf)
+
+*Specialized AI approaches and tools designed specifically for protein analysis and prediction.*
+
+### Field Evolution Trajectory
+[![Building Block Field Evolution Trajectory](content/journal_club_book/mind-maps/previews/building-block-field-evolution-trajectory-1.png)](content/journal_club_book/mind-maps/building-block-field-evolution-trajectory.pdf)
+
+*Mapping the evolutionary trajectory of key building blocks in AI for biology.*
+
+**[View Complete Mind Maps Gallery →](content/journal_club_book/mind_maps_gallery.md)**
+
 ## Running Statistics
 
 <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
