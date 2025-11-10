@@ -80,6 +80,7 @@ chapters:
 - file: content/drug_discovery_book/drug_discovery_book
 - file: content/journal_club_book/journal_club_book
   sections:
+  - file: content/journal_club_book/mind_maps_gallery
   - file: content/journal_club_book/confusing_concepts
   - file: content/journal_club_book/milestone_works
   - file: content/journal_club_book/fundamental_concepts
