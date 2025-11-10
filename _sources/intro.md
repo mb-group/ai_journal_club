@@ -18,6 +18,16 @@ Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in
 
 </div>
 
+Models are organized according to classic textbooks (Proteins, Genes, The Cell) chapters and topics to reflect how much AI has been contributing to fundamental science. See [selection criteria](content/selection_criteria.md) for details of what publications are included.
+
+<div align="center">
+<img src="assets/proteins-creighton-book-cover.jpeg" alt="Proteins Book Cover" width="200" style="margin: 10px;">
+<img src="assets/Genes-lewin-bookcover.jpg" alt="Genes Book Cover" width="200" style="margin: 10px;">
+<img src="assets/cell-bookcover.jpg" alt="The Cell Book Cover" width="200" style="margin: 10px;">
+</div>
+
+**P.S.** Model descriptions are being completed gradually according to the pace of the journal club. If any paper particularly interests you, please feel free to tell us to prioritize them.
+
 ## Highlights
 
 **Rapid**: Frequent, up-to-date discussions that keep pace with AI and biology's fast evolution.
@@ -68,16 +78,6 @@ Our discussions generate comprehensive mind maps that capture key relationships 
 - **Completion**: Model descriptions added progressively through journal club discussions
 
 </div>
-
-Models are organized according to classic textbooks (Proteins, Genes, The Cell) chapters and topics to reflect how much AI has been contributing to fundamental science. See [selection criteria](content/selection_criteria.md) for details of what publications are included.
-
-<div align="center">
-<img src="assets/proteins-creighton-book-cover.jpeg" alt="Proteins Book Cover" width="200" style="margin: 10px;">
-<img src="assets/Genes-lewin-bookcover.jpg" alt="Genes Book Cover" width="200" style="margin: 10px;">
-<img src="assets/cell-bookcover.jpg" alt="The Cell Book Cover" width="200" style="margin: 10px;">
-</div>
-
-**P.S.** Model descriptions are being completed gradually according to the pace of the journal club. If any paper particularly interests you, please feel free to tell us to prioritize them.
 
 ```{tableofcontents}
 ```
