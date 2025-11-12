@@ -26,7 +26,7 @@ This collaborative effort represents the collective knowledge, insights, and ded
 
 ## Core Contributors
 
-### Tian Cai
+### Tian Cai, PhD
 <div style="display: flex; align-items: center; margin: 20px 0;">
 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
 <img src="../people/cai-tian-458904-025.webp" alt="Tian Cai" style="width: 100%; height: 100%; object-fit: cover;">
@@ -96,7 +96,7 @@ This collaborative effort represents the collective knowledge, insights, and ded
 
 ## Content Contributors
 
-### Tian Cai
+### Tian Cai, PhD
 <div style="display: flex; align-items: center; margin: 20px 0;">
 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
 <img src="../people/cai-tian-458904-025.webp" alt="Tian Cai" style="width: 100%; height: 100%; object-fit: cover;">
