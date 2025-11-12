@@ -70,6 +70,32 @@ This collaborative effort represents the collective knowledge, insights, and ded
 </div>
 </div>
 
+### Jaimin Patel
+<div style="display: flex; align-items: center; margin: 20px 0;">
+<div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
+<img src="../people/patel-jaimin-142203-017.webp" alt="Jaimin Patel" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+<div>
+<strong>Role:</strong> Principal Software Engineer<br>
+<strong>Affiliation:</strong> Babu Group Research Team
+</div>
+</div>
+
+### Vikas Trivedi, PhD
+<div style="display: flex; align-items: center; margin: 20px 0;">
+<div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
+<img src="../people/trivedi-vikas-142203-035.webp" alt="Vikas Trivedi" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+<div>
+<strong>Role:</strong> Scientist<br>
+<strong>Affiliation:</strong> Babu Group Research Team
+</div>
+</div>
+
+---
+
+## Content Contributors
+
 ### Katarina Nemec, PhD
 <div style="display: flex; align-items: center; margin: 20px 0;">
 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
@@ -81,13 +107,13 @@ This collaborative effort represents the collective knowledge, insights, and ded
 </div>
 </div>
 
-### Jaimin Patel
+### Eli McDonald, PhD
 <div style="display: flex; align-items: center; margin: 20px 0;">
 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
-<img src="../people/patel-jaimin-142203-017.webp" alt="Jaimin Patel" style="width: 100%; height: 100%; object-fit: cover;">
+<img src="../people/mcdonald-eli-458904-032.webp" alt="Eli McDonald" style="width: 100%; height: 100%; object-fit: cover;">
 </div>
 <div>
-<strong>Role:</strong> Principal Software Engineer<br>
+<strong>Role:</strong> Postdoctoral Research Associate<br>
 <strong>Affiliation:</strong> Babu Group Research Team
 </div>
 </div>
