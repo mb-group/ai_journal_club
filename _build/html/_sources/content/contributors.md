@@ -26,7 +26,7 @@ This collaborative effort represents the collective knowledge, insights, and ded
 
 ## Core Contributors
 
-### Tian Cai
+### Tian Cai, PhD
 <div style="display: flex; align-items: center; margin: 20px 0;">
 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
 <img src="../people/cai-tian-458904-025.webp" alt="Tian Cai" style="width: 100%; height: 100%; object-fit: cover;">
@@ -96,6 +96,18 @@ This collaborative effort represents the collective knowledge, insights, and ded
 
 ## Content Contributors
 
+### Tian Cai, PhD
+<div style="display: flex; align-items: center; margin: 20px 0;">
+<div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
+<img src="../people/cai-tian-458904-025.webp" alt="Tian Cai" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+<div>
+<strong>Role:</strong> Senior Computational Research Scientist<br>
+<strong>Affiliation:</strong> Babu Group Research Team<br>
+<strong>Contribution:</strong> Protein book, Gene book, Cell book
+</div>
+</div>
+
 ### Katarina Nemec, PhD
 <div style="display: flex; align-items: center; margin: 20px 0;">
 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-right: 20px; border: 2px solid #ddd;">
@@ -103,7 +115,8 @@ This collaborative effort represents the collective knowledge, insights, and ded
 </div>
 <div>
 <strong>Role:</strong> Scientist<br>
-<strong>Affiliation:</strong> Babu Group Research Team
+<strong>Affiliation:</strong> Babu Group Research Team<br>
+<strong>Contribution:</strong> Drug discovery and development
 </div>
 </div>
 
@@ -114,7 +127,8 @@ This collaborative effort represents the collective knowledge, insights, and ded
 </div>
 <div>
 <strong>Role:</strong> Postdoctoral Research Associate<br>
-<strong>Affiliation:</strong> Babu Group Research Team
+<strong>Affiliation:</strong> Babu Group Research Team<br>
+<strong>Contribution:</strong> Neural science book
 </div>
 </div>
 
