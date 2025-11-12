@@ -24,6 +24,7 @@ Models are organized according to classic textbooks (Proteins, Genes, The Cell) 
 <img src="assets/proteins-creighton-book-cover.jpeg" alt="Proteins Book Cover" width="200" style="margin: 10px;">
 <img src="assets/Genes-lewin-bookcover.jpg" alt="Genes Book Cover" width="200" style="margin: 10px;">
 <img src="assets/cell-bookcover.jpg" alt="The Cell Book Cover" width="200" style="margin: 10px;">
+<img src="assets/neural-sci-bookcover.jpg" alt="Neural Science Book Cover" width="200" style="margin: 10px;">
 </div>
 
 **P.S.** Model descriptions are being completed gradually according to the pace of the journal club. If any paper particularly interests you, please feel free to tell us to prioritize them.
