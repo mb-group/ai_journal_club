@@ -79,6 +79,7 @@ chapters:
   - file: content/cell_book/chapter25_pathogens
 - file: content/neural_sci_book/neural_sci_book
 - file: content/drug_discovery_book/drug_discovery_book
+- file: content/ai_pi_book/ai_pi_book
 - file: content/journal_club_book/journal_club_book
   sections:
   - file: content/journal_club_book/mind_maps_gallery
