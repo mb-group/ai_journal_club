@@ -2,15 +2,19 @@
 
 This book provides practical guidance for Principal Investigators (PIs) in biology on integrating artificial intelligence into their research programs.
 
-## Overview
+```{admonition} Overview
+:class: info
 
 As AI technologies rapidly advance, biological research laboratories face both opportunities and challenges in adopting these tools. This book is designed to help PIs understand, evaluate, and implement AI solutions in their research environments.
+```
 
-## Target Audience
+```{admonition} Target Audience
+:class: info
 
 - Principal Investigators leading biology research laboratories
 - Group leaders considering AI adoption
 - Senior researchers responsible for lab technology decisions
+```
 
 ---
 
@@ -23,30 +27,25 @@ This comprehensive guide is organized into four main parts, each designed to sup
 
 ## What This Book Covers
 
-```{card} 🧭 Orientation
-:class-header: bg-light text-center
-:class-body: text-left
+---
 
-**Getting your bearings in the AI landscape**
-```
+### 🧭 Orientation
 
-### Orientation
+```{dropdown} Getting your bearings in the AI landscape
+:color: light
+:icon: compass
 
 - What's a model?
 - Training vs. inference vs. deployment
 - AI in biology vs. ChatGPT vs. AlphaFold 1/2/3
+```
 
 ---
 
-```{card} 🎯 Part I: When You Need a Quick Bird's-Eye View
-:class-header: bg-primary text-white text-center
-:class-body: text-left
-:shadow: lg
+### 🎯 Part I: When You Need a Quick Bird's-Eye View
 
-**The Center Stage: Essential knowledge for every PI**
-```
-
-### Part I: When You Need a Quick Bird's-Eye View (The Center Stage)
+```{admonition} The Center Stage: Essential knowledge for every PI
+:class: tip
 
 #### Catch up on the jargons
 
@@ -60,18 +59,14 @@ This comprehensive guide is organized into four main parts, each designed to sup
 - Protein language models (pLMs)
 - What's already "old" vs. state-of-the-art
 - Publications that made top news
+```
 
 ---
 
-```{card} 🔬 Part II: When You Want to Form Understanding
-:class-header: bg-info text-white text-center
-:class-body: text-left
-:shadow: lg
+### 🔬 Part II: When You Want to Form Understanding
 
-**The Back Stage: Deeper insights for strategic decisions**
-```
-
-### Part II: When You Want to Form Understanding (The Back Stage)
+```{admonition} The Back Stage: Deeper insights for strategic decisions
+:class: note
 
 #### AI fundamentals at intuition level
 
@@ -81,18 +76,14 @@ This comprehensive guide is organized into four main parts, each designed to sup
 
 - Out-of-distribution generalization
 - Interpretability techniques
+```
 
 ---
 
-```{card} 🚀 Part III: When You're Planning to "Do It"
-:class-header: bg-success text-white text-center
-:class-body: text-left
-:shadow: lg
+### 🚀 Part III: When You're Planning to "Do It"
 
-**From planning to action: Practical implementation guidance**
-```
-
-### Part III: When You're Planning to "Do It"
+```{admonition} From planning to action: Practical implementation guidance
+:class: important
 
 #### When you need something to use
 
@@ -102,18 +93,14 @@ This comprehensive guide is organized into four main parts, each designed to sup
 
 - Problem formulation: translating biology questions and data into AI tasks
 - The must-know techniques to make it happen: attention, assumptions between cnn/rnn
+```
 
 ---
 
-```{card} 💡 Part IV: Special Topics in the Spotlight
-:class-header: bg-warning text-dark text-center
-:class-body: text-left
-:shadow: lg
+### 💡 Part IV: Special Topics in the Spotlight
 
-**Clarity Emerging from Chaos: Deep dives and myth-busting**
-```
-
-### Part IV: Special Topics in the Spotlight (Clarity Emerging from Chaos)
+```{admonition} Clarity Emerging from Chaos: Deep dives and myth-busting
+:class: seealso
 
 #### Case studies
 
@@ -130,6 +117,7 @@ This comprehensive guide is organized into four main parts, each designed to sup
 
 - Domain generalization vs. transfer learning vs. meta-learning
 - Interpretable vs. explainable AI vs. mechanistic interpretability
+```
 
 ---
 
