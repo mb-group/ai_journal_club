@@ -64,7 +64,7 @@ This book focuses on the strategic, managerial, and decision-making aspects of A
 #### When you want to design your own
 
 - Problem formulation: translating biology questions and data into AI tasks
-- The must-know techniques to make it happen
+- The must-know techniques to make it happen: attention, assumptions between cnn/rnn
 
 ---
 
