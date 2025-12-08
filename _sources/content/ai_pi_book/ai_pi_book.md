@@ -90,41 +90,5 @@ This book focuses on the strategic, managerial, and decision-making aspects of A
 
 ## What Is NOT Included: Execution-Level Complexity
 
-This book intentionally does not cover the technical implementation details that are typically handled by computational team members. The following topics are outside the scope:
-
-### Infrastructure
-
-- Detailed server configuration and setup
-- Network architecture and optimization
-- GPU driver installation and management
-- Container orchestration specifics
-- System administration tasks
-
-### Coding
-
-- Programming language syntax and detailed code examples
-- Algorithm implementation details
-- Software development practices
-- Debugging and code optimization
-- Package development
-
-### Data Preprocessing
-
-- Specific data cleaning scripts
-- Feature engineering techniques
-- Data transformation pipelines
-- File format conversion code
-- ETL (Extract, Transform, Load) implementation
-
-### Training Operations
-
-- Model architecture design details
-- Hyperparameter tuning procedures
-- Training loop implementation
-- Gradient descent optimization specifics
-- Loss function mathematics
-
-**Why This Approach?**
-
-As a PI, your role is to provide strategic direction, secure resources, build teams, and ensure responsible use of AI—not to become a hands-on AI engineer. This book equips you with the knowledge to make informed decisions and effectively communicate with computational team members without requiring deep technical expertise in implementation.
+This book intentionally does not cover the technical implementation details that are typically handled by computational team members. Topics outside the scope include infrastructure setup (server configuration, GPU management, system administration), coding specifics (programming syntax, algorithm implementation, debugging), data preprocessing pipelines (cleaning scripts, feature engineering, ETL operations), and training operations (model architecture design, hyperparameter tuning, loss function mathematics). As a PI, your role is to provide strategic direction, secure resources, build teams, and ensure responsible use of AI—not to become a hands-on AI engineer. This book equips you with the knowledge to make informed decisions and effectively communicate with computational team members without requiring deep technical expertise in implementation.
 
