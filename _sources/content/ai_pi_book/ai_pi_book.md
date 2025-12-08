@@ -12,10 +12,14 @@ As AI technologies rapidly advance, biological research laboratories face both o
 - Group leaders considering AI adoption
 - Senior researchers responsible for lab technology decisions
 
+---
+
 ## What This Book Covers
 
-This book focuses on the strategic, managerial, and decision-making aspects of AI adoption in biological research. It is designed for PIs who need to understand AI's potential impact, make informed decisions about resources and tools, and lead their teams through AI integration.
-
+```{admonition} Book Focus
+:class: tip
+This book focuses on the **strategic, managerial, and decision-making aspects** of AI adoption in biological research. It is designed for PIs who need to understand AI's potential impact, make informed decisions about resources and tools, and lead their teams through AI integration.
+```
 
 ### Orientation
 
