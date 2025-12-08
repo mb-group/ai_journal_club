@@ -12,9 +12,9 @@ Currently, 69 papers/models are hosted, mostly from Nature Portfolio journals in
 
 🔬 **Latest Journal Club Discussion Take Away**
 
-📊 [**State of AI for Biology: A Comprehensive Overview**](content/state_of_ai_for_biology.md)
+📚 [**The AI Book for PI in Biology**](content/ai_pi_book/ai_pi_book.md)
 
-*Our most current synthesis mapping AI's revolutionary impact across all fundamental biological sciences. Get the complete picture of where AI stands today in proteins, genes, and cells—from breakthrough achievements to emerging frontiers.*
+*A practical guide for Principal Investigators on integrating AI into biological research. Learn strategic decision-making, resource planning, and team leadership for AI adoption—without needing to become a hands-on AI engineer.*
 
 </div>
 
