@@ -14,11 +14,20 @@ As AI technologies rapidly advance, biological research laboratories face both o
 
 ---
 
+````{div} full-width
+```{admonition} 📚 What This Book Covers
+:class: dropdown, tip
+This comprehensive guide is organized into four main parts, each designed to support you at different stages of your AI journey.
+```
+````
+
 ## What This Book Covers
 
-```{admonition} Book Focus
-:class: tip
-This book focuses on the **strategic, managerial, and decision-making aspects** of AI adoption in biological research. It is designed for PIs who need to understand AI's potential impact, make informed decisions about resources and tools, and lead their teams through AI integration.
+```{card} 🧭 Orientation
+:class-header: bg-light text-center
+:class-body: text-left
+
+**Getting your bearings in the AI landscape**
 ```
 
 ### Orientation
@@ -28,6 +37,14 @@ This book focuses on the **strategic, managerial, and decision-making aspects** 
 - AI in biology vs. ChatGPT vs. AlphaFold 1/2/3
 
 ---
+
+```{card} 🎯 Part I: When You Need a Quick Bird's-Eye View
+:class-header: bg-primary text-white text-center
+:class-body: text-left
+:shadow: lg
+
+**The Center Stage: Essential knowledge for every PI**
+```
 
 ### Part I: When You Need a Quick Bird's-Eye View (The Center Stage)
 
@@ -46,6 +63,14 @@ This book focuses on the **strategic, managerial, and decision-making aspects** 
 
 ---
 
+```{card} 🔬 Part II: When You Want to Form Understanding
+:class-header: bg-info text-white text-center
+:class-body: text-left
+:shadow: lg
+
+**The Back Stage: Deeper insights for strategic decisions**
+```
+
 ### Part II: When You Want to Form Understanding (The Back Stage)
 
 #### AI fundamentals at intuition level
@@ -59,6 +84,14 @@ This book focuses on the **strategic, managerial, and decision-making aspects** 
 
 ---
 
+```{card} 🚀 Part III: When You're Planning to "Do It"
+:class-header: bg-success text-white text-center
+:class-body: text-left
+:shadow: lg
+
+**From planning to action: Practical implementation guidance**
+```
+
 ### Part III: When You're Planning to "Do It"
 
 #### When you need something to use
@@ -71,6 +104,14 @@ This book focuses on the **strategic, managerial, and decision-making aspects** 
 - The must-know techniques to make it happen: attention, assumptions between cnn/rnn
 
 ---
+
+```{card} 💡 Part IV: Special Topics in the Spotlight
+:class-header: bg-warning text-dark text-center
+:class-body: text-left
+:shadow: lg
+
+**Clarity Emerging from Chaos: Deep dives and myth-busting**
+```
 
 ### Part IV: Special Topics in the Spotlight (Clarity Emerging from Chaos)
 
@@ -90,9 +131,13 @@ This book focuses on the **strategic, managerial, and decision-making aspects** 
 - Domain generalization vs. transfer learning vs. meta-learning
 - Interpretable vs. explainable AI vs. mechanistic interpretability
 
+---
 
+```{admonition} ⚠️ What Is NOT Included: Execution-Level Complexity
+:class: warning
 
 ## What Is NOT Included: Execution-Level Complexity
 
 This book intentionally does not cover the technical implementation details that are typically handled by computational team members. Topics outside the scope include infrastructure setup (server configuration, GPU management, system administration), coding specifics (programming syntax, algorithm implementation, debugging), data preprocessing pipelines (cleaning scripts, feature engineering, ETL operations), and training operations (model architecture design, hyperparameter tuning, loss function mathematics). As a PI, your role is to provide strategic direction, secure resources, build teams, and ensure responsible use of AI—not to become a hands-on AI engineer. This book equips you with the knowledge to make informed decisions and effectively communicate with computational team members without requiring deep technical expertise in implementation.
+```
 
