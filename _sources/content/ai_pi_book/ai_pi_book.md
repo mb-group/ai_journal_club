@@ -35,9 +35,9 @@ This comprehensive guide is organized into four main parts, each designed to sup
 :color: light
 :icon: compass
 
-- What's a model?
-- Training vs. inference vs. deployment
-- AI in biology vs. ChatGPT vs. AlphaFold 1/2/3
+- [What's a model?](orientation_what_is_a_model.md)
+- [Training vs. inference vs. deployment](orientation_training_vs_inference_vs_deployment.md)
+- [AI in biology vs. ChatGPT vs. AlphaFold 1/2/3](orientation_ai_in_biology_vs_chatgpt_vs_alphafold.md)
 ```
 
 ---
@@ -47,13 +47,13 @@ This comprehensive guide is organized into four main parts, each designed to sup
 ```{admonition} The Center Stage: Essential knowledge for every PI
 :class: tip
 
-#### Catch up on the jargons
+#### [Catch up on the jargons](part1_catch_up_jargons.md)
 
 - The must-know models
 - Training, pretraining, fine-tuning, prompting, embeddings—all that jazz
 - Trends/buzz/concepts vs. reality/performance/assumptions/limitations
 
-#### Key domains
+#### [Key domains](part1_key_domains.md)
 
 - Foundation models
 - Protein language models (pLMs)
@@ -68,11 +68,11 @@ This comprehensive guide is organized into four main parts, each designed to sup
 ```{admonition} The Back Stage: Deeper insights for strategic decisions
 :class: note
 
-#### AI fundamentals at intuition level
+#### [AI fundamentals at intuition level](part2_ai_fundamentals_intuition.md)
 
 - Core concepts without the math
 
-#### Going deeper: Less-known but promisingly emerging subfields
+#### [Going deeper: Less-known but promisingly emerging subfields](part2_emerging_subfields.md)
 
 - Out-of-distribution generalization
 - Interpretability techniques
@@ -87,12 +87,11 @@ This comprehensive guide is organized into four main parts, each designed to sup
 
 #### When you need something to use
 
-- Browse by catalog: our curated collection of tools
+- [Browse by catalog: our curated collection of tools](part3_browse_by_catalog.md)
 
 #### When you want to design your own
 
-- Problem formulation: translating biology questions and data into AI tasks
-- The must-know techniques to make it happen: attention, assumptions between cnn/rnn
+- [Problem formulation and must-know techniques](part3_design_your_own.md): translating biology questions and data into AI tasks, attention mechanisms, assumptions between cnn/rnn/transformers
 ```
 
 ---
@@ -102,18 +101,18 @@ This comprehensive guide is organized into four main parts, each designed to sup
 ```{admonition} Clarity Emerging from Chaos: Deep dives and myth-busting
 :class: seealso
 
-#### Case studies
+#### [Case studies](part4_case_studies.md)
 
 - What protein language models actually learn
 - Actual performance of foundation models in genomics
 
-#### Debates and clarifications
+#### [Debates and clarifications](part4_debates_clarifications.md)
 
 - Why this approach, not that one?
 - Must-update misconceptions (e.g., "AI only predicts correlations")
 - Bias-variance tradeoff
 
-#### Seemingly confused subfields clarified
+#### [Seemingly confused subfields clarified](part4_confused_subfields.md)
 
 - Domain generalization vs. transfer learning vs. meta-learning
 - Interpretable vs. explainable AI vs. mechanistic interpretability
