@@ -80,6 +80,19 @@ chapters:
 - file: content/neural_sci_book/neural_sci_book
 - file: content/drug_discovery_book/drug_discovery_book
 - file: content/ai_pi_book/ai_pi_book
+  sections:
+  - file: content/ai_pi_book/orientation_what_is_a_model
+  - file: content/ai_pi_book/orientation_training_vs_inference_vs_deployment
+  - file: content/ai_pi_book/orientation_ai_in_biology_vs_chatgpt_vs_alphafold
+  - file: content/ai_pi_book/part1_catch_up_jargons
+  - file: content/ai_pi_book/part1_key_domains
+  - file: content/ai_pi_book/part2_ai_fundamentals_intuition
+  - file: content/ai_pi_book/part2_emerging_subfields
+  - file: content/ai_pi_book/part3_browse_by_catalog
+  - file: content/ai_pi_book/part3_design_your_own
+  - file: content/ai_pi_book/part4_case_studies
+  - file: content/ai_pi_book/part4_debates_clarifications
+  - file: content/ai_pi_book/part4_confused_subfields
 - file: content/journal_club_book/journal_club_book
   sections:
   - file: content/journal_club_book/mind_maps_gallery

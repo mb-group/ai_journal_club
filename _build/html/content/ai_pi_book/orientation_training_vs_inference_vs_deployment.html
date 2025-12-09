@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The AI Book for PI in Biology &#8212; Babu group AI journal club</title>
+    <title>Training vs. Inference vs. Deployment &#8212; Babu group AI journal club</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/ai_pi_book';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/orientation_training_vs_inference_vs_deployment';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="What’s a Model?" href="orientation_what_is_a_model.html" />
-    <link rel="prev" title="Drug Discovery &amp; Development Book" href="../drug_discovery_book/drug_discovery_book.html" />
+    <link rel="next" title="AI in Biology vs. ChatGPT vs. AlphaFold 1/2/3" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html" />
+    <link rel="prev" title="What’s a Model?" href="orientation_what_is_a_model.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -258,9 +258,9 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../neural_sci_book/neural_sci_book.html">Principles of Neural Science and AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../drug_discovery_book/drug_discovery_book.html">Drug Discovery &amp; Development Book</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">The AI Book for PI in Biology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ai_pi_book.html">The AI Book for PI in Biology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="orientation_what_is_a_model.html">What’s a Model?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orientation_training_vs_inference_vs_deployment.html">Training vs. Inference vs. Deployment</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Training vs. Inference vs. Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">AI in Biology vs. ChatGPT vs. AlphaFold 1/2/3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_catch_up_jargons.html">Catch Up on the Jargons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_key_domains.html">Key Domains</a></li>
@@ -355,7 +355,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/ai_pi_book/ai_pi_book.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/ai_pi_book/orientation_training_vs_inference_vs_deployment.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,7 +385,7 @@
       
       
       
-      <li><a href="../../_sources/content/ai_pi_book/ai_pi_book.md" target="_blank"
+      <li><a href="../../_sources/content/ai_pi_book/orientation_training_vs_inference_vs_deployment.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -469,7 +469,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The AI Book for PI in Biology</h1>
+    <h1>Training vs. Inference vs. Deployment</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -479,14 +479,31 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-book-covers">What This Book Covers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orientation">🧭 Orientation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-when-you-need-a-quick-bird-s-eye-view">🎯 Part I: When You Need a Quick Bird’s-Eye View</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-when-you-want-to-form-understanding">🔬 Part II: When You Want to Form Understanding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-when-you-re-planning-to-do-it">🚀 Part III: When You’re Planning to “Do It”</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-special-topics-in-the-spotlight">💡 Part IV: Special Topics in the Spotlight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-phases-of-ai-model-usage">The Three Phases of AI Model Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training">1. Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics">Key Characteristics</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference">2. Inference</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Key Characteristics</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">3. Deployment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Key Characteristics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-options">Deployment Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-a-pi-what-you-need-to-know">As a PI: What You Need to Know</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#budget-planning">Budget Planning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#team-composition">Team Composition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-scenarios-for-biology-labs">Common Scenarios for Biology Labs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-distinctions-summary">Key Distinctions Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-framework">Decision Framework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
 </ul>
             </nav>
         </div>
@@ -498,126 +515,219 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-ai-book-for-pi-in-biology">
-<h1>The AI Book for PI in Biology<a class="headerlink" href="#the-ai-book-for-pi-in-biology" title="Link to this heading">#</a></h1>
-<p>This book provides practical guidance for Principal Investigators (PIs) in biology on integrating artificial intelligence into their research programs.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="training-vs-inference-vs-deployment">
+<h1>Training vs. Inference vs. Deployment<a class="headerlink" href="#training-vs-inference-vs-deployment" title="Link to this heading">#</a></h1>
 <div class="info admonition">
-<p class="admonition-title">Overview</p>
-<p>As AI technologies rapidly advance, biological research laboratories face both opportunities and challenges in adopting these tools. This book is designed to help PIs understand, evaluate, and implement AI solutions in their research environments.</p>
+<p class="admonition-title">Chapter Overview</p>
+<p>Understanding the lifecycle stages of AI models is crucial for resource planning, team building, and project management. This chapter clarifies three fundamental phases in the AI workflow.</p>
 </div>
-<div class="info admonition">
-<p class="admonition-title">Target Audience</p>
+<section id="the-three-phases-of-ai-model-usage">
+<h2>The Three Phases of AI Model Usage<a class="headerlink" href="#the-three-phases-of-ai-model-usage" title="Link to this heading">#</a></h2>
+<section id="training">
+<h3>1. Training<a class="headerlink" href="#training" title="Link to this heading">#</a></h3>
+<p><strong>What it is</strong>: The process of teaching a model to recognize patterns by showing it examples and adjusting its parameters to minimize errors.</p>
+<section id="key-characteristics">
+<h4>Key Characteristics<a class="headerlink" href="#key-characteristics" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Principal Investigators leading biology research laboratories</p></li>
-<li><p>Group leaders considering AI adoption</p></li>
-<li><p>Senior researchers responsible for lab technology decisions</p></li>
+<li><p><strong>Resource Intensive</strong>: Requires powerful GPUs, large datasets, and significant time</p></li>
+<li><p><strong>One-Time (or Periodic)</strong>: Done once initially, then updated occasionally</p></li>
+<li><p><strong>Expensive</strong>: Can cost thousands to millions of dollars for large models</p></li>
+<li><p><strong>Requires Expertise</strong>: Needs specialized knowledge in model architecture, optimization</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Training in Practice</p>
+<p>For most biology labs, you’ll rarely train large models from scratch. Instead, you’ll:</p>
+<ul class="simple">
+<li><p>Use pre-trained models (transfer learning)</p></li>
+<li><p>Fine-tune existing models on your specific data</p></li>
+<li><p>Work with computational partners who handle training</p></li>
 </ul>
 </div>
-<hr class="docutils" />
-<div class="full-width docutils">
-<div class="dropdown tip admonition">
-<p class="admonition-title">📚 What This Book Covers</p>
-<p>This comprehensive guide is organized into four main parts, each designed to support you at different stages of your AI journey.</p>
-</div>
-</div>
-<section id="what-this-book-covers">
-<h2>What This Book Covers<a class="headerlink" href="#what-this-book-covers" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
-<section id="orientation">
-<h3>🧭 Orientation<a class="headerlink" href="#orientation" title="Link to this heading">#</a></h3>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
-<span class="sd-summary-text">Getting your bearings in the AI landscape</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+</section>
+</section>
+<section id="inference">
+<h3>2. Inference<a class="headerlink" href="#inference" title="Link to this heading">#</a></h3>
+<p><strong>What it is</strong>: Using a trained model to make predictions on new data. This is the “using” phase.</p>
+<section id="id1">
+<h4>Key Characteristics<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference internal" href="orientation_what_is_a_model.html"><span class="std std-doc">What’s a model?</span></a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="orientation_training_vs_inference_vs_deployment.html"><span class="std std-doc">Training vs. inference vs. deployment</span></a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html"><span class="std std-doc">AI in biology vs. ChatGPT vs. AlphaFold 1/2/3</span></a></p></li>
+<li><p><strong>Lightweight</strong>: Much less resource-intensive than training</p></li>
+<li><p><strong>Fast</strong>: Often processes data in seconds to minutes</p></li>
+<li><p><strong>Repeated</strong>: Done many times for different samples/inputs</p></li>
+<li><p><strong>User-Friendly</strong>: Can often be done with simple tools or web interfaces</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Inference Examples</p>
+<ul class="simple">
+<li><p>Running AlphaFold to predict a protein structure</p></li>
+<li><p>Using a genomics model to score variants</p></li>
+<li><p>Applying a trained classifier to new microscopy images</p></li>
+<li><p>Querying a protein language model for embeddings</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="deployment">
+<h3>3. Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h3>
+<p><strong>What it is</strong>: Making a trained model accessible for regular use by others (researchers, clinicians, or systems).</p>
+<section id="id2">
+<h4>Key Characteristics<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Infrastructure</strong>: Requires servers, APIs, or software packaging</p></li>
+<li><p><strong>Maintenance</strong>: Needs monitoring, updates, and bug fixes</p></li>
+<li><p><strong>Accessibility</strong>: Determines how easily others can use your model</p></li>
+<li><p><strong>Security</strong>: Involves data privacy and access control considerations</p></li>
+</ul>
+</section>
+<section id="deployment-options">
+<h4>Deployment Options<a class="headerlink" href="#deployment-options" title="Link to this heading">#</a></h4>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-cloud" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 7.25A5.225 5.225 0 0 1 7.25 2a5.222 5.222 0 0 1 4.767 3.029A4.472 4.472 0 0 1 16 9.5c0 2.505-1.995 4.5-4.5 4.5h-8A3.474 3.474 0 0 1 0 10.5c0-1.41.809-2.614 2.001-3.17Zm1.54.482a.75.75 0 0 1-.556.832c-.86.22-1.484.987-1.484 1.936 0 1.124.876 2 2 2h8c1.676 0 3-1.324 3-3s-1.324-3-3-3a.75.75 0 0 1-.709-.504A3.72 3.72 0 0 0 7.25 3.5C5.16 3.5 3.5 5.16 3.5 7.25c.002.146.014.292.035.436l.004.036.001.008Z"></path></svg></span><span class="sd-summary-text">Web Service/API</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Host the model on a server; users access via web interface or API calls.</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Pros</strong>: Easy for users, centralized updates</p></li>
+<li><p class="sd-card-text"><strong>Cons</strong>: Requires server maintenance, data must leave user’s system</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-package" viewBox="0 0 16 16" aria-hidden="true"><path d="m8.878.392 5.25 3.045c.54.314.872.89.872 1.514v6.098a1.75 1.75 0 0 1-.872 1.514l-5.25 3.045a1.75 1.75 0 0 1-1.756 0l-5.25-3.045A1.75 1.75 0 0 1 1 11.049V4.951c0-.624.332-1.201.872-1.514L7.122.392a1.75 1.75 0 0 1 1.756 0ZM7.875 1.69l-4.63 2.685L8 7.133l4.755-2.758-4.63-2.685a.248.248 0 0 0-.25 0ZM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432Zm6.25 8.271 4.625-2.683a.25.25 0 0 0 .125-.216V5.677L8.75 8.432Z"></path></svg></span><span class="sd-summary-text">Standalone Software</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Package model with software that users install locally.</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Pros</strong>: Data stays local, no server needed</p></li>
+<li><p class="sd-card-text"><strong>Cons</strong>: Users must install and manage software</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-text">Cloud Platform</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Deploy on platforms like AWS, Google Cloud, Azure.</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Pros</strong>: Scalable, managed infrastructure</p></li>
+<li><p class="sd-card-text"><strong>Cons</strong>: Ongoing costs, vendor lock-in</p></li>
 </ul>
 </div>
 </details></section>
-<hr class="docutils" />
-<section id="part-i-when-you-need-a-quick-bird-s-eye-view">
-<h3>🎯 Part I: When You Need a Quick Bird’s-Eye View<a class="headerlink" href="#part-i-when-you-need-a-quick-bird-s-eye-view" title="Link to this heading">#</a></h3>
-<div class="tip admonition">
-<p class="admonition-title">The Center Stage: Essential knowledge for every PI</p>
-<h4 class="rubric" id="catch-up-on-the-jargons"><a class="reference internal" href="part1_catch_up_jargons.html"><span class="std std-doc">Catch up on the jargons</span></a></h4>
-<ul class="simple">
-<li><p>The must-know models</p></li>
-<li><p>Training, pretraining, fine-tuning, prompting, embeddings—all that jazz</p></li>
-<li><p>Trends/buzz/concepts vs. reality/performance/assumptions/limitations</p></li>
-</ul>
-<h4 class="rubric" id="key-domains"><a class="reference internal" href="part1_key_domains.html"><span class="std std-doc">Key domains</span></a></h4>
-<ul class="simple">
-<li><p>Foundation models</p></li>
-<li><p>Protein language models (pLMs)</p></li>
-<li><p>What’s already “old” vs. state-of-the-art</p></li>
-<li><p>Publications that made top news</p></li>
-</ul>
+</section>
+</section>
+<section id="as-a-pi-what-you-need-to-know">
+<h2>As a PI: What You Need to Know<a class="headerlink" href="#as-a-pi-what-you-need-to-know" title="Link to this heading">#</a></h2>
+<section id="budget-planning">
+<h3>Budget Planning<a class="headerlink" href="#budget-planning" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Phase</p></th>
+<th class="head"><p>Cost Considerations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Training</strong></p></td>
+<td><p>High upfront costs (GPUs, cloud compute, personnel)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inference</strong></p></td>
+<td><p>Lower recurring costs (depends on usage volume)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Deployment</strong></p></td>
+<td><p>Ongoing costs (hosting, maintenance, support)</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
-<hr class="docutils" />
-<section id="part-ii-when-you-want-to-form-understanding">
-<h3>🔬 Part II: When You Want to Form Understanding<a class="headerlink" href="#part-ii-when-you-want-to-form-understanding" title="Link to this heading">#</a></h3>
-<div class="note admonition">
-<p class="admonition-title">The Back Stage: Deeper insights for strategic decisions</p>
-<h4 class="rubric" id="ai-fundamentals-at-intuition-level"><a class="reference internal" href="part2_ai_fundamentals_intuition.html"><span class="std std-doc">AI fundamentals at intuition level</span></a></h4>
+<section id="team-composition">
+<h3>Team Composition<a class="headerlink" href="#team-composition" title="Link to this heading">#</a></h3>
+<p>Different phases require different expertise:</p>
 <ul class="simple">
-<li><p>Core concepts without the math</p></li>
+<li><p><strong>Training</strong>: ML engineers, computational biologists with deep learning experience</p></li>
+<li><p><strong>Inference</strong>: Can be done by lab members with basic computational skills</p></li>
+<li><p><strong>Deployment</strong>: Software engineers, DevOps specialists (if scaling)</p></li>
 </ul>
-<h4 class="rubric" id="going-deeper-less-known-but-promisingly-emerging-subfields"><a class="reference internal" href="part2_emerging_subfields.html"><span class="std std-doc">Going deeper: Less-known but promisingly emerging subfields</span></a></h4>
-<ul class="simple">
-<li><p>Out-of-distribution generalization</p></li>
-<li><p>Interpretability techniques</p></li>
-</ul>
-</div>
 </section>
-<hr class="docutils" />
-<section id="part-iii-when-you-re-planning-to-do-it">
-<h3>🚀 Part III: When You’re Planning to “Do It”<a class="headerlink" href="#part-iii-when-you-re-planning-to-do-it" title="Link to this heading">#</a></h3>
-<div class="important admonition">
-<p class="admonition-title">From planning to action: Practical implementation guidance</p>
-<h4 class="rubric" id="when-you-need-something-to-use">When you need something to use</h4>
-<ul class="simple">
-<li><p><a class="reference internal" href="part3_browse_by_catalog.html"><span class="std std-doc">Browse by catalog: our curated collection of tools</span></a></p></li>
-</ul>
-<h4 class="rubric" id="when-you-want-to-design-your-own">When you want to design your own</h4>
-<ul class="simple">
-<li><p><a class="reference internal" href="part3_design_your_own.html"><span class="std std-doc">Problem formulation and must-know techniques</span></a>: translating biology questions and data into AI tasks, attention mechanisms, assumptions between cnn/rnn/transformers</p></li>
-</ul>
-</div>
-</section>
-<hr class="docutils" />
-<section id="part-iv-special-topics-in-the-spotlight">
-<h3>💡 Part IV: Special Topics in the Spotlight<a class="headerlink" href="#part-iv-special-topics-in-the-spotlight" title="Link to this heading">#</a></h3>
+<section id="common-scenarios-for-biology-labs">
+<h3>Common Scenarios for Biology Labs<a class="headerlink" href="#common-scenarios-for-biology-labs" title="Link to this heading">#</a></h3>
 <div class="seealso admonition">
-<p class="admonition-title">Clarity Emerging from Chaos: Deep dives and myth-busting</p>
-<h4 class="rubric" id="case-studies"><a class="reference internal" href="part4_case_studies.html"><span class="std std-doc">Case studies</span></a></h4>
+<p class="admonition-title">Scenario 1: Using Existing Tools</p>
+<p>You only do <strong>inference</strong> using publicly available models (e.g., AlphaFold, ESM).</p>
 <ul class="simple">
-<li><p>What protein language models actually learn</p></li>
-<li><p>Actual performance of foundation models in genomics</p></li>
+<li><p><strong>Your needs</strong>: Computational resources for inference, training for lab members</p></li>
+<li><p><strong>No need for</strong>: Training infrastructure, deployment systems</p></li>
 </ul>
-<h4 class="rubric" id="debates-and-clarifications"><a class="reference internal" href="part4_debates_clarifications.html"><span class="std std-doc">Debates and clarifications</span></a></h4>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Scenario 2: Developing Lab-Specific Models</p>
+<p>You need to <strong>train</strong> models on your proprietary data and use them internally.</p>
 <ul class="simple">
-<li><p>Why this approach, not that one?</p></li>
-<li><p>Must-update misconceptions (e.g., “AI only predicts correlations”)</p></li>
-<li><p>Bias-variance tradeoff</p></li>
+<li><p><strong>Your needs</strong>: Training resources (GPU cluster or cloud), ML expertise, inference capability</p></li>
+<li><p><strong>Consider</strong>: Collaborating with computational groups for training phase</p></li>
 </ul>
-<h4 class="rubric" id="seemingly-confused-subfields-clarified"><a class="reference internal" href="part4_confused_subfields.html"><span class="std std-doc">Seemingly confused subfields clarified</span></a></h4>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Scenario 3: Creating Community Tools</p>
+<p>You develop models and want to <strong>deploy</strong> them for the community.</p>
 <ul class="simple">
-<li><p>Domain generalization vs. transfer learning vs. meta-learning</p></li>
-<li><p>Interpretable vs. explainable AI vs. mechanistic interpretability</p></li>
+<li><p><strong>Your needs</strong>: Full pipeline (training, inference, deployment)</p></li>
+<li><p><strong>Consider</strong>: Grant funding for long-term maintenance, partnerships for hosting</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="key-distinctions-summary">
+<h2>Key Distinctions Summary<a class="headerlink" href="#key-distinctions-summary" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Training</p></th>
+<th class="head"><p>Inference</p></th>
+<th class="head"><p>Deployment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Frequency</strong></p></td>
+<td><p>Once or periodic</p></td>
+<td><p>Many times</p></td>
+<td><p>Continuous</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Resources</strong></p></td>
+<td><p>Very high</p></td>
+<td><p>Moderate to low</p></td>
+<td><p>Moderate</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Speed</strong></p></td>
+<td><p>Hours to weeks</p></td>
+<td><p>Seconds to minutes</p></td>
+<td><p>N/A (availability)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Expertise</strong></p></td>
+<td><p>High</p></td>
+<td><p>Low to moderate</p></td>
+<td><p>Moderate to high</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cost</strong></p></td>
+<td><p>High upfront</p></td>
+<td><p>Low per use</p></td>
+<td><p>Ongoing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="decision-framework">
+<h2>Decision Framework<a class="headerlink" href="#decision-framework" title="Link to this heading">#</a></h2>
+</section>
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>Previous: <a class="reference internal" href="orientation_what_is_a_model.html"><span class="std std-doc">What’s a Model?</span></a></p></li>
+<li><p>Next: <a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html"><span class="std std-doc">AI in Biology vs. ChatGPT vs. AlphaFold</span></a></p></li>
+<li><p>Related: <a class="reference internal" href="#browse_tools_catalog.md"><span class="xref myst">Browse Tools Catalog</span></a></p></li>
 </ul>
 </div>
 <hr class="docutils" />
-<div class="warning admonition">
-<p class="admonition-title">⚠️ What Is NOT Included: Execution-Level Complexity</p>
-<h2 class="rubric" id="what-is-not-included-execution-level-complexity">What Is NOT Included: Execution-Level Complexity</h2>
-<p>This book intentionally does not cover the technical implementation details that are typically handled by computational team members. Topics outside the scope include infrastructure setup (server configuration, GPU management, system administration), coding specifics (programming syntax, algorithm implementation, debugging), data preprocessing pipelines (cleaning scripts, feature engineering, ETL operations), and training operations (model architecture design, hyperparameter tuning, loss function mathematics). As a PI, your role is to provide strategic direction, secure resources, build teams, and ensure responsible use of AI—not to become a hands-on AI engineer. This book equips you with the knowledge to make informed decisions and effectively communicate with computational team members without requiring deep technical expertise in implementation.</p>
-</div>
+<p><em>Understanding these three phases helps PIs make informed decisions about resources, collaborations, and project planning.</em></p>
 </section>
-</section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -651,20 +761,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../drug_discovery_book/drug_discovery_book.html"
+       href="orientation_what_is_a_model.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Drug Discovery &amp; Development Book</p>
+        <p class="prev-next-title">What’s a Model?</p>
       </div>
     </a>
     <a class="right-next"
-       href="orientation_what_is_a_model.html"
+       href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">What’s a Model?</p>
+        <p class="prev-next-title">AI in Biology vs. ChatGPT vs. AlphaFold 1/2/3</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -684,14 +794,31 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-book-covers">What This Book Covers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orientation">🧭 Orientation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-when-you-need-a-quick-bird-s-eye-view">🎯 Part I: When You Need a Quick Bird’s-Eye View</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-when-you-want-to-form-understanding">🔬 Part II: When You Want to Form Understanding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-when-you-re-planning-to-do-it">🚀 Part III: When You’re Planning to “Do It”</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-special-topics-in-the-spotlight">💡 Part IV: Special Topics in the Spotlight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-phases-of-ai-model-usage">The Three Phases of AI Model Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training">1. Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics">Key Characteristics</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference">2. Inference</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Key Characteristics</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">3. Deployment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Key Characteristics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-options">Deployment Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-a-pi-what-you-need-to-know">As a PI: What You Need to Know</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#budget-planning">Budget Planning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#team-composition">Team Composition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-scenarios-for-biology-labs">Common Scenarios for Biology Labs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-distinctions-summary">Key Distinctions Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-framework">Decision Framework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
 </ul>
   </nav></div>
 
