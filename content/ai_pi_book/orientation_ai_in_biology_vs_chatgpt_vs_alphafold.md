@@ -57,15 +57,3 @@ Many researchers first encounter biological AI through **AlphaFold**, which pred
 - Dynamic behavior in cellular contexts
 
 This reflects the problem's complexity and training objectives, not a model flaw.
-
-## Convergence Trend
-
-Language model approaches increasingly apply to biology. "Protein language models" treat amino acid sequences as sentences, using NLP techniques on biological data. While models remain specialized, underlying algorithms unify across domains.
-
-## Summary
-
-**Fundamentally:** Same algorithms learning from data.
-
-**Practically:** Different data, objectives, and specializations create distinct purposes and user experiences.
-
-The distinction isn't categorical—it's about specialized training for specialized tasks.
