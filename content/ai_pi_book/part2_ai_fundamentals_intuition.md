@@ -3,81 +3,205 @@
 ```{admonition} Overview
 :class: info
 
-Gain an intuitive understanding of AI core concepts without getting lost in mathematical details. This chapter focuses on building conceptual models that help you make informed decisions.
+Gain an intuitive understanding of AI core concepts without getting lost in mathematical details. This chapter focuses on building conceptual models that help you make informed decisions when designing AI models.
 ```
 
 ---
 
 ## Core Concepts Without the Math
 
-### Neural Networks: The Building Blocks
+### How a Model Learns from Data
 
-Content coming soon...
+Think of training an AI model like training a circus lion. The lion learns behaviors through a system of rewards and corrections—it tries different actions, receives feedback, and gradually learns which behaviors lead to desired outcomes.
 
-### Learning from Data
+This analogy reveals several key insights about AI training:
 
-Content coming soon...
+**Loss Functions vs. Performance Metrics**
+- The **loss function** (or training objective) is the immediate "penalty" signal during training—like the trainer's corrections to the lion
+- **Performance metrics** evaluate how well the model achieves your actual goals—like whether the lion can perform the full routine
+- These are often different: you optimize one thing during training to achieve another goal in practice
 
-### The Role of Architecture
+**Population-Level vs. Individual Performance**
+- AI models are evaluated on their **overall performance** across many examples (the entire data population)
+- Just like a circus lion that performs well most nights but occasionally has an off performance, models are judged by their aggregate success rate
 
-Content coming soon...
-
-
-workflow wise, decribe the process
----
-
-## Understanding Model Capacity
-
-### Underfitting vs. Overfitting
-
-Content coming soon...
-
-### The Bias-Variance Tradeoff
-
-Content coming soon...
-
-### Regularization Techniques
-
-Content coming soon...
+**Training Data vs. Testing Data**
+- **Training data** is what the model learns from—the practice sessions
+- **Testing data** reveals how well those lessons generalize to new situations—the actual performance
+- The relationship between these two tells crucial stories: Does your model truly understand patterns, or has it just memorized the training examples?
 
 ---
 
-## How Models Make Predictions
+### The AI Workflow: From Design to Deployment
 
-### Pattern Recognition
+Building an AI model follows a structured process:
 
-Content coming soon...
+**1. Design the Model Architecture**
+   - Define how input data transforms into output predictions
+   - Think of it as designing the "wiring" that connects inputs to outputs through mathematical transformations
+   - This happens in linear algebra space, but conceptually you're deciding: what information flows where, and how is it processed?
 
-### Feature Learning
+**2. Design the Training Scheme**
+   - Decide how training data is organized and fed to the model (batch size, order, etc.)
+   - Choose the loss function that defines "good" vs. "bad" predictions
+   - Set the learning strategy: how aggressively should the model update based on errors?
 
-Content coming soon...
+**3. Initialize and Train**
+   - The model starts with random parameters (it knows nothing)
+   - Through repeated exposure to training data and penalty signals, it gradually adjusts its parameters
+   - Like the circus lion's gradual improvement, the model minimizes penalties through iterative updates
 
-### Generalization
-
-Content coming soon...
-
----
-
-## Common Pitfalls and Misconceptions
-
-### "AI Only Predicts Correlations"
-
-Content coming soon...
-
-### Data Quality Matters More Than You Think
-
-Content coming soon...
-
-### The Importance of Domain Knowledge
-
-Content coming soon...
+**4. Determine Stopping Criteria**
+   - Set thresholds that terminate training (based on loss values, performance metrics, or time limits)
+   - Too little training = underfitting (the model hasn't learned enough)
+   - Too much training = overfitting (the model memorized training examples but can't generalize)
 
 ---
 
-```{admonition} Key Takeaways
-:class: tip
+### Why AI Stands Out: Comparing to Traditional Data Analysis
 
-- Understanding AI intuitively enables better strategic decisions
-- The bias-variance tradeoff is fundamental to model performance
-- Avoiding common misconceptions leads to more realistic expectations
-```
+Deep learning is fundamentally statistical learning, but with crucial advantages over older methodologies:
+
+**Beyond Linear Relationships**
+- Traditional statistical analysis typically assumes linear relationships between variables
+- Deep learning can capture complex, non-linear patterns that better reflect biological reality
+
+**From Analysis to Prediction and Generation**
+- Classical biostatistics focuses on understanding relationships in existing data
+- AI models can make predictions about unseen cases and even generate novel examples (like new protein sequences)
+
+**Handling Complex Data Modalities**
+- Traditional methods struggle with images, sequences, and graphs—they need features extracted and converted to numerical representations first
+- Deep learning directly processes these complex modalities more efficiently, learning relevant patterns automatically
+
+**Scaling with Data Volume**
+- As data grows, traditional methods often hit computational or theoretical limits
+- Deep learning models improve with more data, automatically discovering patterns that would be impossible to manually specify
+
+This power comes at a cost: deep learning requires specialized infrastructure (GPUs), careful design choices, and larger datasets. But for many biological problems—especially those involving complex patterns, large-scale data, or predictive tasks—AI's advantages make it the right tool for the job.
+
+---
+
+## Why Modern AI Feels Alien (Even With Statistical and ML Background)
+
+If you have training in classical statistics or even basic machine learning, you might find the current AI landscape surprisingly disorienting. This isn't because the fundamentals have changed—it's because several paradigm shifts have transformed how we think about and use AI models.
+
+### The Age of Embeddings: Representations Are the Real Output
+
+**The Old View:** A model's job is to produce a final prediction (classification label, regression value, etc.)
+
+**The New Reality:** The intermediate representations (embeddings) are often more valuable than the final output.
+
+Modern AI systems like language models, variational autoencoders (VAEs), and contrastive learning frameworks don't just predict—they learn rich internal representations of data. For biology:
+- A protein language model's embedding captures evolutionary relationships, structural motifs, and functional properties
+- These embeddings can be used for downstream tasks the model was never explicitly trained for
+- Think of embeddings as a learned "language" for describing your data that captures patterns humans might never articulate
+
+### Multi-Task Learning: One Model, Many Outputs
+
+Classical ML typically means one model, one task. Modern AI routinely trains single models with multiple objectives simultaneously:
+- Predict protein structure AND function AND stability
+- Learn from labeled AND unlabeled data in the same training run
+- Optimize for multiple performance criteria that may even conflict
+
+This changes how you evaluate models—there's no longer a single "accuracy" number, but rather a profile of performance across tasks.
+
+### Transfer Learning: Standing on the Shoulders of Giants
+
+Perhaps the biggest paradigm shift: you rarely train models from scratch anymore.
+
+**Pre-training + Fine-tuning** has become the dominant workflow:
+1. Someone trains a massive model on general data (e.g., all known protein sequences)
+2. You adapt (fine-tune) that model to your specific task with your data
+3. The pre-trained model brings general "knowledge" that dramatically reduces your data requirements
+
+This is why a model trained on human proteins might work surprisingly well on bacterial proteins—it learned general principles of protein biology during pre-training.
+
+### New Functionalities Beyond Classification
+
+Modern AI does things that don't fit neatly into classical supervised learning:
+- **Image segmentation:** Not just "what's in this image?" but "which pixels correspond to which cell?"
+- **Generation:** Creating new protein sequences, predicting drug-like molecules, generating realistic microscopy images
+- **Self-supervision:** Learning patterns without explicit labels by predicting parts of the data from other parts
+
+### Data Representation: Tokenization Changes Everything
+
+How you represent input data fundamentally shapes what patterns models can learn.
+
+**Tokenization** means breaking complex data into discrete units:
+- Text: words or sub-word pieces
+- Proteins: individual amino acids, or k-mers (overlapping subsequences)
+- Genomic data: nucleotides, codons, or functional motifs
+
+The choice of tokenization isn't just technical—it determines what patterns are "visible" to the model. A model that sees proteins as individual amino acids learns different patterns than one that sees them as structural domains.
+
+---
+
+## For Biology PIs: What to Focus On (and What to Delegate)
+
+As a principal investigator evaluating AI work, you don't need to understand everything. Here's a practical guide to where you should invest your attention.
+
+### You Can Safely Ignore
+
+**Hardware and Infrastructure Details**
+- Memory requirements, GPU specifications, distributed training architectures
+- These are real constraints, but they're engineering problems, not scientific ones
+- Your role: Ensure your team has access to adequate resources, but trust them on the specifics
+
+**Implementation Details of Algorithms**
+- The inner workings of transformers, BERT architectures, diffusion models
+- How exactly the loss function is computed
+- Specific training schemes and optimization techniques
+
+**Why this is okay:** These are tools. Just as you don't need to understand mass spectrometry physics to interpret proteomics data, you don't need to understand backpropagation details to evaluate AI results. What matters is whether the tool is appropriate for the question.
+
+### You Should Actively Question
+
+**Input and Output Definitions**
+- What exactly goes into the model? How is biological data represented?
+- What comes out? Is it interpretable in biological terms?
+- If there are intermediate outputs (embeddings, attention maps), what do they represent?
+
+**Data Splits: Training vs. Testing**
+- How were training and test sets created? Are they truly independent?
+- Do test examples represent the same distribution as training examples, or something different?
+- For biological data: Are you testing on the same protein families you trained on? Same organisms? Same experimental conditions?
+
+**Performance Evaluation Metrics**
+- What metrics are being used? Are they appropriate for your biological question?
+- Does high accuracy on a test set actually mean the model will work for your application?
+- Are there important failure modes being hidden by aggregate statistics?
+
+**Generalization Capacity**
+- **Generalization** means how well a model performs on data it hasn't seen, especially data that differs from its training set
+- Critical questions:
+  - Will this model work on my lab's data, which may differ from public datasets?
+  - Can it handle rare variants, novel protein families, or unusual experimental conditions?
+  - What are the boundaries of its applicability?
+
+### How to Avoid Sounding Uninformed
+
+**Don't Be Too Pessimistic**
+
+Common mistake: "These models are just black boxes making predictions we can't interpret."
+
+More informed view: Modern AI offers tools to understand what models learn. Embeddings, attention mechanisms, and interpretability methods reveal internal representations. The model isn't just predicting—it's learning a compressed understanding of your data that can be examined and leveraged.
+
+Example: A protein language model's embeddings cluster proteins by function even when never explicitly trained on functional labels. This internal representation has scientific value beyond any specific prediction task.
+
+**Don't Be Too Optimistic**
+
+Common mistake: "The model achieved 95% accuracy, so it's solved the problem."
+
+More informed view: High performance on test data doesn't guarantee real-world utility. Key concerns:
+- **Generalization capacity:** Does the model work on substantially different data than it was trained on?
+- **Dataset bias:** Is the model learning the actual biological signal or spurious correlations in training data?
+- **Robustness:** How does performance degrade with noisy data, edge cases, or distribution shifts?
+
+Example: A model trained on proteins from model organisms might fail on proteins from extremophiles. A model trained on high-quality crystal structures might struggle with cryo-EM data.
+
+**The Balanced Perspective**
+
+AI models are powerful tools that can discover patterns humans miss, but they're not magic. They have well-defined capabilities and limitations. Your job as a PI is to ensure the AI approach matches the biological question, the validation is rigorous, and the claims are appropriately scoped.
+
+---
