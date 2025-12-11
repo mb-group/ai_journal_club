@@ -14,7 +14,7 @@ Understanding AI terminology is essential for effective communication with compu
 
 Content coming soon...
 
-### Protein Language Models (pLMs)
+### Protein Language Models (pLMs). virtual cell.
 
 Content coming soon...
 
@@ -45,7 +45,17 @@ Content coming soon...
 ### Embeddings
 
 Content coming soon...
+Model architecture: The structure of a neural network, including layers, types (e.g., CNN, Transformer), and how data flows through it. 
 
+Training behavior/scheme: The process of feeding labeled data to an AI model so it can learn patterns and adjust its parameters. 
+
+Evaluation behavior/scheme: The set of methods and metrics used to assess model performance, such as accuracy, AUROC, or precision-recall. 
+
+Inference behavior/scheme: The process of using a trained model to make predictions on new, unseen data. 
+
+State-of-the-art: The most advanced or highest-performing models or techniques available in the field. 
+
+Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models. 
 ---
 
 ## Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations
