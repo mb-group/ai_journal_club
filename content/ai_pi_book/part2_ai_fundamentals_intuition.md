@@ -197,6 +197,8 @@ More informed view: High performance on test data doesn't guarantee real-world u
 - **Generalization capacity:** Does the model work on substantially different data than it was trained on?
 - **Dataset bias:** Is the model learning the actual biological signal or spurious correlations in training data?
 - **Robustness:** How does performance degrade with noisy data, edge cases, or distribution shifts?
+- **Model design assumptions:** Every model architecture carries implicit assumptions about the data and problem structure. Model designers don't necessarily know best how to align these assumptions with real biology problems. AI is not one thing—especially for biology, each problem deserves its own thoughtfully designed model.
+
 
 Example: A model trained on proteins from model organisms might fail on proteins from extremophiles. A model trained on high-quality crystal structures might struggle with cryo-EM data.
 
