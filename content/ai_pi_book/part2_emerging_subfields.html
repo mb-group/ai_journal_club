@@ -259,9 +259,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../neural_sci_book/neural_sci_book.html">Principles of Neural Science and AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../drug_discovery_book/drug_discovery_book.html">Drug Discovery &amp; Development Book</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ai_pi_book.html">The AI Book for PI in Biology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="orientation_what_is_a_model.html">What’s a Model?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation_what_is_a_model.html">Understanding “Models”: From Biology to Deep Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_training_vs_inference_vs_deployment.html">Training vs. Inference vs. Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">AI in Biology vs. ChatGPT vs. AlphaFold 1/2/3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_catch_up_jargons.html">Catch Up on the Jargons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_key_domains.html">Key Domains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
@@ -491,6 +491,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-mechanisms-and-visualization">Attention Mechanisms and Visualization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-analysis">Feature Importance Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-interpretability">Mechanistic Interpretability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-interpretability-actionable">Making Interpretability Actionable</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-adaptation-and-transfer-learning">Domain Adaptation and Transfer Learning</a><ul class="nav section-nav flex-column">
@@ -522,24 +523,104 @@ document.write(`
 <p class="admonition-title">Overview</p>
 <p>Explore emerging subfields in AI that are particularly relevant for biological research. These areas may not yet be mainstream but show significant promise for advancing scientific understanding.</p>
 </div>
+<div class="warning admonition">
+<p class="admonition-title">Important Note</p>
+<p>These fields are emerging, which means they may not yet have mature, widely usable tools or established best practices. However, being aware of these developments is valuable—it helps you avoid both over-pessimism (dismissing AI as just a black box that can’t generalize) and over-optimism (assuming high test accuracy guarantees real-world success). Understanding these active research areas gives you a more nuanced perspective on AI’s current capabilities and limitations.</p>
+</div>
 <hr class="docutils" />
 <section id="out-of-distribution-generalization">
 <h2>Out-of-Distribution Generalization<a class="headerlink" href="#out-of-distribution-generalization" title="Link to this heading">#</a></h2>
 <section id="the-challenge">
 <h3>The Challenge<a class="headerlink" href="#the-challenge" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p>Standard machine learning assumes that training and test data come from the same distribution. But in biology, this assumption often breaks down:</p>
+<ul class="simple">
+<li><p>Training on human proteins, testing on bacterial proteins</p></li>
+<li><p>Learning from healthy tissue samples, applying to disease states</p></li>
+<li><p>Models trained on one microscopy technique applied to another</p></li>
+<li><p>Data from one lab’s protocols used to predict outcomes in another lab</p></li>
+</ul>
+<p><strong>Out-of-distribution (OOD) generalization</strong> addresses the fundamental question: How can models perform well when real-world conditions differ from training conditions?</p>
+<p>This is not just about “generalization” in the traditional ML sense (performing well on held-out test data from the same distribution). OOD generalization asks models to work on fundamentally different data distributions—a much harder problem.</p>
 </section>
 <section id="why-it-matters-for-biology">
 <h3>Why It Matters for Biology<a class="headerlink" href="#why-it-matters-for-biology" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p>Biology is inherently diverse and context-dependent, making OOD generalization critical:</p>
+<p><strong>Evolutionary Diversity</strong></p>
+<ul class="simple">
+<li><p>Organisms span vast evolutionary distances with different biochemical solutions to similar problems</p></li>
+<li><p>A model trained on eukaryotic proteins may encounter entirely novel structural motifs in archaea</p></li>
+</ul>
+<p><strong>Experimental Heterogeneity</strong></p>
+<ul class="simple">
+<li><p>Different labs use different protocols, instruments, and sample preparation methods</p></li>
+<li><p>Batch effects, technical artifacts, and systematic differences create distributional shifts</p></li>
+</ul>
+<p><strong>Rare Events and Edge Cases</strong></p>
+<ul class="simple">
+<li><p>Disease-causing mutations are rare in training data but critically important</p></li>
+<li><p>Novel drug scaffolds or synthetic biology designs lie outside the training distribution</p></li>
+</ul>
+<p><strong>Dynamic Biological Systems</strong></p>
+<ul class="simple">
+<li><p>Cellular states change with development, disease progression, and environmental conditions</p></li>
+<li><p>Models trained on one state may fail to capture others</p></li>
+</ul>
 </section>
 <section id="current-approaches">
 <h3>Current Approaches<a class="headerlink" href="#current-approaches" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>Domain Invariant Representations</strong></p>
+<ul class="simple">
+<li><p>Learn features that remain stable across different domains (e.g., different cell types or experimental conditions)</p></li>
+<li><p>Example: Train a model to recognize cell states using features that work across multiple imaging modalities</p></li>
+</ul>
+<p><strong>Invariant Risk Minimization (IRM)</strong></p>
+<ul class="simple">
+<li><p>Explicitly optimize for predictors that work across multiple training environments</p></li>
+<li><p>Forces the model to rely on causal features rather than spurious correlations</p></li>
+</ul>
+<p><strong>Data Augmentation for Robustness</strong></p>
+<ul class="simple">
+<li><p>Systematically perturb training data to expose models to variations they’ll encounter in deployment</p></li>
+<li><p>For microscopy: simulate different noise levels, contrast variations, and optical aberrations</p></li>
+<li><p>For sequences: introduce realistic mutations, deletions, or modifications</p></li>
+</ul>
+<p><strong>Meta-Learning (Learning to Learn)</strong></p>
+<ul class="simple">
+<li><p>Train models to quickly adapt to new distributions with minimal additional data</p></li>
+<li><p>Particularly useful when you can collect small amounts of data from new contexts</p></li>
+</ul>
+<p><strong>Ensemble Methods</strong></p>
+<ul class="simple">
+<li><p>Combine multiple models trained on different data subsets or with different assumptions</p></li>
+<li><p>Diversity in the ensemble improves robustness to distribution shifts</p></li>
+</ul>
 </section>
 <section id="practical-implications">
 <h3>Practical Implications<a class="headerlink" href="#practical-implications" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>For Experimental Design</strong></p>
+<ul class="simple">
+<li><p>Deliberately create training data that spans expected variation in deployment</p></li>
+<li><p>Include multiple labs, techniques, or biological contexts in your training set when possible</p></li>
+<li><p>Test models on intentionally different distributions, not just random hold-outs</p></li>
+</ul>
+<p><strong>For Model Evaluation</strong></p>
+<ul class="simple">
+<li><p>Don’t just report accuracy on a test set—evaluate on multiple OOD test sets</p></li>
+<li><p>Measure performance degradation as test data becomes increasingly different from training data</p></li>
+<li><p>Identify specific types of distribution shift where your model fails</p></li>
+</ul>
+<p><strong>Red Flags in Papers</strong></p>
+<ul class="simple">
+<li><p>Training and testing on data from the same source without cross-validation across sources</p></li>
+<li><p>High accuracy claims without examining performance on different biological contexts</p></li>
+<li><p>No analysis of what happens when the model encounters novel conditions</p></li>
+</ul>
+<p><strong>Building Trust</strong></p>
+<ul class="simple">
+<li><p>Explicitly characterize the distribution your model was trained on</p></li>
+<li><p>Define the “applicability domain”—where you expect the model to work</p></li>
+<li><p>Test boundary conditions and report failure modes</p></li>
+</ul>
 </section>
 </section>
 <hr class="docutils" />
@@ -547,19 +628,117 @@ document.write(`
 <h2>Interpretability Techniques<a class="headerlink" href="#interpretability-techniques" title="Link to this heading">#</a></h2>
 <section id="the-black-box-problem">
 <h3>The Black Box Problem<a class="headerlink" href="#the-black-box-problem" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p>Deep learning models are often criticized as “black boxes”—they make predictions, but we don’t understand why. For biology, this is more than an academic concern:</p>
+<p><strong>Scientific Understanding</strong></p>
+<ul class="simple">
+<li><p>We don’t just want predictions; we want to understand biological mechanisms</p></li>
+<li><p>A model that predicts protein function without explaining how is scientifically unsatisfying</p></li>
+<li><p>Interpretability bridges the gap between prediction and understanding</p></li>
+</ul>
+<p><strong>Trust and Validation</strong></p>
+<ul class="simple">
+<li><p>Without knowing what the model learned, how do we know it’s not exploiting artifacts?</p></li>
+<li><p>Interpretability helps distinguish genuine biological signal from spurious correlations</p></li>
+<li><p>Example: A model might predict disease from chest X-rays by detecting the hospital’s scanner type, not actual pathology</p></li>
+</ul>
+<p><strong>Hypothesis Generation</strong></p>
+<ul class="simple">
+<li><p>Interpretable models reveal which features drive predictions</p></li>
+<li><p>These insights can guide new experiments and mechanistic studies</p></li>
+<li><p>The model becomes a tool for scientific discovery, not just prediction</p></li>
+</ul>
 </section>
 <section id="attention-mechanisms-and-visualization">
 <h3>Attention Mechanisms and Visualization<a class="headerlink" href="#attention-mechanisms-and-visualization" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>Attention Maps</strong></p>
+<p>Modern architectures like Transformers use attention mechanisms that can be visualized:</p>
+<ul class="simple">
+<li><p>Shows which parts of the input the model “focuses on” when making predictions</p></li>
+<li><p>For protein sequences: which amino acids or regions are most important?</p></li>
+<li><p>For microscopy images: which cellular structures drive the classification?</p></li>
+</ul>
+<p><strong>Practical use:</strong> Attention maps can reveal biologically meaningful patterns:</p>
+<ul class="simple">
+<li><p>Conservation of attention on functionally important residues</p></li>
+<li><p>Co-attention between interacting protein regions</p></li>
+<li><p>Focus on subcellular structures known to be disease-relevant</p></li>
+</ul>
+<p><strong>Limitations:</strong> Attention ≠ explanation. High attention doesn’t necessarily mean causal importance, just that the model uses that information.</p>
+<p><strong>Embedding Visualizations</strong></p>
+<p>Models learn high-dimensional representations (embeddings) of inputs. Visualization techniques like t-SNE or UMAP project these into 2D or 3D:</p>
+<ul class="simple">
+<li><p>Cluster proteins by learned similarity</p></li>
+<li><p>Reveal the model’s internal organization of biological knowledge</p></li>
+<li><p>Identify outliers or novel categories</p></li>
+</ul>
+<p><strong>Example:</strong> Protein language model embeddings naturally cluster by protein family, even without explicit family labels during training—suggesting the model learned evolutionary relationships.</p>
 </section>
 <section id="feature-importance-analysis">
 <h3>Feature Importance Analysis<a class="headerlink" href="#feature-importance-analysis" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>Gradient-Based Methods</strong></p>
+<p>Calculate how much the output changes when you perturb each input feature:</p>
+<ul class="simple">
+<li><p><strong>Saliency maps:</strong> Which pixels in an image are most important?</p></li>
+<li><p><strong>Integrated gradients:</strong> More robust version that accounts for the full path from baseline to input</p></li>
+<li><p>Useful for identifying critical amino acids in sequences or regions in images</p></li>
+</ul>
+<p><strong>Perturbation-Based Methods</strong></p>
+<p>Directly test what happens when you modify inputs:</p>
+<ul class="simple">
+<li><p><strong>Ablation studies:</strong> Remove features and measure performance drop</p></li>
+<li><p><strong>In silico mutagenesis:</strong> For proteins, mutate each position and observe prediction changes</p></li>
+<li><p><strong>SHAP (SHapley Additive exPlanations):</strong> Rigorously quantifies each feature’s contribution using game theory</p></li>
+</ul>
+<p><strong>Practical application:</strong></p>
+<ul class="simple">
+<li><p>Identify which residues are critical for predicted enzyme activity</p></li>
+<li><p>Determine which experimental measurements are redundant vs. essential</p></li>
+<li><p>Guide targeted mutagenesis experiments</p></li>
+</ul>
 </section>
 <section id="mechanistic-interpretability">
 <h3>Mechanistic Interpretability<a class="headerlink" href="#mechanistic-interpretability" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p>An emerging field focused on understanding the internal computations of neural networks:</p>
+<p><strong>Circuit Analysis</strong></p>
+<ul class="simple">
+<li><p>Identify specific “circuits” (sub-networks) responsible for particular computations</p></li>
+<li><p>Example: Which neurons detect specific protein motifs? Which layers integrate multi-scale information?</p></li>
+<li><p>Goes beyond “what features matter” to “how does the model process information?”</p></li>
+</ul>
+<p><strong>Probing Tasks</strong></p>
+<ul class="simple">
+<li><p>Train simple classifiers on intermediate representations to ask: “What information is encoded at this layer?”</p></li>
+<li><p>Example: Do protein embeddings encode secondary structure? Solvent accessibility? Evolutionary information?</p></li>
+<li><p>Reveals what knowledge the model has learned, even if not directly used for the final prediction</p></li>
+</ul>
+<p><strong>Concept Activation Vectors (CAVs)</strong></p>
+<ul class="simple">
+<li><p>Define interpretable concepts (e.g., “alpha helix”, “hydrophobic”, “membrane-spanning”)</p></li>
+<li><p>Measure how much these concepts activate in the model’s internal representations</p></li>
+<li><p>Test whether the model’s reasoning aligns with biological concepts humans understand</p></li>
+</ul>
+</section>
+<section id="making-interpretability-actionable">
+<h3>Making Interpretability Actionable<a class="headerlink" href="#making-interpretability-actionable" title="Link to this heading">#</a></h3>
+<p><strong>For Model Development</strong></p>
+<ul class="simple">
+<li><p>Use interpretability tools during development to debug spurious correlations</p></li>
+<li><p>Verify that the model uses biologically plausible features</p></li>
+<li><p>Iterate on architecture and training to improve both performance and interpretability</p></li>
+</ul>
+<p><strong>For Publication</strong></p>
+<ul class="simple">
+<li><p>Include interpretability analyses alongside performance metrics</p></li>
+<li><p>Show what biological features the model relies on</p></li>
+<li><p>Demonstrate that predictions align with domain knowledge</p></li>
+</ul>
+<p><strong>For Experimental Follow-Up</strong></p>
+<ul class="simple">
+<li><p>Use feature importance to prioritize mutations or perturbations for experimental validation</p></li>
+<li><p>Generate testable hypotheses from attention patterns or learned representations</p></li>
+<li><p>Let model interpretations guide mechanistic studies</p></li>
+</ul>
+<p><strong>Caution:</strong> Interpretability tools are themselves imperfect. Different methods can give different answers. Use multiple approaches and validate interpretations against biological knowledge.</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -567,15 +746,116 @@ document.write(`
 <h2>Domain Adaptation and Transfer Learning<a class="headerlink" href="#domain-adaptation-and-transfer-learning" title="Link to this heading">#</a></h2>
 <section id="learning-across-contexts">
 <h3>Learning Across Contexts<a class="headerlink" href="#learning-across-contexts" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>The Core Idea</strong></p>
+<p>You have a model trained on abundant data from one context (source domain) and want to apply it to a related but different context (target domain) where you have limited data.</p>
+<p>Classic examples in biology:</p>
+<ul class="simple">
+<li><p>Model trained on mouse data, applied to human data</p></li>
+<li><p>Model trained on one cell type, adapted to another</p></li>
+<li><p>Model trained on in vitro experiments, applied to in vivo conditions</p></li>
+</ul>
+<p><strong>Why This Matters</strong></p>
+<p>Biology is context-dependent, but data is unevenly distributed:</p>
+<ul class="simple">
+<li><p>Some organisms, cell types, and conditions are well-studied with abundant data</p></li>
+<li><p>Others are rare, difficult to study, or newly discovered</p></li>
+<li><p>Transfer learning leverages knowledge from data-rich domains to inform data-poor ones</p></li>
+</ul>
+<p><strong>Domain Adaptation Strategies</strong></p>
+<p><strong>Fine-Tuning</strong></p>
+<ul class="simple">
+<li><p>Start with a pre-trained model</p></li>
+<li><p>Continue training on target domain data with a smaller learning rate</p></li>
+<li><p>The model adapts while retaining general knowledge from pre-training</p></li>
+<li><p>Works best when source and target domains share underlying patterns</p></li>
+</ul>
+<p><strong>Domain-Adversarial Training</strong></p>
+<ul class="simple">
+<li><p>Train the model to make good predictions while simultaneously learning representations that are invariant to domain</p></li>
+<li><p>Forces the model to learn features that work across both source and target domains</p></li>
+<li><p>Useful when you want a single model that works across multiple contexts</p></li>
+</ul>
+<p><strong>Feature Alignment</strong></p>
+<ul class="simple">
+<li><p>Explicitly align the distribution of learned features between source and target domains</p></li>
+<li><p>Reduces the “distribution shift” that causes performance degradation</p></li>
+<li><p>Can work with unlabeled target domain data</p></li>
+</ul>
 </section>
 <section id="few-shot-learning">
 <h3>Few-Shot Learning<a class="headerlink" href="#few-shot-learning" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>The Challenge</strong></p>
+<p>Traditional deep learning requires thousands of labeled examples. But in biology, labeling is often expensive:</p>
+<ul class="simple">
+<li><p>Expert annotation of microscopy images</p></li>
+<li><p>Experimental validation of protein functions</p></li>
+<li><p>Clinical diagnoses requiring specialist expertise</p></li>
+</ul>
+<p><strong>Few-shot learning</strong> aims to learn from very few examples (sometimes just 1-10 per class).</p>
+<p><strong>Approaches</strong></p>
+<p><strong>Meta-Learning (Learning to Learn)</strong></p>
+<ul class="simple">
+<li><p>Train on many different tasks, each with few examples</p></li>
+<li><p>The model learns a strategy for quickly adapting to new tasks</p></li>
+<li><p>When encountering a new biological problem, it can generalize from just a few examples</p></li>
+</ul>
+<p><strong>Prototypical Networks</strong></p>
+<ul class="simple">
+<li><p>Learn a representation space where examples of the same class cluster together</p></li>
+<li><p>New examples are classified based on proximity to class prototypes</p></li>
+<li><p>Requires few examples per class because it leverages learned similarity metrics</p></li>
+</ul>
+<p><strong>Data Augmentation</strong></p>
+<ul class="simple">
+<li><p>Artificially expand limited labeled data through transformations</p></li>
+<li><p>For microscopy: rotations, flips, noise addition</p></li>
+<li><p>For sequences: back-translation, random mutations</p></li>
+<li><p>Works when augmentations preserve biological meaning</p></li>
+</ul>
+<p><strong>Self-Supervised Pre-Training</strong></p>
+<ul class="simple">
+<li><p>Pre-train on large unlabeled datasets using self-supervised tasks</p></li>
+<li><p>Fine-tune on small labeled dataset for your specific task</p></li>
+<li><p>The pre-training provides general knowledge that reduces labeled data requirements</p></li>
+</ul>
 </section>
 <section id="applications-in-biology">
 <h3>Applications in Biology<a class="headerlink" href="#applications-in-biology" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>Cross-Species Transfer</strong></p>
+<p>Train on model organisms with abundant data, apply to understudied species:</p>
+<ul class="simple">
+<li><p>Protein structure prediction models trained on PDB (biased toward well-studied proteins) adapted to orphan proteins</p></li>
+<li><p>Gene regulatory networks learned from yeast applied to bacteria</p></li>
+<li><p>Important for biodiversity research and extremophile biology</p></li>
+</ul>
+<p><strong>Cross-Modality Transfer</strong></p>
+<p>Knowledge learned from one experimental technique applied to another:</p>
+<ul class="simple">
+<li><p>Models trained on high-resolution microscopy adapted to lower-resolution clinical imaging</p></li>
+<li><p>Sequencing data models adapted to mass spectrometry proteomics</p></li>
+<li><p>Reduces need for massive datasets in each modality</p></li>
+</ul>
+<p><strong>Rare Disease Modeling</strong></p>
+<p>Common diseases have abundant patient data; rare diseases don’t:</p>
+<ul class="simple">
+<li><p>Transfer learning from common diseases to rare ones</p></li>
+<li><p>Few-shot learning for rare mutation effects</p></li>
+<li><p>Critical for precision medicine and orphan drug development</p></li>
+</ul>
+<p><strong>Experimental Design Optimization</strong></p>
+<p>When exploring new experimental conditions:</p>
+<ul class="simple">
+<li><p>Use few-shot learning to quickly assess new protocols</p></li>
+<li><p>Transfer knowledge from previous experiments to new ones</p></li>
+<li><p>Reduces trial-and-error in method development</p></li>
+</ul>
+<p><strong>Practical Tips</strong></p>
+<ul class="simple">
+<li><p><strong>Choose related source domains:</strong> Transfer works best when source and target share underlying biology</p></li>
+<li><p><strong>Don’t over-fine-tune:</strong> Too much training on small target datasets causes overfitting</p></li>
+<li><p><strong>Validate transfer assumptions:</strong> Check if the model actually learned transferable features</p></li>
+<li><p><strong>Consider negative transfer:</strong> Sometimes pre-training hurts performance if domains are too different</p></li>
+</ul>
 </section>
 </section>
 <hr class="docutils" />
@@ -583,22 +863,144 @@ document.write(`
 <h2>Causal Inference with AI<a class="headerlink" href="#causal-inference-with-ai" title="Link to this heading">#</a></h2>
 <section id="beyond-correlation">
 <h3>Beyond Correlation<a class="headerlink" href="#beyond-correlation" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>The Correlation vs. Causation Problem</strong></p>
+<p>Traditional machine learning excels at finding correlations: patterns that co-occur in data. But correlation doesn’t imply causation:</p>
+<ul class="simple">
+<li><p>Gene X is upregulated in disease → Does it cause disease, or is it a response?</p></li>
+<li><p>Protein A co-localizes with Protein B → Are they functionally interacting, or independently responding to the same signal?</p></li>
+<li><p>Treatment T correlates with outcome O → Is T effective, or do healthier patients simply receive it more?</p></li>
+</ul>
+<p>For biology, understanding causation is often the ultimate goal:</p>
+<ul class="simple">
+<li><p><strong>Mechanism discovery:</strong> What causes what in biological systems?</p></li>
+<li><p><strong>Intervention design:</strong> Which targets should we manipulate to achieve desired outcomes?</p></li>
+<li><p><strong>Experimental planning:</strong> What experiments would reveal causal relationships?</p></li>
+</ul>
 </section>
 <section id="causal-discovery-methods">
 <h3>Causal Discovery Methods<a class="headerlink" href="#causal-discovery-methods" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>Randomized Controlled Experiments: The Gold Standard</strong></p>
+<p>Random assignment breaks spurious correlations:</p>
+<ul class="simple">
+<li><p>Random knockout/knockdown experiments</p></li>
+<li><p>Randomized drug trials</p></li>
+<li><p>Controlled perturbation screens</p></li>
+</ul>
+<p>But experiments are expensive, slow, and sometimes impossible (ethical constraints, technical limitations). Can we infer causation from observational data?</p>
+<p><strong>Causal Graphs and Structural Causal Models</strong></p>
+<p>Represent causal relationships as directed graphs:</p>
+<ul class="simple">
+<li><p>Nodes = variables (genes, proteins, phenotypes)</p></li>
+<li><p>Edges = causal influences</p></li>
+<li><p>AI methods can learn these graphs from data</p></li>
+</ul>
+<p><strong>Constraint-Based Methods</strong></p>
+<ul class="simple">
+<li><p>Test conditional independence relationships in data</p></li>
+<li><p>Use independence patterns to infer causal structure</p></li>
+<li><p>Example: If A and B are correlated, but independent when conditioning on C, then C may cause both A and B</p></li>
+</ul>
+<p><strong>Score-Based Methods</strong></p>
+<ul class="simple">
+<li><p>Assign scores to different causal graph structures</p></li>
+<li><p>Search for the graph that best explains observed data</p></li>
+<li><p>Bayesian approaches can quantify uncertainty in causal relationships</p></li>
+</ul>
+<p><strong>Functional Causal Models</strong></p>
+<ul class="simple">
+<li><p>Assume specific functional relationships (linear, additive noise, etc.)</p></li>
+<li><p>Use properties of these functions to identify causal directions</p></li>
+<li><p>Example: If X causes Y through an additive noise model, you can sometimes distinguish X→Y from Y→X statistically</p></li>
+</ul>
+<p><strong>Granger Causality for Time Series</strong></p>
+<p>For temporal data (development, disease progression, dynamic signaling):</p>
+<ul class="simple">
+<li><p>If past values of X help predict future values of Y (beyond what Y’s own past predicts), then X “Granger-causes” Y</p></li>
+<li><p>Useful for gene regulatory networks, signaling cascades, ecological dynamics</p></li>
+<li><p>Caveat: Granger causality is about predictive relationships, not necessarily mechanistic causation</p></li>
+</ul>
+<p><strong>Deep Learning for Causal Discovery</strong></p>
+<p>Modern AI approaches:</p>
+<ul class="simple">
+<li><p><strong>Neural causal models:</strong> Use neural networks to learn non-linear causal relationships</p></li>
+<li><p><strong>Variational inference:</strong> Learn distributions over possible causal graphs</p></li>
+<li><p><strong>Counterfactual reasoning:</strong> Train models to answer “what if” questions</p></li>
+</ul>
 </section>
 <section id="integration-with-experimental-design">
 <h3>Integration with Experimental Design<a class="headerlink" href="#integration-with-experimental-design" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p><strong>Active Learning for Causal Discovery</strong></p>
+<p>AI can suggest which experiments would most efficiently reveal causal relationships:</p>
+<ul class="simple">
+<li><p>Identify interventions that discriminate between competing causal hypotheses</p></li>
+<li><p>Prioritize perturbations with maximum information gain</p></li>
+<li><p>Closes the loop between computational prediction and experimental validation</p></li>
+</ul>
+<p><strong>Example workflow:</strong></p>
+<ol class="arabic simple">
+<li><p>Learn preliminary causal graph from observational data</p></li>
+<li><p>Model predicts which perturbations would resolve ambiguities</p></li>
+<li><p>Perform suggested experiments</p></li>
+<li><p>Update causal model with new data</p></li>
+<li><p>Iterate until confident in causal structure</p></li>
+</ol>
+<p><strong>Combining Observational and Interventional Data</strong></p>
+<p>Modern methods integrate both data types:</p>
+<ul class="simple">
+<li><p>Observational data (omics, imaging, clinical records) provides correlations</p></li>
+<li><p>Interventional data (perturbation screens, CRISPR, drug treatments) confirms causation</p></li>
+<li><p>Joint modeling leverages strengths of both</p></li>
+</ul>
+<p><strong>Applications in Biology</strong></p>
+<p><strong>Gene Regulatory Network Inference</strong></p>
+<ul class="simple">
+<li><p>Identify which transcription factors regulate which genes</p></li>
+<li><p>Distinguish direct regulation from indirect effects</p></li>
+<li><p>Guide targeted knockdown/knockout experiments</p></li>
+</ul>
+<p><strong>Drug Target Identification</strong></p>
+<ul class="simple">
+<li><p>Separate causal disease drivers from downstream effects</p></li>
+<li><p>Predict intervention outcomes before expensive trials</p></li>
+<li><p>Identify unexpected causal pathways (drug repurposing opportunities)</p></li>
+</ul>
+<p><strong>Systems Biology</strong></p>
+<ul class="simple">
+<li><p>Map causal relationships in signaling networks</p></li>
+<li><p>Understand metabolic pathway regulation</p></li>
+<li><p>Predict phenotypic effects of genetic perturbations</p></li>
+</ul>
+<p><strong>Precision Medicine</strong></p>
+<ul class="simple">
+<li><p>Identify causal factors for individual patient outcomes</p></li>
+<li><p>Predict treatment responses based on causal mechanisms</p></li>
+<li><p>Personalize interventions to individual causal profiles</p></li>
+</ul>
+<p><strong>Practical Considerations</strong></p>
+<p><strong>Causal discovery has strong assumptions:</strong></p>
+<ul class="simple">
+<li><p>Causal sufficiency (all relevant variables are measured)</p></li>
+<li><p>Faithfulness (causal structure is reflected in statistical patterns)</p></li>
+<li><p>Correct functional form (if assuming specific models)</p></li>
+</ul>
+<p><strong>Validate causal claims:</strong></p>
+<ul class="simple">
+<li><p>Use multiple causal discovery methods</p></li>
+<li><p>Compare inferred causation with known biology</p></li>
+<li><p>Test predictions with targeted experiments</p></li>
+<li><p>Be skeptical of surprising causal claims without experimental confirmation</p></li>
+</ul>
+<p><strong>Don’t oversell:</strong> AI can suggest causal hypotheses and prioritize experiments, but experimental validation remains essential for confirming causation in biology.</p>
 <hr class="docutils" />
 <div class="tip admonition">
 <p class="admonition-title">Key Takeaways</p>
 <ul class="simple">
-<li><p>Out-of-distribution generalization is critical for applying AI to new biological contexts</p></li>
-<li><p>Interpretability techniques help build trust and extract scientific insights</p></li>
-<li><p>Emerging subfields offer solutions to long-standing challenges in biological AI</p></li>
+<li><p><strong>Out-of-distribution generalization</strong> is critical for applying AI across diverse biological contexts—test your models on intentionally different data distributions</p></li>
+<li><p><strong>Interpretability techniques</strong> bridge prediction and understanding—use attention maps, feature importance, and mechanistic analysis to extract scientific insights</p></li>
+<li><p><strong>Transfer learning and domain adaptation</strong> leverage knowledge from data-rich domains to inform data-poor ones—essential for rare diseases, understudied organisms, and new experimental modalities</p></li>
+<li><p><strong>Few-shot learning</strong> addresses the labeled data bottleneck—meta-learning and self-supervised pre-training enable learning from limited examples</p></li>
+<li><p><strong>Causal inference with AI</strong> goes beyond correlation to mechanism—combines observational data, interventional experiments, and computational modeling to reveal causal relationships</p></li>
+<li><p>These emerging subfields are not just technical advances—they address fundamental challenges in applying AI to biology’s diversity, complexity, and experimental constraints</p></li>
 </ul>
 </div>
 </section>
@@ -681,6 +1083,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-mechanisms-and-visualization">Attention Mechanisms and Visualization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-analysis">Feature Importance Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-interpretability">Mechanistic Interpretability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-interpretability-actionable">Making Interpretability Actionable</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-adaptation-and-transfer-learning">Domain Adaptation and Transfer Learning</a><ul class="nav section-nav flex-column">

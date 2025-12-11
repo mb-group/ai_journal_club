@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Key Domains" href="part1_key_domains.html" />
-    <link rel="prev" title="AI in Biology vs. ChatGPT vs. AlphaFold 1/2/3" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html" />
+    <link rel="prev" title="Are ChatGPT and Protein Modeling AI the Same?" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -259,9 +259,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../neural_sci_book/neural_sci_book.html">Principles of Neural Science and AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../drug_discovery_book/drug_discovery_book.html">Drug Discovery &amp; Development Book</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ai_pi_book.html">The AI Book for PI in Biology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="orientation_what_is_a_model.html">What’s a Model?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation_what_is_a_model.html">Understanding “Models”: From Biology to Deep Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_training_vs_inference_vs_deployment.html">Training vs. Inference vs. Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">AI in Biology vs. ChatGPT vs. AlphaFold 1/2/3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Catch Up on the Jargons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_key_domains.html">Key Domains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
@@ -481,7 +481,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-must-know-models">The Must-Know Models</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models">Foundation Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models-plms">Protein Language Models (pLMs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models-plms-virtual-cell">Protein Language Models (pLMs). virtual cell.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vision-models">Vision Models</a></li>
 </ul>
 </li>
@@ -493,6 +493,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings">Embeddings</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models">Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trends-buzz-concepts-vs-reality-performance-assumptions-limitations">Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-hype-cycle">Understanding the Hype Cycle</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics-that-matter">Performance Metrics That Matter</a></li>
@@ -524,8 +525,8 @@ document.write(`
 <h3>Foundation Models<a class="headerlink" href="#foundation-models" title="Link to this heading">#</a></h3>
 <p>Content coming soon…</p>
 </section>
-<section id="protein-language-models-plms">
-<h3>Protein Language Models (pLMs)<a class="headerlink" href="#protein-language-models-plms" title="Link to this heading">#</a></h3>
+<section id="protein-language-models-plms-virtual-cell">
+<h3>Protein Language Models (pLMs). virtual cell.<a class="headerlink" href="#protein-language-models-plms-virtual-cell" title="Link to this heading">#</a></h3>
 <p>Content coming soon…</p>
 </section>
 <section id="vision-models">
@@ -554,10 +555,17 @@ document.write(`
 </section>
 <section id="embeddings">
 <h3>Embeddings<a class="headerlink" href="#embeddings" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<p>Content coming soon…
+Model architecture: The structure of a neural network, including layers, types (e.g., CNN, Transformer), and how data flows through it.</p>
+<p>Training behavior/scheme: The process of feeding labeled data to an AI model so it can learn patterns and adjust its parameters.</p>
+<p>Evaluation behavior/scheme: The set of methods and metrics used to assess model performance, such as accuracy, AUROC, or precision-recall.</p>
+<p>Inference behavior/scheme: The process of using a trained model to make predictions on new, unseen data.</p>
+<p>State-of-the-art: The most advanced or highest-performing models or techniques available in the field.</p>
 </section>
 </section>
-<hr class="docutils" />
+<section id="embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models">
+<h2>Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models.<a class="headerlink" href="#embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models" title="Link to this heading">#</a></h2>
+</section>
 <section id="trends-buzz-concepts-vs-reality-performance-assumptions-limitations">
 <h2>Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations<a class="headerlink" href="#trends-buzz-concepts-vs-reality-performance-assumptions-limitations" title="Link to this heading">#</a></h2>
 <section id="understanding-the-hype-cycle">
@@ -624,7 +632,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AI in Biology vs. ChatGPT vs. AlphaFold 1/2/3</p>
+        <p class="prev-next-title">Are ChatGPT and Protein Modeling AI the Same?</p>
       </div>
     </a>
     <a class="right-next"
@@ -654,7 +662,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-must-know-models">The Must-Know Models</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models">Foundation Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models-plms">Protein Language Models (pLMs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models-plms-virtual-cell">Protein Language Models (pLMs). virtual cell.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vision-models">Vision Models</a></li>
 </ul>
 </li>
@@ -666,6 +674,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings">Embeddings</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models">Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trends-buzz-concepts-vs-reality-performance-assumptions-limitations">Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-hype-cycle">Understanding the Hype Cycle</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics-that-matter">Performance Metrics That Matter</a></li>
