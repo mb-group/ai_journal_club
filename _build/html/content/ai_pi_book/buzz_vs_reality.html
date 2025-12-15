@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations &#8212; Babu group AI journal club</title>
+    <title>Trends, Buzzwords, and Reality: What These Concepts Actually Mean for Biology &#8212; Babu group AI journal club</title>
   
   
   
@@ -264,8 +264,9 @@
 <li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_jargons_with_fixed_meanings.html">Jargons with Community-Agreed Fixed Meanings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_must_know_models.html">The Must-Know Models</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Trends, Buzzwords, and Reality: What These Concepts <em>Actually</em> Mean for Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part2_why_modern_ai_feels_alien.html">Why Modern AI Feels Alien (Even With Statistical and ML Background)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_emerging_subfields.html">Going Deeper: Less-Known but Promisingly Emerging Subfields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_browse_by_catalog.html">Browse by Catalog: Our Curated Collection of Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_design_your_own.html">When You Want to Design Your Own</a></li>
@@ -470,7 +471,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations</h1>
+    <h1>Trends, Buzzwords, and Reality: What These Concepts Actually Mean for Biology</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -480,10 +481,41 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-hype-cycle">Understanding the Hype Cycle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics-that-matter">Performance Metrics That Matter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-assumptions">Hidden Assumptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-limitations">Practical Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models-plms"><strong>Protein Language Models (pLMs)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-good-wish"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-impressive-parts-that-make-it-a-buzz"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-in-a-realistic-light"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-under-stated"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models-in-biology"><strong>Foundation Models (in Biology)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-cell-models"><strong>Virtual Cell Models</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-for-small-molecule-design"><strong>AI for Small Molecule Design</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-labs-robotic-or-self-driving-labs"><strong>Automated Labs (Robotic or Self-Driving Labs)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -495,23 +527,186 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="trends-buzz-concepts-vs-reality-performance-assumptions-limitations">
-<h1>Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations<a class="headerlink" href="#trends-buzz-concepts-vs-reality-performance-assumptions-limitations" title="Link to this heading">#</a></h1>
-<section id="understanding-the-hype-cycle">
-<h2>Understanding the Hype Cycle<a class="headerlink" href="#understanding-the-hype-cycle" title="Link to this heading">#</a></h2>
-<p>Content coming soon…</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="trends-buzzwords-and-reality-what-these-concepts-actually-mean-for-biology">
+<h1>Trends, Buzzwords, and Reality: What These Concepts <em>Actually</em> Mean for Biology<a class="headerlink" href="#trends-buzzwords-and-reality-what-these-concepts-actually-mean-for-biology" title="Link to this heading">#</a></h1>
+<p>Below are concise, parallel-structured explanations of major AI-for-biology concepts. Each follows the same four-part structure to keep expectations calibrated:<br />
+<strong>(1) the good wish, (2) the solid and impressive parts, (3) the realistic performance, (4) the under-stated assumptions.</strong></p>
+<hr class="docutils" />
+<section id="protein-language-models-plms">
+<h2><strong>Protein Language Models (pLMs)</strong><a class="headerlink" href="#protein-language-models-plms" title="Link to this heading">#</a></h2>
+<section id="the-good-wish">
+<h3><strong>1. The good wish</strong><a class="headerlink" href="#the-good-wish" title="Link to this heading">#</a></h3>
+<p>That protein sequences can be treated like a “language,” allowing models to learn structure, function, and mutational behavior directly from raw sequence—ultimately enabling rational design without experiments.</p>
 </section>
-<section id="performance-metrics-that-matter">
-<h2>Performance Metrics That Matter<a class="headerlink" href="#performance-metrics-that-matter" title="Link to this heading">#</a></h2>
-<p>Content coming soon…</p>
+<section id="solid-impressive-parts-that-make-it-a-buzz">
+<h3><strong>2. Solid, impressive parts that make it a buzz</strong><a class="headerlink" href="#solid-impressive-parts-that-make-it-a-buzz" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>pLMs learn surprisingly rich representations from sequence alone.</p></li>
+<li><p>Capture evolutionary constraints, secondary structure tendencies, and some functional motifs.</p></li>
+<li><p>Enable downstream prediction tasks with minimal labeled data.</p></li>
+<li><p>Strong performance on mutational effect prediction in well-studied proteins.</p></li>
+</ul>
 </section>
-<section id="hidden-assumptions">
-<h2>Hidden Assumptions<a class="headerlink" href="#hidden-assumptions" title="Link to this heading">#</a></h2>
-<p>Content coming soon…</p>
+<section id="performance-in-a-realistic-light">
+<h3><strong>3. Performance in a realistic light</strong><a class="headerlink" href="#performance-in-a-realistic-light" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Excellent at broad patterns, weaker at fine-grained or context-specific biology.</p></li>
+<li><p>Predictions degrade for proteins outside training distribution or with novel folds/functions.</p></li>
+<li><p>Often complementary to—not replacements for—experimental assays.</p></li>
+<li><p>Do not automatically produce actionable design rules.</p></li>
+</ul>
 </section>
-<section id="practical-limitations">
-<h2>Practical Limitations<a class="headerlink" href="#practical-limitations" title="Link to this heading">#</a></h2>
-<p>Content coming soon…</p>
+<section id="assumptions-under-stated">
+<h3><strong>4. Assumptions under-stated</strong><a class="headerlink" href="#assumptions-under-stated" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Assumes “sequence contains everything,” which is not always true (environment, PTMs, complexes).</p></li>
+<li><p>Assumes learned representations generalize to new protein families.</p></li>
+<li><p>Assumes evolutionary sampling biases won’t distort conclusions.</p></li>
+<li><p>Assumes <em>emergent biology</em> ≈ “learnable patterns,” which remains scientifically unvalidated.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="foundation-models-in-biology">
+<h2><strong>Foundation Models (in Biology)</strong><a class="headerlink" href="#foundation-models-in-biology" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3><strong>1. The good wish</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>A single massive model (sequence, structure, multimodal, etc.) that becomes a universal biological intelligence layer—capable of answering diverse tasks with minimal customization.</p>
+</section>
+<section id="id2">
+<h3><strong>2. Solid, impressive parts that make it a buzz</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Scaling laws show bigger models often learn more general features.</p></li>
+<li><p>Multimodal models show impressive zero-shot capabilities.</p></li>
+<li><p>Pretraining reduces the need for task-specific datasets.</p></li>
+<li><p>Rapidly expanding ecosystem and investment.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3><strong>3. Performance in a realistic light</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Excellent on benchmark tasks crafted from public datasets.</p></li>
+<li><p>Much less consistent on <em>novel</em> biological problems where data is sparse or distribution-shifted.</p></li>
+<li><p>Zero-shot performance can look strong in publications but weak when deployed on real lab datasets.</p></li>
+<li><p>Still far from a unified “biology reasoning engine.”</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3><strong>4. Assumptions under-stated</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Assumes bigger = more generalizable, which is unproven for complex biology.</p></li>
+<li><p>Assumes training data diversity captures real biological variability.</p></li>
+<li><p>Assumes transferability across cell types, organisms, and experimental settings.</p></li>
+<li><p>Assumes we understand what the model learns (we do not).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="virtual-cell-models">
+<h2><strong>Virtual Cell Models</strong><a class="headerlink" href="#virtual-cell-models" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3><strong>1. The good wish</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>A computational model of a cell that can simulate gene expression, signaling, metabolic responses, and perturbations—serving as an in silico substitute for wet-lab experiments.<br />
+<strong>This dream has existed for over two decades.</strong></p>
+</section>
+<section id="id6">
+<h3><strong>2. Solid, impressive parts that make it a buzz</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Single-cell and perturbation technologies provide large, structured training data.</p></li>
+<li><p>Models can predict transcriptomic changes under small-molecule perturbations.</p></li>
+<li><p>Early successes in mapping response trajectories and perturbation embeddings.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3><strong>3. Performance in a realistic light</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Currently constrained by data availability: mostly <em>single-cell RNA</em> responses to <em>small molecule perturbations</em>.</p></li>
+<li><p>Predictions often coarse-grained: capture directionality, not mechanism.</p></li>
+<li><p>Do not model proteomics, signaling dynamics, or cellular heterogeneity at mechanistic depth.</p></li>
+<li><p>Struggle with completely unseen perturbations or combinatorial interactions.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3><strong>4. Assumptions under-stated</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Assumes transcriptomics = full cell state (it is not).</p></li>
+<li><p>Assumes perturbation response is predictable from current datasets.</p></li>
+<li><p>Assumes single-cell snapshots approximate dynamic processes.</p></li>
+<li><p>Assumes cell lines/general models transfer to primary cells or in vivo contexts.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ai-for-small-molecule-design">
+<h2><strong>AI for Small Molecule Design</strong><a class="headerlink" href="#ai-for-small-molecule-design" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h3><strong>1. The good wish</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>End-to-end AI that discovers new drugs in silico—optimizing potency, ADMET, selectivity, and synthesizability simultaneously, without requiring large experimental loops.</p>
+</section>
+<section id="id10">
+<h3><strong>2. Solid, impressive parts that make it a buzz</strong><a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Generative models produce chemically valid and novel structures.</p></li>
+<li><p>Can optimize simple objectives (e.g., docking score, predicted activity).</p></li>
+<li><p>Useful for triaging libraries or exploring chemical space.</p></li>
+<li><p>Growing integration with synthesis planning tools.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3><strong>3. Performance in a realistic light</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Handles <strong>single-objective optimization</strong> reasonably well;<br />
+<strong>multi-objective</strong> optimization (potency + ADMET + toxicity + PK) remains extremely difficult.</p></li>
+<li><p>Many generated molecules fail in synthesis, stability, solubility, or off-target profiles.</p></li>
+<li><p>In vitro hit rates are often much lower than conceptual illustrations suggest.</p></li>
+<li><p>Requires tight coupling with medicinal chemistry and experimental validation.</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3><strong>4. Assumptions under-stated</strong><a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Assumes predicted activity correlates with real-world binding/function.</p></li>
+<li><p>Assumes docking/ML scoring functions capture biology’s complexity.</p></li>
+<li><p>Assumes chemical space explored by models aligns with what chemists can synthesize.</p></li>
+<li><p>Assumes AI can infer ADMET/toxicity from very limited data.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="automated-labs-robotic-or-self-driving-labs">
+<h2><strong>Automated Labs (Robotic or Self-Driving Labs)</strong><a class="headerlink" href="#automated-labs-robotic-or-self-driving-labs" title="Link to this heading">#</a></h2>
+<section id="id13">
+<h3><strong>1. The good wish</strong><a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>A fully automated laboratory that designs experiments, runs them robotically, learns from the results, and iterates autonomously—accelerating discovery with minimal human intervention.</p>
+</section>
+<section id="id14">
+<h3><strong>2. Solid, impressive parts that make it a buzz</strong><a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Liquid-handling robots have high precision and throughput.</p></li>
+<li><p>Integration with LIMS enables systematic data capture.</p></li>
+<li><p>Machine learning can help prioritize experiments or design active learning loops.</p></li>
+<li><p>Demonstrated success in narrow, well-defined workflows (e.g., protein engineering, screening).</p></li>
+</ul>
+</section>
+<section id="id15">
+<h3><strong>3. Performance in a realistic light</strong><a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Works best in highly standardized protocols (screening, directed evolution, assay automation).</p></li>
+<li><p>Poor at workflows requiring tacit knowledge, cell handling nuances, or troubleshooting.</p></li>
+<li><p>Experiment design autonomy remains limited: humans still define constraints and goals.</p></li>
+<li><p>Integration challenges (hardware heterogeneity, error handling, QC) limit scalability.</p></li>
+</ul>
+</section>
+<section id="id16">
+<h3><strong>4. Assumptions under-stated</strong><a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Assumes protocols are fully codifiable and robust—which is rare in biology.</p></li>
+<li><p>Assumes lab automation failures are easy to detect and correct.</p></li>
+<li><p>Assumes experimental noise does not break downstream ML loops.</p></li>
+<li><p>Assumes the system can generalize beyond the workflows engineers explicitly set up.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
 </section>
 </section>
 
@@ -579,10 +774,41 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-hype-cycle">Understanding the Hype Cycle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics-that-matter">Performance Metrics That Matter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-assumptions">Hidden Assumptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-limitations">Practical Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models-plms"><strong>Protein Language Models (pLMs)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-good-wish"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-impressive-parts-that-make-it-a-buzz"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-in-a-realistic-light"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-under-stated"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models-in-biology"><strong>Foundation Models (in Biology)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-cell-models"><strong>Virtual Cell Models</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-for-small-molecule-design"><strong>AI for Small Molecule Design</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-labs-robotic-or-self-driving-labs"><strong>Automated Labs (Robotic or Self-Driving Labs)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>1. The good wish</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><strong>2. Solid, impressive parts that make it a buzz</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"><strong>3. Performance in a realistic light</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><strong>4. Assumptions under-stated</strong></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -4,8 +4,7 @@
 
 Content coming soon...
 
-### Protein Language Models (pLMs). virtual cell.
-
+### Protein Language Models (pLMs).
 Content coming soon...
 
 ### Vision Models
