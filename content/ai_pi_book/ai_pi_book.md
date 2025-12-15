@@ -1,12 +1,7 @@
 # The AI Book for PI in Biology
 
-This book provides practical guidance for Principal Investigators (PIs) in biology on integrating artificial intelligence into their research programs.
+This book provides intuitive understanding and practical guidance for Principal Investigators (PIs) in biology on integrating artificial intelligence into their research programs.
 
-```{admonition} Overview
-:class: info
-
-As AI technologies rapidly advance, biological research laboratories face both opportunities and challenges in adopting these tools. This book is designed to help PIs understand, evaluate, and implement AI solutions in their research environments.
-```
 
 ```{admonition} Target Audience
 :class: info
@@ -18,20 +13,14 @@ As AI technologies rapidly advance, biological research laboratories face both o
 
 ---
 
-````{div} full-width
-```{admonition} 📚 What This Book Covers
-:class: dropdown, tip
-This comprehensive guide is organized into four main parts, each designed to support you at different stages of your AI journey.
-```
-````
-
 ## What This Book Covers
 
 ---
 
 ### 🧭 Orientation
 
-```{dropdown} Getting your bearings in the AI landscape
+```{admonition} Getting your bearings in the AI landscape
+:class: tip
 :color: light
 :icon: compass
 
@@ -66,7 +55,7 @@ This comprehensive guide is organized into four main parts, each designed to sup
 ### 🔬 Part II: When You Want to Form Understanding
 
 ```{admonition} The Back Stage: Deeper insights for strategic decisions
-:class: note
+:class: tip
 
 #### [AI fundamentals at intuition level](part2_ai_fundamentals_intuition.md)
 
@@ -83,7 +72,7 @@ This comprehensive guide is organized into four main parts, each designed to sup
 ### 🚀 Part III: When You're Planning to "Do It"
 
 ```{admonition} From planning to action: Practical implementation guidance
-:class: important
+:class: tip
 
 #### When you need something to use
 
@@ -99,7 +88,7 @@ This comprehensive guide is organized into four main parts, each designed to sup
 ### 💡 Part IV: Special Topics in the Spotlight
 
 ```{admonition} Clarity Emerging from Chaos: Deep dives and myth-busting
-:class: seealso
+:class: tip
 
 #### [Case studies](part4_case_studies.md)
 
