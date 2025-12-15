@@ -480,8 +480,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters">Why This Matters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequently-asked-about-jargons">Frequently asked about jargons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-may-find-disappointing-and-frustrating">What you may find disappointing and frustrating</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-machine-learning-deep-learning-and-reinforcement-learning-what-they-actually-mean">AI, Machine Learning, Deep Learning, and Reinforcement Learning — What They Actually Mean</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence-ai"><strong>Artificial Intelligence (AI)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ml"><strong>Machine Learning (ML)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-dl"><strong>Deep Learning (DL)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-rl"><strong>Reinforcement Learning (RL)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sentence-summary"><strong>One-sentence summary</strong></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -495,22 +502,94 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="jargons-with-community-agreed-fixed-meanings">
 <h1>Jargons with Community-Agreed Fixed Meanings<a class="headerlink" href="#jargons-with-community-agreed-fixed-meanings" title="Link to this heading">#</a></h1>
-<section id="why-this-matters">
-<h2>Why This Matters<a class="headerlink" href="#why-this-matters" title="Link to this heading">#</a></h2>
-<p>AI is a field far unestablished than people may assume comparing to disciplines such as physics, chemistry. You may think biology is messy and many new discoveries have not make into the textbook. We are at the age like in the first industrial revolution where steam enginees were changing the world but actually thermal dynamics was not even understood. In AI, there’s not even a wildy acknolwedged textbook. Excitement today, mostly started based on new innovations after 2017. Hence it’s a field where theory falls far behind emperical success. Even the success on why AlphaFold fundamental building blocks works and what protein language model actually learns is still a hot research field. This overall immatureness in contrast to its widely spread buzz lead to many “problems”</p>
+<section id="what-you-may-find-disappointing-and-frustrating">
+<h2>What you may find disappointing and frustrating<a class="headerlink" href="#what-you-may-find-disappointing-and-frustrating" title="Link to this heading">#</a></h2>
+<p>AI is a far less established discipline than many assume—especially when compared with fields such as physics or chemistry. In biology, we often say the discipline is “messy” and that textbooks lag behind discovery; however, AI today is arguably even earlier in its scientific maturity. A historical analogy may help: during the first industrial revolution, steam engines were already transforming society long before the principles of thermodynamics were formally understood. Modern AI is in a similar state. Despite its enormous influence, the field lacks even a widely acknowledged textbook. Much of the excitement today traces back to breakthroughs after 2017, and theory continues to trail substantially behind empirical success. Fundamental questions—such as why the architectural components of AlphaFold work as well as they do, or what protein language models truly learn—remain active areas of research.</p>
+<p>This immaturity, juxtaposed with the overwhelming public buzz surrounding AI, produces several practical challenges for newcomers, especially biologists:</p>
 <ul class="simple">
-<li><p>almost all jargons are set based only community consensus without official definition. such as what’s difference between ai, deep learning, machine learning, neural nets.</p></li>
-<li><p>it’s hard for a layman to get into the field by reading. such as what’s the difference between transformer, diffusion, llm.</p></li>
-<li><p>many questions have no clearn answer. such as why use cnn instead lstm, is transformer always better than simple layer</p></li>
+<li><p>Terminology without formal definitions. Many core terms—AI, machine learning, deep learning, neural networks—are defined only through community convention rather than standardized meaning.</p></li>
+<li><p>Difficult entry by reading. Concepts like transformers vs. diffusion models or LLMs vs. other architectures cannot be understood reliably through passive reading alone, because the literature itself is evolving and inconsistent.</p></li>
+<li><p>No clear answers to seemingly basic questions. Examples include: Why use CNNs instead of LSTMs in certain domains? Are transformers always better? When does a simple model outperform a sophisticated one? In many cases, the field has no settled consensus.</p></li>
 </ul>
-<p>Here we just collect to answer frequently asked about jargons that biologists find bothering them.</p>
+<p>To support biologists entering this rapidly shifting landscape, we compiled a collection of clear, practical explanations for the AI jargons and conceptual distinctions that most frequently cause confusion. This glossary is not meant to formalize the field, but to serve as a reliable, stable reference in an environment where the terminology itself is still evolving.</p>
 </section>
-<section id="frequently-asked-about-jargons">
-<h2>Frequently asked about jargons<a class="headerlink" href="#frequently-asked-about-jargons" title="Link to this heading">#</a></h2>
+<section id="ai-machine-learning-deep-learning-and-reinforcement-learning-what-they-actually-mean">
+<h2>AI, Machine Learning, Deep Learning, and Reinforcement Learning — What They Actually Mean<a class="headerlink" href="#ai-machine-learning-deep-learning-and-reinforcement-learning-what-they-actually-mean" title="Link to this heading">#</a></h2>
+<p>Because AI developed rapidly and without a unifying textbook, many commonly used terms are community conventions rather than precise scientific definitions. Below is a practical, biology-friendly way to understand four of the most frequently confused concepts.</p>
+<hr class="docutils" />
+<section id="artificial-intelligence-ai">
+<h3><strong>Artificial Intelligence (AI)</strong><a class="headerlink" href="#artificial-intelligence-ai" title="Link to this heading">#</a></h3>
+<p><strong>The broadest umbrella.</strong><br />
+“AI” refers to any computational system designed to perform tasks that appear to require reasoning, pattern recognition, or decision-making. It can include:</p>
 <ul class="simple">
-<li><p>AI, ML, DL, RL</p></li>
-<li></li>
+<li><p>Hand-coded rules</p></li>
+<li><p>Classical statistical models</p></li>
+<li><p>Machine learning</p></li>
+<li><p>Modern deep neural networks</p></li>
 </ul>
+<p><strong>In practice:</strong> AI ≈ anything that gives computers behaviors that <em>look</em> intelligent, regardless of how it is implemented.</p>
+</section>
+<hr class="docutils" />
+<section id="machine-learning-ml">
+<h3><strong>Machine Learning (ML)</strong><a class="headerlink" href="#machine-learning-ml" title="Link to this heading">#</a></h3>
+<p><strong>A subset of AI.</strong><br />
+Machine learning refers to methods in which computers <em>learn patterns from data</em> instead of relying on manually written rules.</p>
+<p>ML systems:</p>
+<ul class="simple">
+<li><p>Take data</p></li>
+<li><p>Learn patterns</p></li>
+<li><p>Use those patterns to make predictions or decisions</p></li>
+</ul>
+<p>Examples: logistic regression, random forests, support vector machines, early neural networks.</p>
+<p><strong>Key distinction:</strong> ML requires learning from data; AI does not necessarily.</p>
+</section>
+<hr class="docutils" />
+<section id="deep-learning-dl">
+<h3><strong>Deep Learning (DL)</strong><a class="headerlink" href="#deep-learning-dl" title="Link to this heading">#</a></h3>
+<p><strong>A subset of machine learning.</strong><br />
+Deep learning uses multi-layer (“deep”) neural networks that automatically learn increasingly abstract representations from raw data.</p>
+<p>DL powers nearly all major breakthroughs since 2017:</p>
+<ul class="simple">
+<li><p>Protein language models</p></li>
+<li><p>AlphaFold components</p></li>
+<li><p>Large language models (LLMs)</p></li>
+<li><p>Diffusion models</p></li>
+</ul>
+<p><strong>Why it matters:</strong> DL is not just “bigger ML.” It is more empirical, less theoretically understood, and central to modern AI’s rapid advances—and its instability.</p>
+</section>
+<hr class="docutils" />
+<section id="reinforcement-learning-rl">
+<h3><strong>Reinforcement Learning (RL)</strong><a class="headerlink" href="#reinforcement-learning-rl" title="Link to this heading">#</a></h3>
+<p><strong>A different paradigm of learning.</strong><br />
+Reinforcement learning does not rely on labeled datasets. Instead, an <em>agent</em> interacts with an <em>environment</em> and learns through trial and error to maximize cumulative reward.</p>
+<p>Core components:</p>
+<ul class="simple">
+<li><p><strong>Agent</strong></p></li>
+<li><p><strong>Environment</strong></p></li>
+<li><p><strong>Actions</strong></p></li>
+<li><p><strong>Rewards</strong></p></li>
+</ul>
+<p>RL powers systems like:</p>
+<ul class="simple">
+<li><p>AlphaGo</p></li>
+<li><p>Robotics controllers</p></li>
+<li><p>RLHF (reinforcement learning from human feedback) used in modern LLM alignment</p></li>
+</ul>
+<p><strong>Distinction:</strong><br />
+ML/DL learn from <em>datasets</em>.<br />
+RL learns from <em>experience</em>.</p>
+</section>
+<hr class="docutils" />
+<section id="one-sentence-summary">
+<h3><strong>One-sentence summary</strong><a class="headerlink" href="#one-sentence-summary" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>AI</strong> = the whole space of making machines appear intelligent</p></li>
+<li><p><strong>ML</strong> = AI that learns from data</p></li>
+<li><p><strong>DL</strong> = ML using deep neural networks</p></li>
+<li><p><strong>RL</strong> = learning by interacting with an environment to maximize reward</p></li>
+</ul>
+<hr class="docutils" />
+</section>
 </section>
 </section>
 
@@ -578,8 +657,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters">Why This Matters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequently-asked-about-jargons">Frequently asked about jargons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-may-find-disappointing-and-frustrating">What you may find disappointing and frustrating</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-machine-learning-deep-learning-and-reinforcement-learning-what-they-actually-mean">AI, Machine Learning, Deep Learning, and Reinforcement Learning — What They Actually Mean</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence-ai"><strong>Artificial Intelligence (AI)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ml"><strong>Machine Learning (ML)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-dl"><strong>Deep Learning (DL)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-rl"><strong>Reinforcement Learning (RL)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sentence-summary"><strong>One-sentence summary</strong></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
