@@ -1,6 +1,6 @@
 # The AI Book for PI in Biology
 
-This book provides intuitive understanding and practical guidance for Principal Investigators (PIs) in biology on integrating artificial intelligence into their research programs.
+This book provides intuitive understanding and practical guidance for Principal Investigators (PIs) in biology on integrating artificial intelligence into their research programs and translating their research quesition into an AI task.
 
 
 ```{admonition} Target Audience
@@ -10,6 +10,13 @@ This book provides intuitive understanding and practical guidance for Principal 
 - Group leaders considering AI adoption
 - Senior researchers responsible for lab technology decisions
 ```
+```{admonition} ⚠️ What Is NOT Included: Execution-Level Complexity
+:class: warning
+
+This book intentionally does not cover the technical implementation details that are typically handled by computational team members. Topics outside the scope include infrastructure setup (server configuration, GPU management, system administration), coding specifics , data preprocessing pipelines and training operations (model architecture design, hyperparameter tuning, loss function mathematics). 
+```
+
+
 
 ---
 
@@ -108,12 +115,4 @@ This book provides intuitive understanding and practical guidance for Principal 
 ```
 
 ---
-
-```{admonition} ⚠️ What Is NOT Included: Execution-Level Complexity
-:class: warning
-
-## What Is NOT Included: Execution-Level Complexity
-
-This book intentionally does not cover the technical implementation details that are typically handled by computational team members. Topics outside the scope include infrastructure setup (server configuration, GPU management, system administration), coding specifics (programming syntax, algorithm implementation, debugging), data preprocessing pipelines (cleaning scripts, feature engineering, ETL operations), and training operations (model architecture design, hyperparameter tuning, loss function mathematics). As a PI, your role is to provide strategic direction, secure resources, build teams, and ensure responsible use of AI—not to become a hands-on AI engineer. This book equips you with the knowledge to make informed decisions and effectively communicate with computational team members without requiring deep technical expertise in implementation.
-```
 
