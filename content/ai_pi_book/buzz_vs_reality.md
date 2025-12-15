@@ -6,6 +6,9 @@ Below are concise, parallel-structured explanations of major AI-for-biology conc
 
 ## **Protein Language Models (pLMs)**
 
+### **What are they?**
+Protein Language Models (pLMs) are neural networks trained on millions of protein sequences using techniques adapted from natural language processing. These models learn statistical patterns in amino acid sequences to generate embeddings that capture evolutionary, structural, and functional information without requiring labeled training data or explicit 3D structures.
+
 ### **1. The good wish**  
 That protein sequences can be treated like a “language,” allowing models to learn structure, function, and mutational behavior directly from raw sequence—ultimately enabling rational design without experiments.
 
@@ -30,6 +33,9 @@ That protein sequences can be treated like a “language,” allowing models to 
 ---
 
 ## **Foundation Models (in Biology)**
+
+### **What are they?**
+Foundation models are large-scale pre-trained models designed to serve as general-purpose starting points for diverse downstream tasks. In biology, these models are trained on massive datasets (sequences, structures, images, multi-omics) and can be fine-tuned or prompted for specific applications like function prediction, drug design, or data analysis.
 
 ### **1. The good wish**  
 A single massive model (sequence, structure, multimodal, etc.) that becomes a universal biological intelligence layer—capable of answering diverse tasks with minimal customization.
@@ -56,6 +62,9 @@ A single massive model (sequence, structure, multimodal, etc.) that becomes a un
 
 ## **Virtual Cell Models**
 
+### **What are they?**
+Virtual cell models are computational frameworks that aim to predict cellular behavior—including gene expression changes, signaling responses, and phenotypic outcomes—in response to genetic or chemical perturbations. These models leverage large-scale single-cell data and machine learning to create predictive representations of cellular states and transitions.
+
 ### **1. The good wish**  
 A computational model of a cell that can simulate gene expression, signaling, metabolic responses, and perturbations—serving as an in silico substitute for wet-lab experiments.  
 **This dream has existed for over two decades.**
@@ -80,6 +89,9 @@ A computational model of a cell that can simulate gene expression, signaling, me
 ---
 
 ## **AI for Small Molecule Design**
+
+### **What is it?**
+AI for small molecule design uses machine learning—particularly generative models and predictive scoring functions—to propose novel chemical structures optimized for drug-like properties. These methods integrate molecular representation learning, property prediction, and structure generation to accelerate the discovery and optimization of therapeutic compounds.
 
 ### **1. The good wish**  
 End-to-end AI that discovers new drugs in silico—optimizing potency, ADMET, selectivity, and synthesizability simultaneously, without requiring large experimental loops.
@@ -106,6 +118,9 @@ End-to-end AI that discovers new drugs in silico—optimizing potency, ADMET, se
 ---
 
 ## **Automated Labs (Robotic or Self-Driving Labs)**
+
+### **What are they?**
+Automated labs combine robotics, laboratory automation hardware, and machine learning to execute experimental workflows with minimal human intervention. Self-driving labs extend this concept by integrating AI-driven experiment planning, real-time data analysis, and adaptive optimization loops that autonomously design the next experiments based on previous results.
 
 ### **1. The good wish**  
 A fully automated laboratory that designs experiments, runs them robotically, learns from the results, and iterates autonomously—accelerating discovery with minimal human intervention.
