@@ -42,18 +42,9 @@ This book intentionally does not cover the technical implementation details that
 ```{admonition} The Center Stage: Essential knowledge for every PI
 :class: tip
 
-#### [Catch up on the jargons](part1_catch_up_jargons.md)
+- [The must-know models](part1_must_know_models.md)
+- [Trends/buzz/concepts vs. reality/performance/assumptions/limitations](buzz_vs_reality.md)
 
-- The must-know models
-- Training, pretraining, fine-tuning, prompting, embeddings—all that jazz
-- Trends/buzz/concepts vs. reality/performance/assumptions/limitations
-
-#### [Key domains](part1_key_domains.md)
-
-- Foundation models
-- Protein language models (pLMs)
-- What's already "old" vs. state-of-the-art
-- Publications that made top news
 ```
 
 ---

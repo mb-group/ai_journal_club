@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/orientation_jargons_with_fixed_meanings';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Catch Up on the Jargons" href="part1_catch_up_jargons.html" />
+    <link rel="next" title="The Must-Know Models" href="part1_must_know_models.html" />
     <link rel="prev" title="Are ChatGPT and Protein Modeling AI the Same?" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -263,8 +263,8 @@
 <li class="toctree-l2"><a class="reference internal" href="orientation_training_vs_inference_vs_deployment.html">Training vs. Inference vs. Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Jargons with Community-Agreed Fixed Meanings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="part1_catch_up_jargons.html">Catch Up on the Jargons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="part1_key_domains.html">Key Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part1_must_know_models.html">The Must-Know Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buzz_vs_reality.html">Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_emerging_subfields.html">Going Deeper: Less-Known but Promisingly Emerging Subfields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_browse_by_catalog.html">Browse by Catalog: Our Curated Collection of Tools</a></li>
@@ -480,15 +480,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-may-find-disappointing-and-frustrating">What you may find disappointing and frustrating</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-what-you-may-find-disappointing-and-frustrating">Background: What you may find disappointing and frustrating</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-machine-learning-deep-learning-and-reinforcement-learning-what-they-actually-mean">AI, Machine Learning, Deep Learning, and Reinforcement Learning — What They Actually Mean</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence-ai"><strong>Artificial Intelligence (AI)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ml"><strong>Machine Learning (ML)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-dl"><strong>Deep Learning (DL)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-rl"><strong>Reinforcement Learning (RL)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sentence-summary"><strong>One-sentence summary</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining">Pretraining</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning">Fine-Tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompting">Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings">Embeddings</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models">Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models.</a></li>
 </ul>
             </nav>
         </div>
@@ -502,8 +507,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="jargons-with-community-agreed-fixed-meanings">
 <h1>Jargons with Community-Agreed Fixed Meanings<a class="headerlink" href="#jargons-with-community-agreed-fixed-meanings" title="Link to this heading">#</a></h1>
-<section id="what-you-may-find-disappointing-and-frustrating">
-<h2>What you may find disappointing and frustrating<a class="headerlink" href="#what-you-may-find-disappointing-and-frustrating" title="Link to this heading">#</a></h2>
+<section id="background-what-you-may-find-disappointing-and-frustrating">
+<h2>Background: What you may find disappointing and frustrating<a class="headerlink" href="#background-what-you-may-find-disappointing-and-frustrating" title="Link to this heading">#</a></h2>
 <p>AI is a far less established discipline than many assume—especially when compared with fields such as physics or chemistry. In biology, we often say the discipline is “messy” and that textbooks lag behind discovery; however, AI today is arguably even earlier in its scientific maturity. A historical analogy may help: during the first industrial revolution, steam engines were already transforming society long before the principles of thermodynamics were formally understood. Modern AI is in a similar state. Despite its enormous influence, the field lacks even a widely acknowledged textbook. Much of the excitement today traces back to breakthroughs after 2017, and theory continues to trail substantially behind empirical success. Fundamental questions—such as why the architectural components of AlphaFold work as well as they do, or what protein language models truly learn—remain active areas of research.</p>
 <p>This immaturity, juxtaposed with the overwhelming public buzz surrounding AI, produces several practical challenges for newcomers, especially biologists:</p>
 <ul class="simple">
@@ -588,8 +593,32 @@ RL learns from <em>experience</em>.</p>
 <li><p><strong>DL</strong> = ML using deep neural networks</p></li>
 <li><p><strong>RL</strong> = learning by interacting with an environment to maximize reward</p></li>
 </ul>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
+<section id="pretraining">
+<h3>Pretraining<a class="headerlink" href="#pretraining" title="Link to this heading">#</a></h3>
+<p>Content coming soon…</p>
+</section>
+<section id="fine-tuning">
+<h3>Fine-Tuning<a class="headerlink" href="#fine-tuning" title="Link to this heading">#</a></h3>
+<p>Content coming soon…</p>
+</section>
+<section id="prompting">
+<h3>Prompting<a class="headerlink" href="#prompting" title="Link to this heading">#</a></h3>
+<p>Content coming soon…</p>
+</section>
+<section id="embeddings">
+<h3>Embeddings<a class="headerlink" href="#embeddings" title="Link to this heading">#</a></h3>
+<p>Content coming soon…
+Model architecture: The structure of a neural network, including layers, types (e.g., CNN, Transformer), and how data flows through it.</p>
+<p>Training behavior/scheme: The process of feeding labeled data to an AI model so it can learn patterns and adjust its parameters.</p>
+<p>Evaluation behavior/scheme: The set of methods and metrics used to assess model performance, such as accuracy, AUROC, or precision-recall.</p>
+<p>Inference behavior/scheme: The process of using a trained model to make predictions on new, unseen data.</p>
+<p>State-of-the-art: The most advanced or highest-performing models or techniques available in the field.</p>
+</section>
+</section>
+<section id="embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models">
+<h2>Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models.<a class="headerlink" href="#embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -633,11 +662,11 @@ RL learns from <em>experience</em>.</p>
       </div>
     </a>
     <a class="right-next"
-       href="part1_catch_up_jargons.html"
+       href="part1_must_know_models.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Catch Up on the Jargons</p>
+        <p class="prev-next-title">The Must-Know Models</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -657,15 +686,20 @@ RL learns from <em>experience</em>.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-may-find-disappointing-and-frustrating">What you may find disappointing and frustrating</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-what-you-may-find-disappointing-and-frustrating">Background: What you may find disappointing and frustrating</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-machine-learning-deep-learning-and-reinforcement-learning-what-they-actually-mean">AI, Machine Learning, Deep Learning, and Reinforcement Learning — What They Actually Mean</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence-ai"><strong>Artificial Intelligence (AI)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ml"><strong>Machine Learning (ML)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-dl"><strong>Deep Learning (DL)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-rl"><strong>Reinforcement Learning (RL)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sentence-summary"><strong>One-sentence summary</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining">Pretraining</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning">Fine-Tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompting">Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings">Embeddings</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models">Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models.</a></li>
 </ul>
   </nav></div>
 

@@ -1,6 +1,6 @@
 # Jargons with Community-Agreed Fixed Meanings
 
-## What you may find disappointing and frustrating
+## Background: What you may find disappointing and frustrating
 AI is a far less established discipline than many assume—especially when compared with fields such as physics or chemistry. In biology, we often say the discipline is “messy” and that textbooks lag behind discovery; however, AI today is arguably even earlier in its scientific maturity. A historical analogy may help: during the first industrial revolution, steam engines were already transforming society long before the principles of thermodynamics were formally understood. Modern AI is in a similar state. Despite its enormous influence, the field lacks even a widely acknowledged textbook. Much of the excitement today traces back to breakthroughs after 2017, and theory continues to trail substantially behind empirical success. Fundamental questions—such as why the architectural components of AlphaFold work as well as they do, or what protein language models truly learn—remain active areas of research.
 
 This immaturity, juxtaposed with the overwhelming public buzz surrounding AI, produces several practical challenges for newcomers, especially biologists:
@@ -90,4 +90,34 @@ RL learns from *experience*.
 - **DL** = ML using deep neural networks  
 - **RL** = learning by interacting with an environment to maximize reward  
 
+---
+
+
+
+### Pretraining
+
+Content coming soon...
+
+### Fine-Tuning
+
+Content coming soon...
+
+### Prompting
+
+Content coming soon...
+
+### Embeddings
+
+Content coming soon...
+Model architecture: The structure of a neural network, including layers, types (e.g., CNN, Transformer), and how data flows through it. 
+
+Training behavior/scheme: The process of feeding labeled data to an AI model so it can learn patterns and adjust its parameters. 
+
+Evaluation behavior/scheme: The set of methods and metrics used to assess model performance, such as accuracy, AUROC, or precision-recall. 
+
+Inference behavior/scheme: The process of using a trained model to make predictions on new, unseen data. 
+
+State-of-the-art: The most advanced or highest-performing models or techniques available in the field. 
+
+Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models. 
 ---
