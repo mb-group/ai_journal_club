@@ -261,7 +261,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ai_pi_book.html">The AI Book for PI in Biology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Understanding “Models”: From Biology to Deep Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_training_vs_inference_vs_deployment.html">Training vs. Inference vs. Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">AI in Biology vs. ChatGPT vs. AlphaFold 1/2/3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation_jargons_with_fixed_meanings.html">Jargons with Community-Agreed Fixed Meanings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_catch_up_jargons.html">Catch Up on the Jargons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_key_domains.html">Key Domains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
@@ -480,19 +481,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#five-types-of-models-in-biology">Five Types of “Models” in Biology</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-dynamics-md-simulation">1. Molecular Dynamics (MD) Simulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-structure-model">2. Protein Structure Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pharmacokinetic-pk-model">3. Pharmacokinetic (PK) Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wet-lab-model">4. Wet Lab Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-model">5. Deep Learning Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-1-design-architecture-engineering">Phase 1: DESIGN (architecture engineering)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-2-train-learning-from-data">Phase 2: TRAIN (learning from data)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-3-use-inference-prediction">Phase 3: USE (inference/prediction)</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum-of-model">The Spectrum of “Model”</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-contrasts">Key Contrasts</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-each-model-is">What Each Model IS</a></li>
@@ -541,123 +529,6 @@ document.write(`
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>The word “model” means something quite different in biology versus deep learning, which creates confusion for biological researchers. This document provides a comprehensive comparison of different types of models to clarify these conceptual differences.</p>
-</section>
-<hr class="docutils" />
-<section id="five-types-of-models-in-biology">
-<h2>Five Types of “Models” in Biology<a class="headerlink" href="#five-types-of-models-in-biology" title="Link to this heading">#</a></h2>
-<section id="molecular-dynamics-md-simulation">
-<h3>1. Molecular Dynamics (MD) Simulation<a class="headerlink" href="#molecular-dynamics-md-simulation" title="Link to this heading">#</a></h3>
-<p><strong>What it represents</strong>: How molecules move over time based on physics</p>
-<p><strong>Workflow</strong>: Design → Use → Use → Use…</p>
-<p><strong>How it’s made</strong>:</p>
-<ul class="simple">
-<li><p>Start with structure model</p></li>
-<li><p>Apply force fields (equations from physics: bonds, angles, electrostatics, van der Waals)</p></li>
-<li><p>Simulate: calculate forces → move atoms → repeat millions of times (nanoseconds to microseconds)</p></li>
-</ul>
-<p><strong>What you get</strong>: Movie of molecular motion - how protein breathes, how drug binds, why mutations destabilize</p>
-<p><strong>Interpretability</strong>: VERY HIGH - every force is from known physics; you can pause and ask “why did that atom move?” → “because of this electrostatic repulsion”</p>
-<p><strong>Timeline</strong>:</p>
-<ul class="simple">
-<li><p>Design (days) → Use immediately and forever</p></li>
-<li><p>Simulating 1 microsecond might take days/weeks of computing</p></li>
-</ul>
-<p><strong>Key characteristic</strong>: Same physics every time - design once, use repeatedly</p>
-</section>
-<hr class="docutils" />
-<section id="protein-structure-model">
-<h3>2. Protein Structure Model<a class="headerlink" href="#protein-structure-model" title="Link to this heading">#</a></h3>
-<p><strong>What it represents</strong>: Physical coordinates - where each atom sits in 3D space</p>
-<p><strong>Workflow</strong>: Collect data → Build/Solve → Use</p>
-<p><strong>How it’s made</strong>:</p>
-<ul class="simple">
-<li><p><em>Experimental</em>: Crystallize → X-rays → electron density → fit atoms</p></li>
-<li><p><em>Computational (traditional)</em>: Find similar proteins → align sequences → model by homology</p></li>
-<li><p><em>Deep learning</em>: AlphaFold learns from sequences → predicts coordinates</p></li>
-</ul>
-<p><strong>What you get</strong>: Spatial arrangement you can visualize and measure - actual structural coordinates</p>
-<p><strong>Interpretability</strong>: HIGH - every atom has meaning; you can rotate it, zoom in, measure angles, design mutations</p>
-<p><strong>Timeline</strong>: Build (weeks-months) → Use immediately</p>
-<p><strong>Key characteristic</strong>: One structure per protein</p>
-</section>
-<hr class="docutils" />
-<section id="pharmacokinetic-pk-model">
-<h3>3. Pharmacokinetic (PK) Model<a class="headerlink" href="#pharmacokinetic-pk-model" title="Link to this heading">#</a></h3>
-<p><strong>What it represents</strong>: How drug moves through body compartments</p>
-<p><strong>Workflow</strong>: Design → Fit → Use → Update</p>
-<p><strong>How it’s made</strong>:</p>
-<ul class="simple">
-<li><p><strong>Design</strong>: Write differential equations based on physiology</p></li>
-<li><p><strong>Fit</strong>: Collect patient data → estimate parameters (clearance, volume)</p></li>
-<li><p><strong>Use</strong>: Predict drug levels</p></li>
-<li><p>May refine parameters with more data</p></li>
-</ul>
-<p><strong>What you get</strong>: Parameters with clear biological meaning (clearance rate, volume of distribution, half-life)</p>
-<p><strong>Interpretability</strong>: HIGH - each equation term and parameter maps to a real physiological process</p>
-<p><strong>Timeline</strong>: Design (days) → Fit (hours-days) → Use</p>
-<p><strong>Key characteristic</strong>: Mechanistic equations with biologically interpretable parameters</p>
-</section>
-<hr class="docutils" />
-<section id="wet-lab-model">
-<h3>4. Wet Lab Model<a class="headerlink" href="#wet-lab-model" title="Link to this heading">#</a></h3>
-<p><strong>What it represents</strong>: A <em>living physical system</em> that approximates another system you can’t easily study</p>
-<p><strong>Workflow</strong>: Establish → Maintain → Use → Use → Use…</p>
-<p><strong>Examples</strong>:</p>
-<ul class="simple">
-<li><p>Mouse model of Alzheimer’s → represents human disease</p></li>
-<li><p>Cancer cell line → represents patient tumor</p></li>
-<li><p>Liver organoid → represents liver tissue</p></li>
-</ul>
-<p><strong>How it’s made</strong>:</p>
-<ul class="simple">
-<li><p><strong>Establish</strong>: Generate mouse line, establish cell culture, grow organoid</p></li>
-<li><p><strong>Maintain</strong>: Keep alive (feed mice, passage cells)</p></li>
-<li><p><strong>Use</strong>: Run experiments repeatedly</p></li>
-</ul>
-<p><strong>What you get</strong>: Actual living biology you can perturb and measure</p>
-<p><strong>Interpretability</strong>: MEDIUM-HIGH - it’s real biology, but doesn’t perfectly match what it represents (mouse ≠ human, cell line ≠ tumor in body)</p>
-<p><strong>Timeline</strong>: Establish (months-years) → Maintain + Use (ongoing)</p>
-<p><strong>Key characteristic</strong>: Living system requires constant maintenance; the “model” is itself a complex system</p>
-</section>
-<hr class="docutils" />
-<section id="deep-learning-model">
-<h3>5. Deep Learning Model<a class="headerlink" href="#deep-learning-model" title="Link to this heading">#</a></h3>
-<p><strong>What it represents</strong>: Statistical patterns learned from data</p>
-<p><strong>Workflow</strong>: Design → Train → Use → Use → Use…</p>
-<section id="phase-1-design-architecture-engineering">
-<h4>Phase 1: DESIGN (architecture engineering)<a class="headerlink" href="#phase-1-design-architecture-engineering" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Choose architecture (transformer, CNN, RNN)</p></li>
-<li><p>Decide: how many layers? what connections?</p></li>
-<li><p>Set hyperparameters (learning rate, etc.)</p></li>
-<li><p><em>Model knows NOTHING yet - just empty structure</em></p></li>
-<li><p><strong>Timeline</strong>: Days to weeks</p></li>
-</ul>
-</section>
-<section id="phase-2-train-learning-from-data">
-<h4>Phase 2: TRAIN (learning from data)<a class="headerlink" href="#phase-2-train-learning-from-data" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Feed millions of examples</p></li>
-<li><p>Optimization algorithm adjusts billions of parameters</p></li>
-<li><p>Compute intensive: thousands of GPU-hours</p></li>
-<li><p><em>Model learns patterns - becomes “useful”</em></p></li>
-<li><p><strong>This is the expensive, critical step that doesn’t exist for other models</strong></p></li>
-<li><p><strong>Timeline</strong>: Hours to weeks (or months for largest models)</p></li>
-</ul>
-</section>
-<section id="phase-3-use-inference-prediction">
-<h4>Phase 3: USE (inference/prediction)<a class="headerlink" href="#phase-3-use-inference-prediction" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Frozen parameters - no more learning</p></li>
-<li><p>Input new data → get predictions</p></li>
-<li><p>Relatively cheap and fast</p></li>
-<li><p><em>Like using any other model now</em></p></li>
-<li><p><strong>Timeline</strong>: Milliseconds per prediction, use indefinitely</p></li>
-</ul>
-<p><strong>What you get</strong>: Function that makes predictions but doesn’t show its work - numbers that somehow encode patterns, useful for prediction but not directly interpretable</p>
-<p><strong>Interpretability</strong>: LOW - parameters don’t map to biological concepts; you can’t point to parameter #47,382,991 and say “this represents hydrophobicity”</p>
-</section>
-</section>
 </section>
 <hr class="docutils" />
 <section id="the-spectrum-of-model">
@@ -1009,19 +880,6 @@ Design (create container) → Train (learn patterns) → Use
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#five-types-of-models-in-biology">Five Types of “Models” in Biology</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-dynamics-md-simulation">1. Molecular Dynamics (MD) Simulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-structure-model">2. Protein Structure Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pharmacokinetic-pk-model">3. Pharmacokinetic (PK) Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wet-lab-model">4. Wet Lab Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-model">5. Deep Learning Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-1-design-architecture-engineering">Phase 1: DESIGN (architecture engineering)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-2-train-learning-from-data">Phase 2: TRAIN (learning from data)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-3-use-inference-prediction">Phase 3: USE (inference/prediction)</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum-of-model">The Spectrum of “Model”</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-contrasts">Key Contrasts</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-each-model-is">What Each Model IS</a></li>
