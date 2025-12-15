@@ -1,23 +1,36 @@
 # Jargons with Community-Agreed Fixed Meanings
 
-## Background: What you may find disappointing and frustrating
-AI is a far less established discipline than many assume—especially when compared with fields such as physics or chemistry. In biology, we often say the discipline is “messy” and that textbooks lag behind discovery; however, AI today is arguably even earlier in its scientific maturity. A historical analogy may help: during the first industrial revolution, steam engines were already transforming society long before the principles of thermodynamics were formally understood. Modern AI is in a similar state. Despite its enormous influence, the field lacks even a widely acknowledged textbook. Much of the excitement today traces back to breakthroughs after 2017, and theory continues to trail substantially behind empirical success. Fundamental questions—such as why the architectural components of AlphaFold work as well as they do, or what protein language models truly learn—remain active areas of research.
 
-This immaturity, juxtaposed with the overwhelming public buzz surrounding AI, produces several practical challenges for newcomers, especially biologists:
-- Terminology without formal definitions. Many core terms—AI, machine learning, deep learning, neural networks—are defined only through community convention rather than standardized meaning.
-- Difficult entry by reading. Concepts like transformers vs. diffusion models or LLMs vs. other architectures cannot be understood reliably through passive reading alone, because the literature itself is evolving and inconsistent.
-- No clear answers to seemingly basic questions. Examples include: Why use CNNs instead of LSTMs in certain domains? Are transformers always better? When does a simple model outperform a sophisticated one? In many cases, the field has no settled consensus.
+```{admonition} Background: What you may find disappointing and frustrating
+:class: warning
+
+AI is a far less established discipline than many assume—especially when compared with fields such as physics or chemistry. In biology, we often say the discipline is "messy" and that textbooks lag behind discovery; however, AI today is arguably even earlier in its scientific maturity. A historical analogy may help: during the first industrial revolution, steam engines were already transforming society long before the principles of thermodynamics were formally understood. Modern AI is in a similar state. Despite its enormous influence, the field lacks even a widely acknowledged textbook. Much of the excitement today traces back to breakthroughs after 2017, and theory continues to trail substantially behind empirical success. Fundamental questions—such as why the architectural components of AlphaFold work as well as they do, or what protein language models truly learn—remain active areas of research.
+
+**Practical challenges for newcomers, especially biologists:**
+- **Terminology without formal definitions.** Many core terms—AI, machine learning, deep learning, neural networks—are defined only through community convention rather than standardized meaning.
+- **Difficult entry by reading.** Concepts like transformers vs. diffusion models or LLMs vs. other architectures cannot be understood reliably through passive reading alone, because the literature itself is evolving and inconsistent.
+- **No clear answers to seemingly basic questions.** Examples include: Why use CNNs instead of LSTMs in certain domains? Are transformers always better? When does a simple model outperform a sophisticated one? In many cases, the field has no settled consensus.
+```
+
+```{admonition} Purpose of This Glossary
+:class: tip
 
 To support biologists entering this rapidly shifting landscape, we compiled a collection of clear, practical explanations for the AI jargons and conceptual distinctions that most frequently cause confusion. This glossary is not meant to formalize the field, but to serve as a reliable, stable reference in an environment where the terminology itself is still evolving.
+```
 
-## AI, Machine Learning, Deep Learning, and Reinforcement Learning — What They Actually Mean
+---
 
+## 🎯 Core Concepts: AI, Machine Learning, Deep Learning, and Reinforcement Learning
+
+```{admonition} What They Actually Mean
+:class: info
+
+Because AI grew fast without standardized definitions, common terms can be confusing. Here are concise, practical explanations for biologists.
 Because AI grew fast without standardized definitions, common terms can be confusing. Here are concise, practical explanations for biologists.
 
 ---
 
 ### **Artificial Intelligence (AI)**  
-The broadest term.  
 Any method—rules, statistics, or learning systems—that makes a machine behave in a way that appears intelligent.
 
 ---
@@ -49,9 +62,13 @@ Used in AlphaGo, robotics, and RLHF for modern LLMs.
 
 ---
 
-## Pretraining, Fine-Tuning, and Prompting — Short, Practical Explanations
+## 🔄 Model Adaptation: Pretraining, Fine-Tuning, and Prompting
+
+```{admonition} Short, Practical Explanations
+:class: info
 
 These three terms describe how modern AI models are built and adapted. They are often used inconsistently, so here are concise definitions for biology researchers.
+```
 
 ---
 
@@ -86,9 +103,13 @@ Example: Asking an LLM “Explain attention in simple terms,” or prompting a p
 
 ---
 
-## Training Fundamentals — The Learning Process Explained
+## 📚 Training Fundamentals: The Learning Process Explained
+
+```{admonition} Why This Matters
+:class: note
 
 Understanding how models actually learn is crucial for evaluating AI work and managing projects.
+```
 
 ---
 
@@ -149,9 +170,13 @@ Examples: learning rate, number of layers, batch size, dropout rate.
 
 ---
 
-## Generalization — The Central Challenge
+## 🎲 Generalization: The Central Challenge
 
-The ultimate goal: models that work on new, unseen data.
+```{admonition} The Ultimate Goal
+:class: important
+
+Models that work on new, unseen data—this is the core challenge in machine learning.
+```
 
 ---
 
@@ -189,9 +214,13 @@ Example: Asking a language model to write code when only trained on text, or usi
 
 ---
 
-## Model Architectures — The Building Blocks
+## 🏗️ Model Architectures: The Building Blocks
 
-Different neural network designs for different types of data.
+```{admonition} Design Matters
+:class: info
+
+Different neural network designs for different types of data—matching architecture to your data structure is crucial.
+```
 
 ---
 
@@ -255,9 +284,13 @@ A specific type of attention where elements in a sequence attend to each other.
 
 ---
 
-## Embeddings and Representations — The Hidden Value
+## 💎 Embeddings and Representations: The Hidden Value
 
-Modern AI's most powerful outputs are often not the final predictions.
+```{admonition} Key Insight
+:class: tip
+
+Modern AI's most powerful outputs are often not the final predictions, but the intermediate representations (embeddings).
+```
 
 ---
 
@@ -280,9 +313,13 @@ Example: Calculating hydrophobicity, charge, secondary structure propensity as i
 
 ---
 
-## Advanced Training Paradigms
+## 🚀 Advanced Training Paradigms
 
-Beyond simple supervised learning.
+```{admonition} Beyond Supervised Learning
+:class: info
+
+Modern approaches that go beyond traditional "label every example" training.
+```
 
 ---
 
@@ -312,9 +349,13 @@ Training models to quickly adapt to new tasks with minimal data.
 
 ---
 
-## Model Types by Function
+## 🎭 Model Types by Function
 
-What different models are designed to do.
+```{admonition} Understanding Model Categories
+:class: info
+
+What different models are designed to do—classification, generation, representation learning, etc.
+```
 
 ---
 
@@ -370,9 +411,13 @@ Generative models that learn to reverse a noise-adding process.
 
 ---
 
-## Practical Deployment Terms
+## ⚙️ Practical Deployment Terms
 
-Making models accessible and usable.
+```{admonition} From Research to Production
+:class: note
+
+Making models accessible and usable in real-world settings.
+```
 
 ---
 
@@ -403,9 +448,13 @@ Example: Running AlphaFold on your protein sequence.
 
 ---
 
-## Interpretability — Understanding What Models Learn
+## 🔍 Interpretability: Understanding What Models Learn
 
-Critical for scientific trust and insight.
+```{admonition} Critical for Science
+:class: important
+
+Interpretability is essential for scientific trust, insight, and hypothesis generation.
+```
 
 ---
 
@@ -434,9 +483,13 @@ Understanding the internal computations and circuits within neural networks.
 
 ---
 
-## Performance Evaluation
+## 📊 Performance Evaluation
 
-How to assess model quality.
+```{admonition} Measuring Success
+:class: note
+
+How to assess model quality—metrics, benchmarks, and what really matters for your application.
+```
 
 ---
 
@@ -457,9 +510,13 @@ Example: Cell state features that work across different imaging platforms or pro
 
 ---
 
-## Biology-Specific AI Terms
+## 🧬 Biology-Specific AI Terms
 
-Models and concepts specific to biological applications.
+```{admonition} AI for Biology
+:class: tip
+
+Models and concepts specific to biological applications—with critical caveats.
+```
 
 ---
 
@@ -490,16 +547,25 @@ Breaking complex data into discrete units the model can process.
 
 ---
 
-## One-Line Memory Aids for Key Distinctions
+## 💡 Quick Reference: One-Line Memory Aids
 
-**Loss function** = penalty during training | **Performance metric** = what you actually care about  
-**Overfitting** = memorized examples | **Underfitting** = didn't learn enough  
-**Training data** = what model learns from | **Testing data** = evaluates generalization  
-**Generalization** = works on similar new data | **OOD generalization** = works on different distributions  
-**Embeddings** = learned representations | **Final predictions** = task-specific outputs  
-**CNN** = spatial patterns | **RNN** = sequential | **Transformer** = attention-based | **GNN** = relational  
-**Foundation model** = big general-purpose base | **Fine-tuned model** = adapted to your task  
-**Generative** = creates new examples | **Discriminative** = classifies given examples
+```{admonition} Key Distinctions at a Glance
+:class: tip
+
+Memorize these quick comparisons for common confusion points:
+```
+
+| Concept | vs. | Concept |
+|---------|-----|----------|
+| **Loss function** (penalty during training) | ↔ | **Performance metric** (what you actually care about) |
+| **Overfitting** (memorized examples) | ↔ | **Underfitting** (didn't learn enough) |
+| **Training data** (what model learns from) | ↔ | **Testing data** (evaluates generalization) |
+| **Generalization** (similar new data) | ↔ | **OOD generalization** (different distributions) |
+| **Embeddings** (learned representations) | ↔ | **Final predictions** (task-specific outputs) |
+| **CNN** (spatial patterns) | ↔ | **RNN** (sequential) |
+| **Transformer** (attention-based) | ↔ | **GNN** (relational) |
+| **Foundation model** (big general-purpose) | ↔ | **Fine-tuned model** (adapted to task) |
+| **Generative** (creates new examples) | ↔ | **Discriminative** (classifies given examples) |
 
 
 
