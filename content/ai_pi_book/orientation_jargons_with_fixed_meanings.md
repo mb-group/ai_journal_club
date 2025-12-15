@@ -12,112 +12,79 @@ To support biologists entering this rapidly shifting landscape, we compiled a co
 
 ## AI, Machine Learning, Deep Learning, and Reinforcement Learning — What They Actually Mean
 
-Because AI developed rapidly and without a unifying textbook, many commonly used terms are community conventions rather than precise scientific definitions. Below is a practical, biology-friendly way to understand four of the most frequently confused concepts.
+Because AI grew fast without standardized definitions, common terms can be confusing. Here are concise, practical explanations for biologists.
 
 ---
 
 ### **Artificial Intelligence (AI)**  
-**The broadest umbrella.**  
-“AI” refers to any computational system designed to perform tasks that appear to require reasoning, pattern recognition, or decision-making. It can include:
-
-- Hand-coded rules  
-- Classical statistical models  
-- Machine learning  
-- Modern deep neural networks  
-
-**In practice:** AI ≈ anything that gives computers behaviors that *look* intelligent, regardless of how it is implemented.
+The broadest term.  
+Any method—rules, statistics, or learning systems—that makes a machine behave in a way that appears intelligent.
 
 ---
 
 ### **Machine Learning (ML)**  
-**A subset of AI.**  
-Machine learning refers to methods in which computers *learn patterns from data* instead of relying on manually written rules.
-
-ML systems:
-
-- Take data  
-- Learn patterns  
-- Use those patterns to make predictions or decisions  
-
-Examples: logistic regression, random forests, support vector machines, early neural networks.
-
-**Key distinction:** ML requires learning from data; AI does not necessarily.
+A subset of AI.  
+Models that *learn patterns from data* instead of following hand-written rules.  
+Examples: logistic regression, random forests, SVMs, simple neural nets.
 
 ---
 
 ### **Deep Learning (DL)**  
-**A subset of machine learning.**  
-Deep learning uses multi-layer (“deep”) neural networks that automatically learn increasingly abstract representations from raw data.
-
-DL powers nearly all major breakthroughs since 2017:
-
-- Protein language models  
-- AlphaFold components  
-- Large language models (LLMs)  
-- Diffusion models  
-
-**Why it matters:** DL is not just “bigger ML.” It is more empirical, less theoretically understood, and central to modern AI’s rapid advances—and its instability.
+A subset of ML.  
+Uses multi-layer neural networks to learn complex representations directly from raw data.  
+Powers modern breakthroughs such as protein language models, AlphaFold components, LLMs, and diffusion models.
 
 ---
 
 ### **Reinforcement Learning (RL)**  
-**A different paradigm of learning.**  
-Reinforcement learning does not rely on labeled datasets. Instead, an *agent* interacts with an *environment* and learns through trial and error to maximize cumulative reward.
-
-Core components:
-
-- **Agent**  
-- **Environment**  
-- **Actions**  
-- **Rewards**  
-
-RL powers systems like:
-
-- AlphaGo  
-- Robotics controllers  
-- RLHF (reinforcement learning from human feedback) used in modern LLM alignment
-
-**Distinction:**  
-ML/DL learn from *datasets*.  
-RL learns from *experience*.
+A distinct learning paradigm.  
+An agent learns by *interacting with an environment* and improving behavior based on rewards—not by using labeled datasets.  
+Used in AlphaGo, robotics, and RLHF for modern LLMs.
 
 ---
 
-### **One-sentence summary**
-
-- **AI** = the whole space of making machines appear intelligent  
-- **ML** = AI that learns from data  
-- **DL** = ML using deep neural networks  
-- **RL** = learning by interacting with an environment to maximize reward  
+### **One-line memory aid**  
+**AI** (broad idea) → **ML** (learns from data) → **DL** (ML with deep neural nets)  
+**RL** = learns by trial-and-error interaction with rewards.
 
 ---
 
+## Pretraining, Fine-Tuning, and Prompting — Short, Practical Explanations
 
+These three terms describe how modern AI models are built and adapted. They are often used inconsistently, so here are concise definitions for biology researchers.
 
-### Pretraining
-
-Content coming soon...
-
-### Fine-Tuning
-
-Content coming soon...
-
-### Prompting
-
-Content coming soon...
-
-### Embeddings
-
-Content coming soon...
-Model architecture: The structure of a neural network, including layers, types (e.g., CNN, Transformer), and how data flows through it. 
-
-Training behavior/scheme: The process of feeding labeled data to an AI model so it can learn patterns and adjust its parameters. 
-
-Evaluation behavior/scheme: The set of methods and metrics used to assess model performance, such as accuracy, AUROC, or precision-recall. 
-
-Inference behavior/scheme: The process of using a trained model to make predictions on new, unseen data. 
-
-State-of-the-art: The most advanced or highest-performing models or techniques available in the field. 
-
-Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models. 
 ---
+
+### **Pretraining**  
+Training a model on a *very large, general-purpose dataset* so it learns broad patterns (e.g., protein grammar, language structure, image features).  
+- Expensive and time-consuming  
+- Produces a versatile “base model”  
+Example: Protein language models trained on millions of sequences.
+
+---
+
+### **Fine-Tuning**  
+Taking a pretrained model and training it *further on a smaller, task-specific dataset* so it adapts to your problem.  
+- Much cheaper than pretraining  
+- Injects domain knowledge  
+Example: Fine-tuning a protein language model for thermostability prediction on your own experimental data.
+
+---
+
+### **Prompting**  
+Using a pretrained model *as-is* by giving it carefully designed text or tokens that steer its output—no additional training required.  
+- Fastest and easiest way to use a model  
+- Depends on the model’s existing knowledge  
+Example: Asking an LLM “Explain attention in simple terms,” or prompting a protein model with a sequence and a question.
+
+---
+
+### **One-line memory aid**  
+**Pretraining** = teach the model the world.  
+**Fine-tuning** = teach it your task.  
+**Prompting** = ask it for what you need without retraining.
+
+
+
+
+
