@@ -85,8 +85,8 @@ chapters:
   - file: content/ai_pi_book/orientation_training_vs_inference_vs_deployment
   - file: content/ai_pi_book/orientation_ai_in_biology_vs_chatgpt_vs_alphafold
   - file: content/ai_pi_book/orientation_jargons_with_fixed_meanings
-  - file: content/ai_pi_book/part1_catch_up_jargons
-  - file: content/ai_pi_book/part1_key_domains
+  - file: content/ai_pi_book/part1_must_know_models
+  - file: content/ai_pi_book/buzz_vs_reality
   - file: content/ai_pi_book/part2_ai_fundamentals_intuition
   - file: content/ai_pi_book/part2_emerging_subfields
   - file: content/ai_pi_book/part3_browse_by_catalog
