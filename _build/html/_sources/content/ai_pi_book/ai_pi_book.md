@@ -16,8 +16,6 @@ This book provides intuitive understanding and practical guidance for Principal 
 This book intentionally does not cover the technical implementation details that are typically handled by computational team members. Topics outside the scope include infrastructure setup (server configuration, GPU management, system administration), coding specifics , data preprocessing pipelines and training operations (model architecture design, hyperparameter tuning, loss function mathematics). 
 ```
 
-
-
 ---
 
 ## What This Book Covers
