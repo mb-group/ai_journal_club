@@ -264,8 +264,9 @@
 <li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Jargons with Community-Agreed Fixed Meanings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_must_know_models.html">The Must-Know Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="buzz_vs_reality.html">Trends/Buzz/Concepts vs. Reality/Performance/Assumptions/Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buzz_vs_reality.html">Trends, Buzzwords, and Reality: What These Concepts <em>Actually</em> Mean for Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part2_why_modern_ai_feels_alien.html">Why Modern AI Feels Alien (Even With Statistical and ML Background)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_emerging_subfields.html">Going Deeper: Less-Known but Promisingly Emerging Subfields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_browse_by_catalog.html">Browse by Catalog: Our Curated Collection of Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_design_your_own.html">When You Want to Design Your Own</a></li>
@@ -496,6 +497,77 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>One-line memory aid</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-fundamentals-the-learning-process-explained">Training Fundamentals — The Learning Process Explained</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function"><strong>Loss Function</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-or-weights"><strong>Parameters (or Weights)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting"><strong>Overfitting</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underfitting"><strong>Underfitting</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-vs-testing-data"><strong>Training Data vs. Testing Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-size"><strong>Batch Size</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameters"><strong>Hyperparameters</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-the-central-challenge">Generalization — The Central Challenge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization"><strong>Generalization</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#out-of-distribution-ood-generalization"><strong>Out-of-Distribution (OOD) Generalization</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning"><strong>Transfer Learning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-learning"><strong>Zero-Shot Learning</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-architectures-the-building-blocks">Model Architectures — The Building Blocks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network"><strong>Neural Network</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer"><strong>Transformer</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn-convolutional-neural-network"><strong>CNN (Convolutional Neural Network)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rnn-recurrent-neural-network"><strong>RNN (Recurrent Neural Network)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-graph-neural-network"><strong>GNN (Graph Neural Network)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-mechanism"><strong>Attention Mechanism</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-attention"><strong>Self-Attention</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-and-representations-the-hidden-value">Embeddings and Representations — The Hidden Value</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings"><strong>Embeddings</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-engineering"><strong>Feature Engineering</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-training-paradigms">Advanced Training Paradigms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-learning"><strong>Multi-Task Learning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-supervised-learning"><strong>Self-Supervised Learning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-learning-learning-to-learn"><strong>Meta-Learning (Learning to Learn)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-types-by-function">Model Types by Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models"><strong>Foundation Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models-plms"><strong>Protein Language Models (pLMs)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-models"><strong>Generative Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminative-models"><strong>Discriminative Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-autoencoder-vae"><strong>Variational Autoencoder (VAE)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-models"><strong>Diffusion Models</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-deployment-terms">Practical Deployment Terms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-application-programming-interface"><strong>API (Application Programming Interface)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-graphics-processing-unit"><strong>GPU (Graphics Processing Unit)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference"><strong>Inference</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretability-understanding-what-models-learn">Interpretability — Understanding What Models Learn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-map"><strong>Saliency Map</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap-shapley-additive-explanations"><strong>SHAP (SHapley Additive exPlanations)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-interpretability"><strong>Mechanistic Interpretability</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-evaluation">Performance Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics"><strong>Performance Metrics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-invariant-representations"><strong>Domain Invariant Representations</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-specific-ai-terms">Biology-Specific AI Terms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alphafold"><strong>AlphaFold</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-cell-models"><strong>Virtual Cell Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization"><strong>Tokenization</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-line-memory-aids-for-key-distinctions">One-Line Memory Aids for Key Distinctions</a></li>
 </ul>
             </nav>
         </div>
@@ -599,6 +671,492 @@ Example: Asking an LLM “Explain attention in simple terms,” or prompting a p
 <strong>Prompting</strong> = ask it for what you need without retraining.</p>
 </section>
 </section>
+<hr class="docutils" />
+<section id="training-fundamentals-the-learning-process-explained">
+<h2>Training Fundamentals — The Learning Process Explained<a class="headerlink" href="#training-fundamentals-the-learning-process-explained" title="Link to this heading">#</a></h2>
+<p>Understanding how models actually learn is crucial for evaluating AI work and managing projects.</p>
+<hr class="docutils" />
+<section id="loss-function">
+<h3><strong>Loss Function</strong><a class="headerlink" href="#loss-function" title="Link to this heading">#</a></h3>
+<p>The mathematical penalty signal that guides training—tells the model how wrong its predictions are.</p>
+<ul class="simple">
+<li><p>Used during training to update model parameters</p></li>
+<li><p>Different from performance metrics you care about<br />
+Example: Mean squared error for regression, cross-entropy for classification.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="parameters-or-weights">
+<h3><strong>Parameters (or Weights)</strong><a class="headerlink" href="#parameters-or-weights" title="Link to this heading">#</a></h3>
+<p>The learned values inside a neural network that get adjusted during training.</p>
+<ul class="simple">
+<li><p>Millions to billions of numbers that encode learned patterns</p></li>
+<li><p>Start random, become useful through training</p></li>
+<li><p>The “knowledge” of the model is stored in these parameters.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="overfitting">
+<h3><strong>Overfitting</strong><a class="headerlink" href="#overfitting" title="Link to this heading">#</a></h3>
+<p>When a model memorizes training examples instead of learning general patterns.</p>
+<ul class="simple">
+<li><p>High accuracy on training data, poor on new data</p></li>
+<li><p>Like memorizing exam questions instead of understanding concepts</p></li>
+<li><p>Prevented by: more data, regularization, early stopping.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="underfitting">
+<h3><strong>Underfitting</strong><a class="headerlink" href="#underfitting" title="Link to this heading">#</a></h3>
+<p>When a model hasn’t learned enough—too simple to capture important patterns.</p>
+<ul class="simple">
+<li><p>Poor performance on both training and test data</p></li>
+<li><p>Like studying the wrong material for an exam</p></li>
+<li><p>Fixed by: more complex model, longer training, better features.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="training-data-vs-testing-data">
+<h3><strong>Training Data vs. Testing Data</strong><a class="headerlink" href="#training-data-vs-testing-data" title="Link to this heading">#</a></h3>
+<p><strong>Training data</strong>: What the model learns from during training.<br />
+<strong>Testing data</strong>: Held-out examples used to evaluate how well learning generalized.</p>
+<ul class="simple">
+<li><p>Testing data must never be seen during training</p></li>
+<li><p>The gap between training and testing performance reveals overfitting<br />
+Critical in biology: Are test proteins from the same families as training? Same organisms?</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="batch-size">
+<h3><strong>Batch Size</strong><a class="headerlink" href="#batch-size" title="Link to this heading">#</a></h3>
+<p>How many training examples are processed together before updating model parameters.</p>
+<ul class="simple">
+<li><p>Larger batches = faster training but more memory</p></li>
+<li><p>Smaller batches = noisier but sometimes better generalization</p></li>
+<li><p>Typical values: 32, 64, 128, 256.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="hyperparameters">
+<h3><strong>Hyperparameters</strong><a class="headerlink" href="#hyperparameters" title="Link to this heading">#</a></h3>
+<p>Configuration choices you make before training (not learned from data).<br />
+Examples: learning rate, number of layers, batch size, dropout rate.</p>
+<ul class="simple">
+<li><p>Require experimentation to find good values</p></li>
+<li><p>Different from parameters (weights), which are learned during training.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="generalization-the-central-challenge">
+<h2>Generalization — The Central Challenge<a class="headerlink" href="#generalization-the-central-challenge" title="Link to this heading">#</a></h2>
+<p>The ultimate goal: models that work on new, unseen data.</p>
+<hr class="docutils" />
+<section id="generalization">
+<h3><strong>Generalization</strong><a class="headerlink" href="#generalization" title="Link to this heading">#</a></h3>
+<p>How well a model performs on data it hasn’t seen during training.</p>
+<ul class="simple">
+<li><p>The core challenge in machine learning</p></li>
+<li><p>Good generalization = learned real patterns, not memorized examples</p></li>
+<li><p>Evaluated by testing on held-out data.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="out-of-distribution-ood-generalization">
+<h3><strong>Out-of-Distribution (OOD) Generalization</strong><a class="headerlink" href="#out-of-distribution-ood-generalization" title="Link to this heading">#</a></h3>
+<p>Performance when test data is fundamentally different from training data.</p>
+<ul class="simple">
+<li><p>Much harder than standard generalization</p></li>
+<li><p>Critical in biology: different organisms, protocols, experimental conditions<br />
+Example: Model trained on human proteins tested on bacterial proteins.<br />
+<strong>This is an active research area—most models struggle here.</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="transfer-learning">
+<h3><strong>Transfer Learning</strong><a class="headerlink" href="#transfer-learning" title="Link to this heading">#</a></h3>
+<p>Using knowledge from one task to help with another.</p>
+<ul class="simple">
+<li><p>Typically: pretrain on large general dataset, fine-tune on specific task</p></li>
+<li><p>Reduces data requirements dramatically</p></li>
+<li><p>Assumes source and target tasks share underlying patterns<br />
+Example: Protein language model pretrained on all sequences, then fine-tuned for your stability prediction task.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zero-shot-learning">
+<h3><strong>Zero-Shot Learning</strong><a class="headerlink" href="#zero-shot-learning" title="Link to this heading">#</a></h3>
+<p>Model performing a task it was never explicitly trained to do.</p>
+<ul class="simple">
+<li><p>Relies entirely on knowledge from pretraining</p></li>
+<li><p>No task-specific training examples<br />
+Example: Asking a language model to write code when only trained on text, or using protein embeddings for function prediction without function labels during training.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="model-architectures-the-building-blocks">
+<h2>Model Architectures — The Building Blocks<a class="headerlink" href="#model-architectures-the-building-blocks" title="Link to this heading">#</a></h2>
+<p>Different neural network designs for different types of data.</p>
+<hr class="docutils" />
+<section id="neural-network">
+<h3><strong>Neural Network</strong><a class="headerlink" href="#neural-network" title="Link to this heading">#</a></h3>
+<p>A computational model inspired by biological neurons—layers of interconnected processing units.</p>
+<ul class="simple">
+<li><p>Each connection has a weight (parameter) that’s learned during training</p></li>
+<li><p>Data flows through layers, transforming input to output</p></li>
+<li><p>The foundation of deep learning.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="transformer">
+<h3><strong>Transformer</strong><a class="headerlink" href="#transformer" title="Link to this heading">#</a></h3>
+<p>A neural network architecture using self-attention mechanisms.</p>
+<ul class="simple">
+<li><p>Processes sequences without inherent order bias (unlike RNNs)</p></li>
+<li><p>Can attend to any part of the input simultaneously</p></li>
+<li><p>Powers: GPT, BERT, AlphaFold components, protein language models<br />
+Advantage: Captures long-range dependencies efficiently.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="cnn-convolutional-neural-network">
+<h3><strong>CNN (Convolutional Neural Network)</strong><a class="headerlink" href="#cnn-convolutional-neural-network" title="Link to this heading">#</a></h3>
+<p>Architecture designed for spatial data (images, structures).</p>
+<ul class="simple">
+<li><p>Uses sliding “filters” to detect local patterns</p></li>
+<li><p>Assumes nearby positions are related</p></li>
+<li><p>Excellent for: microscopy images, protein structure analysis<br />
+Assumption: Spatial proximity matters.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="rnn-recurrent-neural-network">
+<h3><strong>RNN (Recurrent Neural Network)</strong><a class="headerlink" href="#rnn-recurrent-neural-network" title="Link to this heading">#</a></h3>
+<p>Architecture for sequential data with temporal dependencies.</p>
+<ul class="simple">
+<li><p>Processes sequences one step at a time, maintaining “memory”</p></li>
+<li><p>Older approach, largely replaced by transformers</p></li>
+<li><p>Can struggle with long sequences<br />
+Used in: early protein/DNA sequence analysis, time-series data.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="gnn-graph-neural-network">
+<h3><strong>GNN (Graph Neural Network)</strong><a class="headerlink" href="#gnn-graph-neural-network" title="Link to this heading">#</a></h3>
+<p>Architecture for relational data (networks, molecular graphs).</p>
+<ul class="simple">
+<li><p>Nodes exchange information with neighbors iteratively</p></li>
+<li><p>Natural for: protein interaction networks, molecular structures, pathway analysis<br />
+Assumption: Relationships between entities matter.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="attention-mechanism">
+<h3><strong>Attention Mechanism</strong><a class="headerlink" href="#attention-mechanism" title="Link to this heading">#</a></h3>
+<p>A component that lets models focus on relevant parts of input.</p>
+<ul class="simple">
+<li><p>Learns which parts of the input are important for each prediction</p></li>
+<li><p>Can be visualized to understand model decisions</p></li>
+<li><p>Core component of transformers<br />
+Example: In protein sequences, attention might focus on active site residues.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="self-attention">
+<h3><strong>Self-Attention</strong><a class="headerlink" href="#self-attention" title="Link to this heading">#</a></h3>
+<p>A specific type of attention where elements in a sequence attend to each other.</p>
+<ul class="simple">
+<li><p>Each amino acid “looks at” all other amino acids</p></li>
+<li><p>Captures relationships and dependencies within the sequence</p></li>
+<li><p>Foundation of transformer architectures.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="embeddings-and-representations-the-hidden-value">
+<h2>Embeddings and Representations — The Hidden Value<a class="headerlink" href="#embeddings-and-representations-the-hidden-value" title="Link to this heading">#</a></h2>
+<p>Modern AI’s most powerful outputs are often not the final predictions.</p>
+<hr class="docutils" />
+<section id="embeddings">
+<h3><strong>Embeddings</strong><a class="headerlink" href="#embeddings" title="Link to this heading">#</a></h3>
+<p>Dense numerical representations learned by models that capture patterns.</p>
+<ul class="simple">
+<li><p>Transform discrete items (words, amino acids, proteins) into continuous vectors</p></li>
+<li><p>Similar items have similar embeddings</p></li>
+<li><p>Can be used for tasks the model wasn’t explicitly trained for<br />
+Example: Protein embeddings cluster by function even without function labels during training.<br />
+<strong>Key insight: Embeddings are often more valuable than final predictions.</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="feature-engineering">
+<h3><strong>Feature Engineering</strong><a class="headerlink" href="#feature-engineering" title="Link to this heading">#</a></h3>
+<p>Manually designing input representations based on domain knowledge.</p>
+<ul class="simple">
+<li><p>Traditional ML approach: extract biophysical features, motifs, statistical properties</p></li>
+<li><p>Deep learning often learns features automatically</p></li>
+<li><p>Still useful when data is limited or domain knowledge is strong<br />
+Example: Calculating hydrophobicity, charge, secondary structure propensity as inputs.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="advanced-training-paradigms">
+<h2>Advanced Training Paradigms<a class="headerlink" href="#advanced-training-paradigms" title="Link to this heading">#</a></h2>
+<p>Beyond simple supervised learning.</p>
+<hr class="docutils" />
+<section id="multi-task-learning">
+<h3><strong>Multi-Task Learning</strong><a class="headerlink" href="#multi-task-learning" title="Link to this heading">#</a></h3>
+<p>Training one model to solve multiple related tasks simultaneously.</p>
+<ul class="simple">
+<li><p>Shares knowledge across tasks</p></li>
+<li><p>Can improve performance on all tasks</p></li>
+<li><p>Requires careful balancing of task objectives<br />
+Example: Predicting protein structure AND function AND stability in one model.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="self-supervised-learning">
+<h3><strong>Self-Supervised Learning</strong><a class="headerlink" href="#self-supervised-learning" title="Link to this heading">#</a></h3>
+<p>Learning from unlabeled data by predicting parts of the data from other parts.</p>
+<ul class="simple">
+<li><p>No human annotations needed</p></li>
+<li><p>Creates its own training signal</p></li>
+<li><p>Foundation of modern language models<br />
+Example: Predicting masked amino acids in protein sequences (how ESM models are trained).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="meta-learning-learning-to-learn">
+<h3><strong>Meta-Learning (Learning to Learn)</strong><a class="headerlink" href="#meta-learning-learning-to-learn" title="Link to this heading">#</a></h3>
+<p>Training models to quickly adapt to new tasks with minimal data.</p>
+<ul class="simple">
+<li><p>Learns general learning strategies rather than specific tasks</p></li>
+<li><p>Useful when you have many small datasets</p></li>
+<li><p>Active research area, not yet mainstream in biology.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="model-types-by-function">
+<h2>Model Types by Function<a class="headerlink" href="#model-types-by-function" title="Link to this heading">#</a></h2>
+<p>What different models are designed to do.</p>
+<hr class="docutils" />
+<section id="foundation-models">
+<h3><strong>Foundation Models</strong><a class="headerlink" href="#foundation-models" title="Link to this heading">#</a></h3>
+<p>Large-scale, general-purpose models trained on massive diverse datasets.</p>
+<ul class="simple">
+<li><p>Intended to serve as base for many downstream tasks</p></li>
+<li><p>Expensive to train, but widely reusable</p></li>
+<li><p>Examples: GPT, BERT, ESM (protein language models)<br />
+<strong>In biology: Performance varies—excellent on benchmarks, inconsistent on novel problems.</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="protein-language-models-plms">
+<h3><strong>Protein Language Models (pLMs)</strong><a class="headerlink" href="#protein-language-models-plms" title="Link to this heading">#</a></h3>
+<p>Models that treat protein sequences like language.</p>
+<ul class="simple">
+<li><p>Learn evolutionary patterns, structure hints, functional motifs from sequences alone</p></li>
+<li><p>Can generate embeddings or predict masked positions</p></li>
+<li><p>Examples: ESM-2, ProtBERT, ProtTrans<br />
+<strong>What they actually learn: Broad patterns, evolutionary constraints—but not fine-grained biology or dynamics.</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="generative-models">
+<h3><strong>Generative Models</strong><a class="headerlink" href="#generative-models" title="Link to this heading">#</a></h3>
+<p>Models that create new examples (sequences, molecules, images).</p>
+<ul class="simple">
+<li><p>Learn the distribution of training data</p></li>
+<li><p>Can sample novel examples similar to training data</p></li>
+<li><p>Types: GANs, VAEs, diffusion models<br />
+Example: Generating new protein sequences with desired properties.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="discriminative-models">
+<h3><strong>Discriminative Models</strong><a class="headerlink" href="#discriminative-models" title="Link to this heading">#</a></h3>
+<p>Models that classify or predict labels for given inputs.</p>
+<ul class="simple">
+<li><p>Most common type in traditional ML</p></li>
+<li><p>Learn boundaries between categories</p></li>
+<li><p>Examples: classifiers, regression models<br />
+Example: Predicting whether a protein binds DNA.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="variational-autoencoder-vae">
+<h3><strong>Variational Autoencoder (VAE)</strong><a class="headerlink" href="#variational-autoencoder-vae" title="Link to this heading">#</a></h3>
+<p>A generative model that learns compressed representations.</p>
+<ul class="simple">
+<li><p>Encodes data into low-dimensional space (embeddings)</p></li>
+<li><p>Can decode to reconstruct or generate new examples</p></li>
+<li><p>Used for: exploring chemical space, learning protein representations.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="diffusion-models">
+<h3><strong>Diffusion Models</strong><a class="headerlink" href="#diffusion-models" title="Link to this heading">#</a></h3>
+<p>Generative models that learn to reverse a noise-adding process.</p>
+<ul class="simple">
+<li><p>Start with noise, gradually denoise to create data</p></li>
+<li><p>State-of-the-art for image generation</p></li>
+<li><p>Emerging in biology: protein structure generation, molecular design.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="practical-deployment-terms">
+<h2>Practical Deployment Terms<a class="headerlink" href="#practical-deployment-terms" title="Link to this heading">#</a></h2>
+<p>Making models accessible and usable.</p>
+<hr class="docutils" />
+<section id="api-application-programming-interface">
+<h3><strong>API (Application Programming Interface)</strong><a class="headerlink" href="#api-application-programming-interface" title="Link to this heading">#</a></h3>
+<p>A way to access a model’s functionality programmatically.</p>
+<ul class="simple">
+<li><p>Send data to a server, get predictions back</p></li>
+<li><p>No need to install or run the model yourself</p></li>
+<li><p>Examples: AlphaFold Server, OpenAI API<br />
+Trade-off: Convenient but data leaves your control.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="gpu-graphics-processing-unit">
+<h3><strong>GPU (Graphics Processing Unit)</strong><a class="headerlink" href="#gpu-graphics-processing-unit" title="Link to this heading">#</a></h3>
+<p>Specialized hardware that accelerates neural network training and inference.</p>
+<ul class="simple">
+<li><p>Essential for deep learning at scale</p></li>
+<li><p>Training large models requires multiple GPUs</p></li>
+<li><p>Inference can often run on CPUs (slower) or single GPU<br />
+<strong>For PIs: Major cost consideration—cloud GPUs vs. local cluster.</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="inference">
+<h3><strong>Inference</strong><a class="headerlink" href="#inference" title="Link to this heading">#</a></h3>
+<p>Using a trained model to make predictions on new data.</p>
+<ul class="simple">
+<li><p>The “using” phase (vs. training phase)</p></li>
+<li><p>Much cheaper and faster than training</p></li>
+<li><p>What most biology labs do with models like AlphaFold<br />
+Example: Running AlphaFold on your protein sequence.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="interpretability-understanding-what-models-learn">
+<h2>Interpretability — Understanding What Models Learn<a class="headerlink" href="#interpretability-understanding-what-models-learn" title="Link to this heading">#</a></h2>
+<p>Critical for scientific trust and insight.</p>
+<hr class="docutils" />
+<section id="saliency-map">
+<h3><strong>Saliency Map</strong><a class="headerlink" href="#saliency-map" title="Link to this heading">#</a></h3>
+<p>Visualization showing which input features most influenced a prediction.</p>
+<ul class="simple">
+<li><p>Highlights important regions in images or sequences</p></li>
+<li><p>Computed using gradients<br />
+Example: Which amino acids were most important for a binding prediction?</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="shap-shapley-additive-explanations">
+<h3><strong>SHAP (SHapley Additive exPlanations)</strong><a class="headerlink" href="#shap-shapley-additive-explanations" title="Link to this heading">#</a></h3>
+<p>Method to quantify each feature’s contribution to predictions.</p>
+<ul class="simple">
+<li><p>Based on game theory</p></li>
+<li><p>Provides consistent, interpretable importance scores</p></li>
+<li><p>More rigorous than simple feature importance<br />
+Example: Ranking which experimental measurements matter most for your prediction.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="mechanistic-interpretability">
+<h3><strong>Mechanistic Interpretability</strong><a class="headerlink" href="#mechanistic-interpretability" title="Link to this heading">#</a></h3>
+<p>Understanding the internal computations and circuits within neural networks.</p>
+<ul class="simple">
+<li><p>Goes beyond “what features matter” to “how does the model process information”</p></li>
+<li><p>Identifies specific neurons or layers responsible for particular behaviors</p></li>
+<li><p>Active research area, especially for understanding what models truly learn.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="performance-evaluation">
+<h2>Performance Evaluation<a class="headerlink" href="#performance-evaluation" title="Link to this heading">#</a></h2>
+<p>How to assess model quality.</p>
+<hr class="docutils" />
+<section id="performance-metrics">
+<h3><strong>Performance Metrics</strong><a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h3>
+<p>Measures of how well a model achieves your goals.</p>
+<ul class="simple">
+<li><p>Different from loss functions (what’s optimized during training)</p></li>
+<li><p>Choose metrics that match your biological question<br />
+Examples: Accuracy, precision, recall, AUC, correlation (for regression).<br />
+<strong>Critical: High accuracy on benchmarks ≠ useful for your problem.</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="domain-invariant-representations">
+<h3><strong>Domain Invariant Representations</strong><a class="headerlink" href="#domain-invariant-representations" title="Link to this heading">#</a></h3>
+<p>Features that remain stable across different experimental conditions or contexts.</p>
+<ul class="simple">
+<li><p>Goal: Learn patterns that generalize across domains</p></li>
+<li><p>Helps with distribution shifts<br />
+Example: Cell state features that work across different imaging platforms or protocols.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="biology-specific-ai-terms">
+<h2>Biology-Specific AI Terms<a class="headerlink" href="#biology-specific-ai-terms" title="Link to this heading">#</a></h2>
+<p>Models and concepts specific to biological applications.</p>
+<hr class="docutils" />
+<section id="alphafold">
+<h3><strong>AlphaFold</strong><a class="headerlink" href="#alphafold" title="Link to this heading">#</a></h3>
+<p>AI system that predicts 3D protein structure from amino acid sequence.</p>
+<ul class="simple">
+<li><p>Revolutionary impact on structural biology</p></li>
+<li><p><strong>Critical caveat</strong>: Predicts <em>a</em> structure, not <em>the</em> structure</p></li>
+<li><p>Proteins are dynamic; AlphaFold shows one state</p></li>
+<li><p>Doesn’t specify biological conditions, alternative conformations, or dynamics.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="virtual-cell-models">
+<h3><strong>Virtual Cell Models</strong><a class="headerlink" href="#virtual-cell-models" title="Link to this heading">#</a></h3>
+<p>Computational models simulating cellular processes and responses.</p>
+<ul class="simple">
+<li><p>Dream: In silico substitute for wet-lab experiments</p></li>
+<li><p>Reality: Currently limited to transcriptomic responses to perturbations</p></li>
+<li><p>Don’t model proteomics, dynamics, or mechanistic depth yet</p></li>
+<li><p>Assumptions: Transcriptomics = cell state (it’s not).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="tokenization">
+<h3><strong>Tokenization</strong><a class="headerlink" href="#tokenization" title="Link to this heading">#</a></h3>
+<p>Breaking complex data into discrete units the model can process.</p>
+<ul class="simple">
+<li><p><strong>Proteins</strong>: Individual amino acids, k-mers, or structural domains</p></li>
+<li><p><strong>DNA</strong>: Nucleotides, codons, or functional motifs</p></li>
+<li><p><strong>Text</strong>: Words or sub-word pieces<br />
+<strong>Choice matters</strong>: Defines what patterns the model can see.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="one-line-memory-aids-for-key-distinctions">
+<h2>One-Line Memory Aids for Key Distinctions<a class="headerlink" href="#one-line-memory-aids-for-key-distinctions" title="Link to this heading">#</a></h2>
+<p><strong>Loss function</strong> = penalty during training | <strong>Performance metric</strong> = what you actually care about<br />
+<strong>Overfitting</strong> = memorized examples | <strong>Underfitting</strong> = didn’t learn enough<br />
+<strong>Training data</strong> = what model learns from | <strong>Testing data</strong> = evaluates generalization<br />
+<strong>Generalization</strong> = works on similar new data | <strong>OOD generalization</strong> = works on different distributions<br />
+<strong>Embeddings</strong> = learned representations | <strong>Final predictions</strong> = task-specific outputs<br />
+<strong>CNN</strong> = spatial patterns | <strong>RNN</strong> = sequential | <strong>Transformer</strong> = attention-based | <strong>GNN</strong> = relational<br />
+<strong>Foundation model</strong> = big general-purpose base | <strong>Fine-tuned model</strong> = adapted to your task<br />
+<strong>Generative</strong> = creates new examples | <strong>Discriminative</strong> = classifies given examples</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -681,6 +1239,77 @@ Example: Asking an LLM “Explain attention in simple terms,” or prompting a p
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>One-line memory aid</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-fundamentals-the-learning-process-explained">Training Fundamentals — The Learning Process Explained</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function"><strong>Loss Function</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-or-weights"><strong>Parameters (or Weights)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting"><strong>Overfitting</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underfitting"><strong>Underfitting</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-vs-testing-data"><strong>Training Data vs. Testing Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-size"><strong>Batch Size</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameters"><strong>Hyperparameters</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-the-central-challenge">Generalization — The Central Challenge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization"><strong>Generalization</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#out-of-distribution-ood-generalization"><strong>Out-of-Distribution (OOD) Generalization</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning"><strong>Transfer Learning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-learning"><strong>Zero-Shot Learning</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-architectures-the-building-blocks">Model Architectures — The Building Blocks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network"><strong>Neural Network</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer"><strong>Transformer</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn-convolutional-neural-network"><strong>CNN (Convolutional Neural Network)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rnn-recurrent-neural-network"><strong>RNN (Recurrent Neural Network)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-graph-neural-network"><strong>GNN (Graph Neural Network)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-mechanism"><strong>Attention Mechanism</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-attention"><strong>Self-Attention</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-and-representations-the-hidden-value">Embeddings and Representations — The Hidden Value</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings"><strong>Embeddings</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-engineering"><strong>Feature Engineering</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-training-paradigms">Advanced Training Paradigms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-learning"><strong>Multi-Task Learning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-supervised-learning"><strong>Self-Supervised Learning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-learning-learning-to-learn"><strong>Meta-Learning (Learning to Learn)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-types-by-function">Model Types by Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models"><strong>Foundation Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models-plms"><strong>Protein Language Models (pLMs)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-models"><strong>Generative Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminative-models"><strong>Discriminative Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-autoencoder-vae"><strong>Variational Autoencoder (VAE)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-models"><strong>Diffusion Models</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-deployment-terms">Practical Deployment Terms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-application-programming-interface"><strong>API (Application Programming Interface)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-graphics-processing-unit"><strong>GPU (Graphics Processing Unit)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference"><strong>Inference</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretability-understanding-what-models-learn">Interpretability — Understanding What Models Learn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-map"><strong>Saliency Map</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap-shapley-additive-explanations"><strong>SHAP (SHapley Additive exPlanations)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-interpretability"><strong>Mechanistic Interpretability</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-evaluation">Performance Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics"><strong>Performance Metrics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-invariant-representations"><strong>Domain Invariant Representations</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biology-specific-ai-terms">Biology-Specific AI Terms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alphafold"><strong>AlphaFold</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-cell-models"><strong>Virtual Cell Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization"><strong>Tokenization</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-line-memory-aids-for-key-distinctions">One-Line Memory Aids for Key Distinctions</a></li>
 </ul>
   </nav></div>
 
