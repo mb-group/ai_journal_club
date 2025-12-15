@@ -486,14 +486,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ml"><strong>Machine Learning (ML)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-dl"><strong>Deep Learning (DL)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-rl"><strong>Reinforcement Learning (RL)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sentence-summary"><strong>One-sentence summary</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining">Pretraining</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning">Fine-Tuning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompting">Prompting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings">Embeddings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-line-memory-aid"><strong>One-line memory aid</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models">Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining-fine-tuning-and-prompting-short-practical-explanations">Pretraining, Fine-Tuning, and Prompting — Short, Practical Explanations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining"><strong>Pretraining</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning"><strong>Fine-Tuning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompting"><strong>Prompting</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>One-line memory aid</strong></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -520,105 +522,82 @@ document.write(`
 </section>
 <section id="ai-machine-learning-deep-learning-and-reinforcement-learning-what-they-actually-mean">
 <h2>AI, Machine Learning, Deep Learning, and Reinforcement Learning — What They Actually Mean<a class="headerlink" href="#ai-machine-learning-deep-learning-and-reinforcement-learning-what-they-actually-mean" title="Link to this heading">#</a></h2>
-<p>Because AI developed rapidly and without a unifying textbook, many commonly used terms are community conventions rather than precise scientific definitions. Below is a practical, biology-friendly way to understand four of the most frequently confused concepts.</p>
+<p>Because AI grew fast without standardized definitions, common terms can be confusing. Here are concise, practical explanations for biologists.</p>
 <hr class="docutils" />
 <section id="artificial-intelligence-ai">
 <h3><strong>Artificial Intelligence (AI)</strong><a class="headerlink" href="#artificial-intelligence-ai" title="Link to this heading">#</a></h3>
-<p><strong>The broadest umbrella.</strong><br />
-“AI” refers to any computational system designed to perform tasks that appear to require reasoning, pattern recognition, or decision-making. It can include:</p>
-<ul class="simple">
-<li><p>Hand-coded rules</p></li>
-<li><p>Classical statistical models</p></li>
-<li><p>Machine learning</p></li>
-<li><p>Modern deep neural networks</p></li>
-</ul>
-<p><strong>In practice:</strong> AI ≈ anything that gives computers behaviors that <em>look</em> intelligent, regardless of how it is implemented.</p>
+<p>The broadest term.<br />
+Any method—rules, statistics, or learning systems—that makes a machine behave in a way that appears intelligent.</p>
 </section>
 <hr class="docutils" />
 <section id="machine-learning-ml">
 <h3><strong>Machine Learning (ML)</strong><a class="headerlink" href="#machine-learning-ml" title="Link to this heading">#</a></h3>
-<p><strong>A subset of AI.</strong><br />
-Machine learning refers to methods in which computers <em>learn patterns from data</em> instead of relying on manually written rules.</p>
-<p>ML systems:</p>
-<ul class="simple">
-<li><p>Take data</p></li>
-<li><p>Learn patterns</p></li>
-<li><p>Use those patterns to make predictions or decisions</p></li>
-</ul>
-<p>Examples: logistic regression, random forests, support vector machines, early neural networks.</p>
-<p><strong>Key distinction:</strong> ML requires learning from data; AI does not necessarily.</p>
+<p>A subset of AI.<br />
+Models that <em>learn patterns from data</em> instead of following hand-written rules.<br />
+Examples: logistic regression, random forests, SVMs, simple neural nets.</p>
 </section>
 <hr class="docutils" />
 <section id="deep-learning-dl">
 <h3><strong>Deep Learning (DL)</strong><a class="headerlink" href="#deep-learning-dl" title="Link to this heading">#</a></h3>
-<p><strong>A subset of machine learning.</strong><br />
-Deep learning uses multi-layer (“deep”) neural networks that automatically learn increasingly abstract representations from raw data.</p>
-<p>DL powers nearly all major breakthroughs since 2017:</p>
-<ul class="simple">
-<li><p>Protein language models</p></li>
-<li><p>AlphaFold components</p></li>
-<li><p>Large language models (LLMs)</p></li>
-<li><p>Diffusion models</p></li>
-</ul>
-<p><strong>Why it matters:</strong> DL is not just “bigger ML.” It is more empirical, less theoretically understood, and central to modern AI’s rapid advances—and its instability.</p>
+<p>A subset of ML.<br />
+Uses multi-layer neural networks to learn complex representations directly from raw data.<br />
+Powers modern breakthroughs such as protein language models, AlphaFold components, LLMs, and diffusion models.</p>
 </section>
 <hr class="docutils" />
 <section id="reinforcement-learning-rl">
 <h3><strong>Reinforcement Learning (RL)</strong><a class="headerlink" href="#reinforcement-learning-rl" title="Link to this heading">#</a></h3>
-<p><strong>A different paradigm of learning.</strong><br />
-Reinforcement learning does not rely on labeled datasets. Instead, an <em>agent</em> interacts with an <em>environment</em> and learns through trial and error to maximize cumulative reward.</p>
-<p>Core components:</p>
-<ul class="simple">
-<li><p><strong>Agent</strong></p></li>
-<li><p><strong>Environment</strong></p></li>
-<li><p><strong>Actions</strong></p></li>
-<li><p><strong>Rewards</strong></p></li>
-</ul>
-<p>RL powers systems like:</p>
-<ul class="simple">
-<li><p>AlphaGo</p></li>
-<li><p>Robotics controllers</p></li>
-<li><p>RLHF (reinforcement learning from human feedback) used in modern LLM alignment</p></li>
-</ul>
-<p><strong>Distinction:</strong><br />
-ML/DL learn from <em>datasets</em>.<br />
-RL learns from <em>experience</em>.</p>
+<p>A distinct learning paradigm.<br />
+An agent learns by <em>interacting with an environment</em> and improving behavior based on rewards—not by using labeled datasets.<br />
+Used in AlphaGo, robotics, and RLHF for modern LLMs.</p>
 </section>
 <hr class="docutils" />
-<section id="one-sentence-summary">
-<h3><strong>One-sentence summary</strong><a class="headerlink" href="#one-sentence-summary" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>AI</strong> = the whole space of making machines appear intelligent</p></li>
-<li><p><strong>ML</strong> = AI that learns from data</p></li>
-<li><p><strong>DL</strong> = ML using deep neural networks</p></li>
-<li><p><strong>RL</strong> = learning by interacting with an environment to maximize reward</p></li>
-</ul>
+<section id="one-line-memory-aid">
+<h3><strong>One-line memory aid</strong><a class="headerlink" href="#one-line-memory-aid" title="Link to this heading">#</a></h3>
+<p><strong>AI</strong> (broad idea) → <strong>ML</strong> (learns from data) → <strong>DL</strong> (ML with deep neural nets)<br />
+<strong>RL</strong> = learns by trial-and-error interaction with rewards.</p>
 </section>
+</section>
+<hr class="docutils" />
+<section id="pretraining-fine-tuning-and-prompting-short-practical-explanations">
+<h2>Pretraining, Fine-Tuning, and Prompting — Short, Practical Explanations<a class="headerlink" href="#pretraining-fine-tuning-and-prompting-short-practical-explanations" title="Link to this heading">#</a></h2>
+<p>These three terms describe how modern AI models are built and adapted. They are often used inconsistently, so here are concise definitions for biology researchers.</p>
 <hr class="docutils" />
 <section id="pretraining">
-<h3>Pretraining<a class="headerlink" href="#pretraining" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<h3><strong>Pretraining</strong><a class="headerlink" href="#pretraining" title="Link to this heading">#</a></h3>
+<p>Training a model on a <em>very large, general-purpose dataset</em> so it learns broad patterns (e.g., protein grammar, language structure, image features).</p>
+<ul class="simple">
+<li><p>Expensive and time-consuming</p></li>
+<li><p>Produces a versatile “base model”<br />
+Example: Protein language models trained on millions of sequences.</p></li>
+</ul>
 </section>
+<hr class="docutils" />
 <section id="fine-tuning">
-<h3>Fine-Tuning<a class="headerlink" href="#fine-tuning" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<h3><strong>Fine-Tuning</strong><a class="headerlink" href="#fine-tuning" title="Link to this heading">#</a></h3>
+<p>Taking a pretrained model and training it <em>further on a smaller, task-specific dataset</em> so it adapts to your problem.</p>
+<ul class="simple">
+<li><p>Much cheaper than pretraining</p></li>
+<li><p>Injects domain knowledge<br />
+Example: Fine-tuning a protein language model for thermostability prediction on your own experimental data.</p></li>
+</ul>
 </section>
+<hr class="docutils" />
 <section id="prompting">
-<h3>Prompting<a class="headerlink" href="#prompting" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
+<h3><strong>Prompting</strong><a class="headerlink" href="#prompting" title="Link to this heading">#</a></h3>
+<p>Using a pretrained model <em>as-is</em> by giving it carefully designed text or tokens that steer its output—no additional training required.</p>
+<ul class="simple">
+<li><p>Fastest and easiest way to use a model</p></li>
+<li><p>Depends on the model’s existing knowledge<br />
+Example: Asking an LLM “Explain attention in simple terms,” or prompting a protein model with a sequence and a question.</p></li>
+</ul>
 </section>
-<section id="embeddings">
-<h3>Embeddings<a class="headerlink" href="#embeddings" title="Link to this heading">#</a></h3>
-<p>Content coming soon…
-Model architecture: The structure of a neural network, including layers, types (e.g., CNN, Transformer), and how data flows through it.</p>
-<p>Training behavior/scheme: The process of feeding labeled data to an AI model so it can learn patterns and adjust its parameters.</p>
-<p>Evaluation behavior/scheme: The set of methods and metrics used to assess model performance, such as accuracy, AUROC, or precision-recall.</p>
-<p>Inference behavior/scheme: The process of using a trained model to make predictions on new, unseen data.</p>
-<p>State-of-the-art: The most advanced or highest-performing models or techniques available in the field.</p>
+<hr class="docutils" />
+<section id="id1">
+<h3><strong>One-line memory aid</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>Pretraining</strong> = teach the model the world.<br />
+<strong>Fine-tuning</strong> = teach it your task.<br />
+<strong>Prompting</strong> = ask it for what you need without retraining.</p>
 </section>
-</section>
-<section id="embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models">
-<h2>Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models.<a class="headerlink" href="#embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -692,14 +671,16 @@ Model architecture: The structure of a neural network, including layers, types (
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ml"><strong>Machine Learning (ML)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-dl"><strong>Deep Learning (DL)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-rl"><strong>Reinforcement Learning (RL)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sentence-summary"><strong>One-sentence summary</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining">Pretraining</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning">Fine-Tuning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompting">Prompting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings">Embeddings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-line-memory-aid"><strong>One-line memory aid</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-a-numerical-vector-representation-of-complex-input-e-g-protein-sequences-used-as-input-to-models">Embedding: A numerical vector representation of complex input (e.g., protein sequences), used as input to models.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining-fine-tuning-and-prompting-short-practical-explanations">Pretraining, Fine-Tuning, and Prompting — Short, Practical Explanations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining"><strong>Pretraining</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning"><strong>Fine-Tuning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompting"><strong>Prompting</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>One-line memory aid</strong></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
