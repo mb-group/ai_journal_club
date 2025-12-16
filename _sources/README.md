@@ -1,5 +1,11 @@
 # AI Journal Club
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 Welcome to the AI Journal Club project! This is a Jupyter Book containing resources and discussions for our AI journal club. An interactive playground and zoo of AI models for exploring artificial intelligence's impact on scientific research.
 
 ## Environment Setup

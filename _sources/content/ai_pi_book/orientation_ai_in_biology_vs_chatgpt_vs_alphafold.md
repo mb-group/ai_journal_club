@@ -1,5 +1,11 @@
 # Are ChatGPT and Protein Modeling AI the Same?
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## The Core Question
 
 "Is ChatGPT the same AI as the one used in protein modeling, genomics, or image analysis?"

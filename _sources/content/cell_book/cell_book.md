@@ -1,5 +1,11 @@
 # Cell Book
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ![Cell Book Cover](../../assets/cell-bookcover.jpg)
 
 A comprehensive collection of artificial intelligence and machine learning approaches applied to cell biology, from molecular mechanisms to cellular behavior in tissues. This book covers computational methods for understanding cells at multiple scales and contexts.
