@@ -1,5 +1,11 @@
 # Chapter 1: Cells and Genomes
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Cell Type-Specific Embeddings
 
 ### Foundation Models for Cell Analysis

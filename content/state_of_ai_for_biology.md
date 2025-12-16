@@ -1,5 +1,11 @@
 # State of AI for Biology: A Comprehensive Overview
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 *Mapping the AI revolution across fundamental biological sciences*
 
 ## Executive Summary

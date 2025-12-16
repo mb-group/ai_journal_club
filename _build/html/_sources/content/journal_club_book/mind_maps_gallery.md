@@ -1,5 +1,11 @@
 # Mind Maps Gallery
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Visual Conceptual Frameworks
 
 These mind maps represent visual summaries and conceptual frameworks that emerged from our journal club discussions. Each mind map captures key relationships, hierarchies, and connections between important AI concepts in biology, providing intuitive visual guides for understanding complex topics.

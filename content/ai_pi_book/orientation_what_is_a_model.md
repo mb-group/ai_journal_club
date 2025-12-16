@@ -1,5 +1,11 @@
 # Understanding "Models": From Biology to Deep Learning
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Introduction
 
 The word "model" means something quite different in biology versus deep learning, which creates confusion for biological researchers. This document provides a comprehensive comparison of different types of models to clarify these conceptual differences.

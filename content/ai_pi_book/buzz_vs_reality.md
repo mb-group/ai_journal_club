@@ -1,4 +1,10 @@
 # Trends, Buzzwords, and Reality: What These Concepts *Actually* Mean for Biology  
+
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
 Below are concise, parallel-structured explanations of major AI-for-biology concepts. Each follows the same four-part structure to keep expectations calibrated:  
 **(1) the good wish, (2) the solid and impressive parts, (3) the realistic performance, (4) the under-stated assumptions.**
 

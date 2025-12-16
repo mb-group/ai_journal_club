@@ -1,5 +1,11 @@
 # Contributors
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 *Honoring the minds behind the AI Journal Club live book*
 
 This collaborative effort represents the collective knowledge, insights, and dedication of researchers committed to understanding AI's impact on fundamental biology. We acknowledge all contributors who have helped build this comprehensive resource.

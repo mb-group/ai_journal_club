@@ -1,5 +1,11 @@
 # Chapter 9: Visualizing Cells
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Cell Trajectory Analysis
 
 ### Developmental Trajectory Inference

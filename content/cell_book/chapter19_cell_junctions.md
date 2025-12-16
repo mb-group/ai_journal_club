@@ -1,5 +1,11 @@
 # Chapter 19: Cell Junctions, Cell Adhesion, and the Extracellular Matrix
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Cell Communication Analysis
 
 ### Intercellular Communication Networks

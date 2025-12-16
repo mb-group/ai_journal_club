@@ -1,5 +1,11 @@
 # Chapter 3: Proteins
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Protein Embedding with Cell Context
 
 ### Cell-Context Aware Protein Models

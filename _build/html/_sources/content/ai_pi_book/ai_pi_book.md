@@ -1,5 +1,11 @@
 # The AI Book for PI in Biology
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 This book provides intuitive understanding and practical guidance for Principal Investigators (PIs) in biology on integrating artificial intelligence into their research programs and translating their research quesition into an AI task.
 
 
