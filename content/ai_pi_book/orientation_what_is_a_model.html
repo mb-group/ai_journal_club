@@ -482,7 +482,16 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum-of-model">The Spectrum of “Model”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum-of-model">The Spectrum of “Model”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-models-as-statistical-association-learners">Deep learning models as statistical association learners</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-deep-learning-associations-vs-biostatistical-associations">Comparison: Deep learning associations vs. biostatistical associations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biostatistical-association"><strong>Biostatistical association</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-association"><strong>Deep learning association</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-contrasts">Key Contrasts</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-each-model-is">What Each Model IS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-each-is-built">How Each is Built</a></li>
@@ -545,6 +554,44 @@ MD Simulation ——— Structure ——— PK ——— Wet Lab ——— Deep 
 (pure physics)                                      (pure pattern)
 </pre></div>
 </div>
+<hr class="docutils" />
+<section id="deep-learning-models-as-statistical-association-learners">
+<h3>Deep learning models as statistical association learners<a class="headerlink" href="#deep-learning-models-as-statistical-association-learners" title="Link to this heading">#</a></h3>
+<p>A trained deep learning model is best understood as a <strong>learned representation of statistical association patterns</strong> between inputs and outputs.<br />
+These associations are high-dimensional, implicit, and distributed across the model’s parameters—not interpretable in the way traditional statistical models are.</p>
+</section>
+<section id="comparison-deep-learning-associations-vs-biostatistical-associations">
+<h3>Comparison: Deep learning associations vs. biostatistical associations<a class="headerlink" href="#comparison-deep-learning-associations-vs-biostatistical-associations" title="Link to this heading">#</a></h3>
+<p>Although both deep learning and classical biostatistics deal with “associations,” the nature of these associations is fundamentally different.</p>
+<section id="biostatistical-association">
+<h4><strong>Biostatistical association</strong><a class="headerlink" href="#biostatistical-association" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Explicit and interpretable</p></li>
+<li><p>Parameters correspond to meaningful effect sizes (e.g., β coefficients, hazard ratios)</p></li>
+<li><p>Built on predefined functional forms and assumptions (linearity, proportional hazards, independence)</p></li>
+<li><p>Designed for explanation, inference, and hypothesis testing</p></li>
+<li><p>Low- to moderate-dimensional structure</p></li>
+</ul>
+</section>
+<section id="deep-learning-association">
+<h4><strong>Deep learning association</strong><a class="headerlink" href="#deep-learning-association" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Implicit and distributed across millions of parameters</p></li>
+<li><p>No predefined functional form; the model discovers complex nonlinear relationships</p></li>
+<li><p>Not directly interpretable; does not yield effect sizes or p-values</p></li>
+<li><p>Designed for high-performance prediction rather than causal inference</p></li>
+<li><p>Naturally suited for high-dimensional, unstructured data (images, sequences, text)</p></li>
+</ul>
+</section>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Biostatistics</strong> → interpretable, assumption-driven, low-dimensional associations</p></li>
+<li><p><strong>Deep learning</strong> → high-dimensional, assumption-light, representation-based associations</p></li>
+</ul>
+<p>Both operate on the idea of “association,” but they do so in <strong>fundamentally different ways and for different scientific purposes</strong>.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="key-contrasts">
@@ -885,7 +932,16 @@ Design (create container) → Train (learn patterns) → Use
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum-of-model">The Spectrum of “Model”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spectrum-of-model">The Spectrum of “Model”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-models-as-statistical-association-learners">Deep learning models as statistical association learners</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-deep-learning-associations-vs-biostatistical-associations">Comparison: Deep learning associations vs. biostatistical associations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biostatistical-association"><strong>Biostatistical association</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-association"><strong>Deep learning association</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-contrasts">Key Contrasts</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-each-model-is">What Each Model IS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-each-is-built">How Each is Built</a></li>
