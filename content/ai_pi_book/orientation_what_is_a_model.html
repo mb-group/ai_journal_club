@@ -499,17 +499,19 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-critical-difference-the-training-phase">The Critical Difference: The Training Phase</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-models-design-understanding">Other Models: Design = Understanding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traditional-models-design-encodes-understanding">Traditional Models: Design Encodes Understanding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-design-understanding">Deep Learning: Design ≠ Understanding</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-predicting-protein-stability">Example: Predicting Protein Stability</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traditional-approach-like-pk-model">Traditional Approach (like PK model)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-approach-like-pk-model">Mechanistic Approach (like PK model)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biostatistical-approach">Biostatistical Approach</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-approach">Deep Learning Approach</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversational-examples">Conversational Examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-structure-or-pk-models">With Structure or PK Models:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-mechanistic-models-md-structure-pk">With Mechanistic Models (MD, Structure, PK):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-biostatistical-models">With Biostatistical Models:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-deep-learning">With Deep Learning:</a></li>
 </ul>
 </li>
@@ -518,10 +520,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications">Practical Implications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-t-just-update-a-deep-learning-model-like-other-models">You can’t just “update” a deep learning model like other models:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-t-easily-inspect-what-was-learned">You can’t easily inspect what was learned:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-outputs-for-different-purposes">Different outputs for different purposes:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model-is-a-trained-artifact">The model is a trained artifact:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-the-three-phase-life">Summary: The Three-Phase Life</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-model-development-lifecycle">Summary: Model Development Lifecycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaway">Key Takeaway</a></li>
 </ul>
             </nav>
@@ -547,13 +550,22 @@ document.write(`
 <hr class="docutils" />
 <section id="the-spectrum-of-model">
 <h2>The Spectrum of “Model”<a class="headerlink" href="#the-spectrum-of-model" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>More Interpretable ←——————————————————————→ Less Interpretable
-More Mechanistic ←——————————————————————→ More Empirical
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>More Interpretable ←———————————————————————————————————————→ Less Interpretable
+More Mechanistic ←———————————————————————————————————————→ More Empirical
 
-MD Simulation ——— Structure ——— PK ——— Wet Lab ——— Deep Learning
-(pure physics)                                      (pure pattern)
+MD Simulation — Structure — PK — Biostatistics — Wet Lab — Deep Learning
+(pure physics)                                                  (pure pattern)
 </pre></div>
 </div>
+<p><strong>Where they sit on the spectrum:</strong></p>
+<ul class="simple">
+<li><p><strong>MD Simulation</strong>: Pure physics-based, fully mechanistic</p></li>
+<li><p><strong>Structure</strong>: Atomic-level reality, fully interpretable</p></li>
+<li><p><strong>PK Models</strong>: Physiologically-grounded with interpretable parameters</p></li>
+<li><p><strong>Biostatistics</strong>: Statistical associations with explicit effect sizes</p></li>
+<li><p><strong>Wet Lab Models</strong>: Complex biology, partially understood</p></li>
+<li><p><strong>Deep Learning</strong>: Pure pattern recognition, minimal interpretability</p></li>
+</ul>
 <hr class="docutils" />
 <section id="deep-learning-models-as-statistical-association-learners">
 <h3>Deep learning models as statistical association learners<a class="headerlink" href="#deep-learning-models-as-statistical-association-learners" title="Link to this heading">#</a></h3>
@@ -618,13 +630,17 @@ These associations are high-dimensional, implicit, and distributed across the mo
 <td><p>Drug movement through body</p></td>
 <td><p>Compartments and rates</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Wet Lab</strong></p></td>
+<tr class="row-odd"><td><p><strong>Biostatistics</strong></p></td>
+<td><p>Explicit associations between variables</p></td>
+<td><p>Regression coefficients, effect sizes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wet Lab</strong></p></td>
 <td><p>Living approximation</p></td>
 <td><p>Actual biological system</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Deep Learning</strong></p></td>
-<td><p>Statistical patterns</p></td>
-<td><p>Millions of weights/parameters</p></td>
+<tr class="row-odd"><td><p><strong>Deep Learning</strong></p></td>
+<td><p>Implicit high-dimensional patterns</p></td>
+<td><p>Millions of learned weights/parameters</p></td>
 </tr>
 </tbody>
 </table>
@@ -656,13 +672,18 @@ These associations are high-dimensional, implicit, and distributed across the mo
 <td><p>Yes - “this is liver clearance”</p></td>
 <td><p>~5-10 parameters</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Wet Lab</strong></p></td>
+<tr class="row-odd"><td><p><strong>Biostatistics</strong></p></td>
+<td><p>Mathematical assumptions + data</p></td>
+<td><p>Yes - “this is the effect of age”</p></td>
+<td><p>~5-50 coefficients</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wet Lab</strong></p></td>
 <td><p>Actual biology</p></td>
 <td><p>Partly - but complex</p></td>
 <td><p>Billions of molecules</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Deep Learning</strong></p></td>
-<td><p>Patterns in data</p></td>
+<tr class="row-odd"><td><p><strong>Deep Learning</strong></p></td>
+<td><p>Patterns in data only</p></td>
 <td><p>No - “this is neuron layer 47”</p></td>
 <td><p>Millions to billions</p></td>
 </tr>
@@ -696,15 +717,20 @@ These associations are high-dimensional, implicit, and distributed across the mo
 <td><p>Fit ~5-10 parameters (quick)</p></td>
 <td><p>After fitting</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Wet Lab</strong></p></td>
+<tr class="row-odd"><td><p><strong>Biostatistics</strong></p></td>
+<td><p>Choose model form (linear, Cox, logistic)</p></td>
+<td><p>Fit coefficients (moderate)</p></td>
+<td><p>After fitting + validation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wet Lab</strong></p></td>
 <td><p>Generate/establish</p></td>
 <td><p>Growing/maintaining</p></td>
 <td><p>After establishment</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Deep Learning</strong></p></td>
+<tr class="row-odd"><td><p><strong>Deep Learning</strong></p></td>
 <td><p>Architecture only</p></td>
-<td><p><strong>Train millions of parameters</strong></p></td>
-<td><p>Only after training</p></td>
+<td><p><strong>Train millions of parameters (expensive!)</strong></p></td>
+<td><p>Only after extensive training</p></td>
 </tr>
 </tbody>
 </table>
@@ -714,48 +740,58 @@ These associations are high-dimensional, implicit, and distributed across the mo
 <hr class="docutils" />
 <section id="the-critical-difference-the-training-phase">
 <h2>The Critical Difference: The Training Phase<a class="headerlink" href="#the-critical-difference-the-training-phase" title="Link to this heading">#</a></h2>
-<section id="other-models-design-understanding">
-<h3>Other Models: Design = Understanding<a class="headerlink" href="#other-models-design-understanding" title="Link to this heading">#</a></h3>
-<p>When you design an MD simulation or PK model, you’re encoding your understanding:</p>
+<section id="traditional-models-design-encodes-understanding">
+<h3>Traditional Models: Design Encodes Understanding<a class="headerlink" href="#traditional-models-design-encodes-understanding" title="Link to this heading">#</a></h3>
+<p>When you design traditional models, you’re encoding your knowledge:</p>
 <ul class="simple">
-<li><p>“Atoms repel at short distances” → van der Waals equation</p></li>
-<li><p>“Drugs clear through the liver” → clearance parameter</p></li>
+<li><p><strong>MD simulation</strong>: “Atoms repel at short distances” → van der Waals equation</p></li>
+<li><p><strong>PK model</strong>: “Drugs clear through the liver” → clearance parameter</p></li>
+<li><p><strong>Biostatistics</strong>: “Age affects survival” → proportional hazards with age coefficient</p></li>
 </ul>
-<p><strong>Design IS the model</strong> - there’s no separate “learning” phase</p>
+<p><strong>Design IS the model</strong> - fitting is just calibrating predefined, interpretable parameters</p>
 </section>
 <section id="deep-learning-design-understanding">
 <h3>Deep Learning: Design ≠ Understanding<a class="headerlink" href="#deep-learning-design-understanding" title="Link to this heading">#</a></h3>
 <p>When you design a neural network architecture:</p>
 <ul class="simple">
 <li><p>“Stack 12 transformer layers with 16 attention heads”</p></li>
-<li><p>This is just scaffolding - an empty container</p></li>
+<li><p>This is just scaffolding - an empty container with no biological knowledge</p></li>
 </ul>
-<p><strong>The model doesn’t exist until training!</strong></p>
+<p><strong>The model doesn’t exist until training!</strong> The architecture is useless without the learned weights.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="example-predicting-protein-stability">
 <h2>Example: Predicting Protein Stability<a class="headerlink" href="#example-predicting-protein-stability" title="Link to this heading">#</a></h2>
-<section id="traditional-approach-like-pk-model">
-<h3>Traditional Approach (like PK model)<a class="headerlink" href="#traditional-approach-like-pk-model" title="Link to this heading">#</a></h3>
+<section id="mechanistic-approach-like-pk-model">
+<h3>Mechanistic Approach (like PK model)<a class="headerlink" href="#mechanistic-approach-like-pk-model" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Design</strong>: “Stability = f(hydrophobic burial, H-bonds, electrostatics)” - you write the equation based on biophysics</p></li>
 <li><p><strong>Fit</strong>: Maybe calibrate a few coefficients from experimental data</p></li>
 <li><p><strong>Use</strong>: Plug in new protein → get prediction</p></li>
 </ol>
-<p><em>You designed the model based on understanding</em></p>
+<p><em>You designed the model based on mechanistic understanding</em></p>
+</section>
+<section id="biostatistical-approach">
+<h3>Biostatistical Approach<a class="headerlink" href="#biostatistical-approach" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Design</strong>: “log(Stability) = β₀ + β₁(hydrophobic%) + β₂(charge) + β₃(size)” - you choose functional form and features</p></li>
+<li><p><strong>Fit</strong>: Estimate coefficients using regression on experimental data (e.g., β₁ = 0.23, p &lt; 0.001)</p></li>
+<li><p><strong>Use</strong>: Plug in new protein → get prediction + confidence interval + p-values</p></li>
+</ol>
+<p><em>You designed the functional form; fitting gives interpretable effect sizes</em></p>
 </section>
 <section id="deep-learning-approach">
 <h3>Deep Learning Approach<a class="headerlink" href="#deep-learning-approach" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p><strong>Design</strong>: “12 attention layers, 512 dimensions” - no biology here yet!</p></li>
+<li><p><strong>Design</strong>: “12 attention layers, 512 dimensions” - no biology or statistics here yet!</p></li>
 <li><p><strong>Train</strong>: Show 100M protein sequences for 2 weeks on 256 GPUs</p>
 <ul class="simple">
 <li><p>Model adjusts 380M parameters to learn patterns</p></li>
 <li><p><strong>This is where the “understanding” emerges</strong> (but in uninterpretable form)</p></li>
 </ul>
 </li>
-<li><p><strong>Use</strong>: Plug in new protein → get prediction</p></li>
+<li><p><strong>Use</strong>: Plug in new protein → get prediction (no effect sizes, no p-values)</p></li>
 </ol>
 <p><em>You designed the container; training filled it with learned patterns</em></p>
 </section>
@@ -763,38 +799,56 @@ These associations are high-dimensional, implicit, and distributed across the mo
 <hr class="docutils" />
 <section id="conversational-examples">
 <h2>Conversational Examples<a class="headerlink" href="#conversational-examples" title="Link to this heading">#</a></h2>
-<section id="with-structure-or-pk-models">
-<h3>With Structure or PK Models:<a class="headerlink" href="#with-structure-or-pk-models" title="Link to this heading">#</a></h3>
+<section id="with-mechanistic-models-md-structure-pk">
+<h3>With Mechanistic Models (MD, Structure, PK):<a class="headerlink" href="#with-mechanistic-models-md-structure-pk" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>“Why does this drug clear slowly?” → “Because the clearance parameter is 0.05 L/hr”</p></li>
 <li><p>“Why does this protein fold?” → “Because these hydrophobic residues cluster away from water”</p></li>
 <li><p>“Why did the protein unfold in MD?” → “This salt bridge broke at 340K, reducing stability by 15 kcal/mol”</p></li>
 </ul>
 </section>
+<section id="with-biostatistical-models">
+<h3>With Biostatistical Models:<a class="headerlink" href="#with-biostatistical-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>“Does smoking increase cancer risk?” → “Yes, HR = 2.3 (95% CI: 1.8-2.9), p &lt; 0.001”</p></li>
+<li><p>“Is age associated with disease progression?” → “Each year increases odds by β = 0.12 (SE = 0.03)”</p></li>
+<li><p>“What predicts survival?” → “Stage IV reduces median survival by 18 months (p &lt; 0.0001)”</p></li>
+</ul>
+</section>
 <section id="with-deep-learning">
 <h3>With Deep Learning:<a class="headerlink" href="#with-deep-learning" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>“Why does this model think this protein binds DNA?” → “Because neuron activations in layer 23 are high, which correlates with DNA-binding in training data”</p></li>
+<li><p>“What features matter most?” → “…attention weights suggest sequence position 45-78 matters, but we can’t say why”</p></li>
 </ul>
-<p><strong>It’s more like asking</strong>: “Why does your brain recognize your mother’s face?” The pattern is <em>encoded</em> but not <em>explicit</em>.</p>
+<p><strong>The difference:</strong></p>
+<ul class="simple">
+<li><p><strong>Biostatistics</strong> gives you explicit, testable associations with uncertainty quantification</p></li>
+<li><p><strong>Deep learning</strong> gives you predictions without explicit associations or statistical inference</p></li>
+</ul>
 </section>
 </section>
 <hr class="docutils" />
 <section id="why-this-confuses-biologists">
 <h2>Why This Confuses Biologists<a class="headerlink" href="#why-this-confuses-biologists" title="Link to this heading">#</a></h2>
-<p>For biologists, “model” traditionally means:</p>
+<p>For biologists and biostatisticians, “model” traditionally means:</p>
 <ol class="arabic simple">
-<li><p><strong>Something simpler than reality</strong> (MD simplifies to force fields; mouse is simpler than human)</p></li>
-<li><p><strong>Something you can reason through</strong> (I can trace cause → effect)</p></li>
+<li><p><strong>Something simpler than reality</strong> (MD simplifies to force fields; Cox regression simplifies survival to a few covariates)</p></li>
+<li><p><strong>Something you can reason through</strong> (I can trace cause → effect, or interpret β coefficients)</p></li>
 <li><p><strong>Something that explains</strong> (tells you <em>why</em>, not just <em>what</em>)</p></li>
 </ol>
-<p>Deep learning breaks all three:</p>
+<p>Deep learning violates all three expectations:</p>
 <ol class="arabic simple">
-<li><p><strong>More complex</strong> - billions of parameters vs. real biology</p></li>
-<li><p><strong>Can’t reason through</strong> - no human can trace input → output</p></li>
-<li><p><strong>Doesn’t explain</strong> - predicts without mechanistic insight</p></li>
+<li><p><strong>More complex</strong> - billions of parameters vs. a handful of interpretable coefficients</p></li>
+<li><p><strong>Can’t reason through</strong> - no human can trace input → output through millions of weights</p></li>
+<li><p><strong>Doesn’t explain</strong> - predicts without mechanistic insight or interpretable effect sizes</p></li>
 </ol>
-<p><strong>It’s a model in the statistical sense</strong> (mathematical function fitted to data) but not in the biological sense (simplified representation of mechanism).</p>
+<p><strong>The confusion is semantic:</strong></p>
+<ul class="simple">
+<li><p>Deep learning is a “model” in the <strong>computer science/machine learning sense</strong>: a parameterized function learned from data</p></li>
+<li><p>But it’s NOT a “model” in the <strong>traditional biological/statistical sense</strong>: an interpretable simplification that explains mechanisms or provides explicit associations</p></li>
+</ul>
+<p>This is why biostatisticians and biologists often feel uncomfortable with deep learning—it claims to “model” biology while abandoning the interpretability and explanatory power that traditionally define modeling in their fields.</p>
 </section>
 <hr class="docutils" />
 <section id="the-training-phase-is-alien-to-biology">
@@ -823,47 +877,105 @@ These associations are high-dimensional, implicit, and distributed across the mo
 <section id="you-can-t-just-update-a-deep-learning-model-like-other-models">
 <h3>You can’t just “update” a deep learning model like other models:<a class="headerlink" href="#you-can-t-just-update-a-deep-learning-model-like-other-models" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>PK model</strong>: Get new patient data → refit parameters (quick)</p></li>
-<li><p><strong>Deep learning</strong>: Get new data → might need to retrain entire model (expensive!)</p></li>
+<li><p><strong>PK model</strong>: Get new patient data → refit parameters (minutes)</p></li>
+<li><p><strong>Biostatistics</strong>: Add new covariates → refit regression (minutes to hours)</p></li>
+<li><p><strong>Deep learning</strong>: Get new data → might need to retrain entire model (days to weeks, $$$!)</p></li>
 </ul>
 </section>
 <section id="you-can-t-easily-inspect-what-was-learned">
 <h3>You can’t easily inspect what was learned:<a class="headerlink" href="#you-can-t-easily-inspect-what-was-learned" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>MD simulation</strong>: “Why did it unfold?” → trace forces step by step</p></li>
-<li><p><strong>Deep learning</strong>: “Why this prediction?” → …look at billions of weights?</p></li>
+<li><p><strong>Biostatistics</strong>: “What’s the effect?” → β = 0.23, p &lt; 0.001, here’s the confidence interval</p></li>
+<li><p><strong>Deep learning</strong>: “Why this prediction?” → …look at billions of weights? Use attention visualization?</p></li>
+</ul>
+</section>
+<section id="different-outputs-for-different-purposes">
+<h3>Different outputs for different purposes:<a class="headerlink" href="#different-outputs-for-different-purposes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Biostatistics</strong>: Effect sizes, p-values, confidence intervals → inference and hypothesis testing</p></li>
+<li><p><strong>Deep learning</strong>: Point predictions, maybe uncertainty estimates → high-performance prediction</p></li>
 </ul>
 </section>
 <section id="the-model-is-a-trained-artifact">
 <h3>The model is a trained artifact:<a class="headerlink" href="#the-model-is-a-trained-artifact" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>You can download “ESM-2-650M” - someone else did the expensive training</p></li>
-<li><p>You can’t download “the physics” - you just implement it yourself</p></li>
+<li><p>You can’t download “the physics” or “the regression” - you just implement them yourself</p></li>
 <li><p>This is more like downloading a trained dog vs. downloading the laws of genetics</p></li>
 </ul>
 </section>
 </section>
 <hr class="docutils" />
-<section id="summary-the-three-phase-life">
-<h2>Summary: The Three-Phase Life<a class="headerlink" href="#summary-the-three-phase-life" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Traditional Biology Model:
-Design (encode understanding) ——————————→ Use
+<section id="summary-model-development-lifecycle">
+<h2>Summary: Model Development Lifecycle<a class="headerlink" href="#summary-model-development-lifecycle" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Mechanistic Models (MD, PK):
+Design (encode physics/biology) ——————————→ Use
 
-Deep Learning Model:
-Design (create container) → Train (learn patterns) → Use
-                              ↑
+Biostatistical Models:
+Design (choose functional form) → Fit (estimate coefficients) → Use
+                                   ↑ quick, interpretable
+
+Deep Learning Models:
+Design (create architecture) → Train (learn patterns) → Use
+                                ↑
                     This phase is unique and expensive
                     This is where patterns are learned
                     This is why it&#39;s a black box
+                    Millions of parameters adjusted
 </pre></div>
 </div>
 </section>
 <hr class="docutils" />
 <section id="key-takeaway">
 <h2>Key Takeaway<a class="headerlink" href="#key-takeaway" title="Link to this heading">#</a></h2>
-<p>Deep learning models are more like <strong>compressed recordings of patterns in data</strong> rather than <strong>explanations of how systems work</strong>.</p>
-<p>They’re incredibly useful for prediction but require additional work (like mechanistic interpretability) to extract biological understanding.</p>
-<p>The critical insight: <strong>The training phase is where the magic happens</strong> - where billions of parameters adjust to capture patterns - but this phase doesn’t exist in traditional biological models, and the result is opaque in a way that traditional models are not.</p>
+<p>Deep learning models are fundamentally different from both mechanistic models and biostatistical models:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Mechanistic (MD, PK)</p></th>
+<th class="head"><p>Biostatistical</p></th>
+<th class="head"><p>Deep Learning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>What it captures</strong></p></td>
+<td><p>Physical/biological mechanisms</p></td>
+<td><p>Explicit statistical associations</p></td>
+<td><p>Implicit high-dimensional patterns</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Parameters</strong></p></td>
+<td><p>Few, interpretable</p></td>
+<td><p>Few to moderate, interpretable (β, HR, OR)</p></td>
+<td><p>Millions, uninterpretable</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Output</strong></p></td>
+<td><p>Mechanistic predictions</p></td>
+<td><p>Effect sizes + p-values + CI</p></td>
+<td><p>Point predictions</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Purpose</strong></p></td>
+<td><p>Understanding mechanisms</p></td>
+<td><p>Inference &amp; hypothesis testing</p></td>
+<td><p>High-performance prediction</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>When training matters</strong></p></td>
+<td><p>No training (physics is universal)</p></td>
+<td><p>Quick fitting (interpretable)</p></td>
+<td><p>Expensive training (black box)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Bottom line:</strong></p>
+<ul class="simple">
+<li><p><strong>Mechanistic models</strong> → explain <em>how</em> systems work via physics/biology</p></li>
+<li><p><strong>Biostatistical models</strong> → quantify <em>associations</em> with explicit effect sizes and statistical inference</p></li>
+<li><p><strong>Deep learning models</strong> → learn <em>patterns</em> for prediction without explicit associations or mechanisms</p></li>
+</ul>
+<p>Deep learning models are more like <strong>compressed recordings of patterns in data</strong> rather than <strong>explanations of how systems work</strong> or <strong>explicit quantifications of associations</strong>.</p>
+<p>They’re incredibly useful for prediction but require additional work (like mechanistic interpretability or post-hoc statistical analysis) to extract biological understanding or perform statistical inference.</p>
+<p><strong>The critical insight:</strong> The training phase is where billions of parameters adjust to capture patterns—but this phase either doesn’t exist (mechanistic models) or is quick and interpretable (biostatistics) in traditional approaches. Deep learning’s expensive, opaque training process fundamentally changes what a “model” means.</p>
 </section>
 </section>
 
@@ -949,17 +1061,19 @@ Design (create container) → Train (learn patterns) → Use
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-critical-difference-the-training-phase">The Critical Difference: The Training Phase</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-models-design-understanding">Other Models: Design = Understanding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traditional-models-design-encodes-understanding">Traditional Models: Design Encodes Understanding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-design-understanding">Deep Learning: Design ≠ Understanding</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-predicting-protein-stability">Example: Predicting Protein Stability</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traditional-approach-like-pk-model">Traditional Approach (like PK model)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-approach-like-pk-model">Mechanistic Approach (like PK model)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biostatistical-approach">Biostatistical Approach</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-approach">Deep Learning Approach</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversational-examples">Conversational Examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-structure-or-pk-models">With Structure or PK Models:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-mechanistic-models-md-structure-pk">With Mechanistic Models (MD, Structure, PK):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-biostatistical-models">With Biostatistical Models:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-deep-learning">With Deep Learning:</a></li>
 </ul>
 </li>
@@ -968,10 +1082,11 @@ Design (create container) → Train (learn patterns) → Use
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications">Practical Implications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-t-just-update-a-deep-learning-model-like-other-models">You can’t just “update” a deep learning model like other models:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-t-easily-inspect-what-was-learned">You can’t easily inspect what was learned:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-outputs-for-different-purposes">Different outputs for different purposes:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model-is-a-trained-artifact">The model is a trained artifact:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-the-three-phase-life">Summary: The Three-Phase Life</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-model-development-lifecycle">Summary: Model Development Lifecycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaway">Key Takeaway</a></li>
 </ul>
   </nav></div>
