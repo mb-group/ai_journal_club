@@ -53,10 +53,6 @@ To publish this Jupyter Book to GitHub Pages using the `gh-pages` branch, follow
 
 ### Option 1: Using ghp-import (Recommended)
 
-1. **Install ghp-import**:
-   ```bash
-   pip install ghp-import
-   ```
 
 2. **Build the book**:
    ```bash

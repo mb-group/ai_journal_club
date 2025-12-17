@@ -25,6 +25,38 @@ MD Simulation ——— Structure ——— PK ——— Wet Lab ——— Deep 
 
 ---
 
+### Deep learning models as statistical association learners
+
+A trained deep learning model is best understood as a **learned representation of statistical association patterns** between inputs and outputs.  
+These associations are high-dimensional, implicit, and distributed across the model's parameters—not interpretable in the way traditional statistical models are.
+
+### Comparison: Deep learning associations vs. biostatistical associations
+
+Although both deep learning and classical biostatistics deal with "associations," the nature of these associations is fundamentally different.
+
+#### **Biostatistical association**
+- Explicit and interpretable  
+- Parameters correspond to meaningful effect sizes (e.g., β coefficients, hazard ratios)  
+- Built on predefined functional forms and assumptions (linearity, proportional hazards, independence)  
+- Designed for explanation, inference, and hypothesis testing  
+- Low- to moderate-dimensional structure  
+
+#### **Deep learning association**
+- Implicit and distributed across millions of parameters  
+- No predefined functional form; the model discovers complex nonlinear relationships  
+- Not directly interpretable; does not yield effect sizes or p-values  
+- Designed for high-performance prediction rather than causal inference  
+- Naturally suited for high-dimensional, unstructured data (images, sequences, text)
+
+### Summary
+
+- **Biostatistics** → interpretable, assumption-driven, low-dimensional associations  
+- **Deep learning** → high-dimensional, assumption-light, representation-based associations  
+
+Both operate on the idea of "association," but they do so in **fundamentally different ways and for different scientific purposes**.
+
+---
+
 ## Key Contrasts
 
 ### What Each Model IS
