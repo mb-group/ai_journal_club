@@ -4,20 +4,6 @@
 **This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
 ```
 
-
-
-
-```{admonition} Background: What you may find disappointing and frustrating
-:class: warning
-
-AI is a far less established discipline than many assume—especially when compared with fields such as physics or chemistry. In biology, we often say the discipline is "messy" and that textbooks lag behind discovery; however, AI today is arguably even earlier in its scientific maturity. A historical analogy may help: during the first industrial revolution, steam engines were already transforming society long before the principles of thermodynamics were formally understood. Modern AI is in a similar state. Despite its enormous influence, the field lacks even a widely acknowledged textbook. Much of the excitement today traces back to breakthroughs after 2017, and theory continues to trail substantially behind empirical success. Fundamental questions—such as why the architectural components of AlphaFold work as well as they do, or what protein language models truly learn—remain active areas of research.
-
-**Practical challenges for newcomers, especially biologists:**
-- **Terminology without formal definitions.** Many core terms—AI, machine learning, deep learning, neural networks—are defined only through community convention rather than standardized meaning.
-- **Difficult entry by reading.** Concepts like transformers vs. diffusion models or LLMs vs. other architectures cannot be understood reliably through passive reading alone, because the literature itself is evolving and inconsistent.
-- **No clear answers to seemingly basic questions.** Examples include: Why use CNNs instead of LSTMs in certain domains? Are transformers always better? When does a simple model outperform a sophisticated one? In many cases, the field has no settled consensus.
-```
-
 ```{admonition} Purpose of This Glossary
 :class: tip
 
