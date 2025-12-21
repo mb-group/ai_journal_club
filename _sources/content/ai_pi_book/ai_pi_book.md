@@ -50,6 +50,7 @@ This book intentionally does not cover the technical implementation details that
 
 - [The must-know models](part1_must_know_models.md)
 - [Trends/buzz/concepts vs. reality/performance/assumptions/limitations](buzz_vs_reality.md)
+- [How to digest a paper when prompting your choice of GPT](part1_digest_a_paper.md)
 
 ```
 
