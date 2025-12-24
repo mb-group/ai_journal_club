@@ -1,0 +1,1290 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>What Protein Language Models Actually Learn &#8212; Babu group AI journal club</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.2.0/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.2.0/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+const defaultStyle = document.createElement('style');
+defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+`;
+document.head.appendChild(defaultStyle);
+
+const fullscreenStyle = document.createElement('style');
+fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+document.head.appendChild(fullscreenStyle);
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        return brightness < 128;
+    }
+    return false;
+};
+
+const load = async () => {
+    await mermaid.run();
+
+    const all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(load, 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(load, 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(load, 200);
+        return;
+    }
+
+    const darkTheme = isDarkTheme();
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    const modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    const modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    let previousScrollOffset = [window.scrollX, window.scrollY];
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    const allButtons = [];
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        container.appendChild(fullscreenBtn);
+        allButtons.push(fullscreenBtn);
+    });
+
+    // Update theme classes when theme changes
+    const updateTheme = () => {
+        const dark = isDarkTheme();
+        allButtons.forEach(btn => {
+            if (dark) {
+                btn.classList.add('dark-theme');
+            } else {
+                btn.classList.remove('dark-theme');
+            }
+        });
+        if (dark) {
+            modal.classList.add('dark-theme');
+            modalContent.classList.add('dark-theme');
+            closeBtn.classList.add('dark-theme');
+        } else {
+            modal.classList.remove('dark-theme');
+            modalContent.classList.remove('dark-theme');
+            closeBtn.classList.remove('dark-theme');
+        }
+    };
+
+    // Watch for theme changes
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style']
+    });
+};
+
+window.addEventListener("load", load);
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/part4/part4_protein_language_models';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Actual Performance of Foundation Models in Genomics" href="part4_foundation_models_genomics.html" />
+    <link rel="prev" title="Case Studies" href="part4_case_studies.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/jc_logo.png" class="logo__image only-light" alt="Babu group AI journal club - Home"/>
+    <script>document.write(`<img src="../../../_static/jc_logo.png" class="logo__image only-dark" alt="Babu group AI journal club - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Babu Group AI Journal Club
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../state_of_ai_for_biology.html">State of AI for Biology: A Comprehensive Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../protein_book/protein_book.html">Protein Book</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter1_chemical_properties.html">Chapter 1: Chemical Properties of Polypeptides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter2_biosynthesis.html">Chapter 2: Biosynthesis of Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter3_evolutionary_origins.html">Chapter 3: Evolutionary and Genetic Origins of Protein Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter4_physical_interactions.html">Chapter 4: Physical Interactions That Determine the Properties of Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter5_conformational_properties.html">Chapter 5: Conformational Properties of Polypeptide Chains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter6_folded_conformations.html">Chapter 6: The Folded Conformations of Globular Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter7_proteins_in_solution.html">Chapter 7: Proteins in Solution and in Membranes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter8_interactions_with_molecules.html">Chapter 8: Interactions with Other Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter9_enzyme_catalysis.html">Chapter 9: Enzyme Catalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter10_degradation.html">Chapter 10: Degradation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../gene_book/gene_book.html">Gene Book</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter1_genes_are_dna.html">Chapter 1: Genes are DNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter2_interrupted_gene.html">Chapter 2: The Interrupted Gene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter3_genome_content.html">Chapter 3: The Content of the Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter4_clusters_repeats.html">Chapter 4: Clusters and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter5_messenger_rna.html">Chapter 5: Messenger RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter6_protein_synthesis.html">Chapter 6: Protein Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter7_genetic_code.html">Chapter 7: Using the Genetic Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter8_protein_localization.html">Chapter 8: Protein Localization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter9_transcription.html">Chapter 9: Transcription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter10_operon.html">Chapter 10: The Operon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter11_regulatory_circuits.html">Chapter 11: Regulatory Circuits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter12_phage_strategies.html">Chapter 12: Phage Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter13_the_replicon.html">Chapter 13: The Replicon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter14_dna_replication.html">Chapter 14: DNA Replication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter15_recombination_and_repair.html">Chapter 15: Recombination and Repair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter16_transposons.html">Chapter 16: Transposons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter17_retroviruses_and_retroposons.html">Chapter 17: Retroviruses and Retroposons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter18_dna_rearrangement.html">Chapter 18: Rearrangement of DNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter19_chromosomes.html">Chapter 19: Chromosomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter20_nucleosomes.html">Chapter 20: Nucleosomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter21_promoters_and_enhancers.html">Chapter 21: Promoters and Enhancers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter22_activating_transcription.html">Chapter 22: Activating Transcription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter23_controlling_chromatin_structure.html">Chapter 23: Controlling Chromatin Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter24_rna_splicing.html">Chapter 24: RNA Splicing and Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter25_catalytic_rna.html">Chapter 25: Catalytic RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter26_immune_diversity.html">Chapter 26: Immune Diversity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter27_protein_trafficking.html">Chapter 27: Protein Trafficking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter28_signal_transduction.html">Chapter 28: Signal Transduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter29_cell_cycle_growth_regulation.html">Chapter 29: Cell Cycle Growth Regulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter30_oncogenes_and_cancer.html">Chapter 30: Oncogenes and Cancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gene_book/chapter31_gradients__cascades__and_signaling_pathways.html">Chapter 31: Gradients, Cascades, and Signaling Pathways</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cell_book/cell_book.html">Cell Book</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter1_cells_genomes.html">Chapter 1: Cells and Genomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter2_cell_chemistry_and_biosynthesis.html">Chapter 2: Cell Chemistry and Biosynthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter3_proteins.html">Chapter 3: Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter4_dna_and_chromosomes.html">Chapter 4: DNA and Chromosomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter5_dna_replication__repair__recombination.html">Chapter 5: DNA Replication, Repair, Recombination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter6_genome_to_protein.html">Chapter 6: How Cells Read the Genome: From DNA to Protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter7_gene_expression_control.html">Chapter 7: Control of Gene Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter8_manipulation_methods.html">Chapter 8: Manipulating Proteins, DNA, and RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter9_visualizing_cells.html">Chapter 9: Visualizing Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter10_membrane_structure.html">Chapter 10: Membrane Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter11_membrane_transport_and_electrical_properties.html">Chapter 11: Membrane Transport and Electrical Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter12_intracellular_compartments_and_protein_sorting.html">Chapter 12: Intracellular Compartments and Protein Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter13_intracellular_vesicular_traffic.html">Chapter 13: Intracellular Vesicular Traffic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter14_energy_conversion__mitochondria_and_chloroplasts.html">Chapter 14: Energy Conversion: Mitochondria and Chloroplasts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter15_cell_communication.html">Chapter 15: Cell Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter16_the_cytoskeleton.html">Chapter 16: The Cytoskeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter17_the_cell_cycle_and_programmed_cell_death.html">Chapter 17: The Cell Cycle and Programmed Cell Death</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter18_the_mechanics_of_cell_division.html">Chapter 18: The Mechanics of Cell Division</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter19_cell_junctions.html">Chapter 19: Cell Junctions, Cell Adhesion, and the Extracellular Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter20_germ_cells_and_fertilization.html">Chapter 20: Germ Cells and Fertilization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter21_development.html">Chapter 21: Development of Multicellular Organisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter22_histology__lives_and_deaths_of_cells_in_tissues.html">Chapter 22: Histology: Lives and Deaths of Cells in Tissues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter23_cancer.html">Chapter 23: Cancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter24_immune_system.html">Chapter 24: The Adaptive Immune System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cell_book/chapter25_pathogens.html">Chapter 25: Pathogens</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../neural_sci_book/neural_sci_book.html">Principles of Neural Science and AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../drug_discovery_book/drug_discovery_book.html">Drug Discovery &amp; Development Book</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../ai_pi_book.html">The AI Book for PI in Biology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../orientation/orientation_what_is_a_model.html">Understanding “Models”: From Biology to Deep Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orientation/orientation_training_vs_inference_vs_deployment.html">Training vs. Inference vs. Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orientation/orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orientation/orientation_biology_needs_asi_not_agi.html">AI in Biology IS ASI—Artificial Specific Intelligence, not AGI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orientation/orientation_cambrian_era.html">Working in AI’s Pre-Textbook, Cambrian Era</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orientation/orientation_jargons_with_fixed_meanings.html">Jargons with Community-Agreed Fixed Meanings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/part1_must_know_models.html">The Must-Know Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/buzz_vs_reality.html">Trends, Buzzwords, and Reality: What These Concepts <em>Actually</em> Mean for Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/part1_digest_a_paper.html">How to Digest a Paper when chatting with your choice of GPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../part2/part2_why_modern_ai_feels_alien.html">Why Modern AI Feels Alien (Even for researchers With Statistical and ML Background)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../part2/part2_chapter1_age_of_embeddings.html">The Age of Embeddings: Representations Are the Real Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/part2_chapter2_multi_task_learning.html">Multi-Task Learning: One Model, Many Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/part2_chapter3_transfer_learning.html">Transfer Learning: Standing on the Shoulders of Giants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/part2_chapter4_new_functionalities.html">New Functionalities Beyond Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../part2/part2_chapter5_data_representation.html">Data Representation: Tokenization Changes Everything</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/part2_emerging_subfields.html">Going Deeper: Less-Known but Promisingly Emerging Subfields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/part3_browse_by_catalog.html">Browse by Catalog: Our Curated Collection of Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/part3_design_your_own.html">When You Want to Design Your Own</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part4_case_studies.html">Case Studies</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">What Protein Language Models Actually Learn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part4_foundation_models_genomics.html">Actual Performance of Foundation Models in Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part4_debates_clarifications.html">Debates and Clarifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part4_confused_subfields.html">Seemingly Confused Subfields Clarified</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../journal_club_book/journal_club_book.html">Journal Club Discussion Take-Away</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../journal_club_book/mind_maps_gallery.html">Mind Maps Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../journal_club_book/confusing_concepts.html">Frequently Confusing AI Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../journal_club_book/milestone_works.html">Most Important Milestone Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../journal_club_book/fundamental_concepts.html">Fundamental AI Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../journal_club_book/trend_shifts.html">Important Trend Shifts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../selection_criteria.html">Selection Criteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ai_playground_access.html">Access to AI Playground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/ai_pi_book/part4/part4_protein_language_models.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/ai_pi_book/part4/part4_protein_language_models.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>What Protein Language Models Actually Learn</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-critical-distinction-sequence-based-vs-text-based-language-models">A Critical Distinction: Sequence-Based vs. Text-Based Language Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-paradigm-shift-from-sequential-to-direct-prediction">The Paradigm Shift: From Sequential to Direct Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-the-birth-of-protein-language-models">A Brief History: The Birth of Protein Language Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-expanding-impact-of-plms">The Expanding Impact of PLMs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-engineering-and-design">Protein Engineering and Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-prediction">Structure Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-annotation">Functional Annotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-discovery-and-therapeutics">Drug Discovery and Therapeutics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-question-what-do-plms-actually-learn">The Central Question: What Do PLMs Actually Learn?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoding-the-latent-space">Decoding the Latent Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-information-emerges-without-supervision-heinzinger2025">1. <strong>Structural Information Emerges Without Supervision</strong> <span class="xref cite">Heinzinger2025</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plms-learn-evolutionary-statistics-not-physics-zhang2024">2. <strong>PLMs Learn Evolutionary Statistics, Not Physics</strong> <span class="xref cite">Zhang2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024">3. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span class="xref cite">Notin2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-features-reveal-biological-organization-hsu2024">4. <strong>Sparse Features Reveal Biological Organization</strong> <span class="xref cite">Hsu2024</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rising-trends-augmenting-plms-with-explicit-knowledge">Rising Trends: Augmenting PLMs with Explicit Knowledge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-aware-models">Structure-Aware Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysics-informed-models">Biophysics-Informed Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-means-for-protein-scientists">What This Means for Protein Scientists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-experimentalists">For Experimentalists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-computational-biologists">For Computational Biologists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-ai-researchers">For AI Researchers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-from-black-boxes-to-mechanistic-understanding">Conclusion: From Black Boxes to Mechanistic Understanding</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="what-protein-language-models-actually-learn">
+<h1>What Protein Language Models Actually Learn<a class="headerlink" href="#what-protein-language-models-actually-learn" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>To understand protein language models, we must first understand what a language model is. In its technical definition, <strong>a language model predicts the next word given previous words</strong>. The profound implication: <em>if a model can do this well, it has effectively learned the statistical patterns—the “grammar”—that govern how words combine meaningfully.</em></p>
+<p>Now add “Protein” to this framework. <strong>A protein language model applies the exact same methods</strong>, replacing human sentences with protein sequences and defining amino acids as the vocabulary. If these models learn a “grammar” of proteins, the natural question becomes: <strong>what exactly is this grammar?</strong></p>
+<p>We can examine this by analyzing the models’ <strong>embeddings</strong>—the high-dimensional representations they create for each sequence. However, a crucial caveat:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>No clear-cut grammatical rules have been discovered in protein sequences.</strong> The language analogy is metaphorical, a useful framework rather than a literal description. What these models learn are <em>evolutionary patterns and statistical regularities</em>, not explicit rules.</p>
+</div>
+<section id="a-critical-distinction-sequence-based-vs-text-based-language-models">
+<h3>A Critical Distinction: Sequence-Based vs. Text-Based Language Models<a class="headerlink" href="#a-critical-distinction-sequence-based-vs-text-based-language-models" title="Link to this heading">#</a></h3>
+<p>Before diving deeper, we must clarify a crucial distinction that often causes confusion: <strong>protein language models are fundamentally different from biomedical language models</strong>, even though both are called “language models.”</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Protein LMs (Sequence-Based)</p></th>
+<th class="head"><p>Biomedical LMs (Text-Based)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Input</strong></p></td>
+<td><p>Raw amino acid sequences<br/><code class="docutils literal notranslate"><span class="pre">MKLLVTSLVG...</span></code></p></td>
+<td><p>Natural language text<br/>”The kinase phosphorylates…”</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Vocabulary</strong></p></td>
+<td><p>20 standard amino acids<br/>plus special tokens</p></td>
+<td><p>Tens of thousands of<br/>words/subword tokens</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Training data</strong></p></td>
+<td><p>Protein sequence databases<br/>UniRef, UniProt</p></td>
+<td><p>Scientific literature<br/>PubMed, papers, clinical notes</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>What they learn</strong></p></td>
+<td><p>Evolutionary patterns<br/>Coevolutionary constraints<br/>Sequence-function relationships</p></td>
+<td><p>Scientific concepts<br/>Entity relationships<br/>Domain terminology</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Examples</strong></p></td>
+<td><p>ESM, ESM-2, ProtTrans,<br/>ProtBERT, ProGen</p></td>
+<td><p>PubMedBERT, BioBERT,<br/>SciBERT, BioGPT</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Applications</strong></p></td>
+<td><p>Structure prediction<br/>Variant effect prediction<br/>Protein design</p></td>
+<td><p>Literature mining<br/>Entity recognition<br/>Question answering</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this chapter, “protein language model” refers specifically to sequence-based models (ESM, ProtTrans, etc.), not text-based biomedical models.</p>
+</div>
+</section>
+<section id="the-paradigm-shift-from-sequential-to-direct-prediction">
+<h3>The Paradigm Shift: From Sequential to Direct Prediction<a class="headerlink" href="#the-paradigm-shift-from-sequential-to-direct-prediction" title="Link to this heading">#</a></h3>
+<p>Traditionally, understanding protein function required following a sequential path: sequence → structure → function. PLMs have enabled a revolutionary shortcut:</p>
+<pre  class="mermaid">
+        graph LR
+    A[Sequence] --&gt; B[Structure] --&gt; C[Function]
+    A -.PLM.-&gt; C
+    
+    style A fill:#e3f2fd
+    style B fill:#fff3e0
+    style C fill:#e8f5e9
+    </pre><p><strong>Traditional path</strong>: Sequence → Structure → Function (solid arrows)<br />
+<strong>PLM-enabled</strong>: Sequence → Function (dashed arrow) - direct prediction by learning evolutionary patterns</p>
+<p><strong>Key insight</strong>: PLMs are not designed to replace structural biology, but rather to better leverage the rich existing knowledge of proteins toward function understanding—without being limited by the lack of structure knowledge. They complement structural approaches by unlocking functional insights even when structures are unavailable or difficult to obtain.</p>
+</section>
+</section>
+<section id="a-brief-history-the-birth-of-protein-language-models">
+<h2>A Brief History: The Birth of Protein Language Models<a class="headerlink" href="#a-brief-history-the-birth-of-protein-language-models" title="Link to this heading">#</a></h2>
+<p>The modern era began in 2020 with <a class="reference external" href="https://www.pnas.org/doi/full/10.1073/pnas.2016239118">ESM (Evolutionary Scale Modeling)</a> by Rives et al. The fact that this work appeared in <em>PNAS</em> rather than a “higher-tier” journal hints at the initial skepticism—treating proteins as a language met considerable resistance. ESM’s insight was deceptively simple: apply transformers directly to protein sequences, treating amino acids as tokens. Train on millions of UniRef sequences using masked language modeling. No structural information, no functional annotations—just sequences and their evolutionary patterns.</p>
+<p>Almost simultaneously, <a class="reference external" href="https://ieeexplore.ieee.org/document/9477085">ProtTrans</a> (Elnaggar et al.) arrived at a nearly identical solution. This convergence was no accident. Protein modeling had always borrowed from NLP—even profile HMMs are statistical language models. When BERT and GPT revolutionized language, it was only a matter of time before transformers transformed protein analysis.</p>
+<p>Not everyone followed the naive single-amino-acid approach. <a class="reference external" href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.0c01285">DISAE</a> (Cai et al., 2021) innovated at the vocabulary level: using amino acid <strong>triplets</strong> as tokens (capturing local structural motifs) and selecting only the ~210 most conserved MSA positions (focusing on functionally critical residues). While more domain-specific, DISAE achieved superior performance for chemical-protein interactions, especially for remote homologs.</p>
+</section>
+<section id="the-expanding-impact-of-plms">
+<h2>The Expanding Impact of PLMs<a class="headerlink" href="#the-expanding-impact-of-plms" title="Link to this heading">#</a></h2>
+<p>Since their introduction, protein language models have demonstrated remarkable utility across diverse applications:</p>
+<section id="protein-engineering-and-design">
+<h3>Protein Engineering and Design<a class="headerlink" href="#protein-engineering-and-design" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Variant effect prediction</strong>: PLMs can predict the functional impact of mutations with accuracy rivaling or exceeding experimental deep mutational scanning</p></li>
+<li><p><strong>Zero-shot fitness prediction</strong>: Models like ESM-1v predict protein fitness without task-specific training</p></li>
+<li><p><strong>Directed evolution</strong>: PLMs guide library design by identifying promising sequence regions</p></li>
+</ul>
+</section>
+<section id="structure-prediction">
+<h3>Structure Prediction<a class="headerlink" href="#structure-prediction" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Contact and distance prediction</strong>: PLM embeddings serve as powerful inputs for structure prediction pipelines</p></li>
+<li><p><strong>AlphaFold integration</strong>: Modern structure prediction methods leverage PLM representations</p></li>
+<li><p><strong>Fold recognition</strong>: PLMs can identify remote homologs and novel folds</p></li>
+</ul>
+</section>
+<section id="functional-annotation">
+<h3>Functional Annotation<a class="headerlink" href="#functional-annotation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>GO term prediction</strong>: Transfer learning from PLMs enables accurate functional annotation</p></li>
+<li><p><strong>Subcellular localization</strong>: Embeddings capture cellular targeting signals</p></li>
+<li><p><strong>Protein-protein interactions</strong>: Representations encode interaction propensities</p></li>
+</ul>
+</section>
+<section id="drug-discovery-and-therapeutics">
+<h3>Drug Discovery and Therapeutics<a class="headerlink" href="#drug-discovery-and-therapeutics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Small molecule drug discovery</strong>: PLMs enable genome-wide prediction of chemical-protein interactions for “dark” proteins (unknown ligands), as demonstrated by <a class="reference external" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010851">PortalCG</a>, identifying targets for currently undruggable proteins</p></li>
+<li><p><strong>Antibody design</strong>: PLMs optimize antibody sequences for improved binding and developability</p></li>
+<li><p><strong>Enzyme engineering</strong>: Models guide the design of enzymes with altered substrate specificity</p></li>
+<li><p><strong>Stability prediction</strong>: PLMs predict thermodynamic stability changes</p></li>
+</ul>
+</section>
+</section>
+<section id="the-central-question-what-do-plms-actually-learn">
+<h2>The Central Question: What Do PLMs Actually Learn?<a class="headerlink" href="#the-central-question-what-do-plms-actually-learn" title="Link to this heading">#</a></h2>
+<p>Despite their empirical success, protein language models have largely remained black boxes. Their internal representations—the high-dimensional vectors that encode protein sequences—clearly capture biologically meaningful information, but <em>what</em> exactly do they capture, and <em>how</em>?</p>
+<p>Recent work in 2024-2025 has begun to provide concrete answers, revealing that PLMs learn far more structured biological knowledge than previously appreciated.</p>
+<section id="decoding-the-latent-space">
+<h3>Decoding the Latent Space<a class="headerlink" href="#decoding-the-latent-space" title="Link to this heading">#</a></h3>
+<p>Several landmark studies have systematically probed PLM representations:</p>
+<section id="structural-information-emerges-without-supervision-heinzinger2025">
+<h4>1. <strong>Structural Information Emerges Without Supervision</strong> <span id="id1">[]</span><a class="headerlink" href="#structural-information-emerges-without-supervision-heinzinger2025" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.nature.com/articles/s41592-025-02836-7">Heinzinger et al. (2025)</a> demonstrated that PLMs trained solely on sequences nonetheless learn to represent 3D structural features. Through careful analysis of ESM-2 embeddings, they found that:</p>
+<ul class="simple">
+<li><p><strong>Secondary structure</strong> is explicitly encoded in middle layers</p></li>
+<li><p><strong>Tertiary contacts</strong> emerge in deeper layers, even without structure-based training</p></li>
+<li><p><strong>Residue burial and solvent accessibility</strong> are predictable from embeddings with high accuracy</p></li>
+</ul>
+<p>This suggests that evolutionary patterns in sequences carry sufficient information about structure for models to implicitly learn structural constraints.</p>
+</section>
+<section id="plms-learn-evolutionary-statistics-not-physics-zhang2024">
+<h4>2. <strong>PLMs Learn Evolutionary Statistics, Not Physics</strong> <span id="id2">[]</span><a class="headerlink" href="#plms-learn-evolutionary-statistics-not-physics-zhang2024" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2406285121">Zhang et al. (2024)</a> provided crucial evidence that PLMs <strong>do not learn the physics of protein folding</strong>. Instead, they store and leverage evolutionary statistics:</p>
+<ul class="simple">
+<li><p><strong>Coevolutionary patterns</strong>: PLMs learn which amino acid pairs tend to co-occur across evolution</p></li>
+<li><p><strong>Motif interactions</strong>: Models store statistics of interacting sequence fragments, not physical forces</p></li>
+<li><p><strong>Context dependence</strong>: Contact prediction requires local sequence context, suggesting lookup of evolutionary patterns rather than physics-based computation</p></li>
+</ul>
+<p>This work definitively counters the hypothesis that PLMs understand biophysical principles. The models work because evolutionary selection has imprinted physical constraints into sequence patterns—not because the models learned physics themselves.</p>
+</section>
+<section id="evolutionary-and-functional-constraints-are-disentangled-notin2024">
+<h4>3. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span id="id3">[]</span><a class="headerlink" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2406285121">Notin et al. (2024)</a> revealed that PLMs learn to separate different types of biological constraints:</p>
+<ul class="simple">
+<li><p><strong>Evolutionary constraint</strong>: Conservation patterns across homologs</p></li>
+<li><p><strong>Functional constraint</strong>: Requirements for specific biological activities</p></li>
+<li><p><strong>Structural constraint</strong>: Physical requirements for proper folding</p></li>
+</ul>
+<p>Importantly, these constraints are represented in partially orthogonal subspaces of the embedding space, allowing models to distinguish between conserved-but-flexible sites and invariant functional residues.</p>
+</section>
+<section id="sparse-features-reveal-biological-organization-hsu2024">
+<h4>4. <strong>Sparse Features Reveal Biological Organization</strong> <span id="id4">[]</span><a class="headerlink" href="#sparse-features-reveal-biological-organization-hsu2024" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2506316122">Hsu et al. (2024)</a> used sparse autoencoders to decode PLM representations:</p>
+<ul class="simple">
+<li><p><strong>Gene ontology associations</strong>: Sparse features map cleanly to specific GO terms and protein families</p></li>
+<li><p><strong>Functional monosemanticity</strong>: Individual features correspond to specific biological processes</p></li>
+<li><p><strong>Hierarchical organization</strong>: Features capture biology at multiple levels of abstraction</p></li>
+</ul>
+<p>Importantly, this interpretability work shows PLMs organize biological knowledge systematically, even though they don’t understand underlying physics.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>The Physics vs. Evolution Distinction</strong>: A critical insight from recent research is that PLMs do <strong>not</strong> learn the physics of protein folding. Instead, they memorize evolutionary patterns that reflect physical constraints. This is a subtle but crucial distinction—the models work because evolution has already solved the physics problem, and PLMs learn to recognize those solutions.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="rising-trends-augmenting-plms-with-explicit-knowledge">
+<h2>Rising Trends: Augmenting PLMs with Explicit Knowledge<a class="headerlink" href="#rising-trends-augmenting-plms-with-explicit-knowledge" title="Link to this heading">#</a></h2>
+<section id="structure-aware-models">
+<h3>Structure-Aware Models<a class="headerlink" href="#structure-aware-models" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://academic.oup.com/nargab/article/6/4/lqae150/7901286">ProstT5</a> extends the ProtT5 architecture by treating 3D structure tokens as additional vocabulary. By training on sequence-structure pairs, the model learns joint representations that:</p>
+<ul class="simple">
+<li><p>Improve structure prediction quality</p></li>
+<li><p>Enable structure-conditioned sequence design</p></li>
+<li><p>Better capture conformational flexibility</p></li>
+</ul>
+<p>This approach bridges the gap between sequence and structure modeling, creating models that understand their relationship bidirectionally.</p>
+</section>
+<section id="biophysics-informed-models">
+<h3>Biophysics-Informed Models<a class="headerlink" href="#biophysics-informed-models" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://www.nature.com/articles/s41592-025-02776-2">Recent work in <em>Nature Methods</em></a> demonstrates the value of incorporating biophysical principles:</p>
+<ul class="simple">
+<li><p><strong>Energy-based terms</strong>: Augmenting loss functions with physics-based constraints</p></li>
+<li><p><strong>Mechanistic inductive biases</strong>: Building in known biochemical rules</p></li>
+<li><p><strong>Multi-scale representations</strong>: Explicitly modeling interactions at different scales</p></li>
+</ul>
+<p>These hybrid approaches combine the flexibility of data-driven learning with the interpretability and reliability of physics-based modeling.</p>
+</section>
+</section>
+<section id="what-this-means-for-protein-scientists">
+<h2>What This Means for Protein Scientists<a class="headerlink" href="#what-this-means-for-protein-scientists" title="Link to this heading">#</a></h2>
+<p>The emerging understanding of what PLMs learn has practical implications:</p>
+<section id="for-experimentalists">
+<h3>For Experimentalists<a class="headerlink" href="#for-experimentalists" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Trust but verify</strong>: PLM predictions are powerful but not infallible—use them to guide, not replace, experiments</p></li>
+<li><p><strong>Exploit embeddings</strong>: Use PLM representations for clustering, visualization, and hypothesis generation</p></li>
+<li><p><strong>Understand limitations</strong>: PLMs struggle with truly novel folds and functions absent from training data</p></li>
+</ul>
+</section>
+<section id="for-computational-biologists">
+<h3>For Computational Biologists<a class="headerlink" href="#for-computational-biologists" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Choose models wisely</strong>: Different PLMs capture different aspects of biology—match the model to your task</p></li>
+<li><p><strong>Fine-tuning matters</strong>: Task-specific adaptation can dramatically improve performance</p></li>
+<li><p><strong>Interpret with care</strong>: High-dimensional embeddings resist simple interpretation—use probing methods rigorously</p></li>
+</ul>
+</section>
+<section id="for-ai-researchers">
+<h3>For AI Researchers<a class="headerlink" href="#for-ai-researchers" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Biology as a testbed</strong>: Proteins offer a rich domain for studying representation learning with ground truth</p></li>
+<li><p><strong>Evolution ≠ Physics</strong>: PLMs demonstrate that memorizing evolutionary patterns can substitute for understanding physics</p></li>
+<li><p><strong>Hybrid approaches</strong>: Combining learned and explicit knowledge remains an important frontier</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusion-from-black-boxes-to-mechanistic-understanding">
+<h2>Conclusion: From Black Boxes to Mechanistic Understanding<a class="headerlink" href="#conclusion-from-black-boxes-to-mechanistic-understanding" title="Link to this heading">#</a></h2>
+<p>Protein language models have evolved from mysterious black boxes to increasingly interpretable systems. We now understand that these models:</p>
+<ul class="simple">
+<li><p><strong>Learn evolutionary statistics, not physics</strong>: PLMs memorize coevolutionary patterns rather than understanding biophysical principles</p></li>
+<li><p><strong>Store motif-level interactions</strong>: Models lookup statistics of interacting sequence fragments conditioned on local context</p></li>
+<li><p><strong>Represent biological information hierarchically</strong>: From GO terms to protein families, information is organized systematically</p></li>
+<li><p><strong>Benefit from explicit structure and physics when available</strong>: Hybrid approaches show promise for improving reliability</p></li>
+</ul>
+<p>The key takeaway: <strong>PLMs are powerful because evolution has already solved the physics problem</strong>. These models learn to recognize evolutionary solutions without understanding the underlying forces that shaped them. This insight is crucial for understanding both their capabilities and limitations.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/ai_pi_book/part4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="part4_case_studies.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Case Studies</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="part4_foundation_models_genomics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Actual Performance of Foundation Models in Genomics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-critical-distinction-sequence-based-vs-text-based-language-models">A Critical Distinction: Sequence-Based vs. Text-Based Language Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-paradigm-shift-from-sequential-to-direct-prediction">The Paradigm Shift: From Sequential to Direct Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-the-birth-of-protein-language-models">A Brief History: The Birth of Protein Language Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-expanding-impact-of-plms">The Expanding Impact of PLMs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-engineering-and-design">Protein Engineering and Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-prediction">Structure Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-annotation">Functional Annotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-discovery-and-therapeutics">Drug Discovery and Therapeutics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-question-what-do-plms-actually-learn">The Central Question: What Do PLMs Actually Learn?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoding-the-latent-space">Decoding the Latent Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-information-emerges-without-supervision-heinzinger2025">1. <strong>Structural Information Emerges Without Supervision</strong> <span class="xref cite">Heinzinger2025</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plms-learn-evolutionary-statistics-not-physics-zhang2024">2. <strong>PLMs Learn Evolutionary Statistics, Not Physics</strong> <span class="xref cite">Zhang2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024">3. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span class="xref cite">Notin2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-features-reveal-biological-organization-hsu2024">4. <strong>Sparse Features Reveal Biological Organization</strong> <span class="xref cite">Hsu2024</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rising-trends-augmenting-plms-with-explicit-knowledge">Rising Trends: Augmenting PLMs with Explicit Knowledge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-aware-models">Structure-Aware Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysics-informed-models">Biophysics-Informed Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-means-for-protein-scientists">What This Means for Protein Scientists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-experimentalists">For Experimentalists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-computational-biologists">For Computational Biologists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-ai-researchers">For AI Researchers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-from-black-boxes-to-mechanistic-understanding">Conclusion: From Black Boxes to Mechanistic Understanding</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Babu group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
