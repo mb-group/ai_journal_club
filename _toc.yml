@@ -84,6 +84,7 @@ chapters:
   - file: content/ai_pi_book/orientation_what_is_a_model
   - file: content/ai_pi_book/orientation_training_vs_inference_vs_deployment
   - file: content/ai_pi_book/orientation_ai_in_biology_vs_chatgpt_vs_alphafold
+  - file: content/ai_pi_book/orientation_biology_needs_asi_not_agi
   - file: content/ai_pi_book/orientation_cambrian_era
   - file: content/ai_pi_book/orientation_jargons_with_fixed_meanings
   - file: content/ai_pi_book/part1_must_know_models
