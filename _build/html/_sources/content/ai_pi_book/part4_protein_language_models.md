@@ -2,13 +2,23 @@
 
 ## Introduction
 
-To understand protein language models, we must first understand what a language model actually is. In its dry technical definition, a language model is one that can predict the next word given previous words. The profound implication: if a model can perform this task well, it has effectively learned the rules of grammar—the statistical patterns that govern how words combine to form meaningful sentences.
+To understand protein language models, we must first understand what a language model is. In its technical definition, **a language model predicts the next word given previous words**. The profound implication: *if a model can do this well, it has effectively learned the statistical patterns—the "grammar"—that govern how words combine meaningfully.*
 
-Now add "Protein" to this framework. A protein language model applies the exact same modeling methods, simply replacing human sentences with protein sequences and defining amino acids as the vocabulary. If these models learn the "grammar" of proteins, the natural question becomes: what exactly is this grammar?
+Now add "Protein" to this framework. **A protein language model applies the exact same methods**, replacing human sentences with protein sequences and defining amino acids as the vocabulary. If these models learn a "grammar" of proteins, the natural question becomes: **what exactly is this grammar?**
 
-We can examine this grammar by extracting and analyzing the models' embeddings—the high-dimensional representations they create for each protein sequence. However, a crucial caveat: in this research field, no clear-cut grammatical rules have been discovered. The language analogy is precisely that—an analogy, a useful metaphorical framework rather than a literal description. What the models learn turns out to be more nuanced than simple rules, as we'll explore throughout this chapter.
+We can examine this by analyzing the models' **embeddings**—the high-dimensional representations they create for each sequence. However, a crucial caveat:
 
-Protein language models (PLMs) have emerged as transformative tools in computational biology, fundamentally changing how we approach protein engineering, functional prediction, and evolutionary analysis. These models, trained on vast databases of protein sequences, learn to represent proteins in ways that capture functional and structural properties—often without explicit supervision on these properties. But what exactly do these models learn? And why do they work so well?
+```{important}
+**No clear-cut grammatical rules have been discovered in protein sequences.** The language analogy is metaphorical, a useful framework rather than a literal description. What these models learn are *evolutionary patterns and statistical regularities*, not explicit rules.
+```
+
+**Protein language models (PLMs) have emerged as transformative tools** in computational biology, fundamentally changing how we approach protein engineering, functional prediction, and evolutionary analysis. Key characteristics:
+
+- **Training**: Vast databases of protein sequences (millions of examples)
+- **Learning**: Represent proteins capturing functional and structural properties
+- **Remarkable aspect**: Often work *without explicit supervision* on these properties
+
+**The central questions**: What exactly do these models learn? And why do they work so well?
 
 This chapter explores the journey from the inception of protein language models to our current understanding of their internal representations, drawing on recent breakthrough studies that have begun to decode what these "black box" models actually capture about protein biology.
 
@@ -16,36 +26,29 @@ This chapter explores the journey from the inception of protein language models 
 
 Before diving deeper, we must clarify a crucial distinction that often causes confusion: **protein language models are fundamentally different from biomedical language models**, even though both are called "language models."
 
-**Protein Language Models (Sequence-Based)**
-- **Input**: Raw protein sequences (e.g., `MKLLVTSLVG...`)
-- **Vocabulary**: 20 standard amino acids plus special tokens
-- **Training data**: Millions of protein sequences from databases like UniRef, UniProt
-- **What they learn**: Evolutionary patterns, coevolutionary constraints, sequence-function relationships
-- **Examples**: ESM, ProtTrans, ProtBERT, ESM-2, ProGen
-- **Applications**: Structure prediction, variant effect prediction, protein design, functional annotation
-
-**Biomedical Language Models (Text-Based)**
-- **Input**: Natural language text (e.g., "The protein kinase phosphorylates...")
-- **Vocabulary**: Tens of thousands of words/subword tokens
-- **Training data**: Scientific literature, PubMed abstracts, clinical notes, biomedical corpora
-- **What they learn**: Scientific concepts, relationships between entities, domain terminology
-- **Examples**: PubMedBERT, BioBERT, SciBERT, BioGPT, Med-PaLM
-- **Applications**: Literature mining, entity recognition, relation extraction, question answering, clinical NLP
+| Aspect | Protein LMs (Sequence-Based) | Biomedical LMs (Text-Based) |
+|--------|------------------------------|------------------------------|
+| **Input** | Raw amino acid sequences<br/>`MKLLVTSLVG...` | Natural language text<br/>"The kinase phosphorylates..." |
+| **Vocabulary** | 20 standard amino acids<br/>plus special tokens | Tens of thousands of<br/>words/subword tokens |
+| **Training data** | Protein sequence databases<br/>UniRef, UniProt | Scientific literature<br/>PubMed, papers, clinical notes |
+| **What they learn** | Evolutionary patterns<br/>Coevolutionary constraints<br/>Sequence-function relationships | Scientific concepts<br/>Entity relationships<br/>Domain terminology |
+| **Examples** | ESM, ESM-2, ProtTrans,<br/>ProtBERT, ProGen | PubMedBERT, BioBERT,<br/>SciBERT, BioGPT |
+| **Applications** | Structure prediction<br/>Variant effect prediction<br/>Protein design | Literature mining<br/>Entity recognition<br/>Question answering |
 
 **Why This Matters**
 
-These two classes of models serve complementary roles:
+These two classes of models serve complementary but distinct roles:
 
-1. **Different biological scales**: Text-based models understand conceptual relationships described in papers; sequence-based models understand molecular patterns in proteins themselves.
+- **Different biological scales**: Text-based models understand conceptual relationships described in papers; sequence-based models understand molecular patterns encoded in proteins themselves.
 
-2. **Different knowledge sources**: Biomedical LMs capture human-interpreted knowledge from literature; protein LMs capture evolution's "knowledge" encoded directly in sequences.
+- **Different knowledge sources**: Biomedical LMs capture human-interpreted knowledge from literature; protein LMs capture evolution's "knowledge" encoded directly in sequences over millions of years.
 
-3. **Not interchangeable**: You cannot use PubMedBERT to predict protein structure from sequence, nor can you use ESM to extract protein-protein interactions from a research paper.
+- **Not interchangeable**: You cannot use PubMedBERT to predict protein structure from sequence, nor can you use ESM to extract protein-protein interactions from a research paper. Each is specialized for its domain.
 
-4. **Potential synergy**: Some recent work explores combining both—using text-based models to extract functional annotations from literature and sequence-based models to validate or predict these functions from sequence alone.
+- **Potential synergy**: Emerging work explores combining both—using text models to extract functional annotations from literature and sequence models to validate or predict these functions from sequence alone.
 
 ```{note}
-**When people say "protein language model"**, they typically mean sequence-based models (ESM, ProtTrans). However, some hybrid approaches are emerging that integrate both sequence and text information, such as models that jointly learn from protein sequences and their associated textual descriptions in databases.
+In this chapter, "protein language model" refers specifically to sequence-based models (ESM, ProtTrans, etc.), not text-based biomedical models.
 ```
 
 ### The Paradigm Shift: From Sequential to Direct Prediction
