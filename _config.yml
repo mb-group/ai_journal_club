@@ -35,5 +35,6 @@ html:
 sphinx:
   extra_extensions:
     - sphinx.ext.githubpages
+    - sphinxcontrib.mermaid
   config:
     html_extra_path: ["assets"]

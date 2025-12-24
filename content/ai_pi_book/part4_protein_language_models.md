@@ -11,26 +11,17 @@ This chapter explores the journey from the inception of protein language models 
 Traditionally, understanding protein function required following a sequential path: sequence → structure → function. PLMs have enabled a revolutionary shortcut:
 
 ```{mermaid}
-flowchart TB
-    subgraph Traditional["Traditional Paradigm"]
-        S1[Protein Sequence] --> ST[Structure Determination<br/>X-ray, Cryo-EM, NMR] --> F1[Function Prediction<br/>Experimental assays]
-    end
+graph LR
+    A[Sequence] --> B[Structure] --> C[Function]
+    A -.PLM.-> C
     
-    subgraph PLM["PLM-Enabled Paradigm"]
-        S2[Protein Sequence] --> PLM_Model[Protein Language Model<br/>Embeddings]
-        PLM_Model --> F2[Direct Function Prediction]
-        PLM_Model -.->|implicit representation| ST2[Structure Prediction<br/>ESMFold, AlphaFold]
-        ST2 -.->|optional refinement| F2
-    end
-    
-    style PLM_Model fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
-    style S2 fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
-    style F2 fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
-    style Traditional fill:#f5f5f5,stroke:#999,stroke-width:2px
-    style PLM fill:#e8f5e9,stroke:#4CAF50,stroke-width:2px
+    style A fill:#e3f2fd
+    style B fill:#fff3e0
+    style C fill:#e8f5e9
 ```
 
-**Key insight**: PLMs learn evolutionary patterns that implicitly encode both structural and functional information. This allows them to predict function directly from sequence, or generate structure predictions as an intermediate step when needed. The solid arrows show the primary workflow, while dashed arrows indicate optional or implicit pathways.
+**Traditional path**: Sequence → Structure → Function (solid arrows)  
+**PLM-enabled**: Sequence → Function (dashed arrow) - direct prediction by learning evolutionary patterns
 
 ## A Brief History: The Birth of Protein Language Models
 
