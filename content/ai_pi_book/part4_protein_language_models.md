@@ -12,15 +12,6 @@ We can examine this by analyzing the models' **embeddings**—the high-dimension
 **No clear-cut grammatical rules have been discovered in protein sequences.** The language analogy is metaphorical, a useful framework rather than a literal description. What these models learn are *evolutionary patterns and statistical regularities*, not explicit rules.
 ```
 
-**Protein language models (PLMs) have emerged as transformative tools** in computational biology, fundamentally changing how we approach protein engineering, functional prediction, and evolutionary analysis. Key characteristics:
-
-- **Training**: Vast databases of protein sequences (millions of examples)
-- **Learning**: Represent proteins capturing functional and structural properties
-- **Remarkable aspect**: Often work *without explicit supervision* on these properties
-
-**The central questions**: What exactly do these models learn? And why do they work so well?
-
-This chapter explores the journey from the inception of protein language models to our current understanding of their internal representations, drawing on recent breakthrough studies that have begun to decode what these "black box" models actually capture about protein biology.
 
 ### A Critical Distinction: Sequence-Based vs. Text-Based Language Models
 
@@ -35,17 +26,6 @@ Before diving deeper, we must clarify a crucial distinction that often causes co
 | **Examples** | ESM, ESM-2, ProtTrans,<br/>ProtBERT, ProGen | PubMedBERT, BioBERT,<br/>SciBERT, BioGPT |
 | **Applications** | Structure prediction<br/>Variant effect prediction<br/>Protein design | Literature mining<br/>Entity recognition<br/>Question answering |
 
-**Why This Matters**
-
-These two classes of models serve complementary but distinct roles:
-
-- **Different biological scales**: Text-based models understand conceptual relationships described in papers; sequence-based models understand molecular patterns encoded in proteins themselves.
-
-- **Different knowledge sources**: Biomedical LMs capture human-interpreted knowledge from literature; protein LMs capture evolution's "knowledge" encoded directly in sequences over millions of years.
-
-- **Not interchangeable**: You cannot use PubMedBERT to predict protein structure from sequence, nor can you use ESM to extract protein-protein interactions from a research paper. Each is specialized for its domain.
-
-- **Potential synergy**: Emerging work explores combining both—using text models to extract functional annotations from literature and sequence models to validate or predict these functions from sequence alone.
 
 ```{note}
 In this chapter, "protein language model" refers specifically to sequence-based models (ESM, ProtTrans, etc.), not text-based biomedical models.
