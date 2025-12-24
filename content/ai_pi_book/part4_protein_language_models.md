@@ -23,6 +23,8 @@ graph LR
 **Traditional path**: Sequence → Structure → Function (solid arrows)  
 **PLM-enabled**: Sequence → Function (dashed arrow) - direct prediction by learning evolutionary patterns
 
+**Key insight**: PLMs are not designed to replace structural biology, but rather to better leverage the rich existing knowledge of proteins toward function understanding—without being limited by the lack of structure knowledge. They complement structural approaches by unlocking functional insights even when structures are unavailable or difficult to obtain.
+
 ## A Brief History: The Birth of Protein Language Models
 
 ### The 2020 Watershed Moment
@@ -36,6 +38,15 @@ ESM's key insight was deceptively simple: apply transformer-based language model
 Almost simultaneously, independent research groups arrived at remarkably similar solutions. [ProtTrans](https://ieeexplore.ieee.org/document/9477085), developed by Elnaggar et al., took an almost identical approach, with differences that were largely negligible from a conceptual standpoint. ProtTrans later made all its embeddings publicly available through UniProt, significantly accelerating adoption across the field.
 
 This convergence was no accident. Protein sequence modeling has historically borrowed heavily from natural language processing—even in the pre-deep learning era of statistical models like profile HMMs. When GPT and BERT demonstrated the power of transformer architectures for language, it was only natural that the protein modeling community would follow suit. The question was not *if* but *when* transformers would revolutionize protein sequence analysis.
+
+#### Innovation at the Vocabulary Level
+
+While ESM and ProtTrans represented a straightforward adoption of language models to proteins using single amino acids as tokens, some approaches innovated at the vocabulary level itself. [DISAE (Distilled Sequence Alignment Embedding)](https://pubs.acs.org/doi/full/10.1021/acs.jcim.0c01285) by Cai et al. (2021) introduced two key innovations:
+
+- **Triplet vocabulary**: Instead of treating individual amino acids as tokens, DISAE uses triplets of amino acids as the fundamental vocabulary unit
+- **MSA-based distillation**: Rather than using full sequences, DISAE selects only the ~210 most conserved positions from multiple sequence alignments (MSAs), creating "distilled sequences" that focus on functionally important residues
+
+This approach recognizes that protein function often depends on local structural motifs (captured by triplets) and that not all positions in a sequence contribute equally to function (captured by conservation-based selection). While more domain-specific than the naive application of language models, DISAE demonstrated superior performance for predicting chemical-protein interactions, particularly for remote homologs with low sequence similarity to training data.
 
 ## The Expanding Impact of PLMs
 
@@ -57,6 +68,7 @@ Since their introduction, protein language models have demonstrated remarkable u
 - **Protein-protein interactions**: Representations encode interaction propensities
 
 ### Drug Discovery and Therapeutics
+- **Small molecule drug discovery**: PLMs enable genome-wide prediction of chemical-protein interactions for "dark" proteins (those with unknown ligands), as demonstrated by [PortalCG](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010851). By combining 3D binding site-enhanced sequence pre-training with meta-learning, such approaches can identify drug targets and lead compounds for currently undruggable proteins, opening new avenues for treating complex diseases like Alzheimer's and substance use disorders
 - **Antibody design**: PLMs optimize antibody sequences for improved binding and developability
 - **Enzyme engineering**: Models guide the design of enzymes with altered substrate specificity
 - **Stability prediction**: PLMs predict thermodynamic stability changes
