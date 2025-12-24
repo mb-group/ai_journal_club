@@ -19,7 +19,7 @@ Modern AI systems like language models, variational autoencoders (VAEs), and con
 
 ## What Are Embeddings?
 
-```{figure} embedding_idea.png
+```{figure} ../assets/embedding_idea.png
 ---
 name: embedding-concept
 alt: Conceptual illustration of embeddings
@@ -30,7 +30,7 @@ The embedding concept: transforming discrete, high-dimensional, or complex data 
 
 At their core, **embeddings** are dense vector representations of data that encode meaningful relationships in a continuous space. Instead of representing data through sparse, hand-crafted features, embeddings allow models to learn compact representations where similar items are positioned close together.
 
-```{figure} embedding_illustration_1.png
+```{figure} ../assets/embedding_illustration_1.png
 ---
 name: embedding-vectors
 alt: Vector representation of words in embedding space
@@ -46,7 +46,7 @@ Words represented as dense vectors in continuous embedding space. Each word is m
 
 2. **Semantic Similarity**: Items that are functionally or structurally similar have embeddings that are close in vector space. Distance in embedding space corresponds to meaningful relationships.
 
-```{figure} embedding_illustration_3.png
+```{figure} ../assets/embedding_illustration_3.png
 ---
 name: embedding-analogies
 alt: Semantic relationships in embedding space showing king-queen-man-woman analogy
@@ -95,7 +95,7 @@ embedding = protein_model.encode(sequence)  # Returns 1024-dim vector
 # The model learned what matters from millions of sequences
 ```
 
-```{figure} Kernel-trick-By-transforming-the-original-space-left-into-a-space-of-increased.png
+```{figure} ../assets/Kernel-trick-By-transforming-the-original-space-left-into-a-space-of-increased.png
 ---
 name: embedding-transformation
 alt: Transformation from original space to higher-dimensional embedding space
@@ -207,7 +207,7 @@ embedding_2d = pca.fit_transform(embeddings)
 # Even though the model was never told about these categories!
 ```
 
-```{figure} embedding_illustration_2.jpg
+```{figure} ../assets/embedding_illustration_2.jpg
 ---
 name: embedding-space-viz
 alt: Visualization of embedding space showing clusters and relationships

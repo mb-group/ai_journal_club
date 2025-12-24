@@ -34,12 +34,12 @@ This book intentionally does not cover the technical implementation details that
 :class: tip
 :color: light
 :icon: compass
-- [Working in AI's Pre-Textbook, Cambrian Era](orientation_cambrian_era.md)
-- [AI in biology vs. ChatGPT vs. AlphaFold 1/2/3](orientation_ai_in_biology_vs_chatgpt_vs_alphafold.md)
-- [AI in biology IS ASI—Artificial Specific Intelligence, not AGI](orientation_biology_needs_asi_not_agi.md)
-- [What's a model?](orientation_what_is_a_model.md)
-- [Training vs. inference vs. deployment](orientation_training_vs_inference_vs_deployment.md)
-- [Jargons with community-agreed fixed meanings](orientation_jargons_with_fixed_meanings.md)
+- [Working in AI's Pre-Textbook, Cambrian Era](orientation/orientation_cambrian_era.md)
+- [AI in biology vs. ChatGPT vs. AlphaFold 1/2/3](orientation/orientation_ai_in_biology_vs_chatgpt_vs_alphafold.md)
+- [AI in biology IS ASI—Artificial Specific Intelligence, not AGI](orientation/orientation_biology_needs_asi_not_agi.md)
+- [What's a model?](orientation/orientation_what_is_a_model.md)
+- [Training vs. inference vs. deployment](orientation/orientation_training_vs_inference_vs_deployment.md)
+- [Jargons with community-agreed fixed meanings](orientation/orientation_jargons_with_fixed_meanings.md)
 ```
 
 ---
@@ -49,9 +49,9 @@ This book intentionally does not cover the technical implementation details that
 ```{admonition} The Center Stage: Essential knowledge for every PI
 :class: tip
 
-- [The must-know models](part1_must_know_models.md)
-- [Trends/buzz/concepts vs. reality/performance/assumptions/limitations](buzz_vs_reality.md)
-- [How to digest a paper when prompting your choice of GPT](part1_digest_a_paper.md)
+- [The must-know models](part1/part1_must_know_models.md)
+- [Trends/buzz/concepts vs. reality/performance/assumptions/limitations](part1/buzz_vs_reality.md)
+- [How to digest a paper when prompting your choice of GPT](part1/part1_digest_a_paper.md)
 
 ```
 
@@ -62,19 +62,19 @@ This book intentionally does not cover the technical implementation details that
 ```{admonition} The Back Stage: Deeper insights for strategic decisions
 :class: tip
 
-#### [AI fundamentals at intuition level](part2_ai_fundamentals_intuition.md)
+#### [AI fundamentals at intuition level](part2/part2_ai_fundamentals_intuition.md)
 
 - Core concepts without the math
 
-#### [Why modern AI feels alien (even for researchers with statistical and ML background)](part2_why_modern_ai_feels_alien.md)
+#### [Why modern AI feels alien (even for researchers with statistical and ML background)](part2/part2_why_modern_ai_feels_alien.md)
 
-- [The age of embeddings](part2_chapter1_age_of_embeddings.md)
-- [Multi-task learning](part2_chapter2_multi_task_learning.md)
-- [Transfer learning](part2_chapter3_transfer_learning.md)
-- [New functionalities beyond classification](part2_chapter4_new_functionalities.md)
-- [Data representation and tokenization](part2_chapter5_data_representation.md)
+- [The age of embeddings](part2/part2_chapter1_age_of_embeddings.md)
+- [Multi-task learning](part2/part2_chapter2_multi_task_learning.md)
+- [Transfer learning](part2/part2_chapter3_transfer_learning.md)
+- [New functionalities beyond classification](part2/part2_chapter4_new_functionalities.md)
+- [Data representation and tokenization](part2/part2_chapter5_data_representation.md)
 
-#### [Going deeper: Less-known but promisingly emerging subfields](part2_emerging_subfields.md)
+#### [Going deeper: Less-known but promisingly emerging subfields](part2/part2_emerging_subfields.md)
 
 - Out-of-distribution generalization
 - Interpretability techniques
@@ -89,11 +89,11 @@ This book intentionally does not cover the technical implementation details that
 
 #### When you need something to use
 
-- [Browse by catalog: our curated collection of tools](part3_browse_by_catalog.md)
+- [Browse by catalog: our curated collection of tools](part3/part3_browse_by_catalog.md)
 
 #### When you want to design your own
 
-- [Problem formulation and must-know techniques](part3_design_your_own.md): translating biology questions and data into AI tasks, attention mechanisms, assumptions between cnn/rnn/transformers
+- [Problem formulation and must-know techniques](part3/part3_design_your_own.md): translating biology questions and data into AI tasks, attention mechanisms, assumptions between cnn/rnn/transformers
 ```
 
 ---
@@ -103,18 +103,18 @@ This book intentionally does not cover the technical implementation details that
 ```{admonition} Clarity Emerging from Chaos: Deep dives and myth-busting
 :class: tip
 
-#### [Case studies](part4_case_studies.md)
+#### [Case studies](part4/part4_case_studies.md)
 
-- [What protein language models actually learn](part4_protein_language_models.md)
-- [Actual performance of foundation models in genomics](part4_foundation_models_genomics.md)
+- [What protein language models actually learn](part4/part4_protein_language_models.md)
+- [Actual performance of foundation models in genomics](part4/part4_foundation_models_genomics.md)
 
-#### [Debates and clarifications](part4_debates_clarifications.md)
+#### [Debates and clarifications](part4/part4_debates_clarifications.md)
 
 - Why this approach, not that one?
 - Must-update misconceptions (e.g., "AI only predicts correlations")
 - Bias-variance tradeoff
 
-#### [Seemingly confused subfields clarified](part4_confused_subfields.md)
+#### [Seemingly confused subfields clarified](part4/part4_confused_subfields.md)
 
 - Domain generalization vs. transfer learning vs. meta-learning
 - Interpretable vs. explainable AI vs. mechanistic interpretability

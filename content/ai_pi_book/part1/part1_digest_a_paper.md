@@ -6,6 +6,6 @@
 
 ## Mind Map
 
-[![How to Digest a Paper](digest-a-paper-preview-1.png)](digest-a-paper.pdf)
+[![How to Digest a Paper](../assets/digest-a-paper-preview-1.png)](../assets/digest-a-paper.pdf)
 
 A systematic framework for efficiently reading and understanding AI research papers in biology.
