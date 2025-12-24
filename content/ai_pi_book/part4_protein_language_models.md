@@ -6,6 +6,32 @@ Protein language models (PLMs) have emerged as transformative tools in computati
 
 This chapter explores the journey from the inception of protein language models to our current understanding of their internal representations, drawing on recent breakthrough studies that have begun to decode what these "black box" models actually capture about protein biology.
 
+### The Paradigm Shift: From Sequential to Direct Prediction
+
+Traditionally, understanding protein function required following a sequential path: sequence → structure → function. PLMs have enabled a revolutionary shortcut:
+
+```{mermaid}
+flowchart TB
+    subgraph Traditional["Traditional Paradigm"]
+        S1[Protein Sequence] --> ST[Structure Determination<br/>X-ray, Cryo-EM, NMR] --> F1[Function Prediction<br/>Experimental assays]
+    end
+    
+    subgraph PLM["PLM-Enabled Paradigm"]
+        S2[Protein Sequence] --> PLM_Model[Protein Language Model<br/>Embeddings]
+        PLM_Model --> F2[Direct Function Prediction]
+        PLM_Model -.->|implicit representation| ST2[Structure Prediction<br/>ESMFold, AlphaFold]
+        ST2 -.->|optional refinement| F2
+    end
+    
+    style PLM_Model fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
+    style S2 fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style F2 fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
+    style Traditional fill:#f5f5f5,stroke:#999,stroke-width:2px
+    style PLM fill:#e8f5e9,stroke:#4CAF50,stroke-width:2px
+```
+
+**Key insight**: PLMs learn evolutionary patterns that implicitly encode both structural and functional information. This allows them to predict function directly from sequence, or generate structure predictions as an intermediate step when needed. The solid arrows show the primary workflow, while dashed arrows indicate optional or implicit pathways.
+
 ## A Brief History: The Birth of Protein Language Models
 
 ### The 2020 Watershed Moment
@@ -64,7 +90,17 @@ Several landmark studies have systematically probed PLM representations:
 
 This suggests that evolutionary patterns in sequences carry sufficient information about structure for models to implicitly learn structural constraints.
 
-#### 2. **Evolutionary and Functional Constraints Are Disentangled** {cite}`Notin2024`
+#### 2. **PLMs Learn Evolutionary Statistics, Not Physics** {cite}`Zhang2024`
+
+[Zhang et al. (2024)](https://www.pnas.org/doi/10.1073/pnas.2406285121) provided crucial evidence that PLMs **do not learn the physics of protein folding**. Instead, they store and leverage evolutionary statistics:
+
+- **Coevolutionary patterns**: PLMs learn which amino acid pairs tend to co-occur across evolution
+- **Motif interactions**: Models store statistics of interacting sequence fragments, not physical forces
+- **Context dependence**: Contact prediction requires local sequence context, suggesting lookup of evolutionary patterns rather than physics-based computation
+
+This work definitively counters the hypothesis that PLMs understand biophysical principles. The models work because evolutionary selection has imprinted physical constraints into sequence patterns—not because the models learned physics themselves.
+
+#### 3. **Evolutionary and Functional Constraints Are Disentangled** {cite}`Notin2024`
 
 [Notin et al. (2024)](https://www.pnas.org/doi/10.1073/pnas.2406285121) revealed that PLMs learn to separate different types of biological constraints:
 
@@ -74,30 +110,21 @@ This suggests that evolutionary patterns in sequences carry sufficient informati
 
 Importantly, these constraints are represented in partially orthogonal subspaces of the embedding space, allowing models to distinguish between conserved-but-flexible sites and invariant functional residues.
 
-#### 3. **Mechanistic Understanding of Fitness Landscapes** {cite}`Hsu2024`
+#### 4. **Sparse Features Reveal Biological Organization** {cite}`Hsu2024`
 
-[Hsu et al. (2024)](https://www.pnas.org/doi/10.1073/pnas.2506316122) demonstrated that PLMs capture the *shape* of protein fitness landscapes:
+[Hsu et al. (2024)](https://www.pnas.org/doi/10.1073/pnas.2506316122) used sparse autoencoders to decode PLM representations:
 
-- **Epistatic interactions**: PLMs represent higher-order dependencies between residues
-- **Mutational robustness**: Embeddings encode tolerance to perturbation
-- **Evolutionary trajectories**: Model representations reflect accessible paths through sequence space
+- **Gene ontology associations**: Sparse features map cleanly to specific GO terms and protein families
+- **Functional monosemanticity**: Individual features correspond to specific biological processes
+- **Hierarchical organization**: Features capture biology at multiple levels of abstraction
 
-This mechanistic understanding explains why PLMs can predict variant effects even for unseen sequences.
+Importantly, this interpretability work shows PLMs organize biological knowledge systematically, even though they don't understand underlying physics.
 
-#### 4. **Biophysical Properties Are Implicitly Encoded** {cite}`Biorvix2025`
-
-A recent preprint [(bioRxiv, 2025)](https://www.biorxiv.org/content/10.1101/2025.02.06.636901v2) showed that PLM embeddings correlate with:
-
-- Thermodynamic stability measurements
-- Aggregation propensity
-- Intrinsic disorder
-- Binding interface residues
-
-These properties emerge without explicit training objectives, suggesting that evolutionary selection has imprinted biophysical constraints into sequence patterns that PLMs detect.
+```{note}
+**The Physics vs. Evolution Distinction**: A critical insight from recent research is that PLMs do **not** learn the physics of protein folding. Instead, they memorize evolutionary patterns that reflect physical constraints. This is a subtle but crucial distinction—the models work because evolution has already solved the physics problem, and PLMs learn to recognize those solutions.
+```
 
 ## Rising Trends: Augmenting PLMs with Explicit Knowledge
-
-While unsupervised PLMs have proven remarkably capable, recent work explores explicitly incorporating additional modalities:
 
 ### Structure-Aware Models
 
@@ -135,26 +162,26 @@ The emerging understanding of what PLMs learn has practical implications:
 
 ### For AI Researchers
 - **Biology as a testbed**: Proteins offer a rich domain for studying representation learning with ground truth
-- **Emergent structure**: PLMs provide compelling evidence that structure can emerge from sequence patterns alone
-- **Hybrid approaches**: Combining learned and explicit knowledge remains a frontier
+- **Evolution ≠ Physics**: PLMs demonstrate that memorizing evolutionary patterns can substitute for understanding physics
+- **Hybrid approaches**: Combining learned and explicit knowledge remains an important frontier
 
 ## Conclusion: From Black Boxes to Mechanistic Understanding
 
 Protein language models have evolved from mysterious black boxes to increasingly interpretable systems. We now understand that these models:
 
-- **Learn biophysical constraints** implicitly from evolutionary patterns
-- **Represent multiple types of biological information** in structured, partly disentangled ways
-- **Capture fitness landscapes** that enable prediction of variant effects
-- **Benefit from explicit structure and physics** when available, but work remarkably well without it
+- **Learn evolutionary statistics, not physics**: PLMs memorize coevolutionary patterns rather than understanding biophysical principles
+- **Store motif-level interactions**: Models lookup statistics of interacting sequence fragments conditioned on local context
+- **Represent biological information hierarchically**: From GO terms to protein families, information is organized systematically
+- **Benefit from explicit structure and physics when available**: Hybrid approaches show promise for improving reliability
 
-The next frontier involves moving beyond correlation to causation—building models that not only predict protein properties but explain *why* certain sequences work and others don't. As we decode what PLMs learn, we move closer to truly understanding the language of proteins itself.
+The key takeaway: **PLMs are powerful because evolution has already solved the physics problem**. These models learn to recognize evolutionary solutions without understanding the underlying forces that shaped them. This insight is crucial for understanding both their capabilities and limitations.
 
 ## Further Reading
 
 - Original ESM paper: [Rives et al., 2021, PNAS](https://www.pnas.org/doi/full/10.1073/pnas.2016239118)
 - ProtTrans: [Elnaggar et al., 2021, IEEE TPAMI](https://ieeexplore.ieee.org/document/9477085)
-- What PLMs learn (structure): [Heinzinger et al., 2025, Nature Methods](https://www.nature.com/articles/s41592-025-02836-7)
-- What PLMs learn (evolution): [Notin et al., 2024, PNAS](https://www.pnas.org/doi/10.1073/pnas.2406285121)
-- What PLMs learn (fitness): [Hsu et al., 2024, PNAS](https://www.pnas.org/doi/10.1073/pnas.2506316122)
+- **PLMs learn evolution, not physics**: [Zhang et al., 2024, PNAS](https://www.pnas.org/doi/10.1073/pnas.2406285121) - Key paper showing PLMs memorize evolutionary statistics
+- Structure emerges from evolution: [Heinzinger et al., 2025, Nature Methods](https://www.nature.com/articles/s41592-025-02836-7)
+- Interpretable sparse features: [Hsu et al., 2024, PNAS](https://www.pnas.org/doi/10.1073/pnas.2506316122)
 - Structure-augmented models: [ProstT5, NAR Genomics and Bioinformatics](https://academic.oup.com/nargab/article/6/4/lqae150/7901286)
 - Biophysics-informed models: [Nature Methods, 2025](https://www.nature.com/articles/s41592-025-02776-2)
