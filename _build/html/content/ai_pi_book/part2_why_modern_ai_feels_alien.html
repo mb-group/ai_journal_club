@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Why Modern AI Feels Alien (Even With Statistical and ML Background) &#8212; Babu group AI journal club</title>
+    <title>Why Modern AI Feels Alien (Even for researchers With Statistical and ML Background) &#8212; Babu group AI journal club</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/part2_why_modern_ai_feels_alien';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Going Deeper: Less-Known but Promisingly Emerging Subfields" href="part2_emerging_subfields.html" />
+    <link rel="next" title="The Age of Embeddings: Representations Are the Real Output" href="part2_chapter1_age_of_embeddings.html" />
     <link rel="prev" title="AI Fundamentals at Intuition Level" href="part2_ai_fundamentals_intuition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -269,7 +269,14 @@
 <li class="toctree-l2"><a class="reference internal" href="buzz_vs_reality.html">Trends, Buzzwords, and Reality: What These Concepts <em>Actually</em> Mean for Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_digest_a_paper.html">How to Digest a Paper when chatting with your choice of GPT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Why Modern AI Feels Alien (Even With Statistical and ML Background)</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Why Modern AI Feels Alien (Even for researchers With Statistical and ML Background)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter1_age_of_embeddings.html">The Age of Embeddings: Representations Are the Real Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter2_multi_task_learning.html">Multi-Task Learning: One Model, Many Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter3_transfer_learning.html">Transfer Learning: Standing on the Shoulders of Giants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter4_new_functionalities.html">New Functionalities Beyond Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter5_data_representation.html">Data Representation: Tokenization Changes Everything</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_emerging_subfields.html">Going Deeper: Less-Known but Promisingly Emerging Subfields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_browse_by_catalog.html">Browse by Catalog: Our Curated Collection of Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_design_your_own.html">When You Want to Design Your Own</a></li>
@@ -463,9 +470,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -476,23 +481,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Why Modern AI Feels Alien (Even With Statistical and ML Background)</h1>
+    <h1>Why Modern AI Feels Alien (Even for researchers With Statistical and ML Background)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-age-of-embeddings-representations-are-the-real-output">The Age of Embeddings: Representations Are the Real Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-learning-one-model-many-outputs">Multi-Task Learning: One Model, Many Outputs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning-standing-on-the-shoulders-of-giants">Transfer Learning: Standing on the Shoulders of Giants</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-functionalities-beyond-classification">New Functionalities Beyond Classification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-tokenization-changes-everything">Data Representation: Tokenization Changes Everything</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -502,66 +495,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="why-modern-ai-feels-alien-even-with-statistical-and-ml-background">
-<h1>Why Modern AI Feels Alien (Even With Statistical and ML Background)<a class="headerlink" href="#why-modern-ai-feels-alien-even-with-statistical-and-ml-background" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="why-modern-ai-feels-alien-even-for-researchers-with-statistical-and-ml-background">
+<h1>Why Modern AI Feels Alien (Even for researchers With Statistical and ML Background)<a class="headerlink" href="#why-modern-ai-feels-alien-even-for-researchers-with-statistical-and-ml-background" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>This page is incomplete and under active development.</strong> We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.</p>
 </div>
 <p>If you have training in classical statistics or even basic machine learning, you might find the current AI landscape surprisingly disorienting. This isn’t because the fundamentals have changed—it’s because several paradigm shifts have transformed how we think about and use AI models.</p>
-<section id="the-age-of-embeddings-representations-are-the-real-output">
-<h2>The Age of Embeddings: Representations Are the Real Output<a class="headerlink" href="#the-age-of-embeddings-representations-are-the-real-output" title="Link to this heading">#</a></h2>
-<p><strong>The Old View:</strong> A model’s job is to produce a final prediction (classification label, regression value, etc.)</p>
-<p><strong>The New Reality:</strong> The intermediate representations (embeddings) are often more valuable than the final output.</p>
-<p>Modern AI systems like language models, variational autoencoders (VAEs), and contrastive learning frameworks don’t just predict—they learn rich internal representations of data. For biology:</p>
-<ul class="simple">
-<li><p>A protein language model’s embedding captures evolutionary relationships, structural motifs, and functional properties</p></li>
-<li><p>These embeddings can be used for downstream tasks the model was never explicitly trained for</p></li>
-<li><p>Think of embeddings as a learned “language” for describing your data that captures patterns humans might never articulate</p></li>
+<p>This section explores five major paradigm shifts:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="part2_chapter1_age_of_embeddings.html">The Age of Embeddings: Representations Are the Real Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part2_chapter2_multi_task_learning.html">Multi-Task Learning: One Model, Many Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part2_chapter3_transfer_learning.html">Transfer Learning: Standing on the Shoulders of Giants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part2_chapter4_new_functionalities.html">New Functionalities Beyond Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part2_chapter5_data_representation.html">Data Representation: Tokenization Changes Everything</a></li>
 </ul>
-</section>
-<section id="multi-task-learning-one-model-many-outputs">
-<h2>Multi-Task Learning: One Model, Many Outputs<a class="headerlink" href="#multi-task-learning-one-model-many-outputs" title="Link to this heading">#</a></h2>
-<p>Classical ML typically means one model, one task. Modern AI routinely trains single models with multiple objectives simultaneously:</p>
-<ul class="simple">
-<li><p>Predict protein structure AND function AND stability</p></li>
-<li><p>Learn from labeled AND unlabeled data in the same training run</p></li>
-<li><p>Optimize for multiple performance criteria that may even conflict</p></li>
-</ul>
-<p>This changes how you evaluate models—there’s no longer a single “accuracy” number, but rather a profile of performance across tasks.</p>
-</section>
-<section id="transfer-learning-standing-on-the-shoulders-of-giants">
-<h2>Transfer Learning: Standing on the Shoulders of Giants<a class="headerlink" href="#transfer-learning-standing-on-the-shoulders-of-giants" title="Link to this heading">#</a></h2>
-<p>Perhaps the biggest paradigm shift: you rarely train models from scratch anymore.</p>
-<p><strong>Pre-training + Fine-tuning</strong> has become the dominant workflow:</p>
-<ol class="arabic simple">
-<li><p>Someone trains a massive model on general data (e.g., all known protein sequences)</p></li>
-<li><p>You adapt (fine-tune) that model to your specific task with your data</p></li>
-<li><p>The pre-trained model brings general “knowledge” that dramatically reduces your data requirements</p></li>
-</ol>
-<p>This is why a model trained on human proteins might work surprisingly well on bacterial proteins—it learned general principles of protein biology during pre-training.</p>
-</section>
-<section id="new-functionalities-beyond-classification">
-<h2>New Functionalities Beyond Classification<a class="headerlink" href="#new-functionalities-beyond-classification" title="Link to this heading">#</a></h2>
-<p>Modern AI does things that don’t fit neatly into classical supervised learning:</p>
-<ul class="simple">
-<li><p><strong>Image segmentation:</strong> Not just “what’s in this image?” but “which pixels correspond to which cell?”</p></li>
-<li><p><strong>Generation:</strong> Creating new protein sequences, predicting drug-like molecules, generating realistic microscopy images</p></li>
-<li><p><strong>Self-supervision:</strong> Learning patterns without explicit labels by predicting parts of the data from other parts</p></li>
-</ul>
-</section>
-<section id="data-representation-tokenization-changes-everything">
-<h2>Data Representation: Tokenization Changes Everything<a class="headerlink" href="#data-representation-tokenization-changes-everything" title="Link to this heading">#</a></h2>
-<p>How you represent input data fundamentally shapes what patterns models can learn.</p>
-<p><strong>Tokenization</strong> means breaking complex data into discrete units:</p>
-<ul class="simple">
-<li><p>Text: words or sub-word pieces</p></li>
-<li><p>Proteins: individual amino acids, or k-mers (overlapping subsequences)</p></li>
-<li><p>Genomic data: nucleotides, codons, or functional motifs</p></li>
-</ul>
-<p>The choice of tokenization isn’t just technical—it determines what patterns are “visible” to the model. A model that sees proteins as individual amino acids learns different patterns than one that sees them as structural domains.</p>
-<hr class="docutils" />
-</section>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -604,11 +554,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="part2_emerging_subfields.html"
+       href="part2_chapter1_age_of_embeddings.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Going Deeper: Less-Known but Promisingly Emerging Subfields</p>
+        <p class="prev-next-title">The Age of Embeddings: Representations Are the Real Output</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -618,25 +568,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-age-of-embeddings-representations-are-the-real-output">The Age of Embeddings: Representations Are the Real Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-learning-one-model-many-outputs">Multi-Task Learning: One Model, Many Outputs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning-standing-on-the-shoulders-of-giants">Transfer Learning: Standing on the Shoulders of Giants</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-functionalities-beyond-classification">New Functionalities Beyond Classification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-tokenization-changes-everything">Data Representation: Tokenization Changes Everything</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

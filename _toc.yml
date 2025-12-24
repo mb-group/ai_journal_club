@@ -92,6 +92,12 @@ chapters:
   - file: content/ai_pi_book/part1_digest_a_paper
   - file: content/ai_pi_book/part2_ai_fundamentals_intuition
   - file: content/ai_pi_book/part2_why_modern_ai_feels_alien
+    sections:
+    - file: content/ai_pi_book/part2_chapter1_age_of_embeddings
+    - file: content/ai_pi_book/part2_chapter2_multi_task_learning
+    - file: content/ai_pi_book/part2_chapter3_transfer_learning
+    - file: content/ai_pi_book/part2_chapter4_new_functionalities
+    - file: content/ai_pi_book/part2_chapter5_data_representation
   - file: content/ai_pi_book/part2_emerging_subfields
   - file: content/ai_pi_book/part3_browse_by_catalog
   - file: content/ai_pi_book/part3_design_your_own
