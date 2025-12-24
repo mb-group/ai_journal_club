@@ -164,12 +164,3 @@ Protein language models have evolved from mysterious black boxes to increasingly
 
 The key takeaway: **PLMs are powerful because evolution has already solved the physics problem**. These models learn to recognize evolutionary solutions without understanding the underlying forces that shaped them. This insight is crucial for understanding both their capabilities and limitations.
 
-## Further Reading
-
-- Original ESM paper: [Rives et al., 2021, PNAS](https://www.pnas.org/doi/full/10.1073/pnas.2016239118)
-- ProtTrans: [Elnaggar et al., 2021, IEEE TPAMI](https://ieeexplore.ieee.org/document/9477085)
-- **PLMs learn evolution, not physics**: [Zhang et al., 2024, PNAS](https://www.pnas.org/doi/10.1073/pnas.2406285121) - Key paper showing PLMs memorize evolutionary statistics
-- Structure emerges from evolution: [Heinzinger et al., 2025, Nature Methods](https://www.nature.com/articles/s41592-025-02836-7)
-- Interpretable sparse features: [Hsu et al., 2024, PNAS](https://www.pnas.org/doi/10.1073/pnas.2506316122)
-- Structure-augmented models: [ProstT5, NAR Genomics and Bioinformatics](https://academic.oup.com/nargab/article/6/4/lqae150/7901286)
-- Biophysics-informed models: [Nature Methods, 2025](https://www.nature.com/articles/s41592-025-02776-2)
