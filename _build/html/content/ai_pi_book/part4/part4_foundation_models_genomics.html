@@ -470,7 +470,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -486,6 +488,57 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-foundation-models-in-genomics">Characteristics of Foundation Models in Genomics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-architecture-components">Core Architecture Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-them-foundation-models">What Makes Them “Foundation” Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-value-proposition-of-foundation-models">The Value Proposition of Foundation Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addressing-long-standing-challenges">Addressing Long-Standing Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contextualizing-small-datasets">Contextualizing Small Datasets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-and-transfer-learning-capabilities">Zero-Shot and Transfer Learning Capabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-genomic-challenges">Unique Genomic Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspiration-from-other-domains">Inspiration from Other Domains</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-methods-for-foundation-models">Evaluation Methods for Foundation Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-based-evaluation">Training-Based Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downstream-task-evaluation">Downstream Task Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-benchmark-tasks">Common Benchmark Tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reality-check-drama-and-disappointment">The Reality Check: Drama and Disappointment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proliferation-without-clear-differentiation">Proliferation Without Clear Differentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-benchmarking-problem">The Benchmarking Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limited-performance-gains">Limited Performance Gains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#over-promising-nomenclature">Over-Promising Nomenclature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-marketing-problem">The Marketing Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-trends-and-future-directions">Current Trends and Future Directions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-omics-foundation-models">Multi-Omics Foundation Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-state-foundation-models">Cell-State Foundation Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-realistic-evaluation">More Realistic Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-innovations">Architectural Innovations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-questions">Open Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendations-for-practitioners">Recommendations for Practitioners</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-consider-foundation-models">When to Consider Foundation Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-simpler-approaches">When to Use Simpler Approaches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -497,11 +550,433 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="actual-performance-of-foundation-models-in-genomics">
 <h1>Actual Performance of Foundation Models in Genomics<a class="headerlink" href="#actual-performance-of-foundation-models-in-genomics" title="Link to this heading">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>This page is incomplete and under active development.</strong> We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.</p>
-</div>
-<p>As the concept of protein language model took off, in genomics space, since nucleotide sequence is also sequence, same tech can be conviniently applied to build “genomics language model”.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Following the success of protein language models, the genomics field has adopted similar approaches to build “genomics foundation models.” Since nucleotide sequences—both DNA and RNA—share the sequential nature of proteins, the same transformer-based architectures can be readily adapted. This has led to the emergence of specialized DNA language models and RNA language models, collectively known as genomics foundation models.</p>
+<p>The promise is compelling: models that can learn fundamental patterns from massive genomic datasets and then apply this knowledge to diverse downstream tasks without additional training. However, as we’ll explore, the reality of these models’ performance has proven more nuanced than initial excitement suggested.</p>
+</section>
+<section id="characteristics-of-foundation-models-in-genomics">
+<h2>Characteristics of Foundation Models in Genomics<a class="headerlink" href="#characteristics-of-foundation-models-in-genomics" title="Link to this heading">#</a></h2>
+<p>Foundation models in genomics share several defining characteristics, though not all are strictly necessary (<a class="reference external" href="https://www.nature.com/articles/s42256-025-01007-9">Nguyen et al., 2025, Nature Machine Intelligence</a>).</p>
+<section id="core-architecture-components">
+<h3>Core Architecture Components<a class="headerlink" href="#core-architecture-components" title="Link to this heading">#</a></h3>
+<p><strong>Tokenization Strategy</strong></p>
+<ul class="simple">
+<li><p>Defines the “vocabulary” for genomic sequences</p></li>
+<li><p>Common approaches include k-mer based tokenization (3-mers, 6-mers, etc.)</p></li>
+<li><p>Some models use byte-pair encoding (BPE) adapted from NLP</p></li>
+<li><p>Choice impacts model’s ability to capture different scales of genomic features</p></li>
+</ul>
+<p><strong>Self-Supervised Training</strong></p>
+<ul class="simple">
+<li><p>Typically uses masked language modeling (predicting masked tokens)</p></li>
+<li><p>No labeled data required during pre-training</p></li>
+<li><p>Models learn from sequence patterns themselves</p></li>
+<li><p>Analogous to BERT’s approach in natural language processing</p></li>
+</ul>
+<p><strong>Large-Scale, Diverse Training Data</strong></p>
+<ul class="simple">
+<li><p>Usually genome-level data from one or multiple species</p></li>
+<li><p>Includes both coding and non-coding regions</p></li>
+<li><p>May incorporate evolutionary information across species</p></li>
+<li><p>Training datasets often span millions to billions of base pairs</p></li>
+</ul>
+</section>
+<section id="what-makes-them-foundation-models">
+<h3>What Makes Them “Foundation” Models<a class="headerlink" href="#what-makes-them-foundation-models" title="Link to this heading">#</a></h3>
+<p>While most genomics foundation models are indeed language models, the key distinguishing features are:</p>
+<ol class="arabic simple">
+<li><p><strong>Scale</strong>: Trained on comprehensive genomic datasets</p></li>
+<li><p><strong>Generality</strong>: Designed to be applicable across multiple downstream tasks</p></li>
+<li><p><strong>Transfer learning</strong>: Can be fine-tuned or used zero-shot for specific applications</p></li>
+<li><p><strong>Learned representations</strong>: Generate biologically meaningful embeddings</p></li>
+</ol>
+</section>
+</section>
+<section id="the-value-proposition-of-foundation-models">
+<h2>The Value Proposition of Foundation Models<a class="headerlink" href="#the-value-proposition-of-foundation-models" title="Link to this heading">#</a></h2>
+<section id="addressing-long-standing-challenges">
+<h3>Addressing Long-Standing Challenges<a class="headerlink" href="#addressing-long-standing-challenges" title="Link to this heading">#</a></h3>
+<p>The genomics field has accumulated vast amounts of sequencing data, but lacked efficient methods to extract knowledge from this data at scale until foundation models emerged.</p>
+<p><strong>Knowledge Emergence from Big Data</strong></p>
+<ul class="simple">
+<li><p>Central belief: patterns and insights emerge when data is large and diverse enough</p></li>
+<li><p>Foundation models provide a framework to systematically “digest” genomic big data</p></li>
+<li><p>Enable discovery of relationships not apparent from smaller datasets</p></li>
+</ul>
+<p><strong>Capturing Long-Range Dependencies</strong></p>
+<ul class="simple">
+<li><p>Genomic regulation often involves interactions across long distances</p></li>
+<li><p>Traditional methods struggle with context windows beyond a few hundred base pairs</p></li>
+<li><p>Transformer architectures can theoretically capture dependencies across thousands of bases</p></li>
+<li><p>Critical for understanding regulatory elements, chromatin interactions, and gene networks</p></li>
+</ul>
+</section>
+<section id="contextualizing-small-datasets">
+<h3>Contextualizing Small Datasets<a class="headerlink" href="#contextualizing-small-datasets" title="Link to this heading">#</a></h3>
+<p>One key application is placing limited experimental data within large-scale reference contexts:</p>
+<ul class="simple">
+<li><p>Single-cell datasets can be interpreted against comprehensive atlases</p></li>
+<li><p>Rare variants can be evaluated using population-scale genomic knowledge</p></li>
+<li><p>Small perturbation studies gain context from broader biological understanding</p></li>
+</ul>
+</section>
+<section id="zero-shot-and-transfer-learning-capabilities">
+<h3>Zero-Shot and Transfer Learning Capabilities<a class="headerlink" href="#zero-shot-and-transfer-learning-capabilities" title="Link to this heading">#</a></h3>
+<p>A major promise of foundation models is their ability to generalize:</p>
+<ul class="simple">
+<li><p>Apply to new tasks without retraining</p></li>
+<li><p>Transfer knowledge across species and contexts</p></li>
+<li><p>Given a single DNA sequence, predict functional consequences</p></li>
+<li><p>Reduce need for large task-specific labeled datasets</p></li>
+</ul>
+</section>
+<section id="unique-genomic-challenges">
+<h3>Unique Genomic Challenges<a class="headerlink" href="#unique-genomic-challenges" title="Link to this heading">#</a></h3>
+<p>Foundation models aim to address challenges that traditional bioinformatics approaches struggle with:</p>
+<p><strong>Sequence Length Complexity</strong></p>
+<ul class="simple">
+<li><p>Genomic sequences are much longer than protein sequences</p></li>
+<li><p>Genes can span hundreds of thousands of base pairs</p></li>
+<li><p>Regulatory elements may be distant from their target genes</p></li>
+<li><p>Current models still struggle with truly genome-scale contexts</p></li>
+</ul>
+<p><strong>Sparse Signal Problem</strong></p>
+<ul class="simple">
+<li><p>Coding regions represent only ~2% of the human genome</p></li>
+<li><p>Functional elements are scattered and context-dependent</p></li>
+<li><p>Much of the genome’s regulatory code remains poorly understood</p></li>
+<li><p>Models must learn meaningful patterns from predominantly non-coding sequence</p></li>
+</ul>
+<p><strong>Data Heterogeneity and Noise</strong></p>
+<ul class="simple">
+<li><p>Sequencing technologies vary in quality and error profiles</p></li>
+<li><p>Cross-dataset comparisons are challenging</p></li>
+<li><p>Batch effects and technical artifacts are common</p></li>
+<li><p>Foundation models promise robustness through training on diverse data sources</p></li>
+</ul>
+<p><strong>Unlabeled Data Abundance</strong></p>
+<ul class="simple">
+<li><p>Far more sequence data exists than functional annotations</p></li>
+<li><p>Self-supervised learning leverages this unlabeled data</p></li>
+<li><p>Enables learning beyond current biological knowledge</p></li>
+<li><p>May discover patterns not yet characterized experimentally</p></li>
+</ul>
+</section>
+<section id="inspiration-from-other-domains">
+<h3>Inspiration from Other Domains<a class="headerlink" href="#inspiration-from-other-domains" title="Link to this heading">#</a></h3>
+<p>The development of genomics foundation models was catalyzed by success in:</p>
+<p><strong>Natural Language Processing</strong></p>
+<ul class="simple">
+<li><p>GPT, BERT, and other language models demonstrated power of self-supervised pre-training</p></li>
+<li><p>Transfer learning showed single models could excel at diverse tasks</p></li>
+<li><p>Attention mechanisms proved effective for capturing long-range dependencies</p></li>
+</ul>
+<p><strong>Protein Language Models</strong></p>
+<ul class="simple">
+<li><p>ESM, ProtBERT, and others successfully learned protein structure and function</p></li>
+<li><p>Demonstrated that biological sequences contain learnable patterns</p></li>
+<li><p>Showed embeddings could capture evolutionary and functional relationships</p></li>
+<li><p>Provided direct blueprint for genomics applications</p></li>
+</ul>
+</section>
+</section>
+<section id="evaluation-methods-for-foundation-models">
+<h2>Evaluation Methods for Foundation Models<a class="headerlink" href="#evaluation-methods-for-foundation-models" title="Link to this heading">#</a></h2>
+<p>Assessing foundation models is challenging due to their general-purpose nature and self-supervised training. Multiple evaluation strategies have emerged:</p>
+<section id="training-based-evaluation">
+<h3>Training-Based Evaluation<a class="headerlink" href="#training-based-evaluation" title="Link to this heading">#</a></h3>
+<p><strong>Masked Token Recovery</strong></p>
+<ul class="simple">
+<li><p>Primary metric during training: how well does the model predict masked nucleotides?</p></li>
+<li><p>Perplexity scores indicate how “surprised” the model is by held-out sequences</p></li>
+<li><p><strong>Limitation</strong>: Good perplexity doesn’t guarantee biological utility</p></li>
+<li><p>Similar to evaluating language models by autocomplete accuracy</p></li>
+</ul>
+<p><strong>Embedding Quality Assessment</strong></p>
+<ul class="simple">
+<li><p>Qualitative examination of learned representations</p></li>
+<li><p>Do related sequences cluster together in embedding space?</p></li>
+<li><p>Can visualizations (t-SNE, UMAP) show biological organization?</p></li>
+<li><p><strong>Weakness</strong>: Only function-related control at training stage; subjective interpretation</p></li>
+</ul>
+</section>
+<section id="downstream-task-evaluation">
+<h3>Downstream Task Evaluation<a class="headerlink" href="#downstream-task-evaluation" title="Link to this heading">#</a></h3>
+<p>Since foundation models promise biologically meaningful representations, evaluation on specific tasks is crucial:</p>
+<p><strong>Direct Embedding Usage</strong></p>
+<ul class="simple">
+<li><p>Use frozen model embeddings as features for prediction tasks</p></li>
+<li><p>Tests whether pre-trained representations capture relevant information</p></li>
+<li><p>Common for variant effect prediction, enhancer identification, etc.</p></li>
+<li><p>Zero-shot or few-shot performance indicates generalization</p></li>
+</ul>
+<p><strong>Fine-Tuning Approaches</strong></p>
+<ul class="simple">
+<li><p>Add task-specific layers and train on labeled data</p></li>
+<li><p>May fine-tune the entire foundation model or keep it frozen</p></li>
+<li><p>Tests adaptability to specific applications</p></li>
+<li><p>More computationally expensive but often higher performance</p></li>
+</ul>
+<p><strong>Separate Model Training</strong></p>
+<ul class="simple">
+<li><p>Extract embeddings and train independent classifier</p></li>
+<li><p>More common approach in practice</p></li>
+<li><p>Allows comparison with traditional feature engineering</p></li>
+<li><p>Can use simpler models (linear, random forest) for interpretability</p></li>
+</ul>
+</section>
+<section id="common-benchmark-tasks">
+<h3>Common Benchmark Tasks<a class="headerlink" href="#common-benchmark-tasks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Variant effect prediction</strong>: Does mutation increase or decrease function?</p></li>
+<li><p><strong>Regulatory element identification</strong>: Promoters, enhancers, silencers</p></li>
+<li><p><strong>Splicing prediction</strong>: Will a sequence variant affect RNA splicing?</p></li>
+<li><p><strong>Gene expression prediction</strong>: Predict expression from sequence</p></li>
+<li><p><strong>Chromatin state prediction</strong>: Predict accessibility, histone marks</p></li>
+<li><p><strong>Evolutionary conservation</strong>: Identify constrained regions</p></li>
+</ul>
+</section>
+</section>
+<section id="the-reality-check-drama-and-disappointment">
+<h2>The Reality Check: Drama and Disappointment<a class="headerlink" href="#the-reality-check-drama-and-disappointment" title="Link to this heading">#</a></h2>
+<section id="proliferation-without-clear-differentiation">
+<h3>Proliferation Without Clear Differentiation<a class="headerlink" href="#proliferation-without-clear-differentiation" title="Link to this heading">#</a></h3>
+<p>Beginning in 2021, the field experienced a flood of similar foundation model papers (<a class="reference external" href="https://www.nature.com/articles/s41592-024-02201-0">Dalla-Torre et al., 2024, Nature Methods</a>, <a class="reference external" href="https://www.nature.com/articles/s41592-024-02191-z">Zhou et al., 2024, Nature Methods</a>):</p>
+<ul class="simple">
+<li><p>Dozens of models with nearly identical architectures</p></li>
+<li><p>Often trained on overlapping or similar datasets</p></li>
+<li><p>Marginal improvements claimed over previous models</p></li>
+<li><p>Limited head-to-head comparisons</p></li>
+<li><p>Difficult for practitioners to choose appropriate models</p></li>
+</ul>
+<p>Examples include models like Nucleotide Transformer, DNABERT-2, HyenaDNA, Evo, and many others.</p>
+</section>
+<section id="the-benchmarking-problem">
+<h3>The Benchmarking Problem<a class="headerlink" href="#the-benchmarking-problem" title="Link to this heading">#</a></h3>
+<p>Until 2024, there was no standardized benchmark for fair comparison (<a class="reference external" href="https://arxiv.org/abs/2410.13956">Zrimec et al., 2024, arXiv</a>):</p>
+<ul class="simple">
+<li><p>Each paper used different evaluation datasets</p></li>
+<li><p>Tasks and metrics varied across studies</p></li>
+<li><p>Cherry-picking of favorable results was common</p></li>
+<li><p>Reproducibility challenges were widespread</p></li>
+</ul>
+<p>The development of comprehensive benchmarks like GenomicBenchmarks finally enabled systematic evaluation, but revealed sobering results.</p>
+</section>
+<section id="limited-performance-gains">
+<h3>Limited Performance Gains<a class="headerlink" href="#limited-performance-gains" title="Link to this heading">#</a></h3>
+<p>Recent rigorous evaluations have revealed disappointing performance (<a class="reference external" href="https://www.nature.com/articles/s42256-024-00949-w">Sasse et al., 2024, Nature Machine Intelligence</a>, <a class="reference external" href="https://www.nature.com/articles/s41592-025-02772-6">Chu et al., 2025, Nature Methods</a>):</p>
+<p><strong>Not Better Than Simple Linear Models</strong></p>
+<ul class="simple">
+<li><p>On many tasks, foundation models perform comparably to simple baselines</p></li>
+<li><p>Linear models trained on k-mer features often match or exceed foundation model performance</p></li>
+<li><p>Traditional bioinformatics tools remain competitive</p></li>
+<li><p>Massive computational cost of foundation models often not justified</p></li>
+</ul>
+<p><strong>Where Are the Gains?</strong></p>
+<ul class="simple">
+<li><p>Some improvement on truly novel sequences</p></li>
+<li><p>Benefits for transfer learning across species (sometimes)</p></li>
+<li><p>Potential value in zero-shot scenarios</p></li>
+<li><p>Best performance often requires substantial fine-tuning anyway</p></li>
+</ul>
+<p><strong>Specific Findings</strong></p>
+<ul class="simple">
+<li><p>Enhancer prediction: k-mer models competitive with foundation models</p></li>
+<li><p>Variant effect prediction: marginal improvements, high computational cost</p></li>
+<li><p>Gene expression: traditional features + simple models often sufficient</p></li>
+<li><p>Cross-species transfer: mixed results, often species-specific retraining needed</p></li>
+</ul>
+</section>
+<section id="over-promising-nomenclature">
+<h3>Over-Promising Nomenclature<a class="headerlink" href="#over-promising-nomenclature" title="Link to this heading">#</a></h3>
+<p>The term “foundation model” and claims of generality often don’t match reality:</p>
+<p><strong>Narrow Scope</strong></p>
+<ul class="simple">
+<li><p>Many “genomics foundation models” are actually transcriptomics-only</p></li>
+<li><p>Often limited to specific cell lines or tissue types</p></li>
+<li><p>Small molecule perturbation studies don’t necessarily generalize</p></li>
+<li><p>Species-specific models may not transfer well</p></li>
+</ul>
+<p><strong>Context Limitations</strong></p>
+<ul class="simple">
+<li><p>Despite long-range claims, effective context windows remain limited</p></li>
+<li><p>Most models max out at 10-100kb, tiny compared to genome scale</p></li>
+<li><p>Gene-gene interactions and chromosome topology still poorly captured</p></li>
+<li><p>3D genome organization not effectively modeled</p></li>
+</ul>
+<p><strong>Task Specificity</strong></p>
+<ul class="simple">
+<li><p>Models often excel only at tasks similar to training objective</p></li>
+<li><p>Claimed “general purpose” abilities don’t materialize</p></li>
+<li><p>Fine-tuning often required, undermining zero-shot premise</p></li>
+<li><p>Transfer across biological domains remains challenging</p></li>
+</ul>
+</section>
+<section id="the-marketing-problem">
+<h3>The Marketing Problem<a class="headerlink" href="#the-marketing-problem" title="Link to this heading">#</a></h3>
+<p>There’s a disconnect between marketing and scientific reality:</p>
+<ul class="simple">
+<li><p>Provocative claims in abstracts not supported by thorough evaluation</p></li>
+<li><p>“Revolutionary” language in press releases and grant applications</p></li>
+<li><p>Limited acknowledgment of failures and limitations</p></li>
+<li><p>Incentive structures favor novelty over rigorous validation</p></li>
+<li><p>Preprints may overstate performance before peer review</p></li>
+</ul>
+</section>
+</section>
+<section id="current-trends-and-future-directions">
+<h2>Current Trends and Future Directions<a class="headerlink" href="#current-trends-and-future-directions" title="Link to this heading">#</a></h2>
+<section id="multi-omics-foundation-models">
+<h3>Multi-Omics Foundation Models<a class="headerlink" href="#multi-omics-foundation-models" title="Link to this heading">#</a></h3>
+<p>An emerging trend is integrating multiple data modalities (<a class="reference external" href="https://arxiv.org/pdf/2512.14019">Wu et al., 2024, arXiv</a>):</p>
+<p><strong>Beyond Sequence Alone</strong></p>
+<ul class="simple">
+<li><p>Combining DNA sequence with epigenetic marks</p></li>
+<li><p>Integrating gene expression, protein abundance, metabolomics</p></li>
+<li><p>Incorporating chromatin accessibility and 3D structure</p></li>
+<li><p>Linking sequence to cellular phenotypes</p></li>
+</ul>
+<p><strong>Potential Advantages</strong></p>
+<ul class="simple">
+<li><p>Richer representations of biological state</p></li>
+<li><p>Better prediction of complex phenotypes</p></li>
+<li><p>More comprehensive understanding of regulation</p></li>
+<li><p>Alignment with systems biology perspective</p></li>
+</ul>
+<p><strong>Technical Challenges</strong></p>
+<ul class="simple">
+<li><p>Different modalities have different scales and distributions</p></li>
+<li><p>Missing data is common across modalities</p></li>
+<li><p>Computational requirements multiply</p></li>
+<li><p>Interpretation becomes more complex</p></li>
+</ul>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Models combining scRNA-seq with scATAC-seq</p></li>
+<li><p>Integration of sequence with chromatin conformation data</p></li>
+<li><p>Multi-modal cell state representations</p></li>
+</ul>
+</section>
+<section id="cell-state-foundation-models">
+<h3>Cell-State Foundation Models<a class="headerlink" href="#cell-state-foundation-models" title="Link to this heading">#</a></h3>
+<p>Rather than pure sequence models, focus on cellular representation:</p>
+<ul class="simple">
+<li><p>scRNA-seq based models (scGPT, Geneformer, scBERT)</p></li>
+<li><p>Learning from perturbation data (e.g., Perturb-seq)</p></li>
+<li><p>Predicting cellular responses to genetic/chemical perturbations</p></li>
+<li><p>Drug discovery and cell engineering applications</p></li>
+</ul>
+</section>
+<section id="more-realistic-evaluation">
+<h3>More Realistic Evaluation<a class="headerlink" href="#more-realistic-evaluation" title="Link to this heading">#</a></h3>
+<p>The field is moving toward:</p>
+<ul class="simple">
+<li><p>Standardized benchmarks with diverse tasks</p></li>
+<li><p>Rigorous comparison with simple baselines</p></li>
+<li><p>Transparent reporting of limitations</p></li>
+<li><p>Focus on practical utility over novelty</p></li>
+<li><p>Better understanding of when foundation models actually help</p></li>
+<li><p>Cost-benefit analysis including computational requirements</p></li>
+</ul>
+</section>
+<section id="architectural-innovations">
+<h3>Architectural Innovations<a class="headerlink" href="#architectural-innovations" title="Link to this heading">#</a></h3>
+<p>Beyond standard transformers:</p>
+<ul class="simple">
+<li><p>State space models (e.g., Mamba, Hyena) for longer contexts</p></li>
+<li><p>Sparse attention mechanisms</p></li>
+<li><p>Hierarchical architectures for multi-scale genomics</p></li>
+<li><p>Graph neural networks for 3D genome structure</p></li>
+<li><p>Hybrid models combining multiple approaches</p></li>
+</ul>
+</section>
+<section id="open-questions">
+<h3>Open Questions<a class="headerlink" href="#open-questions" title="Link to this heading">#</a></h3>
+<p><strong>Scientific Questions</strong></p>
+<ul class="simple">
+<li><p>What genomic patterns do these models actually learn?</p></li>
+<li><p>Are emergent properties real or measurement artifacts?</p></li>
+<li><p>How can we make models more interpretable?</p></li>
+<li><p>What’s the minimal data needed for useful foundation models?</p></li>
+<li><p>Do models capture causal relationships or just correlations?</p></li>
+</ul>
+<p><strong>Practical Questions</strong></p>
+<ul class="simple">
+<li><p>When should practitioners use foundation models vs. traditional methods?</p></li>
+<li><p>How to make these models accessible beyond large research groups?</p></li>
+<li><p>What compute requirements are justified by performance gains?</p></li>
+<li><p>How to ensure reproducibility and reliability?</p></li>
+<li><p>How to handle model versioning and updates?</p></li>
+</ul>
+<p><strong>Ethical and Policy Questions</strong></p>
+<ul class="simple">
+<li><p>How to ensure equitable access to powerful genomic AI tools?</p></li>
+<li><p>Privacy concerns with genomic data in foundation models</p></li>
+<li><p>Potential misuse in synthetic biology applications</p></li>
+<li><p>Intellectual property and commercialization issues</p></li>
+</ul>
+</section>
+</section>
+<section id="key-takeaways">
+<h2>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Foundation models in genomics are promising but overhyped</strong>: The theoretical potential is real, but current implementations often underdeliver relative to claims.</p></li>
+<li><p><strong>Simple baselines are surprisingly strong</strong>: Before deploying complex foundation models, validate that they outperform straightforward alternatives like linear models with k-mer features.</p></li>
+<li><p><strong>Evaluation matters critically</strong>: Claims should be backed by rigorous, standardized evaluation against appropriate baselines. Be skeptical of papers lacking comprehensive benchmarking or comparing only to weak baselines.</p></li>
+<li><p><strong>Context is crucial</strong>: “Genomics foundation model” can mean very different things. Understand the training data, architecture, intended use cases, and actual performance before adoption.</p></li>
+<li><p><strong>The field is maturing</strong>: Moving from hype to rigorous science, with better benchmarks and more honest assessment of limitations. Recent publications show increased methodological rigor.</p></li>
+<li><p><strong>Look beyond sequence</strong>: Multi-omics and cell-state models may ultimately prove more valuable than pure sequence models for many biological applications.</p></li>
+<li><p><strong>Traditional bioinformatics still valuable</strong>: Foundation models are tools to complement, not replace, existing methods. Domain knowledge and mechanistic understanding remain essential.</p></li>
+<li><p><strong>Computational costs matter</strong>: The environmental and financial costs of training and deploying foundation models must be justified by tangible performance gains.</p></li>
+<li><p><strong>Interpretability is often lacking</strong>: Understanding <em>why</em> a model makes predictions remains challenging, limiting scientific insight and trust.</p></li>
+<li><p><strong>Success depends on the task</strong>: Foundation models may excel for some applications while offering no advantage for others. Task-specific evaluation is essential.</p></li>
+</ol>
+</section>
+<section id="recommendations-for-practitioners">
+<h2>Recommendations for Practitioners<a class="headerlink" href="#recommendations-for-practitioners" title="Link to this heading">#</a></h2>
+<section id="when-to-consider-foundation-models">
+<h3>When to Consider Foundation Models<a class="headerlink" href="#when-to-consider-foundation-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>You have limited labeled data but access to relevant unlabeled sequence data</p></li>
+<li><p>Transfer learning from other species/contexts could be valuable</p></li>
+<li><p>Task requires capturing long-range dependencies (&gt;1kb)</p></li>
+<li><p>You need embeddings for multiple downstream tasks</p></li>
+<li><p>Computational resources are available</p></li>
+</ul>
+</section>
+<section id="when-to-use-simpler-approaches">
+<h3>When to Use Simpler Approaches<a class="headerlink" href="#when-to-use-simpler-approaches" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Strong baseline methods exist for your task</p></li>
+<li><p>Interpretability is critical</p></li>
+<li><p>Computational resources are limited</p></li>
+<li><p>Training data is abundant for your specific task</p></li>
+<li><p>Real-time predictions are needed</p></li>
+</ul>
+</section>
+<section id="best-practices">
+<h3>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Start with baselines</strong>: Establish performance of simple methods first</p></li>
+<li><p><strong>Use existing benchmarks</strong>: Compare against standardized tasks</p></li>
+<li><p><strong>Report honestly</strong>: Include negative results and limitations</p></li>
+<li><p><strong>Consider costs</strong>: Factor in computational requirements</p></li>
+<li><p><strong>Validate thoroughly</strong>: Test on held-out data from different sources</p></li>
+<li><p><strong>Seek interpretability</strong>: Use attention analysis, ablations, probes</p></li>
+<li><p><strong>Be specific</strong>: Clearly define model capabilities and limitations</p></li>
+<li><p><strong>Share resources</strong>: Make models and code openly available</p></li>
+<li><p><strong>Update regularly</strong>: Re-evaluate as new benchmarks emerge</p></li>
+<li><p><strong>Combine approaches</strong>: Consider ensemble methods with traditional tools</p></li>
+</ol>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Foundation models represent an important development in genomics, bringing powerful machine learning approaches to bear on fundamental biological questions. However, the field must move beyond hype to rigorous evaluation and honest assessment of capabilities.</p>
+<p>The coming years will likely see continued progress in architecture design, multi-omics integration, and task-specific optimization. Success will require collaboration between machine learning researchers, experimental biologists, and clinicians to ensure models address real biological needs rather than just technical benchmarks.</p>
+<p>Most importantly, foundation models should be viewed as one tool among many in the genomics toolkit—powerful when applied appropriately, but not a universal solution. The goal is not to build the biggest model or claim the most revolutionary advance, but to develop practical tools that genuinely advance our understanding of genome biology and improve human health.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -558,6 +1033,64 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-foundation-models-in-genomics">Characteristics of Foundation Models in Genomics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-architecture-components">Core Architecture Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-them-foundation-models">What Makes Them “Foundation” Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-value-proposition-of-foundation-models">The Value Proposition of Foundation Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addressing-long-standing-challenges">Addressing Long-Standing Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contextualizing-small-datasets">Contextualizing Small Datasets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-and-transfer-learning-capabilities">Zero-Shot and Transfer Learning Capabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-genomic-challenges">Unique Genomic Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspiration-from-other-domains">Inspiration from Other Domains</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-methods-for-foundation-models">Evaluation Methods for Foundation Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-based-evaluation">Training-Based Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downstream-task-evaluation">Downstream Task Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-benchmark-tasks">Common Benchmark Tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reality-check-drama-and-disappointment">The Reality Check: Drama and Disappointment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proliferation-without-clear-differentiation">Proliferation Without Clear Differentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-benchmarking-problem">The Benchmarking Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limited-performance-gains">Limited Performance Gains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#over-promising-nomenclature">Over-Promising Nomenclature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-marketing-problem">The Marketing Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-trends-and-future-directions">Current Trends and Future Directions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-omics-foundation-models">Multi-Omics Foundation Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-state-foundation-models">Cell-State Foundation Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-realistic-evaluation">More Realistic Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-innovations">Architectural Innovations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-questions">Open Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendations-for-practitioners">Recommendations for Practitioners</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-consider-foundation-models">When to Consider Foundation Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-simpler-approaches">When to Use Simpler Approaches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
