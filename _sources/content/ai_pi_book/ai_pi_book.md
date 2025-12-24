@@ -36,7 +36,7 @@ This book intentionally does not cover the technical implementation details that
 :icon: compass
 - [Working in AI's Pre-Textbook, Cambrian Era](orientation_cambrian_era.md)
 - [AI in biology vs. ChatGPT vs. AlphaFold 1/2/3](orientation_ai_in_biology_vs_chatgpt_vs_alphafold.md)
-- [Biology needs ASI—Artificial Specific Intelligence, not AGI](orientation_biology_needs_asi_not_agi.md)
+- [AI in biology IS ASI—Artificial Specific Intelligence, not AGI](orientation_biology_needs_asi_not_agi.md)
 - [What's a model?](orientation_what_is_a_model.md)
 - [Training vs. inference vs. deployment](orientation_training_vs_inference_vs_deployment.md)
 - [Jargons with community-agreed fixed meanings](orientation_jargons_with_fixed_meanings.md)

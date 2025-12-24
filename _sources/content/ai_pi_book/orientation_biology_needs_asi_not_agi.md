@@ -1,107 +1,56 @@
-# Biology Needs ASI—Artificial Specific Intelligence, not AGI
+# AI in Biology IS ASI—Artificial Specific Intelligence, not AGI
 
 ```{note}
 **This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
 ```
 
+**ChatGPT does not represent AI. AI in biology means very different things.**
+
 The popular narrative around artificial intelligence today revolves around **AGI**—Artificial General Intelligence—systems that can perform many diverse tasks across domains. ChatGPT, Claude, and Gemini are often framed this way.
 
-But biological research does not need AGI. **Biology needs ASI—Artificial Specific Intelligence.**
+**But AI in biological research is fundamentally ASI—Artificial Specific Intelligence, not AGI.**
+
+Why? Because **biology is fundamentally different from settled domains**. There is still too much unknown. New discoveries emerge constantly—novel cell types, unexpected regulatory mechanisms, unanticipated protein functions, surprising disease pathways. The biological knowledge base is not static. It is expanding rapidly, and much of it remains uncharted.
+
+This makes AI in biology inherently specific by nature. General-purpose AI trained on existing knowledge cannot simply be deployed to biological problems. Each biological question requires models that **adapt to what has not yet been discovered**, that incorporate emerging findings, and that are customized to unique constraints and contexts.
 
 ---
 
-## What Does This Mean?
+## What Defines AI in Biology as ASI?
 
-Biological research demands **custom, context-specific AI models** that do not yet exist. These models must:
+AI for biological research is inherently **specific and context-dependent**. Every successful biological AI model exhibits these characteristics:
 
-- Be tailored to **novel, non-shareable datasets** unique to each biological question
-- Incorporate **deep domain understanding** of biological principles
-- Adapt to specialized data types—single-cell RNA-seq, proteomics, spatial transcriptomics, imaging, clinical phenotypes
-- Work with **limited labeled data** and domain-specific constraints
-- Be **interpretable** and mechanistically transparent
+- Tailored to **novel, non-shareable datasets** unique to each biological question
+- Incorporates **deep domain understanding** of biological principles
+- Adapts to specialized data types—single-cell RNA-seq, proteomics, spatial transcriptomics, imaging, clinical phenotypes
+- Works with **limited labeled data** and domain-specific constraints
+- Requires **interpretability** and mechanistic transparency
 
-These are not generic capabilities. They require specialized architectures, training strategies, and validation methods rooted in the specifics of biology.
-
----
-
-## The Scale of the Problem: Severe Shortages
-
-Biology is not facing one bottleneck—it is facing three distinct crises, each of which compounds the others.
-
-### 1. Shortage in Scale
-**Too few AI experts to meet thousands of biological questions.**
-
-- Biology generates an enormous diversity of research questions, each requiring tailored AI approaches
-- The number of trained AI researchers with biological expertise is vanishingly small
-- Even large institutions often have only one or two people capable of bridging AI and biology meaningfully
-- The ratio of biological questions to expert AI-biology practitioners is growing, not shrinking
-
-This is not a temporary hiring problem. It is a structural mismatch in training pipelines and career paths.
-
-### 2. Shortage in Quality
-**Lack of integration between biological insight and AI modeling.**
-
-Many collaborations between biologists and AI researchers fail not because of lack of effort, but because:
-
-- AI researchers do not understand biological context, causality, or constraints
-- Biologists do not understand what questions are tractable for AI or how to structure data
-- Both groups use different standards for validation, rigor, and interpretability
-- "Black box" models that predict accurately but explain nothing are scientifically insufficient
-
-Bridging this gap requires individuals with **dual fluency**—people who can think both biologically and computationally. Such individuals are rare, and training programs to create them barely exist.
-
-### 3. Shortage in Transparency
-**Existing models are often opaque and not adaptable.**
-
-- Many state-of-the-art AI models (including foundation models) are proprietary and closed
-- Even open models are often incompletely documented
-- Pretrained models are rarely reusable across biological contexts without significant retraining
-- Biological datasets used in model training are often not shared due to patient privacy, proprietary concerns, or competitive pressures
-
-This creates a paradox: AI models appear ubiquitous, yet biologists cannot **adapt, interrogate, or repurpose** them for their specific scientific questions.
+These are not optional features that could make a model better. They are **essential properties** that define what it means to do AI in biology. This is why AI in biological research is ASI by nature, not a scaled-down version of AGI.
 
 ---
 
-## Why General-Purpose AI Is Not Enough
+## What This Means for PIs: Be Specific in Your Questions
 
-Foundation models like GPT-4 or general-purpose vision models are impressive, but they do not solve biological AI challenges:
+Because AI in biology is ASI, **PIs should be empowered—and expected—to ask highly specific questions** about any model they encounter or consider using:
 
-- **Language models know text, not biology.** ChatGPT can summarize literature but cannot reason about protein folding constraints or gene regulatory logic.
-- **Vision models trained on ImageNet cannot interpret microscopy.** Biological images (fluorescence, electron microscopy, histology) require domain-specific pretraining.
-- **Multi-modal models lack biological grounding.** Integrating genomics, proteomics, and imaging requires more than concatenating embeddings.
+- **What exactly was this model trained on?**  
+  What datasets? What organisms? What cell types? What conditions? What timepoints?
 
-Biological AI must be **specific by design**.
+- **What biological assumptions are built into the architecture?**  
+  Does it assume independence between genes? Does it account for spatial structure? Does it model temporal dynamics?
+
+- **What is this model specifically capable of?**  
+  Can it generalize to my organism, my tissue, my experimental conditions? What are the boundary conditions of its applicability?
+
+- **What can this model NOT do?**  
+  What biological contexts will break it? What kinds of novel discoveries would it miss?
+
+- **How was validation performed?**  
+  Was it tested on truly held-out data? Were the validation sets biologically similar to my question?
+
+These are not "technical details" to be delegated. They are **scientific questions that define whether a model is appropriate for your biological problem**. If someone presents a model as a solution but cannot answer these questions clearly, that is a red flag.
+
+In the AGI framing, asking these questions might seem like nitpicking. In the ASI reality of biological research, these questions are central to scientific rigor.
 
 ---
-
-## What Biology Actually Needs
-
-To address these shortages, the field requires:
-
-1. **Custom, interpretable AI architectures** designed for biological reasoning
-2. **Training programs that integrate biology and AI** from the start, not as separate fields connected by collaboration
-3. **Open, adaptable models** that researchers can interrogate, modify, and repurpose
-4. **Data-sharing frameworks** that respect privacy but enable model development
-5. **Validation standards** that prioritize biological interpretability, not just predictive accuracy
-
----
-
-> ## Core Takeaways
-> **• Biology needs Artificial Specific Intelligence, not AGI.**  
-> Biological research demands specialized, context-aware models.
->
-> **• Severe shortage in scale.**  
-> Too few AI experts exist to address thousands of biological questions.
->
-> **• Shortage in quality.**  
-> Lack of deep integration between biological insight and AI expertise.
->
-> **• Shortage in transparency.**  
-> Existing models are often opaque, proprietary, and not adaptable.
->
-> **• General-purpose AI is not enough.**  
-> Foundation models lack the biological grounding and specificity required.
->
-> **• What we need: custom, interpretable, open AI systems.**  
-> The path forward requires new training paradigms, architectures, and collaboration models.
-
