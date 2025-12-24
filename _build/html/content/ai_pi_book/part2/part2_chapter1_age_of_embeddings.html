@@ -555,18 +555,12 @@ document.write(`
 <hr class="docutils" />
 <section id="what-are-embeddings">
 <h2>What Are Embeddings?<a class="headerlink" href="#what-are-embeddings" title="Link to this heading">#</a></h2>
-<figure class="align-center" id="embedding-concept">
-<img alt="Conceptual illustration of embeddings" src="../../../_images/embedding_idea.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The embedding concept: transforming discrete, high-dimensional, or complex data into continuous vector representations that capture semantic relationships.</span><a class="headerlink" href="#embedding-concept" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 <p>At their core, <strong>embeddings</strong> are dense vector representations of data that encode meaningful relationships in a continuous space. Instead of representing data through sparse, hand-crafted features, embeddings allow models to learn compact representations where similar items are positioned close together.</p>
-<figure class="align-center" id="embedding-vectors">
-<a class="reference internal image-reference" href="../../../_images/embedding_illustration_1.png"><img alt="Vector representation of words in embedding space" src="../../../_images/embedding_illustration_1.png" style="width: 70%;" />
+<figure class="align-center" id="embedding-space-viz">
+<a class="reference internal image-reference" href="../../../_images/embedding_illustration_2.jpg"><img alt="Visualization of embedding space showing clusters and relationships" src="../../../_images/embedding_illustration_2.jpg" style="width: 85%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Words represented as dense vectors in continuous embedding space. Each word is mapped to a point where semantic relationships are preserved through geometric proximity.</span><a class="headerlink" href="#embedding-vectors" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Visualization of high-dimensional embeddings projected into 2D space. Similar items cluster together, revealing the learned structure and relationships. These patterns emerge naturally from training, without explicit supervision about categories or relationships.</span><a class="headerlink" href="#embedding-space-viz" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="key-properties-of-good-embeddings">
@@ -579,7 +573,7 @@ document.write(`
 <a class="reference internal image-reference" href="../../../_images/embedding_illustration_3.png"><img alt="Semantic relationships in embedding space showing king-queen-man-woman analogy" src="../../../_images/embedding_illustration_3.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Semantic relationships encoded as geometric relationships in embedding space. The famous word2vec analogy: “king” - “man” + “woman” ≈ “queen” demonstrates how embeddings capture meaningful semantic relationships through vector arithmetic.</span><a class="headerlink" href="#embedding-analogies" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Semantic relationships encoded as geometric relationships in embedding space. The famous word2vec analogy: “king” - “man” + “woman” ≈ “queen” demonstrates how embeddings capture meaningful semantic relationships through vector arithmetic.</span><a class="headerlink" href="#embedding-analogies" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="3">
@@ -627,7 +621,7 @@ document.write(`
 <a class="reference internal image-reference" href="../../../_images/Kernel-trick-By-transforming-the-original-space-left-into-a-space-of-increased.png"><img alt="Transformation from original space to higher-dimensional embedding space" src="../../../_images/Kernel-trick-By-transforming-the-original-space-left-into-a-space-of-increased.png" style="width: 75%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The power of learned transformations: Data that is not linearly separable in the original space (left) can be transformed into a higher-dimensional embedding space (right) where patterns become clear and separable. Embeddings learn these transformations automatically from data rather than requiring hand-crafted feature engineering.</span><a class="headerlink" href="#embedding-transformation" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The power of learned transformations: Data that is not linearly separable in the original space (left) can be transformed into a higher-dimensional embedding space (right) where patterns become clear and separable. Embeddings learn these transformations automatically from data rather than requiring hand-crafted feature engineering.</span><a class="headerlink" href="#embedding-transformation" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The model discovers features that humans might never think to look for, often outperforming decades of domain knowledge encoded in hand-crafted features.</p>
@@ -636,6 +630,7 @@ document.write(`
 <hr class="docutils" />
 <section id="how-embeddings-are-learned">
 <h2>How Embeddings Are Learned<a class="headerlink" href="#how-embeddings-are-learned" title="Link to this heading">#</a></h2>
+<p>Any model’s intermediate output can be taken as an embedding. For example, in a classifier, the typical approach is to take the last layer’s transformation in linear algebra space of the data input as the embedding—this is the representation just before the final classification decision. However, there are many layers before this final one, and taking any one or combining a few of them also produces valid embeddings. Which layer to extract and how to optimally use embeddings is itself an active research direction. Without going too deep into this complexity, let’s focus on two special but already widely applied training approaches: self-supervised learning and contrastive learning.</p>
 <section id="self-supervised-learning">
 <h3>Self-Supervised Learning<a class="headerlink" href="#self-supervised-learning" title="Link to this heading">#</a></h3>
 <p>Many of the most powerful embedding models are trained through <strong>self-supervised learning</strong>—they learn from the data itself without requiring explicit labels:</p>
@@ -728,13 +723,6 @@ document.write(`
 <span class="c1"># Even though the model was never told about these categories!</span>
 </pre></div>
 </div>
-<figure class="align-center" id="embedding-space-viz">
-<a class="reference internal image-reference" href="../../../_images/embedding_illustration_2.jpg"><img alt="Visualization of embedding space showing clusters and relationships" src="../../../_images/embedding_illustration_2.jpg" style="width: 85%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Visualization of high-dimensional embeddings projected into 2D space. Similar items cluster together, revealing the learned structure and relationships. These patterns emerge naturally from training, without explicit supervision about categories or relationships.</span><a class="headerlink" href="#embedding-space-viz" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 <p>The learned representations often rediscover biological organization principles.</p>
 </section>
 </section>

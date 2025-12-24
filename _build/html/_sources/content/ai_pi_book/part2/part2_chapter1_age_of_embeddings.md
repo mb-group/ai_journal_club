@@ -19,25 +19,16 @@ Modern AI systems like language models, variational autoencoders (VAEs), and con
 
 ## What Are Embeddings?
 
-```{figure} ../assets/embedding_idea.png
----
-name: embedding-concept
-alt: Conceptual illustration of embeddings
-align: center
----
-The embedding concept: transforming discrete, high-dimensional, or complex data into continuous vector representations that capture semantic relationships.
-```
-
 At their core, **embeddings** are dense vector representations of data that encode meaningful relationships in a continuous space. Instead of representing data through sparse, hand-crafted features, embeddings allow models to learn compact representations where similar items are positioned close together.
 
-```{figure} ../assets/embedding_illustration_1.png
+```{figure} ../assets/embedding_illustration_2.jpg
 ---
-name: embedding-vectors
-alt: Vector representation of words in embedding space
-width: 70%
+name: embedding-space-viz
+alt: Visualization of embedding space showing clusters and relationships
+width: 85%
 align: center
 ---
-Words represented as dense vectors in continuous embedding space. Each word is mapped to a point where semantic relationships are preserved through geometric proximity.
+Visualization of high-dimensional embeddings projected into 2D space. Similar items cluster together, revealing the learned structure and relationships. These patterns emerge naturally from training, without explicit supervision about categories or relationships.
 ```
 
 ### Key Properties of Good Embeddings
@@ -110,6 +101,8 @@ The model discovers features that humans might never think to look for, often ou
 ---
 
 ## How Embeddings Are Learned
+
+Any model's intermediate output can be taken as an embedding. For example, in a classifier, the typical approach is to take the last layer's transformation in linear algebra space of the data input as the embedding—this is the representation just before the final classification decision. However, there are many layers before this final one, and taking any one or combining a few of them also produces valid embeddings. Which layer to extract and how to optimally use embeddings is itself an active research direction. Without going too deep into this complexity, let's focus on two special but already widely applied training approaches: self-supervised learning and contrastive learning.
 
 ### Self-Supervised Learning
 
@@ -205,16 +198,6 @@ embedding_2d = pca.fit_transform(embeddings)
 # - Functional categories  
 # - Evolutionary relationships
 # Even though the model was never told about these categories!
-```
-
-```{figure} ../assets/embedding_illustration_2.jpg
----
-name: embedding-space-viz
-alt: Visualization of embedding space showing clusters and relationships
-width: 85%
-align: center
----
-Visualization of high-dimensional embeddings projected into 2D space. Similar items cluster together, revealing the learned structure and relationships. These patterns emerge naturally from training, without explicit supervision about categories or relationships.
 ```
 
 The learned representations often rediscover biological organization principles.
