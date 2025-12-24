@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Multi-Task Learning: One Model, Many Outputs" href="part2_chapter2_multi_task_learning.html" />
-    <link rel="prev" title="Why Modern AI Feels Alien (Even With Statistical and ML Background)" href="part2_why_modern_ai_feels_alien.html" />
+    <link rel="prev" title="Why Modern AI Feels Alien (Even for researchers With Statistical and ML Background)" href="part2_why_modern_ai_feels_alien.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -269,7 +269,7 @@
 <li class="toctree-l2"><a class="reference internal" href="buzz_vs_reality.html">Trends, Buzzwords, and Reality: What These Concepts <em>Actually</em> Mean for Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_digest_a_paper.html">How to Digest a Paper when chatting with your choice of GPT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="part2_why_modern_ai_feels_alien.html">Why Modern AI Feels Alien (Even With Statistical and ML Background)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="part2_why_modern_ai_feels_alien.html">Why Modern AI Feels Alien (Even for researchers With Statistical and ML Background)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">The Age of Embeddings: Representations Are the Real Output</a></li>
 <li class="toctree-l3"><a class="reference internal" href="part2_chapter2_multi_task_learning.html">Multi-Task Learning: One Model, Many Outputs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="part2_chapter3_transfer_learning.html">Transfer Learning: Standing on the Shoulders of Giants</a></li>
@@ -470,7 +470,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -486,6 +488,44 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-paradigm-shift">The Fundamental Paradigm Shift</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-embeddings">What Are Embeddings?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-good-embeddings">Key Properties of Good Embeddings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-hand-crafted-features-to-learned-representations">From Hand-Crafted Features to Learned Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-traditional-approach">The Traditional Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-embedding-revolution">The Embedding Revolution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-embeddings-are-learned">How Embeddings Are Learned</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-supervised-learning">Self-Supervised Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-learning">Contrastive Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-embeddings-matter-for-biology">Why Embeddings Matter for Biology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">1. Transfer Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-learning">2. Multi-Task Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-search-and-clustering">3. Similarity Search and Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-latent-spaces">4. Interpretable Latent Spaces</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-considerations">Practical Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-quality-depends-on-training-data">Embedding Quality Depends on Training Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-all-layers-are-equal">Not All Layers Are Equal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-matters">Dimensionality Matters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">Common Pitfalls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -501,6 +541,8 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p><strong>This page is incomplete and under active development.</strong> We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.</p>
 </div>
+<section id="the-fundamental-paradigm-shift">
+<h2>The Fundamental Paradigm Shift<a class="headerlink" href="#the-fundamental-paradigm-shift" title="Link to this heading">#</a></h2>
 <p><strong>The Old View:</strong> A model’s job is to produce a final prediction (classification label, regression value, etc.)</p>
 <p><strong>The New Reality:</strong> The intermediate representations (embeddings) are often more valuable than the final output.</p>
 <p>Modern AI systems like language models, variational autoencoders (VAEs), and contrastive learning frameworks don’t just predict—they learn rich internal representations of data. For biology:</p>
@@ -509,6 +551,267 @@ document.write(`
 <li><p>These embeddings can be used for downstream tasks the model was never explicitly trained for</p></li>
 <li><p>Think of embeddings as a learned “language” for describing your data that captures patterns humans might never articulate</p></li>
 </ul>
+</section>
+<hr class="docutils" />
+<section id="what-are-embeddings">
+<h2>What Are Embeddings?<a class="headerlink" href="#what-are-embeddings" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="embedding-concept">
+<img alt="Conceptual illustration of embeddings" src="../../_images/embedding_idea.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The embedding concept: transforming discrete, high-dimensional, or complex data into continuous vector representations that capture semantic relationships.</span><a class="headerlink" href="#embedding-concept" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>At their core, <strong>embeddings</strong> are dense vector representations of data that encode meaningful relationships in a continuous space. Instead of representing data through sparse, hand-crafted features, embeddings allow models to learn compact representations where similar items are positioned close together.</p>
+<figure class="align-center" id="embedding-vectors">
+<a class="reference internal image-reference" href="../../_images/embedding_illustration_1.png"><img alt="Vector representation of words in embedding space" src="../../_images/embedding_illustration_1.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Words represented as dense vectors in continuous embedding space. Each word is mapped to a point where semantic relationships are preserved through geometric proximity.</span><a class="headerlink" href="#embedding-vectors" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="key-properties-of-good-embeddings">
+<h3>Key Properties of Good Embeddings<a class="headerlink" href="#key-properties-of-good-embeddings" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Dimensionality Reduction</strong>: Embeddings compress high-dimensional or complex data into lower-dimensional vectors (typically 128-1024 dimensions) while preserving the most important information.</p></li>
+<li><p><strong>Semantic Similarity</strong>: Items that are functionally or structurally similar have embeddings that are close in vector space. Distance in embedding space corresponds to meaningful relationships.</p></li>
+</ol>
+<figure class="align-center" id="embedding-analogies">
+<a class="reference internal image-reference" href="../../_images/embedding_illustration_3.png"><img alt="Semantic relationships in embedding space showing king-queen-man-woman analogy" src="../../_images/embedding_illustration_3.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Semantic relationships encoded as geometric relationships in embedding space. The famous word2vec analogy: “king” - “man” + “woman” ≈ “queen” demonstrates how embeddings capture meaningful semantic relationships through vector arithmetic.</span><a class="headerlink" href="#embedding-analogies" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p><strong>Continuous Representation</strong>: Unlike discrete one-hot encodings, embeddings place data on a continuous manifold where interpolation is meaningful. Points between known examples represent plausible intermediate states.</p></li>
+<li><p><strong>Task-Agnostic Features</strong>: Well-trained embeddings capture general properties of the data that are useful across many different downstream tasks, not just the original training objective.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="from-hand-crafted-features-to-learned-representations">
+<h2>From Hand-Crafted Features to Learned Representations<a class="headerlink" href="#from-hand-crafted-features-to-learned-representations" title="Link to this heading">#</a></h2>
+<section id="the-traditional-approach">
+<h3>The Traditional Approach<a class="headerlink" href="#the-traditional-approach" title="Link to this heading">#</a></h3>
+<p>Historically, machine learning required domain experts to manually engineer features:</p>
+<ul class="simple">
+<li><p>For proteins: amino acid composition, charge, hydrophobicity scores, secondary structure propensity</p></li>
+<li><p>For images: edge detectors, color histograms, texture descriptors</p></li>
+<li><p>For text: word counts, TF-IDF scores, hand-crafted linguistic features</p></li>
+</ul>
+<p><strong>Problems with this approach:</strong></p>
+<ul class="simple">
+<li><p>Labor-intensive and requires deep domain expertise</p></li>
+<li><p>Features may not capture the patterns that matter for your specific task</p></li>
+<li><p>Difficult to represent complex, hierarchical relationships</p></li>
+<li><p>Fixed features can’t adapt as you get more data</p></li>
+</ul>
+</section>
+<section id="the-embedding-revolution">
+<h3>The Embedding Revolution<a class="headerlink" href="#the-embedding-revolution" title="Link to this heading">#</a></h3>
+<p>Modern deep learning automatically learns representations through training:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Traditional approach: manual feature engineering</span>
+<span class="n">protein_features</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">calculate_hydrophobicity</span><span class="p">(</span><span class="n">sequence</span><span class="p">),</span>
+    <span class="n">count_charged_residues</span><span class="p">(</span><span class="n">sequence</span><span class="p">),</span>
+    <span class="n">get_secondary_structure_propensity</span><span class="p">(</span><span class="n">sequence</span><span class="p">),</span>
+    <span class="c1"># ... hundreds of hand-crafted features</span>
+<span class="p">]</span>
+
+<span class="c1"># Modern approach: learned embeddings</span>
+<span class="n">embedding</span> <span class="o">=</span> <span class="n">protein_model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>  <span class="c1"># Returns 1024-dim vector</span>
+<span class="c1"># The model learned what matters from millions of sequences</span>
+</pre></div>
+</div>
+<figure class="align-center" id="embedding-transformation">
+<a class="reference internal image-reference" href="../../_images/Kernel-trick-By-transforming-the-original-space-left-into-a-space-of-increased.png"><img alt="Transformation from original space to higher-dimensional embedding space" src="../../_images/Kernel-trick-By-transforming-the-original-space-left-into-a-space-of-increased.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The power of learned transformations: Data that is not linearly separable in the original space (left) can be transformed into a higher-dimensional embedding space (right) where patterns become clear and separable. Embeddings learn these transformations automatically from data rather than requiring hand-crafted feature engineering.</span><a class="headerlink" href="#embedding-transformation" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The model discovers features that humans might never think to look for, often outperforming decades of domain knowledge encoded in hand-crafted features.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="how-embeddings-are-learned">
+<h2>How Embeddings Are Learned<a class="headerlink" href="#how-embeddings-are-learned" title="Link to this heading">#</a></h2>
+<section id="self-supervised-learning">
+<h3>Self-Supervised Learning<a class="headerlink" href="#self-supervised-learning" title="Link to this heading">#</a></h3>
+<p>Many of the most powerful embedding models are trained through <strong>self-supervised learning</strong>—they learn from the data itself without requiring explicit labels:</p>
+<p><strong>Protein Language Models (e.g., ESM, ProtBERT)</strong></p>
+<ul class="simple">
+<li><p>Training task: Predict masked amino acids in a sequence</p></li>
+<li><p>What’s learned: Evolutionary constraints, structural compatibility, functional motifs</p></li>
+<li><p>Result: Embeddings that capture “protein-ness” in general</p></li>
+</ul>
+<p><strong>Molecular Embeddings (e.g., MolCLR, GraphMVP)</strong></p>
+<ul class="simple">
+<li><p>Training task: Predict relationships between different views of molecules (2D graphs vs 3D conformations)</p></li>
+<li><p>What’s learned: Chemical properties, reactivity patterns, binding characteristics</p></li>
+<li><p>Result: Embeddings useful for drug discovery, property prediction, synthesis planning</p></li>
+</ul>
+</section>
+<section id="contrastive-learning">
+<h3>Contrastive Learning<a class="headerlink" href="#contrastive-learning" title="Link to this heading">#</a></h3>
+<p>A particularly powerful approach for learning embeddings:</p>
+<ol class="arabic simple">
+<li><p><strong>Positive pairs</strong>: Create pairs of related items (same protein, different mutations; same molecule, different conformations)</p></li>
+<li><p><strong>Negative pairs</strong>: Sample unrelated items</p></li>
+<li><p><strong>Training objective</strong>: Push positive pairs closer together in embedding space while pushing negative pairs apart</p></li>
+</ol>
+<p>This creates embeddings where meaningful similarity corresponds to vector proximity.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="why-embeddings-matter-for-biology">
+<h2>Why Embeddings Matter for Biology<a class="headerlink" href="#why-embeddings-matter-for-biology" title="Link to this heading">#</a></h2>
+<section id="transfer-learning">
+<h3>1. Transfer Learning<a class="headerlink" href="#transfer-learning" title="Link to this heading">#</a></h3>
+<p>Train once on massive datasets, use everywhere:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use pre-trained protein embeddings</span>
+<span class="n">esm_model</span> <span class="o">=</span> <span class="n">load_pretrained</span><span class="p">(</span><span class="s2">&quot;ESM-2&quot;</span><span class="p">)</span>  <span class="c1"># Trained on 250M sequences</span>
+
+<span class="c1"># Your task: predict enzyme activity with only 500 labeled examples</span>
+<span class="n">embeddings</span> <span class="o">=</span> <span class="n">esm_model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">your_sequences</span><span class="p">)</span>
+<span class="n">activity_predictor</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">your_labels</span><span class="p">)</span>
+<span class="c1"># Often outperforms models trained from scratch on millions of examples</span>
+</pre></div>
+</div>
+<p>The embeddings capture fundamental biology learned from vast sequence databases. You leverage this knowledge even with small datasets.</p>
+</section>
+<section id="multi-task-learning">
+<h3>2. Multi-Task Learning<a class="headerlink" href="#multi-task-learning" title="Link to this heading">#</a></h3>
+<p>One embedding, many predictions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">embedding</span> <span class="o">=</span> <span class="n">protein_model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
+
+<span class="c1"># Use the same embedding for different tasks</span>
+<span class="n">stability</span> <span class="o">=</span> <span class="n">stability_predictor</span><span class="p">(</span><span class="n">embedding</span><span class="p">)</span>
+<span class="n">localization</span> <span class="o">=</span> <span class="n">localization_predictor</span><span class="p">(</span><span class="n">embedding</span><span class="p">)</span>
+<span class="n">interaction_partners</span> <span class="o">=</span> <span class="n">interaction_predictor</span><span class="p">(</span><span class="n">embedding</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The embedding serves as a universal representation that supports diverse biological questions.</p>
+</section>
+<section id="similarity-search-and-clustering">
+<h3>3. Similarity Search and Clustering<a class="headerlink" href="#similarity-search-and-clustering" title="Link to this heading">#</a></h3>
+<p>Find related proteins by embedding similarity:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Embed your query protein</span>
+<span class="n">query_embedding</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">query_sequence</span><span class="p">)</span>
+
+<span class="c1"># Search millions of proteins efficiently</span>
+<span class="n">similar_proteins</span> <span class="o">=</span> <span class="n">embedding_database</span><span class="o">.</span><span class="n">nearest_neighbors</span><span class="p">(</span>
+    <span class="n">query_embedding</span><span class="p">,</span> 
+    <span class="n">k</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+<span class="c1"># Returns functionally related proteins, even with low sequence identity</span>
+</pre></div>
+</div>
+<p>This enables:</p>
+<ul class="simple">
+<li><p>Finding homologs that sequence alignment misses</p></li>
+<li><p>Discovering proteins with similar functions but different evolutionary origins</p></li>
+<li><p>Organizing the protein universe into functional families</p></li>
+</ul>
+</section>
+<section id="interpretable-latent-spaces">
+<h3>4. Interpretable Latent Spaces<a class="headerlink" href="#interpretable-latent-spaces" title="Link to this heading">#</a></h3>
+<p>Well-trained embeddings often have interpretable structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Explore what the model learned</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">embedding_2d</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+
+<span class="c1"># Visualize: proteins often cluster by:</span>
+<span class="c1"># - Structural fold families</span>
+<span class="c1"># - Functional categories  </span>
+<span class="c1"># - Evolutionary relationships</span>
+<span class="c1"># Even though the model was never told about these categories!</span>
+</pre></div>
+</div>
+<figure class="align-center" id="embedding-space-viz">
+<a class="reference internal image-reference" href="../../_images/embedding_illustration_2.jpg"><img alt="Visualization of embedding space showing clusters and relationships" src="../../_images/embedding_illustration_2.jpg" style="width: 85%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Visualization of high-dimensional embeddings projected into 2D space. Similar items cluster together, revealing the learned structure and relationships. These patterns emerge naturally from training, without explicit supervision about categories or relationships.</span><a class="headerlink" href="#embedding-space-viz" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The learned representations often rediscover biological organization principles.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="practical-considerations">
+<h2>Practical Considerations<a class="headerlink" href="#practical-considerations" title="Link to this heading">#</a></h2>
+<section id="embedding-quality-depends-on-training-data">
+<h3>Embedding Quality Depends on Training Data<a class="headerlink" href="#embedding-quality-depends-on-training-data" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Domain specificity</strong>: Protein embeddings from models trained on all proteins may not be optimal for your specific protein family</p></li>
+<li><p><strong>Data scale</strong>: More training data generally produces better embeddings</p></li>
+<li><p><strong>Task alignment</strong>: Embeddings from models trained on related tasks transfer better</p></li>
+</ul>
+</section>
+<section id="not-all-layers-are-equal">
+<h3>Not All Layers Are Equal<a class="headerlink" href="#not-all-layers-are-equal" title="Link to this heading">#</a></h3>
+<p>Deep models create embeddings at multiple layers:</p>
+<ul class="simple">
+<li><p><strong>Early layers</strong>: Capture low-level features (local sequence patterns)</p></li>
+<li><p><strong>Middle layers</strong>: Often contain the most generalizable representations</p></li>
+<li><p><strong>Late layers</strong>: More specialized for the original training task</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Many models let you choose which layer&#39;s embeddings to use</span>
+<span class="n">embeddings_layer_6</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>   <span class="c1"># More general</span>
+<span class="n">embeddings_layer_33</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">33</span><span class="p">)</span>  <span class="c1"># More specialized</span>
+</pre></div>
+</div>
+</section>
+<section id="dimensionality-matters">
+<h3>Dimensionality Matters<a class="headerlink" href="#dimensionality-matters" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Higher dimensions</strong>: Can capture more nuanced information but require more data and computation</p></li>
+<li><p><strong>Lower dimensions</strong>: More efficient, less prone to overfitting, but may lose important details</p></li>
+<li><p><strong>Typical ranges</strong>:</p>
+<ul>
+<li><p>Small molecules: 128-512 dimensions</p></li>
+<li><p>Proteins: 512-1280 dimensions</p></li>
+<li><p>Large biomolecular complexes: 1024-2048 dimensions</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="common-pitfalls">
+<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Assuming embeddings are magic</strong>: They’re only as good as their training. Embeddings from models trained on unrelated data may not help.</p></li>
+<li><p><strong>Ignoring embedding space geometry</strong>: Different models use different distance metrics and normalization schemes. Always check the documentation.</p></li>
+<li><p><strong>Freezing when you should fine-tune</strong>: Pre-trained embeddings are a starting point. For specialized tasks, fine-tuning the embedding model on your data often helps.</p></li>
+<li><p><strong>Over-interpreting individual dimensions</strong>: While embeddings capture meaningful patterns, individual dimensions rarely correspond to interpretable features. The information is distributed across the entire vector.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="key-takeaways">
+<h2>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Remember</p>
+<ol class="arabic simple">
+<li><p><strong>Embeddings are the product</strong>: Modern AI’s real value often lies in its learned representations, not just its predictions</p></li>
+<li><p><strong>Transfer learning at scale</strong>: Pre-trained embeddings let you leverage knowledge from massive datasets even when you have limited labeled data</p></li>
+<li><p><strong>Similarity in embedding space is meaningful</strong>: Close vectors represent related biological entities—a powerful property for search, clustering, and analysis</p></li>
+<li><p><strong>One representation, many uses</strong>: Good embeddings support diverse downstream tasks without modification</p></li>
+<li><p><strong>Learn from the data</strong>: Embeddings often capture patterns and relationships that human experts never explicitly encoded</p></li>
+</ol>
+</div>
+</section>
+<hr class="docutils" />
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span id="id1">[]</span> - ESM protein language models</p></li>
+<li><p><span id="id2">[]</span> - AlphaFold structure prediction using embeddings</p></li>
+<li><p><span id="id3">[]</span> - Molecular embeddings for drug design</p></li>
+<li><p><span id="id4">[]</span> - Structure-aware protein embeddings</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -547,7 +850,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Why Modern AI Feels Alien (Even With Statistical and ML Background)</p>
+        <p class="prev-next-title">Why Modern AI Feels Alien (Even for researchers With Statistical and ML Background)</p>
       </div>
     </a>
     <a class="right-next"
@@ -565,6 +868,51 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-paradigm-shift">The Fundamental Paradigm Shift</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-embeddings">What Are Embeddings?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-good-embeddings">Key Properties of Good Embeddings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-hand-crafted-features-to-learned-representations">From Hand-Crafted Features to Learned Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-traditional-approach">The Traditional Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-embedding-revolution">The Embedding Revolution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-embeddings-are-learned">How Embeddings Are Learned</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-supervised-learning">Self-Supervised Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-learning">Contrastive Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-embeddings-matter-for-biology">Why Embeddings Matter for Biology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">1. Transfer Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-learning">2. Multi-Task Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-search-and-clustering">3. Similarity Search and Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-latent-spaces">4. Interpretable Latent Spaces</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-considerations">Practical Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-quality-depends-on-training-data">Embedding Quality Depends on Training Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-all-layers-are-equal">Not All Layers Are Equal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-matters">Dimensionality Matters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">Common Pitfalls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
