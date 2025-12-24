@@ -20,16 +20,17 @@ The word "model" means different things in biology versus deep learning. Biologi
 ```
 More Interpretable ←———————————————————————————————————————→ Less Interpretable
 More Mechanistic ←———————————————————————————————————————→ More Empirical
+Lower Complexity ←———————————————————————————————————————→ Higher Complexity
 
 MD Simulation — Structure — Biostatistics — Deep Learning
 (pure physics)                                  (pure pattern)
 ```
 
 **Where they sit on the spectrum:**
-- **MD Simulation**: Pure physics-based, fully mechanistic
-- **Structure**: Atomic-level reality, fully interpretable
-- **Biostatistics**: Statistical associations with explicit effect sizes
-- **Deep Learning**: Pure pattern recognition, minimal interpretability
+- **MD Simulation**: Pure physics-based, fully mechanistic, limited scope (single molecule/system)
+- **Structure**: Atomic-level reality, fully interpretable, limited scope (one protein)
+- **Biostatistics**: Statistical associations with explicit effect sizes, moderate complexity (multiple variables)
+- **Deep Learning**: Pure pattern recognition, minimal interpretability, handles high complexity (millions of features/examples)
 
 ---
 
@@ -49,7 +50,7 @@ MD Simulation — Structure — Biostatistics — Deep Learning
 | Model Type | Built From | Can Explain Each Part? | Number of Parameters |
 |------------|------------|------------------------|---------------------|
 | **MD Simulation** | Physics equations | Yes - every force traceable | ~10-100 physics parameters |
-| **Structure** | Experimental data or prediction | Yes - "this is leucine at position 47" | ~1000s of atoms |
+| **Structure** | Experimental data (X-ray, cryo-EM) or physics-based prediction (Rosetta uses energy functions) | Yes - "this is leucine at position 47" | ~1000s of atoms |
 | **Biostatistics** | Mathematical assumptions + data | Yes - "this is the effect of age" | ~5-50 coefficients |
 | **Deep Learning** | Patterns in data only | No - "this is neuron layer 47" | Millions to billions |
 

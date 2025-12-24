@@ -542,6 +542,7 @@ document.write(`
 <h2>The Spectrum of “Model”<a class="headerlink" href="#the-spectrum-of-model" title="Link to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>More Interpretable ←———————————————————————————————————————→ Less Interpretable
 More Mechanistic ←———————————————————————————————————————→ More Empirical
+Lower Complexity ←———————————————————————————————————————→ Higher Complexity
 
 MD Simulation — Structure — Biostatistics — Deep Learning
 (pure physics)                                  (pure pattern)
@@ -549,10 +550,10 @@ MD Simulation — Structure — Biostatistics — Deep Learning
 </div>
 <p><strong>Where they sit on the spectrum:</strong></p>
 <ul class="simple">
-<li><p><strong>MD Simulation</strong>: Pure physics-based, fully mechanistic</p></li>
-<li><p><strong>Structure</strong>: Atomic-level reality, fully interpretable</p></li>
-<li><p><strong>Biostatistics</strong>: Statistical associations with explicit effect sizes</p></li>
-<li><p><strong>Deep Learning</strong>: Pure pattern recognition, minimal interpretability</p></li>
+<li><p><strong>MD Simulation</strong>: Pure physics-based, fully mechanistic, limited scope (single molecule/system)</p></li>
+<li><p><strong>Structure</strong>: Atomic-level reality, fully interpretable, limited scope (one protein)</p></li>
+<li><p><strong>Biostatistics</strong>: Statistical associations with explicit effect sizes, moderate complexity (multiple variables)</p></li>
+<li><p><strong>Deep Learning</strong>: Pure pattern recognition, minimal interpretability, handles high complexity (millions of features/examples)</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -605,7 +606,7 @@ MD Simulation — Structure — Biostatistics — Deep Learning
 <td><p>~10-100 physics parameters</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Structure</strong></p></td>
-<td><p>Experimental data or prediction</p></td>
+<td><p>Experimental data (X-ray, cryo-EM) or physics-based prediction (Rosetta uses energy functions)</p></td>
 <td><p>Yes - “this is leucine at position 47”</p></td>
 <td><p>~1000s of atoms</p></td>
 </tr>
