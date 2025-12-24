@@ -269,7 +269,14 @@
 <li class="toctree-l2"><a class="reference internal" href="buzz_vs_reality.html">Trends, Buzzwords, and Reality: What These Concepts <em>Actually</em> Mean for Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_digest_a_paper.html">How to Digest a Paper when chatting with your choice of GPT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
-<li class="toctree-l2"><a class="reference internal" href="part2_why_modern_ai_feels_alien.html">Why Modern AI Feels Alien (Even With Statistical and ML Background)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="part2_why_modern_ai_feels_alien.html">Why Modern AI Feels Alien (Even With Statistical and ML Background)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter1_age_of_embeddings.html">The Age of Embeddings: Representations Are the Real Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter2_multi_task_learning.html">Multi-Task Learning: One Model, Many Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter3_transfer_learning.html">Transfer Learning: Standing on the Shoulders of Giants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter4_new_functionalities.html">New Functionalities Beyond Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part2_chapter5_data_representation.html">Data Representation: Tokenization Changes Everything</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_emerging_subfields.html">Going Deeper: Less-Known but Promisingly Emerging Subfields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_browse_by_catalog.html">Browse by Catalog: Our Curated Collection of Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_design_your_own.html">When You Want to Design Your Own</a></li>
@@ -463,9 +470,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -481,17 +486,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-foundation-models">Benchmarking Foundation Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-traditional-methods">Comparison with Traditional Methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-they-excel">Where They Excel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-they-fall-short">Where They Fall Short</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -507,30 +501,7 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p><strong>This page is incomplete and under active development.</strong> We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.</p>
 </div>
-<div class="info admonition">
-<p class="admonition-title">Overview</p>
-<p>An in-depth examination of foundation models in genomics, comparing their performance against traditional methods and identifying where they excel and where they fall short.</p>
-</div>
-<hr class="docutils" />
-<section id="benchmarking-foundation-models">
-<h2>Benchmarking Foundation Models<a class="headerlink" href="#benchmarking-foundation-models" title="Link to this heading">#</a></h2>
-<p>Content coming soon…</p>
-</section>
-<hr class="docutils" />
-<section id="comparison-with-traditional-methods">
-<h2>Comparison with Traditional Methods<a class="headerlink" href="#comparison-with-traditional-methods" title="Link to this heading">#</a></h2>
-<p>Content coming soon…</p>
-</section>
-<hr class="docutils" />
-<section id="where-they-excel">
-<h2>Where They Excel<a class="headerlink" href="#where-they-excel" title="Link to this heading">#</a></h2>
-<p>Content coming soon…</p>
-</section>
-<hr class="docutils" />
-<section id="where-they-fall-short">
-<h2>Where They Fall Short<a class="headerlink" href="#where-they-fall-short" title="Link to this heading">#</a></h2>
-<p>Content coming soon…</p>
-</section>
+<p>As the concept of protein language model took off, in genomics space, since nucleotide sequence is also sequence, same tech can be conviniently applied to build “genomics language model”.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -587,24 +558,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-foundation-models">Benchmarking Foundation Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-traditional-methods">Comparison with Traditional Methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-they-excel">Where They Excel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-they-fall-short">Where They Fall Short</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
