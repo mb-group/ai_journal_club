@@ -66,11 +66,13 @@ This book intentionally does not cover the technical implementation details that
 
 - Core concepts without the math
 
-#### [Why modern AI feels alien (even with statistical and ML background)](part2_why_modern_ai_feels_alien.md)
+#### [Why modern AI feels alien (even for researchers with statistical and ML background)](part2_why_modern_ai_feels_alien.md)
 
-- The age of embeddings
-- Multi-task learning and transfer learning
-- New functionalities beyond classification
+- [The age of embeddings](part2_chapter1_age_of_embeddings.md)
+- [Multi-task learning](part2_chapter2_multi_task_learning.md)
+- [Transfer learning](part2_chapter3_transfer_learning.md)
+- [New functionalities beyond classification](part2_chapter4_new_functionalities.md)
+- [Data representation and tokenization](part2_chapter5_data_representation.md)
 
 #### [Going deeper: Less-known but promisingly emerging subfields](part2_emerging_subfields.md)
 
