@@ -20,6 +20,7 @@ This material is divided into the following sub-chapters:
    - Zero-shot and transfer learning capabilities
    - Unique genomic challenges these models aim to solve
    - Inspiration from NLP and protein language models
+   - **Application examples demonstrating real-world impact**
 
 3. **[Evaluation Methods for Foundation Models in Genomics](part4_fm_evaluation_methods.md)**
    - Training-based evaluation approaches
