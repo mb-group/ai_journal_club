@@ -1,5 +1,11 @@
 # What Protein Language Models Actually Learn
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Introduction
 
 To understand protein language models, we must first understand what a language model is. In its technical definition, **a language model predicts the next word given previous words**. The profound implication: *if a model can do this well, it has effectively learned the statistical patterns—the "grammar"—that govern how words combine meaningfully.*
