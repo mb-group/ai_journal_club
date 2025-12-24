@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The AI Book for PI in Biology &#8212; Babu group AI journal club</title>
+    <title>What Protein Language Models Actually Learn &#8212; Babu group AI journal club</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/ai_pi_book';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/part4_protein_language_models';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Understanding “Models”: From Biology to Deep Learning" href="orientation_what_is_a_model.html" />
-    <link rel="prev" title="Drug Discovery &amp; Development Book" href="../drug_discovery_book/drug_discovery_book.html" />
+    <link rel="next" title="Actual Performance of Foundation Models in Genomics" href="part4_foundation_models_genomics.html" />
+    <link rel="prev" title="Case Studies" href="part4_case_studies.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -258,7 +258,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../neural_sci_book/neural_sci_book.html">Principles of Neural Science and AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../drug_discovery_book/drug_discovery_book.html">Drug Discovery &amp; Development Book</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">The AI Book for PI in Biology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ai_pi_book.html">The AI Book for PI in Biology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="orientation_what_is_a_model.html">Understanding “Models”: From Biology to Deep Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_training_vs_inference_vs_deployment.html">Training vs. Inference vs. Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
@@ -274,7 +274,7 @@
 <li class="toctree-l2"><a class="reference internal" href="part3_browse_by_catalog.html">Browse by Catalog: Our Curated Collection of Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_design_your_own.html">When You Want to Design Your Own</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_case_studies.html">Case Studies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="part4_protein_language_models.html">What Protein Language Models Actually Learn</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">What Protein Language Models Actually Learn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_foundation_models_genomics.html">Actual Performance of Foundation Models in Genomics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_debates_clarifications.html">Debates and Clarifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_confused_subfields.html">Seemingly Confused Subfields Clarified</a></li>
@@ -362,7 +362,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/ai_pi_book/ai_pi_book.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/ai_pi_book/part4_protein_language_models.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +392,7 @@
       
       
       
-      <li><a href="../../_sources/content/ai_pi_book/ai_pi_book.md" target="_blank"
+      <li><a href="../../_sources/content/ai_pi_book/part4_protein_language_models.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -476,7 +476,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The AI Book for PI in Biology</h1>
+    <h1>What Protein Language Models Actually Learn</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -486,14 +486,42 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-book-covers">What This Book Covers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orientation">🧭 Orientation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-when-you-need-a-quick-bird-s-eye-view">🎯 Part I: When You Need a Quick Bird’s-Eye View</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-when-you-want-to-form-understanding">🔬 Part II: When You Want to Form Understanding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-when-you-re-planning-to-do-it">🚀 Part III: When You’re Planning to “Do It”</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-special-topics-in-the-spotlight">💡 Part IV: Special Topics in the Spotlight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-the-birth-of-protein-language-models">A Brief History: The Birth of Protein Language Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-2020-watershed-moment">The 2020 Watershed Moment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-innovations-and-convergent-evolution">Parallel Innovations and Convergent Evolution</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-expanding-impact-of-plms">The Expanding Impact of PLMs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-engineering-and-design">Protein Engineering and Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-prediction">Structure Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-annotation">Functional Annotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-discovery-and-therapeutics">Drug Discovery and Therapeutics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-question-what-do-plms-actually-learn">The Central Question: What Do PLMs Actually Learn?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoding-the-latent-space">Decoding the Latent Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-information-emerges-without-supervision-heinzinger2025">1. <strong>Structural Information Emerges Without Supervision</strong> <span class="xref cite">Heinzinger2025</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024">2. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span class="xref cite">Notin2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-understanding-of-fitness-landscapes-hsu2024">3. <strong>Mechanistic Understanding of Fitness Landscapes</strong> <span class="xref cite">Hsu2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysical-properties-are-implicitly-encoded-biorvix2025">4. <strong>Biophysical Properties Are Implicitly Encoded</strong> <span class="xref cite">Biorvix2025</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rising-trends-augmenting-plms-with-explicit-knowledge">Rising Trends: Augmenting PLMs with Explicit Knowledge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-aware-models">Structure-Aware Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysics-informed-models">Biophysics-Informed Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-means-for-protein-scientists">What This Means for Protein Scientists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-experimentalists">For Experimentalists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-computational-biologists">For Computational Biologists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-ai-researchers">For AI Researchers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-from-black-boxes-to-mechanistic-understanding">Conclusion: From Black Boxes to Mechanistic Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
 </ul>
             </nav>
         </div>
@@ -505,119 +533,187 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-ai-book-for-pi-in-biology">
-<h1>The AI Book for PI in Biology<a class="headerlink" href="#the-ai-book-for-pi-in-biology" title="Link to this heading">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>This page is incomplete and under active development.</strong> We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.</p>
-</div>
-<p>This book provides intuitive understanding and practical guidance for Principal Investigators (PIs) in biology on integrating artificial intelligence into their research programs and translating their research quesition into an AI task.</p>
-<div class="info admonition">
-<p class="admonition-title">Target Audience</p>
-<ul class="simple">
-<li><p>Principal Investigators leading biology research laboratories</p></li>
-<li><p>Group leaders considering AI adoption</p></li>
-<li><p>Senior researchers responsible for lab technology decisions</p></li>
-</ul>
-</div>
-<div class="warning admonition">
-<p class="admonition-title">⚠️ What Is NOT Included: Execution-Level Complexity</p>
-<p>This book intentionally does not cover the technical implementation details that are typically handled by computational team members. Topics outside the scope include infrastructure setup (server configuration, GPU management, system administration), coding specifics , data preprocessing pipelines and training operations (model architecture design, hyperparameter tuning, loss function mathematics).</p>
-</div>
-<hr class="docutils" />
-<section id="what-this-book-covers">
-<h2>What This Book Covers<a class="headerlink" href="#what-this-book-covers" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
-<section id="orientation">
-<h3>🧭 Orientation<a class="headerlink" href="#orientation" title="Link to this heading">#</a></h3>
-<div class="tip admonition">
-<p class="admonition-title">Getting your bearings in the AI landscape</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="orientation_cambrian_era.html"><span class="std std-doc">Working in AI’s Pre-Textbook, Cambrian Era</span></a></p></li>
-<li><p><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html"><span class="std std-doc">AI in biology vs. ChatGPT vs. AlphaFold 1/2/3</span></a></p></li>
-<li><p><a class="reference internal" href="orientation_biology_needs_asi_not_agi.html"><span class="std std-doc">AI in biology IS ASI—Artificial Specific Intelligence, not AGI</span></a></p></li>
-<li><p><a class="reference internal" href="orientation_what_is_a_model.html"><span class="std std-doc">What’s a model?</span></a></p></li>
-<li><p><a class="reference internal" href="orientation_training_vs_inference_vs_deployment.html"><span class="std std-doc">Training vs. inference vs. deployment</span></a></p></li>
-<li><p><a class="reference internal" href="orientation_jargons_with_fixed_meanings.html"><span class="std std-doc">Jargons with community-agreed fixed meanings</span></a></p></li>
-</ul>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="what-protein-language-models-actually-learn">
+<h1>What Protein Language Models Actually Learn<a class="headerlink" href="#what-protein-language-models-actually-learn" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Protein language models (PLMs) have emerged as transformative tools in computational biology, fundamentally changing how we approach protein engineering, functional prediction, and evolutionary analysis. These models, trained on vast databases of protein sequences, learn to represent proteins in ways that capture functional and structural properties—often without explicit supervision on these properties. But what exactly do these models learn? And why do they work so well?</p>
+<p>This chapter explores the journey from the inception of protein language models to our current understanding of their internal representations, drawing on recent breakthrough studies that have begun to decode what these “black box” models actually capture about protein biology.</p>
 </section>
-<hr class="docutils" />
-<section id="part-i-when-you-need-a-quick-bird-s-eye-view">
-<h3>🎯 Part I: When You Need a Quick Bird’s-Eye View<a class="headerlink" href="#part-i-when-you-need-a-quick-bird-s-eye-view" title="Link to this heading">#</a></h3>
-<div class="tip admonition">
-<p class="admonition-title">The Center Stage: Essential knowledge for every PI</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="part1_must_know_models.html"><span class="std std-doc">The must-know models</span></a></p></li>
-<li><p><a class="reference internal" href="buzz_vs_reality.html"><span class="std std-doc">Trends/buzz/concepts vs. reality/performance/assumptions/limitations</span></a></p></li>
-<li><p><a class="reference internal" href="part1_digest_a_paper.html"><span class="std std-doc">How to digest a paper when prompting your choice of GPT</span></a></p></li>
-</ul>
-</div>
+<section id="a-brief-history-the-birth-of-protein-language-models">
+<h2>A Brief History: The Birth of Protein Language Models<a class="headerlink" href="#a-brief-history-the-birth-of-protein-language-models" title="Link to this heading">#</a></h2>
+<section id="the-2020-watershed-moment">
+<h3>The 2020 Watershed Moment<a class="headerlink" href="#the-2020-watershed-moment" title="Link to this heading">#</a></h3>
+<p>The modern era of protein language models began in earnest in 2020 with the publication of <a class="reference external" href="https://www.pnas.org/doi/full/10.1073/pnas.2016239118">ESM (Evolutionary Scale Modeling)</a> by Rives et al. The fact that this groundbreaking work was published in <em>PNAS</em> rather than a “higher-tier” journal reflects the initial skepticism the field faced. At the time, the idea of treating proteins as a language—with amino acids as vocabulary and sequences as sentences—was met with considerable resistance from parts of the structural biology community.</p>
+<p>ESM’s key insight was deceptively simple: apply transformer-based language models directly to protein sequences, treating amino acids as tokens. The model was trained using masked language modeling—randomly masking amino acids and training the model to predict them from context—on millions of protein sequences from UniRef. No structural information, no functional annotations—just sequences and the evolutionary patterns they contained.</p>
 </section>
-<hr class="docutils" />
-<section id="part-ii-when-you-want-to-form-understanding">
-<h3>🔬 Part II: When You Want to Form Understanding<a class="headerlink" href="#part-ii-when-you-want-to-form-understanding" title="Link to this heading">#</a></h3>
-<div class="tip admonition">
-<p class="admonition-title">The Back Stage: Deeper insights for strategic decisions</p>
-<h4 class="rubric" id="ai-fundamentals-at-intuition-level"><a class="reference internal" href="part2_ai_fundamentals_intuition.html"><span class="std std-doc">AI fundamentals at intuition level</span></a></h4>
-<ul class="simple">
-<li><p>Core concepts without the math</p></li>
-</ul>
-<h4 class="rubric" id="why-modern-ai-feels-alien-even-with-statistical-and-ml-background"><a class="reference internal" href="part2_why_modern_ai_feels_alien.html"><span class="std std-doc">Why modern AI feels alien (even with statistical and ML background)</span></a></h4>
-<ul class="simple">
-<li><p>The age of embeddings</p></li>
-<li><p>Multi-task learning and transfer learning</p></li>
-<li><p>New functionalities beyond classification</p></li>
-</ul>
-<h4 class="rubric" id="going-deeper-less-known-but-promisingly-emerging-subfields"><a class="reference internal" href="part2_emerging_subfields.html"><span class="std std-doc">Going deeper: Less-known but promisingly emerging subfields</span></a></h4>
-<ul class="simple">
-<li><p>Out-of-distribution generalization</p></li>
-<li><p>Interpretability techniques</p></li>
-</ul>
-</div>
-</section>
-<hr class="docutils" />
-<section id="part-iii-when-you-re-planning-to-do-it">
-<h3>🚀 Part III: When You’re Planning to “Do It”<a class="headerlink" href="#part-iii-when-you-re-planning-to-do-it" title="Link to this heading">#</a></h3>
-<div class="tip admonition">
-<p class="admonition-title">From planning to action: Practical implementation guidance</p>
-<h4 class="rubric" id="when-you-need-something-to-use">When you need something to use</h4>
-<ul class="simple">
-<li><p><a class="reference internal" href="part3_browse_by_catalog.html"><span class="std std-doc">Browse by catalog: our curated collection of tools</span></a></p></li>
-</ul>
-<h4 class="rubric" id="when-you-want-to-design-your-own">When you want to design your own</h4>
-<ul class="simple">
-<li><p><a class="reference internal" href="part3_design_your_own.html"><span class="std std-doc">Problem formulation and must-know techniques</span></a>: translating biology questions and data into AI tasks, attention mechanisms, assumptions between cnn/rnn/transformers</p></li>
-</ul>
-</div>
-</section>
-<hr class="docutils" />
-<section id="part-iv-special-topics-in-the-spotlight">
-<h3>💡 Part IV: Special Topics in the Spotlight<a class="headerlink" href="#part-iv-special-topics-in-the-spotlight" title="Link to this heading">#</a></h3>
-<div class="tip admonition">
-<p class="admonition-title">Clarity Emerging from Chaos: Deep dives and myth-busting</p>
-<h4 class="rubric" id="case-studies"><a class="reference internal" href="part4_case_studies.html"><span class="std std-doc">Case studies</span></a></h4>
-<ul class="simple">
-<li><p><a class="reference internal" href="part4_protein_language_models.html"><span class="std std-doc">What protein language models actually learn</span></a></p></li>
-<li><p><a class="reference internal" href="part4_foundation_models_genomics.html"><span class="std std-doc">Actual performance of foundation models in genomics</span></a></p></li>
-</ul>
-<h4 class="rubric" id="debates-and-clarifications"><a class="reference internal" href="part4_debates_clarifications.html"><span class="std std-doc">Debates and clarifications</span></a></h4>
-<ul class="simple">
-<li><p>Why this approach, not that one?</p></li>
-<li><p>Must-update misconceptions (e.g., “AI only predicts correlations”)</p></li>
-<li><p>Bias-variance tradeoff</p></li>
-</ul>
-<h4 class="rubric" id="seemingly-confused-subfields-clarified"><a class="reference internal" href="part4_confused_subfields.html"><span class="std std-doc">Seemingly confused subfields clarified</span></a></h4>
-<ul class="simple">
-<li><p>Domain generalization vs. transfer learning vs. meta-learning</p></li>
-<li><p>Interpretable vs. explainable AI vs. mechanistic interpretability</p></li>
-</ul>
-</div>
+<section id="parallel-innovations-and-convergent-evolution">
+<h3>Parallel Innovations and Convergent Evolution<a class="headerlink" href="#parallel-innovations-and-convergent-evolution" title="Link to this heading">#</a></h3>
+<p>Almost simultaneously, independent research groups arrived at remarkably similar solutions. <a class="reference external" href="https://ieeexplore.ieee.org/document/9477085">ProtTrans</a>, developed by Elnaggar et al., took an almost identical approach, with differences that were largely negligible from a conceptual standpoint. ProtTrans later made all its embeddings publicly available through UniProt, significantly accelerating adoption across the field.</p>
+<p>This convergence was no accident. Protein sequence modeling has historically borrowed heavily from natural language processing—even in the pre-deep learning era of statistical models like profile HMMs. When GPT and BERT demonstrated the power of transformer architectures for language, it was only natural that the protein modeling community would follow suit. The question was not <em>if</em> but <em>when</em> transformers would revolutionize protein sequence analysis.</p>
 </section>
 </section>
-<hr class="docutils" />
-<div class="toctree-wrapper compound">
-</div>
+<section id="the-expanding-impact-of-plms">
+<h2>The Expanding Impact of PLMs<a class="headerlink" href="#the-expanding-impact-of-plms" title="Link to this heading">#</a></h2>
+<p>Since their introduction, protein language models have demonstrated remarkable utility across diverse applications:</p>
+<section id="protein-engineering-and-design">
+<h3>Protein Engineering and Design<a class="headerlink" href="#protein-engineering-and-design" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Variant effect prediction</strong>: PLMs can predict the functional impact of mutations with accuracy rivaling or exceeding experimental deep mutational scanning</p></li>
+<li><p><strong>Zero-shot fitness prediction</strong>: Models like ESM-1v predict protein fitness without task-specific training</p></li>
+<li><p><strong>Directed evolution</strong>: PLMs guide library design by identifying promising sequence regions</p></li>
+</ul>
+</section>
+<section id="structure-prediction">
+<h3>Structure Prediction<a class="headerlink" href="#structure-prediction" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Contact and distance prediction</strong>: PLM embeddings serve as powerful inputs for structure prediction pipelines</p></li>
+<li><p><strong>AlphaFold integration</strong>: Modern structure prediction methods leverage PLM representations</p></li>
+<li><p><strong>Fold recognition</strong>: PLMs can identify remote homologs and novel folds</p></li>
+</ul>
+</section>
+<section id="functional-annotation">
+<h3>Functional Annotation<a class="headerlink" href="#functional-annotation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>GO term prediction</strong>: Transfer learning from PLMs enables accurate functional annotation</p></li>
+<li><p><strong>Subcellular localization</strong>: Embeddings capture cellular targeting signals</p></li>
+<li><p><strong>Protein-protein interactions</strong>: Representations encode interaction propensities</p></li>
+</ul>
+</section>
+<section id="drug-discovery-and-therapeutics">
+<h3>Drug Discovery and Therapeutics<a class="headerlink" href="#drug-discovery-and-therapeutics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Antibody design</strong>: PLMs optimize antibody sequences for improved binding and developability</p></li>
+<li><p><strong>Enzyme engineering</strong>: Models guide the design of enzymes with altered substrate specificity</p></li>
+<li><p><strong>Stability prediction</strong>: PLMs predict thermodynamic stability changes</p></li>
+</ul>
+</section>
+</section>
+<section id="the-central-question-what-do-plms-actually-learn">
+<h2>The Central Question: What Do PLMs Actually Learn?<a class="headerlink" href="#the-central-question-what-do-plms-actually-learn" title="Link to this heading">#</a></h2>
+<p>Despite their empirical success, protein language models have largely remained black boxes. Their internal representations—the high-dimensional vectors that encode protein sequences—clearly capture biologically meaningful information, but <em>what</em> exactly do they capture, and <em>how</em>?</p>
+<p>Recent work in 2024-2025 has begun to provide concrete answers, revealing that PLMs learn far more structured biological knowledge than previously appreciated.</p>
+<section id="decoding-the-latent-space">
+<h3>Decoding the Latent Space<a class="headerlink" href="#decoding-the-latent-space" title="Link to this heading">#</a></h3>
+<p>Several landmark studies have systematically probed PLM representations:</p>
+<section id="structural-information-emerges-without-supervision-heinzinger2025">
+<h4>1. <strong>Structural Information Emerges Without Supervision</strong> <span id="id1">[]</span><a class="headerlink" href="#structural-information-emerges-without-supervision-heinzinger2025" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.nature.com/articles/s41592-025-02836-7">Heinzinger et al. (2025)</a> demonstrated that PLMs trained solely on sequences nonetheless learn to represent 3D structural features. Through careful analysis of ESM-2 embeddings, they found that:</p>
+<ul class="simple">
+<li><p><strong>Secondary structure</strong> is explicitly encoded in middle layers</p></li>
+<li><p><strong>Tertiary contacts</strong> emerge in deeper layers, even without structure-based training</p></li>
+<li><p><strong>Residue burial and solvent accessibility</strong> are predictable from embeddings with high accuracy</p></li>
+</ul>
+<p>This suggests that evolutionary patterns in sequences carry sufficient information about structure for models to implicitly learn structural constraints.</p>
+</section>
+<section id="evolutionary-and-functional-constraints-are-disentangled-notin2024">
+<h4>2. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span id="id2">[]</span><a class="headerlink" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2406285121">Notin et al. (2024)</a> revealed that PLMs learn to separate different types of biological constraints:</p>
+<ul class="simple">
+<li><p><strong>Evolutionary constraint</strong>: Conservation patterns across homologs</p></li>
+<li><p><strong>Functional constraint</strong>: Requirements for specific biological activities</p></li>
+<li><p><strong>Structural constraint</strong>: Physical requirements for proper folding</p></li>
+</ul>
+<p>Importantly, these constraints are represented in partially orthogonal subspaces of the embedding space, allowing models to distinguish between conserved-but-flexible sites and invariant functional residues.</p>
+</section>
+<section id="mechanistic-understanding-of-fitness-landscapes-hsu2024">
+<h4>3. <strong>Mechanistic Understanding of Fitness Landscapes</strong> <span id="id3">[]</span><a class="headerlink" href="#mechanistic-understanding-of-fitness-landscapes-hsu2024" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2506316122">Hsu et al. (2024)</a> demonstrated that PLMs capture the <em>shape</em> of protein fitness landscapes:</p>
+<ul class="simple">
+<li><p><strong>Epistatic interactions</strong>: PLMs represent higher-order dependencies between residues</p></li>
+<li><p><strong>Mutational robustness</strong>: Embeddings encode tolerance to perturbation</p></li>
+<li><p><strong>Evolutionary trajectories</strong>: Model representations reflect accessible paths through sequence space</p></li>
+</ul>
+<p>This mechanistic understanding explains why PLMs can predict variant effects even for unseen sequences.</p>
+</section>
+<section id="biophysical-properties-are-implicitly-encoded-biorvix2025">
+<h4>4. <strong>Biophysical Properties Are Implicitly Encoded</strong> <span id="id4">[]</span><a class="headerlink" href="#biophysical-properties-are-implicitly-encoded-biorvix2025" title="Link to this heading">#</a></h4>
+<p>A recent preprint <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2025.02.06.636901v2">(bioRxiv, 2025)</a> showed that PLM embeddings correlate with:</p>
+<ul class="simple">
+<li><p>Thermodynamic stability measurements</p></li>
+<li><p>Aggregation propensity</p></li>
+<li><p>Intrinsic disorder</p></li>
+<li><p>Binding interface residues</p></li>
+</ul>
+<p>These properties emerge without explicit training objectives, suggesting that evolutionary selection has imprinted biophysical constraints into sequence patterns that PLMs detect.</p>
+</section>
+</section>
+</section>
+<section id="rising-trends-augmenting-plms-with-explicit-knowledge">
+<h2>Rising Trends: Augmenting PLMs with Explicit Knowledge<a class="headerlink" href="#rising-trends-augmenting-plms-with-explicit-knowledge" title="Link to this heading">#</a></h2>
+<p>While unsupervised PLMs have proven remarkably capable, recent work explores explicitly incorporating additional modalities:</p>
+<section id="structure-aware-models">
+<h3>Structure-Aware Models<a class="headerlink" href="#structure-aware-models" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://academic.oup.com/nargab/article/6/4/lqae150/7901286">ProstT5</a> extends the ProtT5 architecture by treating 3D structure tokens as additional vocabulary. By training on sequence-structure pairs, the model learns joint representations that:</p>
+<ul class="simple">
+<li><p>Improve structure prediction quality</p></li>
+<li><p>Enable structure-conditioned sequence design</p></li>
+<li><p>Better capture conformational flexibility</p></li>
+</ul>
+<p>This approach bridges the gap between sequence and structure modeling, creating models that understand their relationship bidirectionally.</p>
+</section>
+<section id="biophysics-informed-models">
+<h3>Biophysics-Informed Models<a class="headerlink" href="#biophysics-informed-models" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://www.nature.com/articles/s41592-025-02776-2">Recent work in <em>Nature Methods</em></a> demonstrates the value of incorporating biophysical principles:</p>
+<ul class="simple">
+<li><p><strong>Energy-based terms</strong>: Augmenting loss functions with physics-based constraints</p></li>
+<li><p><strong>Mechanistic inductive biases</strong>: Building in known biochemical rules</p></li>
+<li><p><strong>Multi-scale representations</strong>: Explicitly modeling interactions at different scales</p></li>
+</ul>
+<p>These hybrid approaches combine the flexibility of data-driven learning with the interpretability and reliability of physics-based modeling.</p>
+</section>
+</section>
+<section id="what-this-means-for-protein-scientists">
+<h2>What This Means for Protein Scientists<a class="headerlink" href="#what-this-means-for-protein-scientists" title="Link to this heading">#</a></h2>
+<p>The emerging understanding of what PLMs learn has practical implications:</p>
+<section id="for-experimentalists">
+<h3>For Experimentalists<a class="headerlink" href="#for-experimentalists" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Trust but verify</strong>: PLM predictions are powerful but not infallible—use them to guide, not replace, experiments</p></li>
+<li><p><strong>Exploit embeddings</strong>: Use PLM representations for clustering, visualization, and hypothesis generation</p></li>
+<li><p><strong>Understand limitations</strong>: PLMs struggle with truly novel folds and functions absent from training data</p></li>
+</ul>
+</section>
+<section id="for-computational-biologists">
+<h3>For Computational Biologists<a class="headerlink" href="#for-computational-biologists" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Choose models wisely</strong>: Different PLMs capture different aspects of biology—match the model to your task</p></li>
+<li><p><strong>Fine-tuning matters</strong>: Task-specific adaptation can dramatically improve performance</p></li>
+<li><p><strong>Interpret with care</strong>: High-dimensional embeddings resist simple interpretation—use probing methods rigorously</p></li>
+</ul>
+</section>
+<section id="for-ai-researchers">
+<h3>For AI Researchers<a class="headerlink" href="#for-ai-researchers" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Biology as a testbed</strong>: Proteins offer a rich domain for studying representation learning with ground truth</p></li>
+<li><p><strong>Emergent structure</strong>: PLMs provide compelling evidence that structure can emerge from sequence patterns alone</p></li>
+<li><p><strong>Hybrid approaches</strong>: Combining learned and explicit knowledge remains a frontier</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusion-from-black-boxes-to-mechanistic-understanding">
+<h2>Conclusion: From Black Boxes to Mechanistic Understanding<a class="headerlink" href="#conclusion-from-black-boxes-to-mechanistic-understanding" title="Link to this heading">#</a></h2>
+<p>Protein language models have evolved from mysterious black boxes to increasingly interpretable systems. We now understand that these models:</p>
+<ul class="simple">
+<li><p><strong>Learn biophysical constraints</strong> implicitly from evolutionary patterns</p></li>
+<li><p><strong>Represent multiple types of biological information</strong> in structured, partly disentangled ways</p></li>
+<li><p><strong>Capture fitness landscapes</strong> that enable prediction of variant effects</p></li>
+<li><p><strong>Benefit from explicit structure and physics</strong> when available, but work remarkably well without it</p></li>
+</ul>
+<p>The next frontier involves moving beyond correlation to causation—building models that not only predict protein properties but explain <em>why</em> certain sequences work and others don’t. As we decode what PLMs learn, we move closer to truly understanding the language of proteins itself.</p>
+</section>
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Original ESM paper: <a class="reference external" href="https://www.pnas.org/doi/full/10.1073/pnas.2016239118">Rives et al., 2021, PNAS</a></p></li>
+<li><p>ProtTrans: <a class="reference external" href="https://ieeexplore.ieee.org/document/9477085">Elnaggar et al., 2021, IEEE TPAMI</a></p></li>
+<li><p>What PLMs learn (structure): <a class="reference external" href="https://www.nature.com/articles/s41592-025-02836-7">Heinzinger et al., 2025, Nature Methods</a></p></li>
+<li><p>What PLMs learn (evolution): <a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2406285121">Notin et al., 2024, PNAS</a></p></li>
+<li><p>What PLMs learn (fitness): <a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2506316122">Hsu et al., 2024, PNAS</a></p></li>
+<li><p>Structure-augmented models: <a class="reference external" href="https://academic.oup.com/nargab/article/6/4/lqae150/7901286">ProstT5, NAR Genomics and Bioinformatics</a></p></li>
+<li><p>Biophysics-informed models: <a class="reference external" href="https://www.nature.com/articles/s41592-025-02776-2">Nature Methods, 2025</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -651,20 +747,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../drug_discovery_book/drug_discovery_book.html"
+       href="part4_case_studies.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Drug Discovery &amp; Development Book</p>
+        <p class="prev-next-title">Case Studies</p>
       </div>
     </a>
     <a class="right-next"
-       href="orientation_what_is_a_model.html"
+       href="part4_foundation_models_genomics.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Understanding “Models”: From Biology to Deep Learning</p>
+        <p class="prev-next-title">Actual Performance of Foundation Models in Genomics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -684,14 +780,42 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-book-covers">What This Book Covers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orientation">🧭 Orientation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-when-you-need-a-quick-bird-s-eye-view">🎯 Part I: When You Need a Quick Bird’s-Eye View</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-when-you-want-to-form-understanding">🔬 Part II: When You Want to Form Understanding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-when-you-re-planning-to-do-it">🚀 Part III: When You’re Planning to “Do It”</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-special-topics-in-the-spotlight">💡 Part IV: Special Topics in the Spotlight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-the-birth-of-protein-language-models">A Brief History: The Birth of Protein Language Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-2020-watershed-moment">The 2020 Watershed Moment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-innovations-and-convergent-evolution">Parallel Innovations and Convergent Evolution</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-expanding-impact-of-plms">The Expanding Impact of PLMs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-engineering-and-design">Protein Engineering and Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-prediction">Structure Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-annotation">Functional Annotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-discovery-and-therapeutics">Drug Discovery and Therapeutics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-question-what-do-plms-actually-learn">The Central Question: What Do PLMs Actually Learn?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoding-the-latent-space">Decoding the Latent Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-information-emerges-without-supervision-heinzinger2025">1. <strong>Structural Information Emerges Without Supervision</strong> <span class="xref cite">Heinzinger2025</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024">2. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span class="xref cite">Notin2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-understanding-of-fitness-landscapes-hsu2024">3. <strong>Mechanistic Understanding of Fitness Landscapes</strong> <span class="xref cite">Hsu2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysical-properties-are-implicitly-encoded-biorvix2025">4. <strong>Biophysical Properties Are Implicitly Encoded</strong> <span class="xref cite">Biorvix2025</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rising-trends-augmenting-plms-with-explicit-knowledge">Rising Trends: Augmenting PLMs with Explicit Knowledge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-aware-models">Structure-Aware Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysics-informed-models">Biophysics-Informed Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-means-for-protein-scientists">What This Means for Protein Scientists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-experimentalists">For Experimentalists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-computational-biologists">For Computational Biologists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-ai-researchers">For AI Researchers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-from-black-boxes-to-mechanistic-understanding">Conclusion: From Black Boxes to Mechanistic Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
 </ul>
   </nav></div>
 

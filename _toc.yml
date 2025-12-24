@@ -96,6 +96,8 @@ chapters:
   - file: content/ai_pi_book/part3_browse_by_catalog
   - file: content/ai_pi_book/part3_design_your_own
   - file: content/ai_pi_book/part4_case_studies
+  - file: content/ai_pi_book/part4_protein_language_models
+  - file: content/ai_pi_book/part4_foundation_models_genomics
   - file: content/ai_pi_book/part4_debates_clarifications
   - file: content/ai_pi_book/part4_confused_subfields
 - file: content/journal_club_book/journal_club_book

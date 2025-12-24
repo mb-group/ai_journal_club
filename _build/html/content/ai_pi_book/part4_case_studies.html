@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/part4_case_studies';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Debates and Clarifications" href="part4_debates_clarifications.html" />
+    <link rel="next" title="What Protein Language Models Actually Learn" href="part4_protein_language_models.html" />
     <link rel="prev" title="When You Want to Design Your Own" href="part3_design_your_own.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -262,15 +262,20 @@
 <li class="toctree-l2"><a class="reference internal" href="orientation_what_is_a_model.html">Understanding “Models”: From Biology to Deep Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_training_vs_inference_vs_deployment.html">Training vs. Inference vs. Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation_biology_needs_asi_not_agi.html">AI in Biology IS ASI—Artificial Specific Intelligence, not AGI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation_cambrian_era.html">Working in AI’s Pre-Textbook, Cambrian Era</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orientation_jargons_with_fixed_meanings.html">Jargons with Community-Agreed Fixed Meanings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part1_must_know_models.html">The Must-Know Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buzz_vs_reality.html">Trends, Buzzwords, and Reality: What These Concepts <em>Actually</em> Mean for Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part1_digest_a_paper.html">How to Digest a Paper when chatting with your choice of GPT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_ai_fundamentals_intuition.html">AI Fundamentals at Intuition Level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_why_modern_ai_feels_alien.html">Why Modern AI Feels Alien (Even With Statistical and ML Background)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part2_emerging_subfields.html">Going Deeper: Less-Known but Promisingly Emerging Subfields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_browse_by_catalog.html">Browse by Catalog: Our Curated Collection of Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part3_design_your_own.html">When You Want to Design Your Own</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Case Studies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part4_protein_language_models.html">What Protein Language Models Actually Learn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part4_foundation_models_genomics.html">Actual Performance of Foundation Models in Genomics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_debates_clarifications.html">Debates and Clarifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_confused_subfields.html">Seemingly Confused Subfields Clarified</a></li>
 </ul>
@@ -481,36 +486,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-protein-language-models-actually-learn">What Protein Language Models Actually Learn</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-promise">The Promise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-they-really-capture">What They Really Capture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-and-failure-modes">Limitations and Failure Modes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications">Practical Implications</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-performance-of-foundation-models-in-genomics">Actual Performance of Foundation Models in Genomics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-foundation-models">Benchmarking Foundation Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-traditional-methods">Comparison with Traditional Methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-they-excel">Where They Excel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-they-fall-short">Where They Fall Short</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#success-stories-when-ai-transformed-research">Success Stories: When AI Transformed Research</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accelerating-protein-structure-prediction">Accelerating Protein Structure Prediction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovering-novel-drug-candidates">Discovering Novel Drug Candidates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-regulatory-elements">Predicting Regulatory Elements</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lessons-from-failures">Lessons from Failures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overhyped-claims">Overhyped Claims</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-issues">Data Quality Issues</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mismatched-assumptions">Mismatched Assumptions</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-your-own-case-study">Building Your Own Case Study</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-best-practices">Documentation Best Practices</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-results-responsibly">Sharing Results Responsibly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-the-field">Contributing to the Field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-case-studies">Available Case Studies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models">Protein Language Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models-in-genomics">Foundation Models in Genomics</a></li>
 </ul>
 </li>
 </ul>
@@ -535,101 +514,29 @@ document.write(`
 <p>Deep dives into specific AI applications in biology, examining what actually works, what doesn’t, and why. These case studies provide concrete examples of the principles discussed throughout this book.</p>
 </div>
 <hr class="docutils" />
-<section id="what-protein-language-models-actually-learn">
-<h2>What Protein Language Models Actually Learn<a class="headerlink" href="#what-protein-language-models-actually-learn" title="Link to this heading">#</a></h2>
-<section id="the-promise">
-<h3>The Promise<a class="headerlink" href="#the-promise" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="what-they-really-capture">
-<h3>What They Really Capture<a class="headerlink" href="#what-they-really-capture" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="limitations-and-failure-modes">
-<h3>Limitations and Failure Modes<a class="headerlink" href="#limitations-and-failure-modes" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="practical-implications">
-<h3>Practical Implications<a class="headerlink" href="#practical-implications" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="actual-performance-of-foundation-models-in-genomics">
-<h2>Actual Performance of Foundation Models in Genomics<a class="headerlink" href="#actual-performance-of-foundation-models-in-genomics" title="Link to this heading">#</a></h2>
-<section id="benchmarking-foundation-models">
-<h3>Benchmarking Foundation Models<a class="headerlink" href="#benchmarking-foundation-models" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="comparison-with-traditional-methods">
-<h3>Comparison with Traditional Methods<a class="headerlink" href="#comparison-with-traditional-methods" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="where-they-excel">
-<h3>Where They Excel<a class="headerlink" href="#where-they-excel" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="where-they-fall-short">
-<h3>Where They Fall Short<a class="headerlink" href="#where-they-fall-short" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="success-stories-when-ai-transformed-research">
-<h2>Success Stories: When AI Transformed Research<a class="headerlink" href="#success-stories-when-ai-transformed-research" title="Link to this heading">#</a></h2>
-<section id="accelerating-protein-structure-prediction">
-<h3>Accelerating Protein Structure Prediction<a class="headerlink" href="#accelerating-protein-structure-prediction" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="discovering-novel-drug-candidates">
-<h3>Discovering Novel Drug Candidates<a class="headerlink" href="#discovering-novel-drug-candidates" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="predicting-regulatory-elements">
-<h3>Predicting Regulatory Elements<a class="headerlink" href="#predicting-regulatory-elements" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="lessons-from-failures">
-<h2>Lessons from Failures<a class="headerlink" href="#lessons-from-failures" title="Link to this heading">#</a></h2>
-<section id="overhyped-claims">
-<h3>Overhyped Claims<a class="headerlink" href="#overhyped-claims" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="data-quality-issues">
-<h3>Data Quality Issues<a class="headerlink" href="#data-quality-issues" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="mismatched-assumptions">
-<h3>Mismatched Assumptions<a class="headerlink" href="#mismatched-assumptions" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="building-your-own-case-study">
-<h2>Building Your Own Case Study<a class="headerlink" href="#building-your-own-case-study" title="Link to this heading">#</a></h2>
-<section id="documentation-best-practices">
-<h3>Documentation Best Practices<a class="headerlink" href="#documentation-best-practices" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="sharing-results-responsibly">
-<h3>Sharing Results Responsibly<a class="headerlink" href="#sharing-results-responsibly" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-</section>
-<section id="contributing-to-the-field">
-<h3>Contributing to the Field<a class="headerlink" href="#contributing-to-the-field" title="Link to this heading">#</a></h3>
-<p>Content coming soon…</p>
-<hr class="docutils" />
-<div class="tip admonition">
-<p class="admonition-title">Key Takeaways</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This section contains detailed case studies examining real-world applications of AI in biological research. Each case study provides:</p>
 <ul class="simple">
-<li><p>Real-world performance often differs from benchmark results</p></li>
-<li><p>Understanding both successes and failures is crucial</p></li>
-<li><p>Context matters: what works in one domain may not transfer to another</p></li>
-<li><p>Rigorous evaluation is essential for building trust in AI methods</p></li>
+<li><p><strong>Context</strong>: The biological problem and why AI is being applied</p></li>
+<li><p><strong>What Works</strong>: Documented successes and their limitations</p></li>
+<li><p><strong>What Doesn’t</strong>: Common failure modes and misconceptions</p></li>
+<li><p><strong>Practical Implications</strong>: What these findings mean for your research</p></li>
 </ul>
-</div>
+</section>
+<hr class="docutils" />
+<section id="available-case-studies">
+<h2>Available Case Studies<a class="headerlink" href="#available-case-studies" title="Link to this heading">#</a></h2>
+<section id="protein-language-models">
+<h3>Protein Language Models<a class="headerlink" href="#protein-language-models" title="Link to this heading">#</a></h3>
+<p>Detailed analysis of what protein language models actually learn from sequences and their practical applications.</p>
+<p>See: <a class="reference internal" href="part4_protein_language_models.html"><span class="std std-doc">What Protein Language Models Actually Learn</span></a></p>
+</section>
+<section id="foundation-models-in-genomics">
+<h3>Foundation Models in Genomics<a class="headerlink" href="#foundation-models-in-genomics" title="Link to this heading">#</a></h3>
+<p>Comprehensive evaluation of foundation model performance in genomics compared to traditional methods.</p>
+<p>See: <a class="reference internal" href="part4_foundation_models_genomics.html"><span class="std std-doc">Actual Performance of Foundation Models in Genomics</span></a></p>
+<hr class="docutils" />
 </section>
 </section>
 </section>
@@ -674,11 +581,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="part4_debates_clarifications.html"
+       href="part4_protein_language_models.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Debates and Clarifications</p>
+        <p class="prev-next-title">What Protein Language Models Actually Learn</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -698,36 +605,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-protein-language-models-actually-learn">What Protein Language Models Actually Learn</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-promise">The Promise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-they-really-capture">What They Really Capture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-and-failure-modes">Limitations and Failure Modes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications">Practical Implications</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-performance-of-foundation-models-in-genomics">Actual Performance of Foundation Models in Genomics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-foundation-models">Benchmarking Foundation Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-traditional-methods">Comparison with Traditional Methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-they-excel">Where They Excel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-they-fall-short">Where They Fall Short</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#success-stories-when-ai-transformed-research">Success Stories: When AI Transformed Research</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accelerating-protein-structure-prediction">Accelerating Protein Structure Prediction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovering-novel-drug-candidates">Discovering Novel Drug Candidates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-regulatory-elements">Predicting Regulatory Elements</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lessons-from-failures">Lessons from Failures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overhyped-claims">Overhyped Claims</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-issues">Data Quality Issues</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mismatched-assumptions">Mismatched Assumptions</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-your-own-case-study">Building Your Own Case Study</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-best-practices">Documentation Best Practices</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-results-responsibly">Sharing Results Responsibly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-the-field">Contributing to the Field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-case-studies">Available Case Studies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-language-models">Protein Language Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-models-in-genomics">Foundation Models in Genomics</a></li>
 </ul>
 </li>
 </ul>
