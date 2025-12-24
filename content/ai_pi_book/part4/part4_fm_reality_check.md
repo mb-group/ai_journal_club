@@ -1,5 +1,11 @@
 # The Reality Check: Drama and Disappointment
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Proliferation Without Clear Differentiation
 
 Beginning in 2021, the field experienced a flood of similar foundation model papers ([Dalla-Torre et al., 2024, Nature Methods](https://www.nature.com/articles/s41592-024-02201-0), [Zhou et al., 2024, Nature Methods](https://www.nature.com/articles/s41592-024-02191-z)):

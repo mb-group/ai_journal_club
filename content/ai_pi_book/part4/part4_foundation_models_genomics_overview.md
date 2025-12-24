@@ -1,5 +1,11 @@
 # Foundation Models in Genomics: Overview
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Introduction
 
 Following the success of protein language models, the genomics field has adopted similar approaches to build "genomics foundation models." Since nucleotide sequences—both DNA and RNA—share the sequential nature of proteins, the same transformer-based architectures can be readily adapted. This has led to the emergence of specialized DNA language models and RNA language models, collectively known as genomics foundation models.

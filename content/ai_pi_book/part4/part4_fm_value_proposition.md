@@ -1,5 +1,11 @@
 # The Value Proposition of Foundation Models in Genomics
 
+```{note}
+**This page is incomplete and under active development.** We welcome your suggestions and feedback! Please feel free to contribute or reach out with ideas for improvement.
+```
+
+
+
 ## Addressing Long-Standing Challenges
 
 The genomics field has accumulated vast amounts of sequencing data, but lacked efficient methods to extract knowledge from this data at scale until foundation models emerged.
