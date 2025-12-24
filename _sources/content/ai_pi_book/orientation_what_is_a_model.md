@@ -19,49 +19,15 @@ The word "model" means something quite different in biology versus deep learning
 More Interpretable ←———————————————————————————————————————→ Less Interpretable
 More Mechanistic ←———————————————————————————————————————→ More Empirical
 
-MD Simulation — Structure — PK — Biostatistics — Wet Lab — Deep Learning
-(pure physics)                                                  (pure pattern)
+MD Simulation — Structure — Biostatistics — Deep Learning
+(pure physics)                                  (pure pattern)
 ```
 
 **Where they sit on the spectrum:**
 - **MD Simulation**: Pure physics-based, fully mechanistic
 - **Structure**: Atomic-level reality, fully interpretable
-- **PK Models**: Physiologically-grounded with interpretable parameters
 - **Biostatistics**: Statistical associations with explicit effect sizes
-- **Wet Lab Models**: Complex biology, partially understood
 - **Deep Learning**: Pure pattern recognition, minimal interpretability
-
----
-
-### Deep learning models as statistical association learners
-
-A trained deep learning model is best understood as a **learned representation of statistical association patterns** between inputs and outputs.  
-These associations are high-dimensional, implicit, and distributed across the model's parameters—not interpretable in the way traditional statistical models are.
-
-### Comparison: Deep learning associations vs. biostatistical associations
-
-Although both deep learning and classical biostatistics deal with "associations," the nature of these associations is fundamentally different.
-
-#### **Biostatistical association**
-- Explicit and interpretable  
-- Parameters correspond to meaningful effect sizes (e.g., β coefficients, hazard ratios)  
-- Built on predefined functional forms and assumptions (linearity, proportional hazards, independence)  
-- Designed for explanation, inference, and hypothesis testing  
-- Low- to moderate-dimensional structure  
-
-#### **Deep learning association**
-- Implicit and distributed across millions of parameters  
-- No predefined functional form; the model discovers complex nonlinear relationships  
-- Not directly interpretable; does not yield effect sizes or p-values  
-- Designed for high-performance prediction rather than causal inference  
-- Naturally suited for high-dimensional, unstructured data (images, sequences, text)
-
-### Summary
-
-- **Biostatistics** → interpretable, assumption-driven, low-dimensional associations  
-- **Deep learning** → high-dimensional, assumption-light, representation-based associations  
-
-Both operate on the idea of "association," but they do so in **fundamentally different ways and for different scientific purposes**.
 
 ---
 
@@ -73,9 +39,7 @@ Both operate on the idea of "association," but they do so in **fundamentally dif
 |------------|-------------------|---------------|
 | **MD Simulation** | Molecular motion from physics | Force field equations |
 | **Structure** | Atomic coordinates | Atoms and residues |
-| **PK Model** | Drug movement through body | Compartments and rates |
 | **Biostatistics** | Explicit associations between variables | Regression coefficients, effect sizes |
-| **Wet Lab** | Living approximation | Actual biological system |
 | **Deep Learning** | Implicit high-dimensional patterns | Millions of learned weights/parameters |
 
 ### How Each is Built
@@ -84,9 +48,7 @@ Both operate on the idea of "association," but they do so in **fundamentally dif
 |------------|------------|------------------------|---------------------|
 | **MD Simulation** | Physics equations | Yes - every force traceable | ~10-100 physics parameters |
 | **Structure** | Experimental data or prediction | Yes - "this is leucine at position 47" | ~1000s of atoms |
-| **PK Model** | Physiological principles | Yes - "this is liver clearance" | ~5-10 parameters |
 | **Biostatistics** | Mathematical assumptions + data | Yes - "this is the effect of age" | ~5-50 coefficients |
-| **Wet Lab** | Actual biology | Partly - but complex | Billions of molecules |
 | **Deep Learning** | Patterns in data only | No - "this is neuron layer 47" | Millions to billions |
 
 ### Workflow Comparison
@@ -95,9 +57,7 @@ Both operate on the idea of "association," but they do so in **fundamentally dif
 |------------|-------------|------------------|--------------|
 | **MD Simulation** | Set physics equations | None - physics is universal | Immediately |
 | **Structure** | Set up experiment | Data collection | After solving |
-| **PK Model** | Write equations | Fit ~5-10 parameters (quick) | After fitting |
 | **Biostatistics** | Choose model form (linear, Cox, logistic) | Fit coefficients (moderate) | After fitting + validation |
-| **Wet Lab** | Generate/establish | Growing/maintaining | After establishment |
 | **Deep Learning** | Architecture only | **Train millions of parameters (expensive!)** | Only after extensive training |
 
 ---
@@ -108,7 +68,6 @@ Both operate on the idea of "association," but they do so in **fundamentally dif
 
 When you design traditional models, you're encoding your knowledge:
 - **MD simulation**: "Atoms repel at short distances" → van der Waals equation
-- **PK model**: "Drugs clear through the liver" → clearance parameter
 - **Biostatistics**: "Age affects survival" → proportional hazards with age coefficient
 
 **Design IS the model** - fitting is just calibrating predefined, interpretable parameters
@@ -125,7 +84,7 @@ When you design a neural network architecture:
 
 ## Example: Predicting Protein Stability
 
-### Mechanistic Approach (like PK model)
+### Mechanistic Approach
 1. **Design**: "Stability = f(hydrophobic burial, H-bonds, electrostatics)" - you write the equation based on biophysics
 2. **Fit**: Maybe calibrate a few coefficients from experimental data
 3. **Use**: Plug in new protein → get prediction
@@ -152,8 +111,7 @@ When you design a neural network architecture:
 
 ## Conversational Examples
 
-### With Mechanistic Models (MD, Structure, PK):
-- "Why does this drug clear slowly?" → "Because the clearance parameter is 0.05 L/hr"
+### With Mechanistic Models (MD, Structure):
 - "Why does this protein fold?" → "Because these hydrophobic residues cluster away from water"
 - "Why did the protein unfold in MD?" → "This salt bridge broke at 340K, reducing stability by 15 kcal/mol"
 
@@ -186,95 +144,47 @@ Deep learning violates all three expectations:
 2. **Can't reason through** - no human can trace input → output through millions of weights
 3. **Doesn't explain** - predicts without mechanistic insight or interpretable effect sizes
 
-**The confusion is semantic:**
-- Deep learning is a "model" in the **computer science/machine learning sense**: a parameterized function learned from data
-- But it's NOT a "model" in the **traditional biological/statistical sense**: an interpretable simplification that explains mechanisms or provides explicit associations
+**The confusion is semantic:** Deep learning is a "model" in the **computer science sense** (a parameterized function learned from data), but NOT in the **traditional biological/statistical sense** (an interpretable simplification that explains mechanisms).
 
-This is why biostatisticians and biologists often feel uncomfortable with deep learning—it claims to "model" biology while abandoning the interpretability and explanatory power that traditionally define modeling in their fields.
+### The Training Phase is Alien to Biology
 
----
-
-## The Training Phase is Alien to Biology
-
-In traditional biology, you don't usually:
-- Build something that starts empty/useless
-- Feed it massive data to "learn"
-- End up with something useful but opaque
-
-The closest biological analogies might be:
-- **Directed evolution**: Start with random mutants → select for function → end with optimized protein (but you can sequence it and understand it)
-- **Training a mouse**: Start with naive mouse → condition with rewards → get learned behavior (but the mouse is a black box)
-
-But even these aren't quite right because:
-- **Training is the expensive part** - for ESM-2 (protein language model), training cost ~$1M in compute
+In traditional biology, you don't usually build something that starts empty, feed it massive data to "learn," and end with something useful but opaque. Even directed evolution or mouse training don't match this pattern—because:
+- **Training is the expensive part** - ESM-2 training cost ~$1M in compute
 - **Design is relatively cheap** - architecture is reusable
-- **The value is in the trained weights** - the parameters after training are what you actually use
+- **The value is in the trained weights** - you download "ESM-2-650M" (someone else did the training), but you can't download "the physics" or "the regression"
 
 ---
 
 ## Practical Implications
 
-### You can't just "update" a deep learning model like other models:
-- **PK model**: Get new patient data → refit parameters (minutes)
+**Updating models:**
 - **Biostatistics**: Add new covariates → refit regression (minutes to hours)
 - **Deep learning**: Get new data → might need to retrain entire model (days to weeks, $$$!)
 
-### You can't easily inspect what was learned:
-- **MD simulation**: "Why did it unfold?" → trace forces step by step
-- **Biostatistics**: "What's the effect?" → β = 0.23, p < 0.001, here's the confidence interval
-- **Deep learning**: "Why this prediction?" → ...look at billions of weights? Use attention visualization?
+**Interpreting results:**
+- **Mechanistic/Biostatistics**: Trace mechanisms or get explicit effect sizes (β = 0.23, p < 0.001)
+- **Deep learning**: Black box predictions—you can visualize attention weights but can't explain mechanisms
 
-### Different outputs for different purposes:
-- **Biostatistics**: Effect sizes, p-values, confidence intervals → inference and hypothesis testing
-- **Deep learning**: Point predictions, maybe uncertainty estimates → high-performance prediction
-
-### The model is a trained artifact:
-- You can download "ESM-2-650M" - someone else did the expensive training
-- You can't download "the physics" or "the regression" - you just implement them yourself
-- This is more like downloading a trained dog vs. downloading the laws of genetics
+**Models as artifacts:**
+- You download "ESM-2-650M" (pre-trained weights) but implement physics/regression yourself
+- This is like downloading a trained dog vs. downloading the laws of genetics
 
 ---
 
-## Summary: Model Development Lifecycle
 
-```
-Mechanistic Models (MD, PK):
-Design (encode physics/biology) ——————————→ Use
-
-Biostatistical Models:
-Design (choose functional form) → Fit (estimate coefficients) → Use
-                                   ↑ quick, interpretable
-
-Deep Learning Models:
-Design (create architecture) → Train (learn patterns) → Use
-                                ↑
-                    This phase is unique and expensive
-                    This is where patterns are learned
-                    This is why it's a black box
-                    Millions of parameters adjusted
-```
-
----
 
 ## Key Takeaway
 
 Deep learning models are fundamentally different from both mechanistic models and biostatistical models:
 
-| Aspect | Mechanistic (MD, PK) | Biostatistical | Deep Learning |
-|--------|---------------------|----------------|---------------|
+| Aspect | Mechanistic (MD) | Biostatistical | Deep Learning |
+|--------|-----------------|----------------|---------------|
 | **What it captures** | Physical/biological mechanisms | Explicit statistical associations | Implicit high-dimensional patterns |
 | **Parameters** | Few, interpretable | Few to moderate, interpretable (β, HR, OR) | Millions, uninterpretable |
 | **Output** | Mechanistic predictions | Effect sizes + p-values + CI | Point predictions |
 | **Purpose** | Understanding mechanisms | Inference & hypothesis testing | High-performance prediction |
 | **When training matters** | No training (physics is universal) | Quick fitting (interpretable) | Expensive training (black box) |
 
-**Bottom line:**
-- **Mechanistic models** → explain *how* systems work via physics/biology
-- **Biostatistical models** → quantify *associations* with explicit effect sizes and statistical inference
-- **Deep learning models** → learn *patterns* for prediction without explicit associations or mechanisms
+**Bottom line:** Deep learning models are **compressed recordings of patterns in data** rather than **explanations of mechanisms** or **explicit quantifications of associations**. They're incredibly useful for prediction but require additional work to extract biological understanding or perform statistical inference.
 
-Deep learning models are more like **compressed recordings of patterns in data** rather than **explanations of how systems work** or **explicit quantifications of associations**. 
-
-They're incredibly useful for prediction but require additional work (like mechanistic interpretability or post-hoc statistical analysis) to extract biological understanding or perform statistical inference.
-
-**The critical insight:** The training phase is where billions of parameters adjust to capture patterns—but this phase either doesn't exist (mechanistic models) or is quick and interpretable (biostatistics) in traditional approaches. Deep learning's expensive, opaque training process fundamentally changes what a "model" means.
+**The critical insight:** The expensive training phase—where billions of parameters adjust to capture patterns—fundamentally changes what a "model" means compared to traditional approaches.
