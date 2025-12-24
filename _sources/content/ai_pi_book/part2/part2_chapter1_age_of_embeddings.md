@@ -21,6 +21,8 @@ Modern AI systems like language models, variational autoencoders (VAEs), and con
 
 At their core, **embeddings** are dense vector representations of data that encode meaningful relationships in a continuous space. Instead of representing data through sparse, hand-crafted features, embeddings allow models to learn compact representations where similar items are positioned close together.
 
+It's ultimately linear algebra. Think about representing a point with (x, y) in a 2D space such as shown in the figure below. Each item in your dataset becomes a point in this multi-dimensional space, where the coordinates are learned to capture meaningful relationships.
+
 ```{figure} ../assets/embedding_illustration_2.jpg
 ---
 name: embedding-space-viz
