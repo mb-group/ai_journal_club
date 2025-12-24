@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Actual Performance of Foundation Models in Genomics &#8212; Babu group AI journal club</title>
+    <title>Evaluation Methods for Foundation Models in Genomics &#8212; Babu group AI journal club</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/part4/part4_foundation_models_genomics';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ai_pi_book/part4/part4_fm_evaluation_methods';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Debates and Clarifications" href="part4_debates_clarifications.html" />
-    <link rel="prev" title="What Protein Language Models Actually Learn" href="part4_protein_language_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,7 +179,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../state_of_ai_for_biology.html">State of AI for Biology: A Comprehensive Overview</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../protein_book/protein_book.html">Protein Book</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../protein_book/chapter1_chemical_properties.html">Chapter 1: Chemical Properties of Polypeptides</a></li>
@@ -258,7 +258,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../neural_sci_book/neural_sci_book.html">Principles of Neural Science and AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../drug_discovery_book/drug_discovery_book.html">Drug Discovery &amp; Development Book</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../ai_pi_book.html">The AI Book for PI in Biology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ai_pi_book.html">The AI Book for PI in Biology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../orientation/orientation_what_is_a_model.html">Understanding “Models”: From Biology to Deep Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../orientation/orientation_training_vs_inference_vs_deployment.html">Training vs. Inference vs. Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../orientation/orientation_ai_in_biology_vs_chatgpt_vs_alphafold.html">Are ChatGPT and Protein Modeling AI the Same?</a></li>
@@ -282,7 +282,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../part3/part3_design_your_own.html">When You Want to Design Your Own</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_case_studies.html">Case Studies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_protein_language_models.html">What Protein Language Models Actually Learn</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Actual Performance of Foundation Models in Genomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part4_foundation_models_genomics.html">Actual Performance of Foundation Models in Genomics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_debates_clarifications.html">Debates and Clarifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part4_confused_subfields.html">Seemingly Confused Subfields Clarified</a></li>
 </ul>
@@ -369,7 +369,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/ai_pi_book/part4/part4_foundation_models_genomics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/ai_pi_book/part4/part4_fm_evaluation_methods.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +399,7 @@
       
       
       
-      <li><a href="../../../_sources/content/ai_pi_book/part4/part4_foundation_models_genomics.md" target="_blank"
+      <li><a href="../../../_sources/content/ai_pi_book/part4/part4_fm_evaluation_methods.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -483,7 +483,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Actual Performance of Foundation Models in Genomics</h1>
+    <h1>Evaluation Methods for Foundation Models in Genomics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -493,9 +493,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-organization">Chapter Organization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-navigation">Quick Navigation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-challenge-of-assessment">The Challenge of Assessment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-based-evaluation">Training-Based Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downstream-task-evaluation">Downstream Task Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-benchmark-tasks">Common Benchmark Tasks</a></li>
 </ul>
             </nav>
         </div>
@@ -507,66 +508,63 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="actual-performance-of-foundation-models-in-genomics">
-<h1>Actual Performance of Foundation Models in Genomics<a class="headerlink" href="#actual-performance-of-foundation-models-in-genomics" title="Link to this heading">#</a></h1>
-<p>This chapter explores the current state of foundation models in genomics, from their theoretical promise to practical reality. The content has been organized into several focused sub-chapters for easier navigation.</p>
-<section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>Following the success of protein language models, the genomics field has adopted similar approaches to build “genomics foundation models.” The promise is compelling: models that can learn fundamental patterns from massive genomic datasets and then apply this knowledge to diverse downstream tasks. However, the reality has proven more nuanced than initial excitement suggested.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="evaluation-methods-for-foundation-models-in-genomics">
+<h1>Evaluation Methods for Foundation Models in Genomics<a class="headerlink" href="#evaluation-methods-for-foundation-models-in-genomics" title="Link to this heading">#</a></h1>
+<section id="the-challenge-of-assessment">
+<h2>The Challenge of Assessment<a class="headerlink" href="#the-challenge-of-assessment" title="Link to this heading">#</a></h2>
+<p>Assessing foundation models is challenging due to their general-purpose nature and self-supervised training. Multiple evaluation strategies have emerged:</p>
 </section>
-<section id="chapter-organization">
-<h2>Chapter Organization<a class="headerlink" href="#chapter-organization" title="Link to this heading">#</a></h2>
-<p>This material is divided into the following sub-chapters:</p>
-<ol class="arabic simple">
-<li><p><strong><a class="reference internal" href="part4_foundation_models_genomics_overview.html"><span class="std std-doc">Foundation Models in Genomics: Overview</span></a></strong></p>
+<section id="training-based-evaluation">
+<h2>Training-Based Evaluation<a class="headerlink" href="#training-based-evaluation" title="Link to this heading">#</a></h2>
+<p><strong>Masked Token Recovery</strong></p>
 <ul class="simple">
-<li><p>Introduction to genomics foundation models</p></li>
-<li><p>Characteristics and core architecture components</p></li>
-<li><p>What distinguishes them as “foundation” models</p></li>
+<li><p>Primary metric during training: how well does the model predict masked nucleotides?</p></li>
+<li><p>Perplexity scores indicate how “surprised” the model is by held-out sequences</p></li>
+<li><p><strong>Limitation</strong>: Good perplexity doesn’t guarantee biological utility</p></li>
+<li><p>Similar to evaluating language models by autocomplete accuracy</p></li>
 </ul>
-</li>
-<li><p><strong><a class="reference internal" href="part4_fm_value_proposition.html"><span class="std std-doc">The Value Proposition of Foundation Models in Genomics</span></a></strong></p>
+<p><strong>Embedding Quality Assessment</strong></p>
 <ul class="simple">
-<li><p>Addressing long-standing challenges in genomics</p></li>
-<li><p>Zero-shot and transfer learning capabilities</p></li>
-<li><p>Unique genomic challenges these models aim to solve</p></li>
-<li><p>Inspiration from NLP and protein language models</p></li>
+<li><p>Qualitative examination of learned representations</p></li>
+<li><p>Do related sequences cluster together in embedding space?</p></li>
+<li><p>Can visualizations (t-SNE, UMAP) show biological organization?</p></li>
+<li><p><strong>Weakness</strong>: Only function-related control at training stage; subjective interpretation</p></li>
 </ul>
-</li>
-<li><p><strong><a class="reference internal" href="part4_fm_evaluation_methods.html"><span class="std std-doc">Evaluation Methods for Foundation Models in Genomics</span></a></strong></p>
-<ul class="simple">
-<li><p>Training-based evaluation approaches</p></li>
-<li><p>Downstream task evaluation strategies</p></li>
-<li><p>Common benchmark tasks</p></li>
-</ul>
-</li>
-<li><p><strong><a class="reference internal" href="part4_fm_reality_check.html"><span class="std std-doc">The Reality Check: Drama and Disappointment</span></a></strong></p>
-<ul class="simple">
-<li><p>Proliferation without clear differentiation</p></li>
-<li><p>The benchmarking problem</p></li>
-<li><p>Limited performance gains compared to simple baselines</p></li>
-<li><p>Over-promising nomenclature and marketing issues</p></li>
-</ul>
-</li>
-<li><p><strong><a class="reference internal" href="part4_fm_future_directions.html"><span class="std std-doc">Future Directions and Recommendations</span></a></strong></p>
-<ul class="simple">
-<li><p>Multi-omics foundation models</p></li>
-<li><p>Cell-state foundation models</p></li>
-<li><p>Architectural innovations</p></li>
-<li><p>Key takeaways and recommendations for practitioners</p></li>
-<li><p>Conclusion</p></li>
-</ul>
-</li>
-</ol>
 </section>
-<section id="quick-navigation">
-<h2>Quick Navigation<a class="headerlink" href="#quick-navigation" title="Link to this heading">#</a></h2>
+<section id="downstream-task-evaluation">
+<h2>Downstream Task Evaluation<a class="headerlink" href="#downstream-task-evaluation" title="Link to this heading">#</a></h2>
+<p>Since foundation models promise biologically meaningful representations, evaluation on specific tasks is crucial:</p>
+<p><strong>Direct Embedding Usage</strong></p>
 <ul class="simple">
-<li><p>For an introduction to what foundation models are in genomics: <a class="reference internal" href="part4_foundation_models_genomics_overview.html"><span class="std std-doc">Overview</span></a></p></li>
-<li><p>To understand why these models matter: <a class="reference internal" href="part4_fm_value_proposition.html"><span class="std std-doc">Value Proposition</span></a></p></li>
-<li><p>For details on how they’re evaluated: <a class="reference internal" href="part4_fm_evaluation_methods.html"><span class="std std-doc">Evaluation Methods</span></a></p></li>
-<li><p>To see the sobering reality: <a class="reference internal" href="part4_fm_reality_check.html"><span class="std std-doc">Reality Check</span></a></p></li>
-<li><p>For future outlook and practical advice: <a class="reference internal" href="part4_fm_future_directions.html"><span class="std std-doc">Future Directions</span></a></p></li>
+<li><p>Use frozen model embeddings as features for prediction tasks</p></li>
+<li><p>Tests whether pre-trained representations capture relevant information</p></li>
+<li><p>Common for variant effect prediction, enhancer identification, etc.</p></li>
+<li><p>Zero-shot or few-shot performance indicates generalization</p></li>
+</ul>
+<p><strong>Fine-Tuning Approaches</strong></p>
+<ul class="simple">
+<li><p>Add task-specific layers and train on labeled data</p></li>
+<li><p>May fine-tune the entire foundation model or keep it frozen</p></li>
+<li><p>Tests adaptability to specific applications</p></li>
+<li><p>More computationally expensive but often higher performance</p></li>
+</ul>
+<p><strong>Separate Model Training</strong></p>
+<ul class="simple">
+<li><p>Extract embeddings and train independent classifier</p></li>
+<li><p>More common approach in practice</p></li>
+<li><p>Allows comparison with traditional feature engineering</p></li>
+<li><p>Can use simpler models (linear, random forest) for interpretability</p></li>
+</ul>
+</section>
+<section id="common-benchmark-tasks">
+<h2>Common Benchmark Tasks<a class="headerlink" href="#common-benchmark-tasks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Variant effect prediction</strong>: Does mutation increase or decrease function?</p></li>
+<li><p><strong>Regulatory element identification</strong>: Promoters, enhancers, silencers</p></li>
+<li><p><strong>Splicing prediction</strong>: Will a sequence variant affect RNA splicing?</p></li>
+<li><p><strong>Gene expression prediction</strong>: Predict expression from sequence</p></li>
+<li><p><strong>Chromatin state prediction</strong>: Predict accessibility, histone marks</p></li>
+<li><p><strong>Evolutionary conservation</strong>: Identify constrained regions</p></li>
 </ul>
 </section>
 </section>
@@ -601,24 +599,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="part4_protein_language_models.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">What Protein Language Models Actually Learn</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="part4_debates_clarifications.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Debates and Clarifications</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -635,9 +615,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-organization">Chapter Organization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-navigation">Quick Navigation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-challenge-of-assessment">The Challenge of Assessment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-based-evaluation">Training-Based Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downstream-task-evaluation">Downstream Task Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-benchmark-tasks">Common Benchmark Tasks</a></li>
 </ul>
   </nav></div>
 
