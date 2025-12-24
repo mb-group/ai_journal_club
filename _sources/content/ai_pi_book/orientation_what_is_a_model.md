@@ -8,7 +8,9 @@
 
 ## Introduction
 
-The word "model" means something quite different in biology versus deep learning, which creates confusion for biological researchers. This document provides a comprehensive comparison of different types of models to clarify these conceptual differences.
+The word "model" means different things in biology versus deep learning. Biologists use wet lab models (cell lines, animal models), PKPD models (drug kinetics), mechanistic simulations (MD, structures), statistical models (regression), and deep learning models (pattern learners).
+
+**This document compares MD, Structure, Biostatistics, and Deep Learning** because they represent the clearest contrast points along a computational spectrum—from pure mechanistic (physics-based) to pure empirical (pattern-based). We exclude wet lab models (actual biological systems, not computational representations) and PKPD models (hybrid mechanistic-statistical approaches) to focus on the extremes that clarify why deep learning feels alien to traditional computational biology.
 
 ---
 
