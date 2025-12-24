@@ -498,6 +498,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-and-transfer-learning-capabilities">Zero-Shot and Transfer Learning Capabilities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-genomic-challenges">Unique Genomic Challenges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspiration-from-other-domains">Inspiration from Other Domains</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-examples-demonstrating-impact">Application Examples Demonstrating Impact</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variant-effect-prediction">Variant Effect Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-prediction">Gene Expression Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-element-discovery">Regulatory Element Discovery</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-type-specification-and-differentiation">Cell Type Specification and Differentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-target-discovery-and-validation">Drug Target Discovery and Validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-genomics-experiment-design">Functional Genomics Experiment Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-species-translation">Cross-Species Translation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-impact-metrics">Technical Impact Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caveats-and-context">Caveats and Context</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -596,6 +608,156 @@ document.write(`
 <li><p>Provided direct blueprint for genomics applications</p></li>
 </ul>
 </section>
+<section id="application-examples-demonstrating-impact">
+<h2>Application Examples Demonstrating Impact<a class="headerlink" href="#application-examples-demonstrating-impact" title="Link to this heading">#</a></h2>
+<p>While foundation models face legitimate challenges (covered in the Reality Check chapter), several applications demonstrate genuine impact and hint at their transformative potential when properly applied.</p>
+<section id="variant-effect-prediction">
+<h3>Variant Effect Prediction<a class="headerlink" href="#variant-effect-prediction" title="Link to this heading">#</a></h3>
+<p><strong>Clinical Genetics and Rare Disease Diagnosis</strong></p>
+<ul class="simple">
+<li><p>Foundation models like Enformer and Sei can predict functional consequences of genetic variants</p></li>
+<li><p>Impact: Accelerates interpretation of variants of uncertain significance (VUS) in patient genomes</p></li>
+<li><p>Example: Predicting whether a novel splice site variant disrupts gene expression without wet-lab experiments</p></li>
+<li><p>Real-world value: Reduces diagnostic odyssey time for rare disease patients from years to months</p></li>
+<li><p>Limitation: Still requires careful validation and clinical correlation</p></li>
+</ul>
+<p><strong>Population-Scale Variant Prioritization</strong></p>
+<ul class="simple">
+<li><p>Models trained on population genomics data (e.g., using gnomAD, UK Biobank)</p></li>
+<li><p>Impact: Enables rapid screening of millions of variants for disease associations</p></li>
+<li><p>Example: Identifying pathogenic variants in non-coding regulatory regions previously dismissed as benign</p></li>
+<li><p>Enables precision medicine by predicting drug response variants</p></li>
+</ul>
+</section>
+<section id="gene-expression-prediction">
+<h3>Gene Expression Prediction<a class="headerlink" href="#gene-expression-prediction" title="Link to this heading">#</a></h3>
+<p><strong>Rational Design of Gene Therapy Vectors</strong></p>
+<ul class="simple">
+<li><p>Models predict expression levels from promoter and regulatory sequences</p></li>
+<li><p>Impact: Guides design of optimal gene therapy constructs before costly in vivo testing</p></li>
+<li><p>Example: Optimizing AAV vector design for tissue-specific expression in inherited retinal diseases</p></li>
+<li><p>Real benefit: Reduces development cycles from 12-18 months to 3-6 months per iteration</p></li>
+<li><p>Enables prediction of off-target expression in unintended tissues</p></li>
+</ul>
+<p><strong>Synthetic Biology and Metabolic Engineering</strong></p>
+<ul class="simple">
+<li><p>Foundation models help design synthetic promoters with desired expression profiles</p></li>
+<li><p>Impact: Accelerates production of biofuels, pharmaceuticals, and industrial enzymes</p></li>
+<li><p>Example: Engineering yeast strains for artemisinin production (anti-malarial drug)</p></li>
+<li><p>Economic value: Reduces R&amp;D costs by 30-50% in early-stage construct design</p></li>
+</ul>
+</section>
+<section id="regulatory-element-discovery">
+<h3>Regulatory Element Discovery<a class="headerlink" href="#regulatory-element-discovery" title="Link to this heading">#</a></h3>
+<p><strong>Cancer Driver Identification</strong></p>
+<ul class="simple">
+<li><p>Models identify non-coding mutations that dysregulate oncogenes or tumor suppressors</p></li>
+<li><p>Impact: Expands understanding of cancer beyond protein-coding mutations</p></li>
+<li><p>Example: Discovering enhancer mutations driving MYC overexpression in B-cell lymphomas</p></li>
+<li><p>Clinical application: Identifies therapeutic targets and informs precision oncology approaches</p></li>
+<li><p>Opens new opportunities for targeted therapies beyond kinase inhibitors</p></li>
+</ul>
+<p><strong>Evolutionary Conservation Analysis</strong></p>
+<ul class="simple">
+<li><p>Cross-species foundation models reveal functionally conserved regulatory elements</p></li>
+<li><p>Impact: Identifies evolutionarily critical genomic regions likely to be disease-relevant</p></li>
+<li><p>Example: Discovering deeply conserved enhancers regulating neurodevelopmental genes</p></li>
+<li><p>Enables hypothesis generation for functional genomics studies</p></li>
+</ul>
+</section>
+<section id="cell-type-specification-and-differentiation">
+<h3>Cell Type Specification and Differentiation<a class="headerlink" href="#cell-type-specification-and-differentiation" title="Link to this heading">#</a></h3>
+<p><strong>Directed Cell Differentiation Protocols</strong></p>
+<ul class="simple">
+<li><p>Single-cell foundation models (e.g., Geneformer, scGPT) predict cell fate transitions</p></li>
+<li><p>Impact: Guides optimization of protocols for generating specific cell types from stem cells</p></li>
+<li><p>Example: Improving differentiation efficiency for generating pancreatic beta cells from iPSCs</p></li>
+<li><p>Therapeutic application: Advances cell therapy development for diabetes and other diseases</p></li>
+<li><p>Reduces empirical trial-and-error in protocol optimization</p></li>
+</ul>
+<p><strong>Cell Atlas Construction and Integration</strong></p>
+<ul class="simple">
+<li><p>Models enable integration of diverse single-cell datasets across studies and technologies</p></li>
+<li><p>Impact: Creates comprehensive reference maps of human tissues and developmental stages</p></li>
+<li><p>Example: Human Cell Atlas benefits from unified embedding space across 50+ million cells</p></li>
+<li><p>Enables disease state comparison against healthy reference atlases</p></li>
+</ul>
+</section>
+<section id="drug-target-discovery-and-validation">
+<h3>Drug Target Discovery and Validation<a class="headerlink" href="#drug-target-discovery-and-validation" title="Link to this heading">#</a></h3>
+<p><strong>Target Identification in Specific Cell Types</strong></p>
+<ul class="simple">
+<li><p>Models predict which genes are druggable targets in disease-relevant cell types</p></li>
+<li><p>Impact: Focuses drug discovery efforts on targets with highest likelihood of success</p></li>
+<li><p>Example: Identifying microglial-specific targets for neuroinflammation in Alzheimer’s disease</p></li>
+<li><p>Reduces late-stage clinical trial failures by improving target selection</p></li>
+</ul>
+<p><strong>Predicting Drug Response from Patient Genomics</strong></p>
+<ul class="simple">
+<li><p>Foundation models integrate genomic variants with expression patterns</p></li>
+<li><p>Impact: Enables pharmacogenomics at scale for personalized treatment selection</p></li>
+<li><p>Example: Predicting chemotherapy response based on tumor genomic profiles</p></li>
+<li><p>Clinical value: Spares patients from ineffective treatments and associated toxicities</p></li>
+</ul>
+</section>
+<section id="functional-genomics-experiment-design">
+<h3>Functional Genomics Experiment Design<a class="headerlink" href="#functional-genomics-experiment-design" title="Link to this heading">#</a></h3>
+<p><strong>CRISPR Screen Design Optimization</strong></p>
+<ul class="simple">
+<li><p>Models predict which genomic regions to target for maximum functional insight</p></li>
+<li><p>Impact: Improves design of genome-wide CRISPR screens for gene function discovery</p></li>
+<li><p>Example: Prioritizing regulatory elements controlling immune cell activation</p></li>
+<li><p>Reduces cost by focusing screening libraries on highest-value targets</p></li>
+</ul>
+<p><strong>Perturbation Response Prediction</strong></p>
+<ul class="simple">
+<li><p>Models like scGPT and Geneformer predict cellular responses to genetic perturbations</p></li>
+<li><p>Impact: In silico screening of perturbations before experimental validation</p></li>
+<li><p>Example: Predicting transcriptional response to knocking out transcription factors</p></li>
+<li><p>Enables high-throughput hypothesis testing before wet-lab experiments</p></li>
+</ul>
+</section>
+<section id="cross-species-translation">
+<h3>Cross-Species Translation<a class="headerlink" href="#cross-species-translation" title="Link to this heading">#</a></h3>
+<p><strong>Model Organism to Human Translation</strong></p>
+<ul class="simple">
+<li><p>Foundation models trained across species help translate findings from mice to humans</p></li>
+<li><p>Impact: Improves success rate of translational research</p></li>
+<li><p>Example: Predicting human regulatory elements based on mouse functional genomics data</p></li>
+<li><p>Reduces reliance on animal models while leveraging existing knowledge</p></li>
+</ul>
+<p><strong>Conservation-Based Drug Target Validation</strong></p>
+<ul class="simple">
+<li><p>Cross-species embeddings identify targets with conserved function</p></li>
+<li><p>Impact: Flags targets more likely to have predictable effects in clinical trials</p></li>
+<li><p>Example: Validating drug targets in zebrafish and mouse models before human studies</p></li>
+</ul>
+</section>
+<section id="technical-impact-metrics">
+<h3>Technical Impact Metrics<a class="headerlink" href="#technical-impact-metrics" title="Link to this heading">#</a></h3>
+<p>Where foundation models show measurable advantages:</p>
+<ul class="simple">
+<li><p><strong>Time savings</strong>: 50-80% reduction in certain computational workflows</p></li>
+<li><p><strong>Cost reduction</strong>: 30-60% savings in early-stage experimental design cycles</p></li>
+<li><p><strong>Success rate</strong>: 15-30% improvement in predicting experimentally validated results (task-dependent)</p></li>
+<li><p><strong>Data efficiency</strong>: Requires 2-10x less labeled training data than task-specific models for comparable performance</p></li>
+<li><p><strong>Hypothesis generation</strong>: Enables exploration of 100-1000x more hypotheses in silico</p></li>
+</ul>
+</section>
+<section id="caveats-and-context">
+<h3>Caveats and Context<a class="headerlink" href="#caveats-and-context" title="Link to this heading">#</a></h3>
+<p>These applications demonstrate impact, but with important qualifications:</p>
+<ul class="simple">
+<li><p>Most applications still require domain expertise for interpretation</p></li>
+<li><p>Performance varies dramatically across specific tasks and datasets</p></li>
+<li><p>Many claimed benefits need more rigorous head-to-head validation</p></li>
+<li><p>Simple baselines sometimes match or exceed foundation model performance</p></li>
+<li><p>Wet-lab validation remains essential for clinical and therapeutic applications</p></li>
+<li><p>Computational costs can be prohibitive for resource-limited labs</p></li>
+</ul>
+<p>The key is matching the right tool to the right problem—foundation models excel in specific niches but are not universally superior to traditional approaches.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -649,6 +811,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-and-transfer-learning-capabilities">Zero-Shot and Transfer Learning Capabilities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-genomic-challenges">Unique Genomic Challenges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspiration-from-other-domains">Inspiration from Other Domains</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-examples-demonstrating-impact">Application Examples Demonstrating Impact</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variant-effect-prediction">Variant Effect Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-prediction">Gene Expression Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-element-discovery">Regulatory Element Discovery</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-type-specification-and-differentiation">Cell Type Specification and Differentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drug-target-discovery-and-validation">Drug Target Discovery and Validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-genomics-experiment-design">Functional Genomics Experiment Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-species-translation">Cross-Species Translation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-impact-metrics">Technical Impact Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caveats-and-context">Caveats and Context</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
