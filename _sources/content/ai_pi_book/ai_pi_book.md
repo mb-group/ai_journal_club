@@ -103,8 +103,8 @@ This book intentionally does not cover the technical implementation details that
 
 #### [Case studies](part4_case_studies.md)
 
-- What protein language models actually learn
-- Actual performance of foundation models in genomics
+- [What protein language models actually learn](part4_protein_language_models.md)
+- [Actual performance of foundation models in genomics](part4_foundation_models_genomics.md)
 
 #### [Debates and clarifications](part4_debates_clarifications.md)
 
