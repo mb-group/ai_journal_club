@@ -486,7 +486,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-paradigm-shift-from-sequential-to-direct-prediction">The Paradigm Shift: From Sequential to Direct Prediction</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-the-birth-of-protein-language-models">A Brief History: The Birth of Protein Language Models</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-2020-watershed-moment">The 2020 Watershed Moment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-innovations-and-convergent-evolution">Parallel Innovations and Convergent Evolution</a></li>
@@ -502,9 +505,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-question-what-do-plms-actually-learn">The Central Question: What Do PLMs Actually Learn?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoding-the-latent-space">Decoding the Latent Space</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-information-emerges-without-supervision-heinzinger2025">1. <strong>Structural Information Emerges Without Supervision</strong> <span class="xref cite">Heinzinger2025</span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024">2. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span class="xref cite">Notin2024</span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-understanding-of-fitness-landscapes-hsu2024">3. <strong>Mechanistic Understanding of Fitness Landscapes</strong> <span class="xref cite">Hsu2024</span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysical-properties-are-implicitly-encoded-biorvix2025">4. <strong>Biophysical Properties Are Implicitly Encoded</strong> <span class="xref cite">Biorvix2025</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plms-learn-evolutionary-statistics-not-physics-zhang2024">2. <strong>PLMs Learn Evolutionary Statistics, Not Physics</strong> <span class="xref cite">Zhang2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024">3. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span class="xref cite">Notin2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-features-reveal-biological-organization-hsu2024">4. <strong>Sparse Features Reveal Biological Organization</strong> <span class="xref cite">Hsu2024</span></a></li>
 </ul>
 </li>
 </ul>
@@ -539,6 +542,11 @@ document.write(`
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Protein language models (PLMs) have emerged as transformative tools in computational biology, fundamentally changing how we approach protein engineering, functional prediction, and evolutionary analysis. These models, trained on vast databases of protein sequences, learn to represent proteins in ways that capture functional and structural properties—often without explicit supervision on these properties. But what exactly do these models learn? And why do they work so well?</p>
 <p>This chapter explores the journey from the inception of protein language models to our current understanding of their internal representations, drawing on recent breakthrough studies that have begun to decode what these “black box” models actually capture about protein biology.</p>
+<section id="the-paradigm-shift-from-sequential-to-direct-prediction">
+<h3>The Paradigm Shift: From Sequential to Direct Prediction<a class="headerlink" href="#the-paradigm-shift-from-sequential-to-direct-prediction" title="Link to this heading">#</a></h3>
+<p>Traditionally, understanding protein function required following a sequential path: sequence → structure → function. PLMs have enabled a revolutionary shortcut:</p>
+<p><strong>Key insight</strong>: PLMs learn evolutionary patterns that implicitly encode both structural and functional information. This allows them to predict function directly from sequence, or generate structure predictions as an intermediate step when needed. The solid arrows show the primary workflow, while dashed arrows indicate optional or implicit pathways.</p>
+</section>
 </section>
 <section id="a-brief-history-the-birth-of-protein-language-models">
 <h2>A Brief History: The Birth of Protein Language Models<a class="headerlink" href="#a-brief-history-the-birth-of-protein-language-models" title="Link to this heading">#</a></h2>
@@ -606,8 +614,18 @@ document.write(`
 </ul>
 <p>This suggests that evolutionary patterns in sequences carry sufficient information about structure for models to implicitly learn structural constraints.</p>
 </section>
+<section id="plms-learn-evolutionary-statistics-not-physics-zhang2024">
+<h4>2. <strong>PLMs Learn Evolutionary Statistics, Not Physics</strong> <span id="id2">[]</span><a class="headerlink" href="#plms-learn-evolutionary-statistics-not-physics-zhang2024" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2406285121">Zhang et al. (2024)</a> provided crucial evidence that PLMs <strong>do not learn the physics of protein folding</strong>. Instead, they store and leverage evolutionary statistics:</p>
+<ul class="simple">
+<li><p><strong>Coevolutionary patterns</strong>: PLMs learn which amino acid pairs tend to co-occur across evolution</p></li>
+<li><p><strong>Motif interactions</strong>: Models store statistics of interacting sequence fragments, not physical forces</p></li>
+<li><p><strong>Context dependence</strong>: Contact prediction requires local sequence context, suggesting lookup of evolutionary patterns rather than physics-based computation</p></li>
+</ul>
+<p>This work definitively counters the hypothesis that PLMs understand biophysical principles. The models work because evolutionary selection has imprinted physical constraints into sequence patterns—not because the models learned physics themselves.</p>
+</section>
 <section id="evolutionary-and-functional-constraints-are-disentangled-notin2024">
-<h4>2. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span id="id2">[]</span><a class="headerlink" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024" title="Link to this heading">#</a></h4>
+<h4>3. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span id="id3">[]</span><a class="headerlink" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024" title="Link to this heading">#</a></h4>
 <p><a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2406285121">Notin et al. (2024)</a> revealed that PLMs learn to separate different types of biological constraints:</p>
 <ul class="simple">
 <li><p><strong>Evolutionary constraint</strong>: Conservation patterns across homologs</p></li>
@@ -616,32 +634,24 @@ document.write(`
 </ul>
 <p>Importantly, these constraints are represented in partially orthogonal subspaces of the embedding space, allowing models to distinguish between conserved-but-flexible sites and invariant functional residues.</p>
 </section>
-<section id="mechanistic-understanding-of-fitness-landscapes-hsu2024">
-<h4>3. <strong>Mechanistic Understanding of Fitness Landscapes</strong> <span id="id3">[]</span><a class="headerlink" href="#mechanistic-understanding-of-fitness-landscapes-hsu2024" title="Link to this heading">#</a></h4>
-<p><a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2506316122">Hsu et al. (2024)</a> demonstrated that PLMs capture the <em>shape</em> of protein fitness landscapes:</p>
+<section id="sparse-features-reveal-biological-organization-hsu2024">
+<h4>4. <strong>Sparse Features Reveal Biological Organization</strong> <span id="id4">[]</span><a class="headerlink" href="#sparse-features-reveal-biological-organization-hsu2024" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2506316122">Hsu et al. (2024)</a> used sparse autoencoders to decode PLM representations:</p>
 <ul class="simple">
-<li><p><strong>Epistatic interactions</strong>: PLMs represent higher-order dependencies between residues</p></li>
-<li><p><strong>Mutational robustness</strong>: Embeddings encode tolerance to perturbation</p></li>
-<li><p><strong>Evolutionary trajectories</strong>: Model representations reflect accessible paths through sequence space</p></li>
+<li><p><strong>Gene ontology associations</strong>: Sparse features map cleanly to specific GO terms and protein families</p></li>
+<li><p><strong>Functional monosemanticity</strong>: Individual features correspond to specific biological processes</p></li>
+<li><p><strong>Hierarchical organization</strong>: Features capture biology at multiple levels of abstraction</p></li>
 </ul>
-<p>This mechanistic understanding explains why PLMs can predict variant effects even for unseen sequences.</p>
-</section>
-<section id="biophysical-properties-are-implicitly-encoded-biorvix2025">
-<h4>4. <strong>Biophysical Properties Are Implicitly Encoded</strong> <span id="id4">[]</span><a class="headerlink" href="#biophysical-properties-are-implicitly-encoded-biorvix2025" title="Link to this heading">#</a></h4>
-<p>A recent preprint <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2025.02.06.636901v2">(bioRxiv, 2025)</a> showed that PLM embeddings correlate with:</p>
-<ul class="simple">
-<li><p>Thermodynamic stability measurements</p></li>
-<li><p>Aggregation propensity</p></li>
-<li><p>Intrinsic disorder</p></li>
-<li><p>Binding interface residues</p></li>
-</ul>
-<p>These properties emerge without explicit training objectives, suggesting that evolutionary selection has imprinted biophysical constraints into sequence patterns that PLMs detect.</p>
+<p>Importantly, this interpretability work shows PLMs organize biological knowledge systematically, even though they don’t understand underlying physics.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>The Physics vs. Evolution Distinction</strong>: A critical insight from recent research is that PLMs do <strong>not</strong> learn the physics of protein folding. Instead, they memorize evolutionary patterns that reflect physical constraints. This is a subtle but crucial distinction—the models work because evolution has already solved the physics problem, and PLMs learn to recognize those solutions.</p>
+</div>
 </section>
 </section>
 </section>
 <section id="rising-trends-augmenting-plms-with-explicit-knowledge">
 <h2>Rising Trends: Augmenting PLMs with Explicit Knowledge<a class="headerlink" href="#rising-trends-augmenting-plms-with-explicit-knowledge" title="Link to this heading">#</a></h2>
-<p>While unsupervised PLMs have proven remarkably capable, recent work explores explicitly incorporating additional modalities:</p>
 <section id="structure-aware-models">
 <h3>Structure-Aware Models<a class="headerlink" href="#structure-aware-models" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://academic.oup.com/nargab/article/6/4/lqae150/7901286">ProstT5</a> extends the ProtT5 architecture by treating 3D structure tokens as additional vocabulary. By training on sequence-structure pairs, the model learns joint representations that:</p>
@@ -686,8 +696,8 @@ document.write(`
 <h3>For AI Researchers<a class="headerlink" href="#for-ai-researchers" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Biology as a testbed</strong>: Proteins offer a rich domain for studying representation learning with ground truth</p></li>
-<li><p><strong>Emergent structure</strong>: PLMs provide compelling evidence that structure can emerge from sequence patterns alone</p></li>
-<li><p><strong>Hybrid approaches</strong>: Combining learned and explicit knowledge remains a frontier</p></li>
+<li><p><strong>Evolution ≠ Physics</strong>: PLMs demonstrate that memorizing evolutionary patterns can substitute for understanding physics</p></li>
+<li><p><strong>Hybrid approaches</strong>: Combining learned and explicit knowledge remains an important frontier</p></li>
 </ul>
 </section>
 </section>
@@ -695,21 +705,21 @@ document.write(`
 <h2>Conclusion: From Black Boxes to Mechanistic Understanding<a class="headerlink" href="#conclusion-from-black-boxes-to-mechanistic-understanding" title="Link to this heading">#</a></h2>
 <p>Protein language models have evolved from mysterious black boxes to increasingly interpretable systems. We now understand that these models:</p>
 <ul class="simple">
-<li><p><strong>Learn biophysical constraints</strong> implicitly from evolutionary patterns</p></li>
-<li><p><strong>Represent multiple types of biological information</strong> in structured, partly disentangled ways</p></li>
-<li><p><strong>Capture fitness landscapes</strong> that enable prediction of variant effects</p></li>
-<li><p><strong>Benefit from explicit structure and physics</strong> when available, but work remarkably well without it</p></li>
+<li><p><strong>Learn evolutionary statistics, not physics</strong>: PLMs memorize coevolutionary patterns rather than understanding biophysical principles</p></li>
+<li><p><strong>Store motif-level interactions</strong>: Models lookup statistics of interacting sequence fragments conditioned on local context</p></li>
+<li><p><strong>Represent biological information hierarchically</strong>: From GO terms to protein families, information is organized systematically</p></li>
+<li><p><strong>Benefit from explicit structure and physics when available</strong>: Hybrid approaches show promise for improving reliability</p></li>
 </ul>
-<p>The next frontier involves moving beyond correlation to causation—building models that not only predict protein properties but explain <em>why</em> certain sequences work and others don’t. As we decode what PLMs learn, we move closer to truly understanding the language of proteins itself.</p>
+<p>The key takeaway: <strong>PLMs are powerful because evolution has already solved the physics problem</strong>. These models learn to recognize evolutionary solutions without understanding the underlying forces that shaped them. This insight is crucial for understanding both their capabilities and limitations.</p>
 </section>
 <section id="further-reading">
 <h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Original ESM paper: <a class="reference external" href="https://www.pnas.org/doi/full/10.1073/pnas.2016239118">Rives et al., 2021, PNAS</a></p></li>
 <li><p>ProtTrans: <a class="reference external" href="https://ieeexplore.ieee.org/document/9477085">Elnaggar et al., 2021, IEEE TPAMI</a></p></li>
-<li><p>What PLMs learn (structure): <a class="reference external" href="https://www.nature.com/articles/s41592-025-02836-7">Heinzinger et al., 2025, Nature Methods</a></p></li>
-<li><p>What PLMs learn (evolution): <a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2406285121">Notin et al., 2024, PNAS</a></p></li>
-<li><p>What PLMs learn (fitness): <a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2506316122">Hsu et al., 2024, PNAS</a></p></li>
+<li><p><strong>PLMs learn evolution, not physics</strong>: <a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2406285121">Zhang et al., 2024, PNAS</a> - Key paper showing PLMs memorize evolutionary statistics</p></li>
+<li><p>Structure emerges from evolution: <a class="reference external" href="https://www.nature.com/articles/s41592-025-02836-7">Heinzinger et al., 2025, Nature Methods</a></p></li>
+<li><p>Interpretable sparse features: <a class="reference external" href="https://www.pnas.org/doi/10.1073/pnas.2506316122">Hsu et al., 2024, PNAS</a></p></li>
 <li><p>Structure-augmented models: <a class="reference external" href="https://academic.oup.com/nargab/article/6/4/lqae150/7901286">ProstT5, NAR Genomics and Bioinformatics</a></p></li>
 <li><p>Biophysics-informed models: <a class="reference external" href="https://www.nature.com/articles/s41592-025-02776-2">Nature Methods, 2025</a></p></li>
 </ul>
@@ -780,7 +790,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-paradigm-shift-from-sequential-to-direct-prediction">The Paradigm Shift: From Sequential to Direct Prediction</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-the-birth-of-protein-language-models">A Brief History: The Birth of Protein Language Models</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-2020-watershed-moment">The 2020 Watershed Moment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-innovations-and-convergent-evolution">Parallel Innovations and Convergent Evolution</a></li>
@@ -796,9 +809,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-question-what-do-plms-actually-learn">The Central Question: What Do PLMs Actually Learn?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoding-the-latent-space">Decoding the Latent Space</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-information-emerges-without-supervision-heinzinger2025">1. <strong>Structural Information Emerges Without Supervision</strong> <span class="xref cite">Heinzinger2025</span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024">2. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span class="xref cite">Notin2024</span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-understanding-of-fitness-landscapes-hsu2024">3. <strong>Mechanistic Understanding of Fitness Landscapes</strong> <span class="xref cite">Hsu2024</span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysical-properties-are-implicitly-encoded-biorvix2025">4. <strong>Biophysical Properties Are Implicitly Encoded</strong> <span class="xref cite">Biorvix2025</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plms-learn-evolutionary-statistics-not-physics-zhang2024">2. <strong>PLMs Learn Evolutionary Statistics, Not Physics</strong> <span class="xref cite">Zhang2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-and-functional-constraints-are-disentangled-notin2024">3. <strong>Evolutionary and Functional Constraints Are Disentangled</strong> <span class="xref cite">Notin2024</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-features-reveal-biological-organization-hsu2024">4. <strong>Sparse Features Reveal Biological Organization</strong> <span class="xref cite">Hsu2024</span></a></li>
 </ul>
 </li>
 </ul>
