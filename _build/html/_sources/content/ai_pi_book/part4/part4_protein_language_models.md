@@ -60,6 +60,8 @@ graph LR
 
 The modern era began in 2020 with [ESM (Evolutionary Scale Modeling)](https://www.pnas.org/doi/full/10.1073/pnas.2016239118) by Rives et al. The fact that this work appeared in *PNAS* rather than a "higher-tier" journal hints at the initial skepticism—treating proteins as a language met considerable resistance. ESM's insight was deceptively simple: apply transformers directly to protein sequences, treating amino acids as tokens. Train on millions of UniRef sequences using masked language modeling. No structural information, no functional annotations—just sequences and their evolutionary patterns.
 
+The vindication came from an unexpected direction: **independent researchers leveraging ESM variants** achieved breakthrough results published in [*Science*](https://www.science.org/doi/10.1126/science.adk8946). Using ESM-IF, an extension of ESM designed for inverse folding, these researchers demonstrated the framework's versatility beyond its original conception. The trajectory—from a somewhat skeptically received PNAS paper to others building with its variants for Science—perfectly captures how transformative tools gain acceptance: through adoption and successful application by the wider research community.
+
 Almost simultaneously, [ProtTrans](https://ieeexplore.ieee.org/document/9477085) (Elnaggar et al.) arrived at a nearly identical solution. This convergence was no accident. Protein modeling had always borrowed from NLP—even profile HMMs are statistical language models. When BERT and GPT revolutionized language, it was only a matter of time before transformers transformed protein analysis.
 
 Not everyone followed the naive single-amino-acid approach. [DISAE](https://pubs.acs.org/doi/full/10.1021/acs.jcim.0c01285) (Cai et al., 2021) innovated at the vocabulary level: using amino acid **triplets** as tokens (capturing local structural motifs) and selecting only the ~210 most conserved MSA positions (focusing on functionally critical residues). While more domain-specific, DISAE achieved superior performance for chemical-protein interactions, especially for remote homologs.
@@ -164,6 +166,16 @@ This approach bridges the gap between sequence and structure modeling, creating 
 - **Multi-scale representations**: Explicitly modeling interactions at different scales
 
 These hybrid approaches combine the flexibility of data-driven learning with the interpretability and reliability of physics-based modeling.
+
+### Substructure-Aware Models
+
+[Magneton](https://arxiv.org/pdf/2512.18114) represents a paradigm shift in how PLMs learn protein biology. Rather than treating proteins as simple sequences of amino acids, Magneton teaches models to recognize functional "building blocks"—domains, active sites, and other conserved substructures. By fine-tuning on these biologically meaningful units, the framework enables models to:
+
+- Capture functional organization at the domain and motif level
+- Better understand relationships between sequence patterns and biological function
+- Achieve significant accuracy gains in enzyme classification and functional annotation
+
+This approach bridges the gap between sequence-level and function-level understanding, demonstrating that teaching models to think in terms of biological substructures—not just amino acids—unlocks deeper functional insights.
 
 ## What This Means for Protein Scientists
 
