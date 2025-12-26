@@ -884,6 +884,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rising-trends-augmenting-plms-with-explicit-knowledge">Rising Trends: Augmenting PLMs with Explicit Knowledge</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-aware-models">Structure-Aware Models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysics-informed-models">Biophysics-Informed Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substructure-aware-models">Substructure-Aware Models</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-means-for-protein-scientists">What This Means for Protein Scientists</a><ul class="nav section-nav flex-column">
@@ -981,6 +982,7 @@ document.write(`
 <section id="a-brief-history-the-birth-of-protein-language-models">
 <h2>A Brief History: The Birth of Protein Language Models<a class="headerlink" href="#a-brief-history-the-birth-of-protein-language-models" title="Link to this heading">#</a></h2>
 <p>The modern era began in 2020 with <a class="reference external" href="https://www.pnas.org/doi/full/10.1073/pnas.2016239118">ESM (Evolutionary Scale Modeling)</a> by Rives et al. The fact that this work appeared in <em>PNAS</em> rather than a “higher-tier” journal hints at the initial skepticism—treating proteins as a language met considerable resistance. ESM’s insight was deceptively simple: apply transformers directly to protein sequences, treating amino acids as tokens. Train on millions of UniRef sequences using masked language modeling. No structural information, no functional annotations—just sequences and their evolutionary patterns.</p>
+<p>The vindication came from an unexpected direction: <strong>independent researchers leveraging ESM variants</strong> achieved breakthrough results published in <a class="reference external" href="https://www.science.org/doi/10.1126/science.adk8946"><em>Science</em></a>. Using ESM-IF, an extension of ESM designed for inverse folding, these researchers demonstrated the framework’s versatility beyond its original conception. The trajectory—from a somewhat skeptically received PNAS paper to others building with its variants for Science—perfectly captures how transformative tools gain acceptance: through adoption and successful application by the wider research community.</p>
 <p>Almost simultaneously, <a class="reference external" href="https://ieeexplore.ieee.org/document/9477085">ProtTrans</a> (Elnaggar et al.) arrived at a nearly identical solution. This convergence was no accident. Protein modeling had always borrowed from NLP—even profile HMMs are statistical language models. When BERT and GPT revolutionized language, it was only a matter of time before transformers transformed protein analysis.</p>
 <p>Not everyone followed the naive single-amino-acid approach. <a class="reference external" href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.0c01285">DISAE</a> (Cai et al., 2021) innovated at the vocabulary level: using amino acid <strong>triplets</strong> as tokens (capturing local structural motifs) and selecting only the ~210 most conserved MSA positions (focusing on functionally critical residues). While more domain-specific, DISAE achieved superior performance for chemical-protein interactions, especially for remote homologs.</p>
 </section>
@@ -1095,6 +1097,16 @@ document.write(`
 <li><p><strong>Multi-scale representations</strong>: Explicitly modeling interactions at different scales</p></li>
 </ul>
 <p>These hybrid approaches combine the flexibility of data-driven learning with the interpretability and reliability of physics-based modeling.</p>
+</section>
+<section id="substructure-aware-models">
+<h3>Substructure-Aware Models<a class="headerlink" href="#substructure-aware-models" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://arxiv.org/pdf/2512.18114">Magneton</a> represents a paradigm shift in how PLMs learn protein biology. Rather than treating proteins as simple sequences of amino acids, Magneton teaches models to recognize functional “building blocks”—domains, active sites, and other conserved substructures. By fine-tuning on these biologically meaningful units, the framework enables models to:</p>
+<ul class="simple">
+<li><p>Capture functional organization at the domain and motif level</p></li>
+<li><p>Better understand relationships between sequence patterns and biological function</p></li>
+<li><p>Achieve significant accuracy gains in enzyme classification and functional annotation</p></li>
+</ul>
+<p>This approach bridges the gap between sequence-level and function-level understanding, demonstrating that teaching models to think in terms of biological substructures—not just amino acids—unlocks deeper functional insights.</p>
 </section>
 </section>
 <section id="what-this-means-for-protein-scientists">
@@ -1228,6 +1240,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rising-trends-augmenting-plms-with-explicit-knowledge">Rising Trends: Augmenting PLMs with Explicit Knowledge</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-aware-models">Structure-Aware Models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biophysics-informed-models">Biophysics-Informed Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substructure-aware-models">Substructure-Aware Models</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-means-for-protein-scientists">What This Means for Protein Scientists</a><ul class="nav section-nav flex-column">
