@@ -105,6 +105,7 @@ chapters:
   - file: content/ai_pi_book/part4/part4_case_studies
   - file: content/ai_pi_book/part4/part4_protein_language_models
   - file: content/ai_pi_book/part4/part4_foundation_models_genomics
+  - file: content/ai_pi_book/part4/part4_alphagenome
   - file: content/ai_pi_book/part4/part4_debates_clarifications
   - file: content/ai_pi_book/part4/part4_confused_subfields
 - file: content/journal_club_book/journal_club_book

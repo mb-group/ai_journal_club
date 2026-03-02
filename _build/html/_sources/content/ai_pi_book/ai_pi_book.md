@@ -108,6 +108,7 @@ This book intentionally does not cover the technical implementation details that
 
 - [What protein language models actually learn](part4/part4_protein_language_models.md)
 - [Actual performance of foundation models in genomics](part4/part4_foundation_models_genomics.md)
+- [AlphaGenome](part4/part4_alphagenome.md)
 
 #### [Debates and clarifications](part4/part4_debates_clarifications.md)
 
